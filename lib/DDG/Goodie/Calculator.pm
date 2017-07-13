@@ -14,13 +14,14 @@ my $calc_regex = qr/^(free)?\s?(online)?\s?calc(ulator)?\s?(online)?\s?(free)?$/
 triggers query => $calc_regex;
 
 triggers query => qr'^
-    (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = % ]+ |
+    (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = % °]+ |
     \d+\%=?$ |
     what\sis| calculat(e|or) | solve | math | log\sof | fact(?:orial?)?(\s+of)? |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
     sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acos | asin | arcsin | cosh |
     deg(?:rees?)? | rad(?:ians?)? |
-    squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | dozen | pi |
+    squared | sqrt | cbrt | \d+\s?mod(?:ulo)?\s?\d+ | dozen | pi |
+    (?:cub(?:ed?|ic)|sq(?:uare)?)\s?r(?:oo)?t(?:\sof)? | cubed? |
     score){2,}$
 'xi;
 
@@ -128,8 +129,15 @@ sub rewriteFunctions {
 
     $query =~ s/exp\s?\(?(\d+)\)?/exp($1)/i;
 
-    # Preprocesses sqrt
-    $query =~ s/sqrt\s?\(?([^)]+)\)?/sqrt($1)/i;
+    $query =~ s/cube\s?\((.+)\)/cube($1)/gi;
+    $query =~ s/cube\s?(\d+|e|pi|tau)/cube($1)/gi;
+    $query =~ s/(\d+|e|pi|tau)\scubed/cube($1)/gi;
+
+    # Preprocesses cbrt / sqrt
+    $query =~ s/(?:cu(?:be)?d?|cubic)\s?r(?:oo)?t(?:\sof)?/cbrt/ig;
+    $query =~ s/sq(?:uare)?\s?r(?:oo)?t(?:\sof)?/sqrt/ig;
+    $query =~ s/(cbrt|sqrt)\s?\((.+)\)/$1($2)/i;
+    $query =~ s/(cbrt|sqrt)\s?(\d+|e|pi|tau)/$1($2)/i;
 
     # Preprocesses Log/Ln
     $query =~ s/log\sof\s(\d+)/log($1)/i;
@@ -169,9 +177,10 @@ handle query => sub {
         };
     }
 
+    # Help support the query if there is degrees involed
+    $query =~ s/°/ deg/gi;
     return if ( m/deg(rees?)?|°/i && m/rad(ians?)?/); # we don't support a mix of degrees and radians in the same query
     $query = rewriteFunctions($query);
-    
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
@@ -181,7 +190,7 @@ handle query => sub {
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
-    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh)e?$/; # stops empty functions at end or with <func>e
+    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|cbrt|cubed?)e?$/; # stops empty functions at end or with <func>e
     return if $query =~ m#(?:x(\^|/)|(\^|/)x)#; # stops triggering on what is most likely algebra
 
     # some shallow preprocessing of the query
@@ -212,7 +221,7 @@ handle query => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
     $query =~ s/(?<!e)x(?!p)/\*/ig; # stops the x in exp being converted to *
-    return if ($tmp_expr eq $query) && ($query !~ /\de|fact|a?cos|a?tan|sin|log|ln|exp|mod|!/i);     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de|fact|a?cos|a?tan|sin|cbrt|cubed?|log|ln|exp|mod|!/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
@@ -223,7 +232,7 @@ handle query => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
-    return if scalar(split(" ", $spaced_query)) < 2 && ($spaced_query !~ /^(fact|sqrt|exp|a?cosh?|a?tan|a?sin|log|ln|mod|modulo|\d+\!$)/i);
+    return if scalar(split(" ", $spaced_query)) < 2 && ($spaced_query !~ /^(fact|cubed?|cbrt|sqrt|exp|a?cosh?|a?tan|a?sin|log|ln|mod|modulo|\d+\!$)/i);
 
     return '', structured_answer => {
         data => {

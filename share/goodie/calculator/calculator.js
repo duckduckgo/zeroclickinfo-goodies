@@ -739,6 +739,10 @@ DDH.calculator = DDH.calculator || {};
             var expression = display.value.split(" ");
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
+            // if it's an operator, we'll leave the yRootState
+        if(yRootState === true && Utils.isOperand(element)) {
+            yRootState = false;
+        }
 
         // if element is math function or square root, increment paren total
         if(Utils.isMathFunction(element) || element === "√(") {

@@ -416,7 +416,26 @@ ddg_goodie_test(
     'cos(103*232+22)+2' => build_test(
         'cos(103 * 232 + 22) + 2'
     ),
+    'square root of 25' => build_test(
+        'sqrt(25)'
+    ),
+    '77 * square root 25 + 2' => build_test(
+        '77 * sqrt(25) + 2'
+    ),
+    '77 * cube rt 25 + 2' => build_test(
+        '77 * cbrt(25) + 2'
+    ),
+    'cubic rt of 90' => build_test(
+        'cbrt(90)'
+    ),
+    '99 cubed' => build_test(
+        'cube(99)'
+    ),
+    '2 + cube 66 + 2' => build_test(
+        '2 + cube(66) + 2'
+    ),
 
+    '232 * 2 cube'                    => undef, # /cube/ can't be at end, only /cubed/
     'sine'                            => undef,
     'loge'                            => undef,
     'lne'                             => undef, # a search with high click through
