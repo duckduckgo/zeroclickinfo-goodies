@@ -90,12 +90,6 @@ ddg_goodie_test(
     'sin(1)' => build_test(
         'sin(1)'
     ),
-    'csc(1)' => build_test(
-        'csc(1)'
-    ),
-    'sec(1)' => build_test(
-        'sec(1)'
-    ),
     '$3.43+$34.45' => build_test(
         '$3.43 + $34.45'
     ),
@@ -146,9 +140,6 @@ ddg_goodie_test(
     ),
     '2,90 + 4,6' => build_test(
         '2.90 + 4.6'
-    ),
-    '2,90 + sec(4,6)' => build_test(
-        '2.90 + sec(4.6)'
     ),
     '100 - 96.54' => build_test(
         '100 - 96.54'
@@ -422,8 +413,43 @@ ddg_goodie_test(
     'cos(103*232+22)+2' => build_test(
         'cos(103 * 232 + 22) + 2'
     ),
+    'cos(103*232+22)+2' => build_test(
+        'cos(103 * 232 + 22) + 2'
+    ),
+    'square root of 25' => build_test(
+        'sqrt(25)'
+    ),
+    '77 * square root 25 + 2' => build_test(
+        '77 * sqrt(25) + 2'
+    ),
+    '77 * cube rt 25 + 2' => build_test(
+        '77 * cbrt(25) + 2'
+    ),
+    'cubic rt of 90' => build_test(
+        'cbrt(90)'
+    ),
+    '99 cubed' => build_test(
+        'cube(99)'
+    ),
+    '2 + cube 66 + 2' => build_test(
+        '2 + cube(66) + 2'
+    ),
 
-
+    'e2e4'                            => undef,
+    'cosh(4+-)'                       => undef,  
+    '232 * 2 cube'                    => undef, # /cube/ can't be at end, only /cubed/
+    'sine'                            => undef,
+    'loge'                            => undef,
+    'lne'                             => undef, # a search with high click through
+    'cose'                            => undef,
+    'tane'                            => undef,
+    '1e+6'                            => undef,
+    '7/11'                            => undef, # an ambiguity. Probably looking for US store
+    'sec^2-1'                         => undef,
+    '(x^2-1)*(5x^4+2x+1)'             => undef,
+    '88y * 1312'                      => undef,
+    '23x+3x'                          => undef,
+    '3a / 8b'                         => undef,
     'tan of 88 degrees and radians'   => undef,
     'sin 88 degrees + sin 10 radians' => undef,
     '1432 / 28 2'                     => undef,
