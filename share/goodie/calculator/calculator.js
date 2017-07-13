@@ -992,6 +992,10 @@ DDH.calculator = DDH.calculator || {};
                      */
                     $calcInputTrap.keypress(function(e){
 
+                        if (e.altKey || e.metaKey || e.ctrlKey) {
+                            return;
+                        }
+
                         var key = e.keyCode || e.charCode;
                         var evt = "";
 
