@@ -26,6 +26,7 @@ aliases:
   - sts
   - stone
   - st
+  - stone weight
 type: mass
 unit: stone
 symbols: [st]
@@ -403,6 +404,16 @@ aliases:
   - miles
 type: length
 unit: mile
+---
+aliases:
+  - nautical mile
+  - nautical miles
+  - naut mile
+  - naut miles
+  - nautical mi
+  - nautical
+type: length
+unit: nauticalmile
 ---
 aliases:
   - yd
@@ -1560,6 +1571,14 @@ aliases:
   - terabytes
 type: digital
 unit: TB
+---
+aliases:
+  - PB
+  - PBs
+  - petabyte
+  - petabytes
+type: digital
+unit: PB
 ---
 aliases:
   - litre

@@ -2137,6 +2137,39 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
      	})
 	),
+	# Ounce / Fluid Ounce Ambiguity
+	'how many ounces in a quart' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'impquart',
+			to_unit => 'impfluidounce',
+			physical_quantity => 'volume'
+     	})
+	),
+	'ounces in a cup' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'impcup',
+			to_unit => 'impfluidounce',
+			physical_quantity => 'volume'
+     	})
+	),
+	'ml to oz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millilitre',
+			to_unit => 'impfluidounce',
+			physical_quantity => 'volume'
+     	})
+	),
+	'miles to nautical' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'mile',
+			to_unit => 'nauticalmile',
+			physical_quantity => 'length'
+     	})
+	),
 
 	# single unit queries with no number 
 	'grams' => test_zci(
@@ -2161,6 +2194,14 @@ ddg_goodie_test(
 			from_unit => 'foot',
 			to_unit => '',
 			physical_quantity => 'length'
+		})
+	),
+	'petabyte' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'PB',
+			to_unit => '',
+			physical_quantity => 'digital'
 		})
 	),
 	'miles ph' => test_zci(
@@ -2334,12 +2375,77 @@ ddg_goodie_test(
 			physical_quantity => 'frequency'
 		})
 	),
+	'kg' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilogram',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
 	'kgs' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
 			from_unit => 'kilogram',
 			to_unit => '',
 			physical_quantity => 'mass'
+		})
+	),
+	'how many inches is 120mm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '120',
+			from_unit => 'millimeter',
+			to_unit => 'inch',
+			physical_quantity => 'length'
+		})
+	),
+	'millimeters in to inches' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => 'inch',
+			physical_quantity => 'length'
+		})
+	),
+	'how many years is 3150000 minutes' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '3150000',
+			from_unit => 'minute',
+			to_unit => 'year',
+			physical_quantity => 'duration'
+		})
+	),
+	'centigrade to fahrenheit conversion table' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	# fraction type conversions
+	'1/3 m to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.3333',
+			from_unit => 'meter',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	'1/3 m to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.3333',
+			from_unit => 'meter',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	'1/2 byte in bits' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.5',
+			from_unit => 'B',
+			to_unit => 'b',
+			physical_quantity => 'digital'
 		})
 	),
 
@@ -2416,6 +2522,11 @@ ddg_goodie_test(
 		})
 	 ),
 	'metric conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'measurement conversion chart' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'length'
 		})

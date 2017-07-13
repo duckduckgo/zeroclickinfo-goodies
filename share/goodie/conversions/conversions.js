@@ -102,6 +102,9 @@ DDH.conversions = DDH.conversions || {};
             {name: 'zettaelectronvolt',     factor: '1000 exaelectronvolt'},
             {name: 'yottaelectronvolt',     factor: '1000 zettaelectronvolt'},
 
+            // CUSTOM LENGTH UNITS
+            {name: 'nauticalmile',          factor: '1.15078 miles'},
+
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
             {name: 'gramforce',      factor: '0.00980665 newton'},
@@ -428,25 +431,26 @@ DDH.conversions = DDH.conversions || {};
         length: {
             name: "Length",
             units: [
-                { symbol: 'decameter',  name: 'Decameter' },
-                { symbol: 'millimeter', name: 'Millimeter' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'nanometer',  name: 'Nanometer' },
-                { symbol: 'picometer',  name: 'Picometer' },
-                { symbol: 'kilometer',  name: 'Kilometer' },
-                { symbol: 'meter',      name: 'Meter' },
-                { symbol: 'cm',         name: 'Centimeter' },
-                { symbol: 'hectometer', name: 'Hectometer' },
-                { symbol: 'chains',     name: 'Chains' },
-                { symbol: 'inch',       name: 'Inch' },
-                { symbol: 'foot',       name: 'Feet' },
-                { symbol: 'yard',       name: 'Yard' },
-                { symbol: 'mile',       name: 'Mile' },
-                { symbol: 'link',       name: 'Link' },
-                { symbol: 'rod',        name: 'Rod' },
-                { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil' },
+                { symbol: 'decameter',      name: 'Decameter' },
+                { symbol: 'millimeter',     name: 'Millimeter' },
+                { symbol: 'micrometer',     name: 'Micrometer' },
+                { symbol: 'micrometer',     name: 'Micrometer' },
+                { symbol: 'nanometer',      name: 'Nanometer' },
+                { symbol: 'picometer',      name: 'Picometer' },
+                { symbol: 'kilometer',      name: 'Kilometer' },
+                { symbol: 'meter',          name: 'Meter' },
+                { symbol: 'cm',             name: 'Centimeter' },
+                { symbol: 'hectometer',     name: 'Hectometer' },
+                { symbol: 'chains',         name: 'Chains' },
+                { symbol: 'inch',           name: 'Inch' },
+                { symbol: 'foot',           name: 'Feet' },
+                { symbol: 'yard',           name: 'Yard' },
+                { symbol: 'mile',           name: 'Mile' },
+                { symbol: 'nauticalmile',   name: 'Nautical mile'},
+                { symbol: 'link',           name: 'Link' },
+                { symbol: 'rod',            name: 'Rod' },
+                { symbol: 'angstrom',       name: 'Angstrom' },
+                { symbol: 'mil',            name: 'Mil' },
             ],
             defaults: ['meter', 'cm']
         },
@@ -634,18 +638,18 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert();
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert() }                            
+                        } catch(e) {}
                     });
 
                     $convert_right.keyup(function( _e ) {
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert("left");
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert("left") }
+                        } catch(e) {}
                     });
                     
                     $convert_left.click(function() {
