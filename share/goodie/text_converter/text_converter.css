@@ -22,10 +22,10 @@
  * The text converter controls
  */
 .zci--text_converter #controls {
-    margin: 0.8em 0 0.3em 0;
+    margin: 1em 0 0.3em 0;
 }
 
 .zci--text_converter #controls--to-label {
-    margin-left: .3em;
+    margin-left: .5em;
 }
 
