@@ -184,7 +184,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
 .zci--calculator .tile__calc .tile__ctrl__toggle:focus,
 .zci--calculator .tile__calc .tile__ctrl__btn:active,
 .zci--calculator .tile__calc .tile__ctrl__toggle:active {
-    outline: 0;
+    outline: none;
 }
 
 .no-touch .tile__calc .tile__ctrl__btn:hover,
@@ -260,9 +260,16 @@ input:checked+.tile__ctrl__toggle-slider:before {
     white-space: nowrap;
 }
 
-.zci--calculator .tile__calc .tile__input-trap:focus+.tile__display,
-.zci--calculator .tile__calc .tile__display:focus {
+.zci--calculator .tile__calc .tile__display:hover {
+    box-shadow: inset -1px -1px 0px #999, inset 1px 1px 0px #999;
+}
+
+.zci--calculator .tile__calc .tile__display.selected {
     box-shadow: inset -1px -1px 0px #61a0c7, inset 1px 1px 0px #61a0c7;
+}
+
+.zci--calculator .tile__calc .tile__display:focus {
+    outline: none;
 }
 
 .zci--calculator .tile__calc .tile__display__aside--wrap {
