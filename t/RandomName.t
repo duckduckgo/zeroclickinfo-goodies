@@ -16,7 +16,7 @@ sub build_name_answer {
         structured_answer => {
             data => {
                 title => re(qr/\w\w/),
-                altsubtitle => re(qr/Randomly generated name/)
+                altSubtitle => re(qr/Randomly generated name/)
             },
 
             templates => {
@@ -33,7 +33,7 @@ sub build_person_answer {
             data => {
                 title => re(qr/\w\w/),
                 subtitle => re(qr/Birthday: \d{4}\-\d{2}\-\d{2}\+ | Age: \d/),
-                altsubtitle => re(qr/Randomly generated person/)
+                altSubtitle => re(qr/Randomly generated person/)
             },
 
             templates => {
