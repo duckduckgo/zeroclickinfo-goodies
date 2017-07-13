@@ -19,7 +19,6 @@ sub build_structured_answer {
 
             data => {
                 title    => 'Text Converter',
-                subtitle => 'Various Text Conversion Tools',
                 from_type => $input->{'from_type'},
                 to_type => $input->{'to_type'}
             },

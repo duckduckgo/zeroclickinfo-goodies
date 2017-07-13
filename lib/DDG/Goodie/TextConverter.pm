@@ -77,7 +77,6 @@ handle query_lc => sub {
 
                 data => {
                     title    => "Text Converter",
-                    subtitle => "Various Text Conversion Tools",
                     from_type => $from_type,
                     to_type => $to_type 
                 },
@@ -97,7 +96,6 @@ handle query_lc => sub {
 
                 data => {
                     title    => "Text Converter",
-                    subtitle => "Various Text Conversion Tools",
                     from_type => $from_type,
                     to_type => $to_type 
                 },

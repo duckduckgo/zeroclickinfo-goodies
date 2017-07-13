@@ -1,16 +1,17 @@
 <div class="gw">
 
     <div class="g js_minify--wrap frm half">
-        <textarea name="text-converter--input" id="text-converter--input" class="text-converter--input whole tx--16 frm__text" placeholder="Text to convert from..."></textarea>
+        <textarea name="text-converter--input" id="text-converter--input" class="frm__input text-converter--input whole tx--16 frm__text" placeholder="Text to convert from..."></textarea>
     </div>
 
     <div class="g js_minify--wrap fifty frm">
-        <textarea name="js_minify--output" id="text-converter--output" class="js_minify--output whole tx--16 frm__text" cols="60" readonly="readonly" onclick="this.focus();this.select()"></textarea>
+        <textarea name="js_minify--output" id="text-converter--output" class="frm__input js_minify--output whole tx--16 frm__text" cols="60" readonly="readonly" onclick="this.focus();this.select()"></textarea>
     </div>
 
 </div>
 
 <div id="controls">
+    <label for="js_convert--select-from" id="controls--from-label">From:</label>
     <div class="frm__select">
         <select name="" id="js_convert--select-from">
             <option value="text" selected="selected">ASCII / ANSI</option>
@@ -21,7 +22,7 @@
             <option value="hexadecimal">Hexadecimal</option>
         </select>
     </div>
-    <span>-</span>
+    <label for="js_convert--select-to" id="controls--to-label">To:</label>
     <div class="frm__select">
         <select name="" id="js_convert--select-to">
             <option value="text">ASCII / ANSI</option>
@@ -32,7 +33,7 @@
             <option value="hexadecimal" selected="selected">Hexadecimal</option>
         </select>
     </div>
-    <div class="g forty">
-        <button class="btn btn--skeleton" id="js_convert-button">Convert</button>
+    <div class="g">
+        <button class="btn btn--primary" id="js_convert-button">Convert</button>
     </div>
 </div>

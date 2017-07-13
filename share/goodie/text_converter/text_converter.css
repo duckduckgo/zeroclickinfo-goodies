@@ -4,13 +4,28 @@
  */
 .zci--text_converter #text-converter--input,
 .zci--text_converter #text-converter--output {
+    background-color: #ffffff;
     height: 10em;
+}
+
+/*
+ * Dark theme changes to the text areas
+ */
+.dark-bg .zci--text_converter #text-converter--input,
+.dark-bg .zci--text_converter #text-converter--output {
+    background-color: #4b4b4b;
+    border-color: #434343;
+    color: #c2c2c2;
 }
 
 /*
  * The text converter controls
  */
 .zci--text_converter #controls {
-    margin: .3em 0;
+    margin: 0.8em 0 0.3em 0;
+}
+
+.zci--text_converter #controls--to-label {
+    margin-left: .3em;
 }
 
