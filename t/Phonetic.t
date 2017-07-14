@@ -10,11 +10,12 @@ zci answer_type => 'phonetic';
 zci is_cached => 1;
 
 sub build_answer {
-    my($answer) = @_;
-    return $answer,
+    my($word, $answer) = @_;
+    return "Phonetic: " . $answer,
         structured_answer => {
             data => {
-                title => $answer,
+                title => "Phonetic: " . $word,
+                subtitle => $answer,
             },
             templates => {
                 group => 'text',
@@ -28,10 +29,10 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Phonetic
         )],
-        'phonetic what duck' => build_test('Phonetic: Whiskey-Hotel-Alfa-Tango Delta-Uniform-Charlie-Kilo'),
-        'phonetic through yonder' => build_test('Phonetic: Tango-Hotel-Romeo-Oscar-Uniform-Golf-Hotel Yankee-Oscar-November-Delta-Echo-Romeo'),
-        'phonetic window quacks' => build_test('Phonetic: Whiskey-India-November-Delta-Oscar-Whiskey Quebec-Uniform-Alfa-Charlie-Kilo-Sierra'),
-        'phonetic Who are you?' => build_test('Phonetic: Whiskey-Hotel-Oscar Alfa-Romeo-Echo Yankee-Oscar-Uniform'),
+        'phonetic what duck' => build_test('what duck', 'Whiskey-Hotel-Alfa-Tango Delta-Uniform-Charlie-Kilo'),
+        'phonetic through yonder' => build_test('through yonder', 'Tango-Hotel-Romeo-Oscar-Uniform-Golf-Hotel Yankee-Oscar-November-Delta-Echo-Romeo'),
+        'phonetic window quacks' => build_test('window quacks', 'Whiskey-India-November-Delta-Oscar-Whiskey Quebec-Uniform-Alfa-Charlie-Kilo-Sierra'),
+        'phonetic Who are you?' => build_test('who are you?', 'Whiskey-Hotel-Oscar Alfa-Romeo-Echo Yankee-Oscar-Uniform'),
         'what is phonetic?' => undef,
 );
 

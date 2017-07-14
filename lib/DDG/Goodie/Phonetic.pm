@@ -58,9 +58,12 @@ handle remainder => sub {
     my @words = split(/\s+/, $_);
     my @phonetics = map { components($_) } @words;
     my $string_answer = "Phonetic: " . join(" ", @phonetics);
+    my $title = "Phonetic: " . $_;
+    my $subtitle = join(" ", @phonetics);
     return $string_answer, structured_answer => {
         data => {
-            title => $string_answer,
+            title => $title,
+            subtitle => $subtitle,
         },
         templates => {
             group => 'text',
