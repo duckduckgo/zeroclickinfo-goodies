@@ -9,14 +9,30 @@ use DDG::Test::Goodie;
 zci answer_type => 'phonetic';
 zci is_cached => 1;
 
+sub build_answer {
+    my($answer) = @_;
+    return $answer,
+        structured_answer => {
+            data => {
+                title => $answer,
+            },
+            templates => {
+                group => 'text',
+            }
+        };
+}
+
+sub build_test { test_zci(build_answer(@_)) }
+
 ddg_goodie_test(
         [qw(
                 DDG::Goodie::Phonetic
         )],
-        'phonetic what duck' => test_zci('Phonetic: Whiskey-Hotel-Alfa-Tango Delta-Uniform-Charlie-Kilo'),
-        'phonetic through yonder' => test_zci('Phonetic: Tango-Hotel-Romeo-Oscar-Uniform-Golf-Hotel Yankee-Oscar-November-Delta-Echo-Romeo'),
-        'phonetic window quacks' => test_zci('Phonetic: Whiskey-India-November-Delta-Oscar-Whiskey Quebec-Uniform-Alfa-Charlie-Kilo-Sierra'),
-        'phonetic Who are you?' => test_zci('Phonetic: Whiskey-Hotel-Oscar Alfa-Romeo-Echo Yankee-Oscar-Uniform')
+        'phonetic what duck' => build_test('Phonetic: Whiskey-Hotel-Alfa-Tango Delta-Uniform-Charlie-Kilo'),
+        'phonetic through yonder' => build_test('Phonetic: Tango-Hotel-Romeo-Oscar-Uniform-Golf-Hotel Yankee-Oscar-November-Delta-Echo-Romeo'),
+        'phonetic window quacks' => build_test('Phonetic: Whiskey-India-November-Delta-Oscar-Whiskey Quebec-Uniform-Alfa-Charlie-Kilo-Sierra'),
+        'phonetic Who are you?' => build_test('Phonetic: Whiskey-Hotel-Oscar Alfa-Romeo-Echo Yankee-Oscar-Uniform'),
+        'what is phonetic?' => undef,
 );
 
 done_testing;
