@@ -1,9 +1,10 @@
 {
     "id": "regex_security_cheat_sheet",
-    "name": "RegexSecurity",
+    "name": "Regex Security",
     "description": "A list of common security issues generally faced when using Regex in softwares which might invalidate data.",
 
     "metadata": {
+        "sourceUrl": "https://code.tutsplus.com/tutorials/advanced-regular-expression-tips-and-techniques",
         "sourceName": "Regex Security for web application firewalls"   
     },
 
@@ -14,23 +15,23 @@
     "template_type": "code",
 
     "section_order": [
-        "High Severity issues",
-        "Medium Severity issues"
+        "High Severity Issues",
+        "Medium Severity Issues"
     ],
 
     "sections": {
-        "High Severity issues": [
+        "High Severity Issues": [
             {
                 "key": "`(^a|a$)`",
-                "val": "Regexp should avoid using `^` (alternative: `\\A`) and `$` (alternative: `\\Z`) symbols, which are metacharacters for start and end of a string. It is possible to bypass regex by inserting any symbol in front or after regexp."
+                "val": "Regexp should avoid using `^` (alternative: `\\A`) and `$` (alternative: `\\Z`) symbols, which are metacharacters for start and end of a string. It is possible to bypass regex by inserting any symbol in front or after regexp"
             },
             {
                 "key": "`http`",
-                "val": "Regexp should be case-insensitive: `(?i:` or `//regex//i`. It is possible to bypass regex using upper or lower cases in words. [Modsecurity transformation commands](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#cmdLine) (which are applied on string before regex pattern is applied) can also be included in tests to cover more regexps."
+                "val": "Regexp should be case-insensitive: `(?i:` or `//regex//i`. It is possible to bypass regex using upper or lower cases in words. [Modsecurity transformation commands](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#cmdLine) (which are applied on string before regex pattern is applied) can also be included in tests to cover more regexps"
             },
             {
                 "key": "`a.*b`",
-                "value": "In case modifier `//m` is not (globally) specified, regexp should avoid using dot `.` symbol, which means every symbol except newline (`\n`). It is possible to bypass regex using [newline injection](https://www.htbridge.com/blog/bypassing-bitrix-web-application-firewall-via-tiny-regexp-error.html)."
+                "value": "In case modifier `//m` is not (globally) specified, regexp should avoid using dot `.` symbol, which means every symbol except newline (`\n`). It is possible to bypass regex using [newline injection](https://www.htbridge.com/blog/bypassing-bitrix-web-application-firewall-via-tiny-regexp-error.html)"
             },
             {
                 "key": "`(a+)+`",
@@ -38,7 +39,7 @@
             },
             {
                 "key": "`a{1,5}`",
-                "value": "Number of repetitions of set or group `{}` should be carefully used, as one can bypass such limitation by lowering or increasing specified numbers."
+                "value": "Number of repetitions of set or group `{}` should be carefully used, as one can bypass such limitation by lowering or increasing specified numbers"
             },
             {
                 "key": "``[A-z] = [a-zA-Z] + [\\]^_` ``",
@@ -46,15 +47,15 @@
             },
             {
                 "key": "`a'\\s+\\d`",
-                "value": "Regexp should only use plus “`+`” metacharacter in places where it is necessary, as it means “one or more”. Alternative metacharacter star “`*`”, which means “zero or more” is generally preferred."
+                "value": "Regexp should only use plus “`+`” metacharacter in places where it is necessary, as it means “one or more”. Alternative metacharacter star “`*`”, which means “zero or more” is generally preferred"
             },
             {
                 "key": "`a\\s(not[whitespace]|and)\\sb`",
-                "value": "Regular expression writers should be careful while using only whitespace character (`%20`) as separators. Rule can be bypassed e.g. with newline character, tabulation, by skipping whitespace, or alternatives."
+                "value": "Regular expression writers should be careful while using only whitespace character (`%20`) as separators. Rule can be bypassed e.g. with newline character, tabulation, by skipping whitespace, or alternatives"
             },
             {
                 "key": "`a||b`",
-                "value": "Nonstandard combinations of operators."
+                "value": "Nonstandard combinations of operators"
             },
             {
                 "key": "`(a |b)c`",
@@ -69,7 +70,7 @@
                 "value": "Opposite usage of brackets [], () and {}"
             }
         ],
-        "Medium Severity issues": [
+        "Medium Severity Issues": [
             {
                 "key": "`a(?#some comment about wildcards:\\)(\\w*)b`1",
                 "val": "Unsafe usage of comments"
