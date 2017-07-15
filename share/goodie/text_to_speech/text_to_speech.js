@@ -2,7 +2,7 @@ var voices = window.speechSynthesis.getVoices();
 
 window.onload = function(){
     // If browser has speech synthesis show goodie
-    if ('speechSynthesis' in window) {
+    if ('speechSynthesis' in window && voices.length > 0) {
        loadGoodie();
     }
 }
