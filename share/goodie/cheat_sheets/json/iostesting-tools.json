@@ -1,9 +1,10 @@
 {
     "id": "iostesting_tools_cheat_sheet",
-    "name": "IOSTestingTools",
-    "description": "This cheat sheet provides a checklist of tasks to be performed when testing an iOS application. When assessing a mobile application several areas should be taken into account: client software, the communication channel and the server side infrastructure. Testing an iOS application usually requires a jailbroken device, which is basically a device that not pose any restrictions on the software that can be installed on it.",
+    "name": "IOS Testing Tools",
+    "description": "This cheat sheet provides a list of tools and frameworks we can use for testing iOS devices",
     "metadata": {
-        "sourceName": "A list of valuable tools for testing iOS devices."
+        "sourceUrl": "www.owasp.org/index.php/IOS_Application_Security_Testing",
+        "sourceName": "OWASP Application Testing references"
     },
     "aliases": [
         "ios testing", "ios testing tools"
@@ -85,11 +86,11 @@
             },
             {
                 "key": "lsof ARM Binary",
-                "val": "list of all open files and the processes that opened them"
+                "val": "List of all open files and the processes that opened them"
             },
             {
                 "key": "lsock ARM Binary",
-                "val": "monitor socket connections"
+                "val": "Monitor socket connections"
             },
             {
                 "key": "PonyDebugger Injected",
@@ -109,7 +110,7 @@
             },
             {
                 "key": "USBMux Proxy",
-                "val": "command line tool to connect local TCP port sto ports on an iPhone or iPod Touch device over USB"
+                "val": "Command line tool to connect local TCP port sto ports on an iPhone or iPod Touch device over USB"
             },
             {
                 "key": "iFunBox",
@@ -117,7 +118,7 @@
             },
             {
                 "key": "iNalyzer",
-                "val": "iOS Penetration testing framework"
+                "val": "IOS Penetration testing framework"
             },
             {
                 "key": "removePIE",
