@@ -1,10 +1,10 @@
 {
     "id": "xaml_cheat_sheet",
     "name": "XAML",
-    "description": "XAML for WPF Cheat Sheet. Includes Data Binding, Styles and Triggers, Resources, Transforms, Brushes, and Layout.",
+    "description": "XAML for WPF Cheat Sheet. Extensible Application Markup Language is an XML-based markup language developed by Microsoft. Cheat Sheet includes Data Binding, Styles and Triggers, Resources, Transforms, Brushes, and Layout.",
 
     "metadata": {
-        "sourceName": "Blueboxes.co.uk",
+        "sourceName": "Cheat-Sheets.org",
         "sourceUrl" : "http://www.cheat-sheets.org/saved-copy/wpfcheatsheet.pdf"
     },
 
@@ -79,7 +79,7 @@
         "Resources": [
             {
                 "key": "<element Name.Resources>",
-                "val": "Holds resources accessible to anything under the element."
+                "val": "Holds resources accessible to anything under the element"
             },
             {
                 "key": "<system:String x:Key=\"resName\">stringValue </system:String>",
@@ -113,7 +113,7 @@
             },
             {
                 "key": "TransformGroup",
-                "val": "Used to hold multiple transforms "
+                "val": "Used to hold multiple transforms"
             },
             {
                 "key": "RotateTransform",
