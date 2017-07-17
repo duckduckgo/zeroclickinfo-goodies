@@ -2449,6 +2449,56 @@ ddg_goodie_test(
 		})
 	),
 
+	# data transfer rate
+	'bits per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => '',
+			physical_quantity => 'data_transfer'
+		})
+	),
+	'bits per second to kilobits per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => 'kbitps',
+			physical_quantity => 'data_transfer'
+		})
+	),
+	'bits per second to megabits per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => 'mbitps',
+			physical_quantity => 'data_transfer'
+		})
+	),
+	'bits per second to gigabits per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => 'gbitps',
+			physical_quantity => 'data_transfer'
+		})
+	),
+	'bits per second to terrabits per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => 'tbitps',
+			physical_quantity => 'data_transfer'
+		})
+	),
+	'bits per second to terabytes per second' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'bitps',
+			to_unit => 'terabyteps',
+			physical_quantity => 'data_transfer'
+		})
+	),
+
 	 # natural language queries
 	'unit converter' => test_zci(
 		'', structured_answer => make_answer_with_base({

@@ -68,6 +68,21 @@ DDH.conversions = DDH.conversions || {};
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'},
+
+            // CUSTOM DIGITAL TRANSFER UNITS
+            {name: 'bitps',         factor: '1 b'},
+            {name: 'kbitps',        factor: '1000 bitps'},
+            {name: 'mbitps',        factor: '1000 kbitps'},
+            {name: 'gbitps',        factor: '1000 mbitps'},
+            {name: 'tbitps',        factor: '1000 gbitps'},
+            {name: 'kilobyteps',    factor: '8000 bitps'},
+            {name: 'megabyteps',    factor: '1000 kilobyteps'},
+            {name: 'gigabyteps',    factor: '1000 megabyteps'},
+            {name: 'terabyteps',    factor: '1000 gigabyteps'},
+            {name: 'kibps',         factor: '1024 bitps'},
+            {name: 'mibps',         factor: '1024 kibps'},
+            {name: 'gibps',         factor: '1024 mibps'},
+            {name: 'tibps',         factor: '1024 gibps'},
             
             // CUSTOM ANGLE UNITS
             {name: 'microarcsec', factor: '0.000000000004848 rad'},
@@ -135,7 +150,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'exawatt',     factor: '1000 petawatt'},
             
             // CUSTOM PRESSURE UNITS
-            {name: 'barye',     factor: '0.000001 bar' },
+            {name: 'barye',     factor: '0.000001 bar'},
             {name: 'Satm',      factor: '1 atm'},
             {name: 'at',        factor:'0.980665 bar'},
             {name: 'mbar',      factor: '0.001 bar'},
@@ -322,6 +337,25 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'sqmillimeter',   name: 'Square Millimeter' },
             ],
             defaults: ['m2', 'sqin']
+        },
+        data_transfer: {
+            name: "Data Transfer Rate",
+            units: [
+                { symbol: 'bitps',       name: 'Bits per second'},
+                { symbol: 'kbitps',      name: 'Kilobit per second'},
+                { symbol: 'mbitps',      name: 'Megabit per second'},
+                { symbol: 'gbitps',      name: 'Gigabit per second'},
+                { symbol: 'tbitps',      name: 'Terrabit per second'},
+                { symbol: 'kilobyteps',  name: 'Kilobyte per second'},
+                { symbol: 'megabyteps',  name: 'Megabyte per second'},
+                { symbol: 'gigabyteps',  name: 'Gigabyte per second'},
+                { symbol: 'terabyteps',  name: 'Terabyte per second'},
+                { symbol: 'kibps',       name: 'Kibibit per second'},
+                { symbol: 'mibps',       name: 'Mebibit per second'},
+                { symbol: 'gibps',       name: 'Gibibit per second'},
+                { symbol: 'tibps',       name: 'Tebibit per second'},
+            ],
+            defaults: ['bitps', 'kbitps']
         },
         digital: {
             name: "Digital Storage",
