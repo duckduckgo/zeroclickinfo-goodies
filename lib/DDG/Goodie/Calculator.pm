@@ -18,7 +18,7 @@ triggers query => qr'^
     \d+\%=?$ |
     what\sis| calculat(e|or) | solve | math | log\sof | fact(?:orial?)?(\s+of)? |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
-    sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acos | asin | arcsin | cosh |
+    sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acosh? | asinh? | arcsin | cosh |
     deg(?:rees?)? | rad(?:ians?)? |
     squared | sqrt | cbrt | \d+\s?mod(?:ulo)?\s?\d+ | dozen | pi |
     (?:cub(?:ed?|ic)|sq(?:uare)?)\s?r(?:oo)?t(?:\sof)? | cubed? |
