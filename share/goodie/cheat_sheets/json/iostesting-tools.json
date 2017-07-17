@@ -1,10 +1,10 @@
 {
     "id": "iostesting_tools_cheat_sheet",
     "name": "IOS Testing Tools",
-    "description": "This cheat sheet provides a list of tools and frameworks we can use for testing iOS devices",
+    "description": "A list of tools for testing iOS devices",
     "metadata": {
         "sourceUrl": "www.owasp.org/index.php/IOS_Application_Security_Testing",
-        "sourceName": "OWASP Application Testing references"
+        "sourceName": "OWASP"
     },
     "aliases": [
         "ios testing", "ios testing tools"
