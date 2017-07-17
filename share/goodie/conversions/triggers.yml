@@ -1581,6 +1581,80 @@ type: digital
 unit: PB
 ---
 aliases:
+  - kibibit
+  - kibibits
+  - kibit
+  - kibits
+  - kib
+type: digital
+unit: kibibit
+---
+aliases:
+  - mebibit
+  - mebibits
+  - mebit
+  - mebits
+  - Mibit
+type: digital
+unit: mebibit
+---
+aliases:
+  - gibibit
+  - gibibits
+  - gibit
+  - gibits
+  - Gibit
+type: digital
+unit: gibibit
+---
+aliases:
+  - tebibit
+  - tebibits
+  - tibit
+type: digital
+unit: tebibit
+---
+aliases:
+  - pebibit
+  - pebibits
+  - pibit
+type: digital
+unit: pebibit
+---
+aliases:
+  - kibibytes
+  - kibi byte
+  - kibi bytes
+  - KiB
+type: digital
+unit: kibibyte
+---
+aliases:
+  - mebibytes
+  - mebi byte
+  - mebi bytes
+  - MiB
+type: digital
+unit: mebibyte
+---
+aliases:
+  - tibibyte
+  - tibibytes
+  - tibi byte
+  - tibi bytes
+  - TiB
+type: digital
+unit: tibibyte
+---
+aliases:
+  - pebibyte
+  - pebibytes
+  - pebi byte
+  - pebi bytes
+type: digital
+unit: pebibyte
+---
+aliases:
   - litre
   - litres
   - liter
