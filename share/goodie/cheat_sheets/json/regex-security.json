@@ -1,11 +1,11 @@
 {
     "id": "regex_security_cheat_sheet",
     "name": "Regex Security",
-    "description": "A list of common security issues generally faced when using Regex in softwares which might invalidate data.",
+    "description": "A list of common security issues generally faced when using Regex in softwares which might invalidate data",
 
     "metadata": {
-        "sourceUrl": "https://code.tutsplus.com/tutorials/advanced-regular-expression-tips-and-techniques",
-        "sourceName": "Regex Security for web application firewalls"   
+        "sourceUrl": "https://code.tutsplus.com/tutorials/advanced-regular-expression-tips-and-techniques--net-11011",
+        "sourceName": "Tutsplus Regex Security"   
     },
 
     "aliases": [
