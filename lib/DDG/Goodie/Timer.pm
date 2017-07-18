@@ -11,11 +11,16 @@ my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
-my @startTriggers = qw(start begin set run);
+my @baseTriggers = qw(start begin set run);
+my @startTriggers = ();
+# creates 'start a', 'begin a'
+map { push(@startTriggers, "$_ a") } @baseTriggers; 
+push(@startTriggers, @baseTriggers);
+
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTriggers = qw(online);
 #Joins the Timer Value
-my @joiners = qw(for on at with);
+my @joiners = qw(for on at to with);
 # StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
 my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
 # Ambigous triggers which should not give Timer IA
