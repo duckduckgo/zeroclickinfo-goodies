@@ -1581,6 +1581,80 @@ type: digital
 unit: PB
 ---
 aliases:
+  - kibibit
+  - kibibits
+  - kibit
+  - kibits
+  - kib
+type: digital
+unit: kibibit
+---
+aliases:
+  - mebibit
+  - mebibits
+  - mebit
+  - mebits
+  - Mibit
+type: digital
+unit: mebibit
+---
+aliases:
+  - gibibit
+  - gibibits
+  - gibit
+  - gibits
+  - Gibit
+type: digital
+unit: gibibit
+---
+aliases:
+  - tebibit
+  - tebibits
+  - tibit
+type: digital
+unit: tebibit
+---
+aliases:
+  - pebibit
+  - pebibits
+  - pibit
+type: digital
+unit: pebibit
+---
+aliases:
+  - kibibytes
+  - kibi byte
+  - kibi bytes
+  - KiB
+type: digital
+unit: kibibyte
+---
+aliases:
+  - mebibytes
+  - mebi byte
+  - mebi bytes
+  - MiB
+type: digital
+unit: mebibyte
+---
+aliases:
+  - tibibyte
+  - tibibytes
+  - tibi byte
+  - tibi bytes
+  - TiB
+type: digital
+unit: tibibyte
+---
+aliases:
+  - pebibyte
+  - pebibytes
+  - pebi byte
+  - pebi bytes
+type: digital
+unit: pebibyte
+---
+aliases:
   - litre
   - litres
   - liter
@@ -2173,3 +2247,121 @@ aliases:
   - kt
 type: speed
 unit: knot
+---
+aliases:
+  - bit per sec
+  - bits per sec
+  - bit per second
+  - bits per second
+  - bps
+type: data_transfer 
+unit: bitps 
+---
+aliases:
+  - kilobit per sec
+  - kilobits per sec
+  - kilobit per second
+  - kilobits per second
+  - kbps
+type: data_transfer 
+unit: kbitps 
+---
+aliases:
+  - megabit per sec
+  - megabits per sec
+  - megabit per second
+  - megabits per second
+  - mbps
+  - Mbps
+type: data_transfer 
+unit: mbitps 
+---
+aliases:
+  - gigabit per sec
+  - gigabits per sec
+  - gigabit per second
+  - gigabits per second
+  - gbps
+type: data_transfer 
+unit: gbitps
+---
+aliases:
+  - terrabit per sec
+  - terrabits per sec
+  - terrabit per second
+  - terrabits per second
+  - tbps
+type: data_transfer 
+unit: tbitps 
+---
+aliases:
+  - kilobyte per sec
+  - kilobytes per sec
+  - kilobyte per second
+  - kilobytes per second
+  - kb per sec
+  - kb per second
+type: data_transfer 
+unit: kilobyteps
+---
+aliases:
+  - megabyte per sec
+  - megabytes per sec
+  - megabyte per second
+  - megabytes per second
+  - mb per sec
+  - mb per second
+type: data_transfer 
+unit: megabyteps
+---
+aliases:
+  - gigabyte per sec
+  - gigabytes per sec
+  - gigabyte per second
+  - gigabytes per second
+  - gb per sec
+  - gb per second
+type: data_transfer 
+unit: gigabyteps
+---
+aliases:
+  - terabyte per sec
+  - terabytes per sec
+  - terabyte per second
+  - terabytes per second
+  - tb per second
+  - tb per sec
+type: data_transfer 
+unit: terabyteps
+---
+aliases:
+  - kibibit per sec
+  - kibibits per sec
+  - kibibit per second
+  - kibibits per second
+type: data_transfer 
+unit: kibps
+---
+aliases:
+  - mibibit per sec
+  - mibibits per sec
+  - mibibit per second
+  - mibibits per second
+type: data_transfer 
+unit: mibps
+---
+aliases:
+  - gibibit per sec
+  - gibibits per sec
+  - gibibit per second
+  - gibibits per second
+type: data_transfer 
+unit: gibps
+---
+aliases:
+  - tibibit per sec
+  - tibibits per sec
+  - tibibit per second
+  - tibibits per second
+type: data_transfer 
+unit: tibps

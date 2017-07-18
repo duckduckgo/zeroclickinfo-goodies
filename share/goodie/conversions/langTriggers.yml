@@ -19,6 +19,8 @@ mass:
   - weight
 angle:
 area:
+data_transfer:
+  - transfer
 digital:
   - digital storage
 duration:
