@@ -11,11 +11,12 @@ zci answer_type => 'idn';
 zci is_cached => 1;
 
 sub build_answer {
-    my($answer) = @_;
-    return $answer,
+    my($string_answer, $title, $subtitle) = @_;
+    return $string_answer,
         structured_answer => {
             data => {
-                title => $answer,
+                title => $title,
+                subtitle => $subtitle,
             },
             templates => {
                 group => 'text',
@@ -29,11 +30,11 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::IDN
     )],
-    'idn exämple.com' => build_test('Encoded IDN: xn--exmple-cua.com'),
-    'internationalize domain  exämple.com' => build_test('Encoded internationalized domain: xn--exmple-cua.com'),
-    'idn xn--exmple-cua.com' => build_test('Decoded IDN: exämple.com'),
-    'international domain xn--exmple-cua.com' => build_test('Decoded international domain: exämple.com'),
-    'internationalized domain xn--exmple-cua.com' => build_test('Decoded internationalized domain: exämple.com'),
+    'idn exämple.com' => build_test('Encoded IDN: xn--exmple-cua.com', 'xn--exmple-cua.com', 'exämple.com encoded'),
+    'internationalize domain  exämple.com' => build_test('Encoded internationalized domain: xn--exmple-cua.com', 'xn--exmple-cua.com', 'exämple.com encoded'),
+    'idn xn--exmple-cua.com' => build_test('Decoded IDN: exämple.com', 'exämple.com', 'xn--exmple-cua.com decoded'),
+    'international domain xn--exmple-cua.com' => build_test('Decoded international domain: exämple.com', 'exämple.com', 'xn--exmple-cua.com decoded'),
+    'internationalized domain xn--exmple-cua.com' => build_test('Decoded internationalized domain: exämple.com', 'exämple.com', 'xn--exmple-cua.com decoded'),
 );
 
 done_testing;
