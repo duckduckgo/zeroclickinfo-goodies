@@ -12,7 +12,7 @@ sub build_sum_answer {
     return $subtitle,
         structured_answer => {
             data => {
-                title => "$title\n",
+                title => "$title",
                 subtitle => $subtitle
             },
             templates => {
@@ -27,13 +27,13 @@ ddg_goodie_test(
     [
         'DDG::Goodie::SumOfNaturalNumbers'
     ],
-    'sum 1 to 10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10 is 55.'),
-    'sum 55 to 63' => build_sum_test('531', 'Sum of natural numbers from 55 to 63 is 531.'),
-    'sum 33 to 100' => build_sum_test('4,522', 'Sum of natural numbers from 33 to 100 is 4,522.'),
-    'sum 1-10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10 is 55.'),
-    'sum from 1 to 10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10 is 55.'),
-    '1-10 sum' => build_sum_test('55', 'Sum of natural numbers from 1 to 10 is 55.'),
-    'add from 1 to 100' => build_sum_test('5,050', 'Sum of natural numbers from 1 to 100 is 5,050.'),
+    'sum 1 to 10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10'),
+    'sum 55 to 63' => build_sum_test('531', 'Sum of natural numbers from 55 to 63'),
+    'add 33 to 100' => build_sum_test('4,522', 'Sum of natural numbers from 33 to 100'),
+    'sum 1-10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10'),
+    'sum from 1 to 10' => build_sum_test('55', 'Sum of natural numbers from 1 to 10'),
+    '1-10 sum' => build_sum_test('55', 'Sum of natural numbers from 1 to 10'),
+    'add from 1 to 100' => build_sum_test('5,050', 'Sum of natural numbers from 1 to 100'),
 
     # Invalid Input
     'sum 1 --- 10' => undef,
