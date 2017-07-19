@@ -3,7 +3,7 @@
     "name": "IOS Testing Tools",
     "description": "A list of tools for testing iOS devices",
     "metadata": {
-        "sourceUrl": "www.owasp.org/index.php/IOS_Application_Security_Testing",
+        "sourceUrl": "https://www.owasp.org/index.php/IOS_Application_Security_Testing_Cheat_Sheet",
         "sourceName": "OWASP"
     },
     "aliases": [
