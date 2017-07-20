@@ -1,0 +1,47 @@
+{
+    "id": "kaomoji_cheat_sheet",
+    "name": "Kaomoji",
+    "description": "Text based emoticons that are created by including Japanese and other 2-byte characters",
+    "template_type": "code",
+    "section_order": [
+        "Emotions",
+        "Actions",
+        "Animals"
+    ],
+    "aliases": [
+        "kaomoji",
+        "japanese emoticons"
+    ],
+    "sections": {
+        "Emotions": [
+            {
+                "val": "joy",
+                "key": "(* ^ ω ^)"
+            },
+            {
+                "val": "love",
+                "key": "(♡°▽°♡)"
+            }
+        ],
+        "Actions": [
+            {
+                "val": "hugging",
+                "key": "(⊃｡•́‿•̀｡)⊃	"
+            },
+            {
+                "val": "hiding",
+                "key": "ﾍ(･_|	"
+            }
+        ],
+        "Animals": [
+            {
+                "val": "cat",
+                "key": "(=^･ｪ･^=)"
+            },
+            {
+                "val": "dog",
+                "key": "∪･ω･∪"
+            }
+        ]
+    }
+}
