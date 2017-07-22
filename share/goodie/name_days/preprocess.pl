@@ -63,22 +63,7 @@ sub prepare_dates {
     # Prepare the plain-text answer
     my $res = '';
     foreach (sort keys %{$dates_by_country}) {
-        $res .= $_ . ': ' . $dates_by_country->{$_} . "; ";
-    }
-    $res =~ s/; $/\|/;
-
-    # Prepare the HTML answer
-    foreach (sort keys %{$dates_by_country_and_month}) {
-        $res .= '<tr><td class="name-days-country">' .
-            get_flag($_) . ' <span class="name-days-country-name">' . $_ .
-            '</span></td><td class="name-days-dates">';
-        my $i = 0;
-        for (@{$dates_by_country_and_month->{$_}}) {
-            $res .= '<div class="name-days-tile"><span>' . $month_names[$i] . ' ' .
-                    $_ . '</span></div>' if $_;
-            $i++;
-        }
-        $res .= '</td></tr>';
+        $res .= $_ . ': ' . $dates_by_country->{$_} . ";";
     }
     return $res;
 }

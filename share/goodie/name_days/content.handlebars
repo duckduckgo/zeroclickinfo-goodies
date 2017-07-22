@@ -1,0 +1,20 @@
+<div>Name days for <strong>{{name}}</strong></div>
+<table>
+    <tbody>
+        {{#name_days}}
+        <tr>
+            <td class="name-days-country">
+                <span class="flag-sm flag-sm-{{flag}}"></span>
+                <span class="name-days-country-name">{{country}}</span>
+            </td>
+            <td class="name-day-dates">
+                {{#each months}}
+                    <td class="name-days-tile">
+                        <span>{{@key}} {{#each this}} {{this}}, {{/each}}</span>
+                    </td>
+                {{/each}}
+            </td>
+        </tr>
+        {{/name_days}}
+    </tbody>
+</table>

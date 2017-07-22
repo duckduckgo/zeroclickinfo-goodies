@@ -22,6 +22,7 @@ triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
 my @names = share('preprocessed_names.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Names indexed by day
 my %dates = share('preprocessed_dates.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Days indexed by name
 
+sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; $s =~ s/\s+/ /g; return $s };
 
 sub parse_other_date_formats {
     # Quick fix for the date formats not supported by parse_datestring_to_date.
@@ -77,21 +78,18 @@ sub parse_other_date_formats {
 
 sub get_flag {
     my $country = shift;
-    return '<span class="flag-sm flag-sm-' . country2code($country) . '"></span>';
+    return country2code($country);
 }
 
 # Handle statement
 handle remainder => sub {
     my $text;
-    my $html;
     my $query;
-    my $header;
 
     if (exists $dates{lc($_)}) {
         # Search by name first
         $query = ucfirst($_);
-        ($text, $html) = split('\|', $dates{lc($_)});
-        $header = "Name days for <b>$query</b>";
+        $text = $dates{lc($_)};
     } else {
         # Then, search by date
         my $day = parse_datestring_to_date($_);
@@ -104,32 +102,33 @@ handle remainder => sub {
 
         # Any leap year here, because the array includes February, 29
         $day->set_year(2000);
-
-        my $suffix = 'th';
-        my $daynum = $day->day();
-        $suffix = 'st' if $daynum == 1 || $daynum == 21 || $daynum == 31;
-        $suffix = 'nd' if $daynum == 2 || $daynum == 22;
-        $suffix = 'rd' if $daynum == 3 || $daynum == 23;
-        $query = $day->month_name() . " $daynum$suffix";
         $text = $names[$day->day_of_year() - 1];
-
-        # Convert to HTML
-        $html = $text;
-        $html =~ s/(\d{1,2}) (\w{1,3})/$1&nbsp;$2/g;
-        $html =~ s@(.*?): (.*?)(?:$|; )@'<tr><td class="name-days-country">' . get_flag($1) .
-                                        ' <span class="name-days-country-name">' . $1 . '</span>' .
-                                        '</td><td class="name-days-dates">'  . $2 . '</td></tr>'@ge;
-
-        $header = "Name days on <b>$query</b>";
     }
 
-    # Add the header
-    $html = '<div class="zci--name_days">' .
-        "<span>$header</span>" .
-        '<div class="zci__content"><table>' .
-        $html . '</table></div></div>';
-
-    return $text, html => $html;
+    my @name_days = split /;/, $text;
+    my $structured_answer = {};
+    my @sorted_days;
+    foreach (@name_days) {
+        my @day_parts = split /:/, $_;
+        my $country_sorted = {};
+        my @day_dates = split /,/, $day_parts[1];
+        $country_sorted->{country} = $day_parts[0];
+        $country_sorted->{flag} = get_flag($day_parts[0]);
+        my %months;
+        foreach (@day_dates) {
+           my @day_and_month = split / /, trim($_);
+           %months->{$day_and_month[1]} = [] unless exists %months->{$day_and_month[1]};
+           push %months->{$day_and_month[1]}, $day_and_month[0];
+        }
+        $country_sorted->{dates} = \@day_dates;
+        $country_sorted->{months} = \%months;
+        push @sorted_days, $country_sorted;
+    }
+    $structured_answer->{templates}->{group} = 'text';
+    $structured_answer->{templates}->{options}->{content} = 'DDH.name_days.content';
+    $structured_answer->{data}->{name_days} = \@sorted_days;
+    $structured_answer->{data}->{name} = $query;
+    return trim($text), structured_answer => $structured_answer;
 };
 
 1;
