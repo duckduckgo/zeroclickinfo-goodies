@@ -6,8 +6,15 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Chess_title"
     },
+	"aliases": [
+        "chess titles",
+        "fide titles",
+        "uscf titles",
+        "united states chess federation titles"
+    ],
+
     "template_type": "reference",
-    "section_order": ["FIDE", "770 BC - 0 AD", "1 AD - 1000 AD", "1001 AD - 2000 AD"],
+    "section_order": ["FIDE Open Titles", "FIDE Women's Titles", "United States Chess Federation Titles", "Chess Federation of Canada", "English Chess Federation"],
     "sections": {
         "FIDE Open Titles": [{
             "val": "Candidate Master (CM)",
