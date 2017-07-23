@@ -22,7 +22,8 @@ triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
 my @names = share('preprocessed_names.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Names indexed by day
 my %dates = share('preprocessed_dates.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Days indexed by name
 
-sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; $s =~ s/\s+/ /g; return $s };
+# trim and remove extra spaces
+sub  clean { my $s = shift; $s =~ s/^\s+|\s+$//g; $s =~ s/\s+/ /g; return $s };
 
 sub parse_other_date_formats {
     # Quick fix for the date formats not supported by parse_datestring_to_date.
@@ -84,11 +85,9 @@ sub get_flag {
 # Handle statement
 handle remainder => sub {
     my $text;
-    my $query;
 
     if (exists $dates{lc($_)}) {
         # Search by name first
-        $query = ucfirst($_);
         $text = $dates{lc($_)};
     } else {
         # Then, search by date
@@ -116,19 +115,38 @@ handle remainder => sub {
         $country_sorted->{flag} = get_flag($day_parts[0]);
         my %months;
         foreach (@day_dates) {
-           my @day_and_month = split / /, trim($_);
-           %months->{$day_and_month[1]} = [] unless exists %months->{$day_and_month[1]};
-           push %months->{$day_and_month[1]}, $day_and_month[0];
+            my @day_and_month = split / /, clean($_);
+            %months->{$day_and_month[1]} = [] unless exists %months->{$day_and_month[1]};
+            push %months->{$day_and_month[1]}, $day_and_month[0];
         }
-        $country_sorted->{dates} = \@day_dates;
-        $country_sorted->{months} = \%months;
+        my @sorted_months;
+        my @included_months;
+        foreach my $key (keys %months) {
+            my $sorted_month;
+            foreach (%months->{$key}) {
+                $sorted_month = join(', ', @{%months->{$key}});
+            }
+            $sorted_month = $key . ' ' . $sorted_month;
+            push @sorted_months, $sorted_month;
+            push @included_months, $key;
+        }
+        sub by_month {
+            my $mi = shift;
+            my ($m1, $m2) = map { lc(substr $_, 0, 3) } @_;
+            return $mi->{$m1} <=> $mi->{$m2};
+        }
+        my @mons = qw(jan feb mar apr may jun jul aug sep oct nov dec);
+        my %mon_ind;
+        @mon_ind{ @mons } = 1..12;
+        my @chronological_months = sort { by_month(\%mon_ind, $a, $b) } @sorted_months;
+        $country_sorted->{months} = \@chronological_months;
         push @sorted_days, $country_sorted;
     }
     $structured_answer->{templates}->{group} = 'text';
     $structured_answer->{templates}->{options}->{content} = 'DDH.name_days.content';
     $structured_answer->{data}->{name_days} = \@sorted_days;
-    $structured_answer->{data}->{name} = $query;
-    return trim($text), structured_answer => $structured_answer;
+    $structured_answer->{data}->{name} = ucfirst($_);
+    return clean($text), structured_answer => $structured_answer;
 };
 
 1;
