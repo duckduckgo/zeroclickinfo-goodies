@@ -92,11 +92,7 @@ handle remainder => sub {
     } else {
         # Then, search by date
         my $day = parse_datestring_to_date($_);
-
-        if (!$day) {
-            $day = parse_other_date_formats($_);
-        }
-
+        $day = parse_other_date_formats($_) unless $day;
         return unless $day;
 
         # Any leap year here, because the array includes February, 29
@@ -104,44 +100,53 @@ handle remainder => sub {
         $text = $names[$day->day_of_year() - 1];
     }
 
+    # split string answer into name days by country
     my @name_days = split /;/, $text;
-    my $structured_answer = {};
     my @sorted_days;
     foreach (@name_days) {
+        # Break answer apart for each country
         my @day_parts = split /:/, $_;
         my $country_sorted = {};
         my @day_dates = split /,/, $day_parts[1];
+
+        # Add country and flag
         $country_sorted->{country} = $day_parts[0];
         $country_sorted->{flag} = get_flag($day_parts[0]);
+
         my %months;
         foreach (@day_dates) {
+            # Put days from same month into a hash
             my @day_and_month = split / /, clean($_);
             %months->{$day_and_month[1]} = [] unless exists %months->{$day_and_month[1]};
             push %months->{$day_and_month[1]}, $day_and_month[0];
         }
+
         my @sorted_months;
-        my @included_months;
         foreach my $key (keys %months) {
+            # Convert hash into a string
             my $sorted_month;
             foreach (%months->{$key}) {
                 $sorted_month = join(', ', @{%months->{$key}});
             }
             $sorted_month = $key . ' ' . $sorted_month;
             push @sorted_months, $sorted_month;
-            push @included_months, $key;
         }
+
+        # Sort each string in array chronologically
         sub by_month {
             my $mi = shift;
             my ($m1, $m2) = map { lc(substr $_, 0, 3) } @_;
             return $mi->{$m1} <=> $mi->{$m2};
         }
         my @mons = qw(jan feb mar apr may jun jul aug sep oct nov dec);
-        my %mon_ind;
-        @mon_ind{ @mons } = 1..12;
+        my %mon_ind; @mon_ind{@mons} = 1..12;
         my @chronological_months = sort { by_month(\%mon_ind, $a, $b) } @sorted_months;
         $country_sorted->{months} = \@chronological_months;
         push @sorted_days, $country_sorted;
     }
+
+    # Create and populate structured answer
+    my $structured_answer = {};
     $structured_answer->{templates}->{group} = 'text';
     $structured_answer->{templates}->{options}->{content} = 'DDH.name_days.content';
     $structured_answer->{data}->{name_days} = \@sorted_days;
