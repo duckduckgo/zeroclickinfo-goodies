@@ -42,7 +42,7 @@ DDH.text_converter = DDH.text_converter || {};
                         from = TextConverter.rot13(from);
                         break;
                     case "base64":
-                        from = TextConverter.base64Decoder(from);
+                        from = TextConverter.base64Encoder(from);
                         break;
                     case "hexadecimal":
                         from = TextConverter.hexToText(from);
@@ -64,7 +64,7 @@ DDH.text_converter = DDH.text_converter || {};
                     return TextConverter.rot13(from);
                     break;
                 case "base64":
-                    return TextConverter.base64Encoder(from);
+                    return TextConverter.base64Decoder(from);
                     break;
                 case "hexadecimal":
                     return TextConverter.toHex(from);
