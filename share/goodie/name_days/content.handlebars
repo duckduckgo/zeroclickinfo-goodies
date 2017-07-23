@@ -7,12 +7,12 @@
                 <span class="flag-sm flag-sm-{{flag}}"></span>
                 <span class="name-days-country-name">{{country}}</span>
             </td>
-            <td class="name-day-dates">
-                {{#each months}}
-                    <td class="name-days-tile">
+            <td class="name-days-dates">
+                {{#months}}
+                    <div class="name-days-tile">
                         <span>{{this}}</span>
-                    </td>
-                {{/each}}
+                    </div>
+                {{/months}}
             </td>
         </tr>
         {{/name_days}}
