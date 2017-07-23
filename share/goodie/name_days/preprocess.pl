@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 # Preprocess the source files and output data structures for slurping
 
 use strict;
