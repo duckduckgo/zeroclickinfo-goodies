@@ -146,12 +146,18 @@ handle remainder => sub {
     }
 
     # Create and populate structured answer
-    my $structured_answer = {};
-    $structured_answer->{templates}->{group} = 'text';
-    $structured_answer->{templates}->{options}->{content} = 'DDH.name_days.content';
-    $structured_answer->{data}->{name_days} = \@sorted_days;
-    $structured_answer->{data}->{name} = ucfirst($_);
-    return clean($text), structured_answer => $structured_answer;
+    return clean($text), structured_answer => {
+        data => {
+            name_days => \@sorted_days,
+            name => ucfirst($_),
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.name_days.content'
+            }
+        }
+    }
 };
 
 1;
