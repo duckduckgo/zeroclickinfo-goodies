@@ -53,12 +53,12 @@
             },
             {
                 "key": "q",
-                "val": "Quit aptitude"
+                "val": "Quit"
             }
         ],
         "Search patterns": [
             {
-                "key": "<string> or ~n<string>",
+                "key": "<string>",
                 "val": "Packages whose name contains <string>"
             },
             {
