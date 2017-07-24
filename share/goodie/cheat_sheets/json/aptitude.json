@@ -4,8 +4,8 @@
     "description": "Basic shortcuts for Aptitude, an Ncurses based interface for Apt",
 
     "metadata": {
-        "sourceName": "Debian",
-        "sourceUrl" : "https://aptitude.alioth.debian.org/doc/en/index.html"
+        "sourceName": "Debian reference",
+        "sourceUrl" : "https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_interactive_use_of_aptitude"
     },
 
     "template_type": "keyboard",
