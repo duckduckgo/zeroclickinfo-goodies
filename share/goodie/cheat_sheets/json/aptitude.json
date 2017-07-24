@@ -13,7 +13,8 @@
     "section_order": [
         "Basics",
         "Search patterns",
-        "Package management and conflict resolution"
+        "Package management",
+        "Conflict resolution"
     ],
 
     "sections": {
