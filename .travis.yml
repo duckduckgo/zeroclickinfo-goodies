@@ -1,4 +1,5 @@
 ---
+dist: precise
 sudo: false
 env:
   - PERL_LWP_SSL_VERIFY_HOSTNAME=0
