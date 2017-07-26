@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8; # For non ASCII triggers support
 
 use Test::More;
 use DDG::Test::Goodie;
@@ -55,6 +56,11 @@ ddg_goodie_test(
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
     'count down timer'       => build_test(),
+    
+    # Foreign language triggers
+    'таймер'                 => build_test(),
+    'temporizador'           => build_test(),
+    'chrônometro'            => build_test(),
 
     # With initial time
     'timer 15 mins'                                  => build_test('900'),

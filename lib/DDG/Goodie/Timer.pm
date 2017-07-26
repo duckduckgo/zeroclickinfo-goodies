@@ -1,6 +1,6 @@
 package DDG::Goodie::Timer;
 # ABSTRACT: Shows a countdown timer
-
+use utf8;
 use strict;
 use DDG::Goodie;
 
@@ -8,6 +8,9 @@ zci answer_type => 'timer';
 zci is_cached   => 1;
 
 my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
+# Foreign language triggers
+my @foreignTriggers = ('temporizador','chrônometro','таймер');
+push(@triggers, @foreignTriggers);
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
@@ -16,7 +19,6 @@ my @startTriggers = ();
 # creates 'start a', 'begin a'
 map { push(@startTriggers, "$_ a") } @baseTriggers; 
 push(@startTriggers, @baseTriggers);
-
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTriggers = qw(online);
 #Joins the Timer Value
