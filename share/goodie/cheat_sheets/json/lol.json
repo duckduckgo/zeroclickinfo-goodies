@@ -1,16 +1,13 @@
 {
     "id": "lol_cheat_sheet",
     "name": "League of Legends Hotkeys And Commands",
-    "description": "This is a cheat sheet for basic Hotkeys and Commands for the popular MOBA game League of Legends (LoL).",
+    "description": " This is a cheat sheet for basic Hotkeys and Commands for the popular MOBA game League of Legends (LoL). ",
     "metadata": {
-        "sourceName": "League of Legends Wiki",
+        "sourceName": "League of Legends Wiki: Hotkeys and commands",
         "sourceUrl": "http://leagueoflegends.wikia.com/wiki/Hotkeys_and_commands"
     },
-     "aliases": [
-        "age of mythology codes",
-        "age of mythology extra food",
-        "age of mythology wood",
-        "age of mythology more gold"
+    "aliases": [
+        "lol", "LoL", "League of Legends"
     ],
     "template_type": "keyboard",
     "section_order": [
