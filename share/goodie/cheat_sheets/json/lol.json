@@ -12,19 +12,7 @@
     "template_type": "keyboard",
     "section_order": [
         "Hotkeys",
-        "Commands",
-        "Villager Build Commands",
-        "Military Unit Commands",
-        "Archery Range Build Commands",
-        "Barracks Build Commands",
-        "Castle Build Commands",
-        "Dock Build Commands",
-        "Market Build Commands",
-        "Monastery Build Commands",
-        "Siege Workshop Build Commands",
-        "Stable Build Commands",
-        "Town Center Commands",
-        "Scroll Commands"
+        "Commands"
     ],
     "sections": {
         "Hotkeys": [{
