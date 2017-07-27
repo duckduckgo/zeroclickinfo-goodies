@@ -12,7 +12,7 @@
     "template_type": "keyboard",
     "section_order": [
         "Hotkeys",
-        "Commands"
+        "Chat Commands"
     ],
     "sections": {
         "Hotkeys": [{
@@ -29,33 +29,141 @@
             "key": "R"
         }, {
             "val": "Add an ability point to the champion's 1st ability.",
-            "key": "[Ctrl] + [Q]"
+            "key": "[Ctrl]+[Q]"
         }, {
             "val": "Add an ability point to the champion's 2nd ability.",
-            "key": "[Ctrl] + [W]"
+            "key": "[Ctrl]+[W]"
         }, {
             "val": "Add an ability point to the champion's 3rd ability.",
-            "key": "[Ctrl] + [E]"
+            "key": "[Ctrl]+[E]"
         }, {
             "val": "Add an ability point to the champion's ultimate ability.",
-            "key": "[Ctrl] + [R]"
+            "key": "[Ctrl]+[R]"
         }, {
-            "val": "Repair",
-            "key": "R"
+            "val": "Cast champion's 1st ability on self (must be a support spell). ",
+            "key": "[Alt]+[Q] or [Q]+[F1]"
         }, {
-            "val": "Set Gather Point",
-            "key": "I"
+            "val": "Cast champion's 2nd ability on self (must be a support spell).",
+            "key": "[Alt]+[W] or [W]+[F1]"
         }, {
-            "val": "Stop",
+            "val": "Cast champion's 3rd ability on self (must be a support spell).",
+            "key": "[Alt]+[E] or [E]+[F1]"
+        }, {
+            "val": "Cast champion's ultimate ability on self (must be a support spell).",
+            "key": "[Alt]+[R] or [R]+[F1]"
+        }, {
+            "val": "Smart cast champion's 1st ability.",
+            "key": "[Shift]+[Q]"
+        }, {
+            "val": "Smart cast champion's 2nd ability.",
+            "key": "[Shift]+[W]"
+        }, {
+            "val": "Smart cast champion's 3rd ability.",
+            "key": "[Shift]+[E]"
+        }, {
+            "val": "Smart cast champion's 4th ability.",
+            "key": "[Shift]+[R]"
+        }, {
+            "val": "Attack Move (Champion moves to point, stopping to attack any enemies along the way).",
+            "key": "[A] or [X] or [Shift]+[Right Click]"
+        }, {
+            "val": "Command Pet (E.g. Tibbers Tibbers).",
+            "key": "[Alt]+[Right Click]"
+        }, {
+            "val": "Stop Command (Champion stops their current course of action).",
             "key": "S"
         }, {
-            "val": "Unload",
-            "key": "L"
+            "val": "Hold Command (Hold works like Stop, but is toggled while held down).",
+            "key": "H"
         }, {
-            "val": "Unpack",
-            "key": "U"
+            "val": "Cast 1st Summoner spell.",
+            "key": "D"
+        }, {
+            "val": "Cast 2nd Summoner spell.",
+            "key": "F"
+        }, {
+            "val": "Use consumable item in corresponding inventory slot.",
+            "key": "Numbers [1] to [3] and [5] to [7]"
+        }, {
+            "val": "Use designated active ability items. ",
+            "key": "[1-3] and [5-7]"
+        }, {
+            "val": "Use trinket.",
+            "key": "4"
+        }, {
+            "val": "Recall",
+            "key": "B"
+        }, {
+            "val": "Close current window, such as the shop.",
+            "key": "Esc"
+        }, {
+            "val": "Open champion statistics page.",
+            "key": "C"
+        }, {
+            "val": "Toggle alert ping cursor.",
+            "key": "G"
+        }, {
+            "val": "Toggle camera lock on champion.",
+            "key": "Y"
+        }, {
+            "val": "Center camera on champion (holding Space will hold the camera on the champion until released).",
+            "key": "Space"
+        }, {
+            "val": "Open match stats page/leaderboard.",
+            "key": "O"
+        }, {
+            "val": "Open match stats page/leaderboard (unlike O, the screen will disappear when the Tab button is released).",
+            "key": "Tab"
+        }, {
+            "val": "Toggle retreat ping cursor. Clicking with this hotkey on an allied champion (or their icon in the upper left area of the screen) will show an alert telling that specific champion to fall back.",
+            "key": "V"
+        }, {
+            "val": "Cycle through minion health bar views.",
+            "key": "[Ctrl]+[L]"
+        }, {
+            "val": "Turn off champion health bars.",
+            "key": "[Shift]+[L]"
+        }, {
+            "val": "Turn off summoner names above champion health bars.",
+            "key": "[Shift]+[K]"
+        }, {
+            "val": "Open item shop.",
+            "key": "P"
+        }, {
+            "val": "Scroll camera in the corresponding direction.",
+            "key": "Arrow Keys"
+        }, {
+            "val": "Ping location/Open Radial Menu.",
+            "key": "[Alt]+[Left Click]"
+        }, {
+            "val": "Retreat Ping location/Open Radial Menu.",
+            "key": "[Ctrl]+[Left Click]"
+        }, {
+            "val": "Move camera to corresponding ally champion (camera must be unlocked).",
+            "key": "F2-F5"
+        }, {
+            "val": "Take a screenshot.",
+            "key": "F12"
+        }, {
+            "val": "Removes HUD.",
+            "key": "[Alt] + [+]"
+        }, {
+            "val": "Create chat cursor.",
+            "key": "Enter"
+        }, {
+            "val": "Open chat with /all already written.",
+            "key": "[Shift]+[Enter]"
+        }, {
+            "val": "Toggle the numeric frames-per-second and latency display.",
+            "key": "[Ctrl]+[F]"
+        }, {
+            "val": "Open chat history.",
+            "key": "Z"
+        }, {
+            "val": "Hold down to select or target only champions when using champion abilities or summoner spells.",
+            "key": "~"
         }],
-        "Commands": [{
+        "Chat Commands": [{
             "val": "Chat Dialog",
             "key": "[Alt] [T]"
         }, {
