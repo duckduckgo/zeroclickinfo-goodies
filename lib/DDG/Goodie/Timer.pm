@@ -9,7 +9,7 @@ zci is_cached   => 1;
 
 my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
 # Foreign language triggers
-my @foreignTriggers = ('temporizador','chrônometro','таймер');
+my @foreignTriggers = ('temporizador', 'chrônometro', 'таймер');
 push(@triggers, @foreignTriggers);
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
