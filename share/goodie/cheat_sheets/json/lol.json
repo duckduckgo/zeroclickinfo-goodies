@@ -29,7 +29,7 @@
             "key": "R"
         }, {
             "val": "Add an ability point to the champion's 1st ability.",
-            "key": "[Ctrl] [Q]"
+            "key": "[Ctrl] + [Q]"
         }, {
             "val": "Add an ability point to the champion's 2nd ability.",
             "key": "[Ctrl] [W]"
