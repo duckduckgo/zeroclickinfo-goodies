@@ -32,13 +32,13 @@
             "key": "[Ctrl] + [Q]"
         }, {
             "val": "Add an ability point to the champion's 2nd ability.",
-            "key": "[Ctrl] [W]"
+            "key": "[Ctrl] + [W]"
         }, {
             "val": "Add an ability point to the champion's 3rd ability.",
-            "key": "[Ctrl] [E]"
+            "key": "[Ctrl] + [E]"
         }, {
             "val": "Add an ability point to the champion's ultimate ability.",
-            "key": "[Ctrl] [R]"
+            "key": "[Ctrl] + [R]"
         }, {
             "val": "Repair",
             "key": "R"
