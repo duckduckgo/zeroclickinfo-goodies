@@ -9,8 +9,18 @@ zci is_cached   => 1;
 
 my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
 # Foreign language triggers
-my @foreignTriggers = ('temporizador', 'chrônometro', 'таймер');
-push(@triggers, @foreignTriggers);
+
+my @foreignTriggers = (
+    {lang=>'ru', triggers => ['таймер', 'отсчет']},
+    {lang=>'es', triggers => ['temporizador']},
+    {lang=>'pt', triggers => ['crônometro']},
+);
+
+foreach (@foreignTriggers){ 
+    foreach (values $_->{triggers}){
+        push(@triggers, $_);
+    }
+}
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
@@ -68,9 +78,25 @@ sub parse_query_for_time {
     return ($time <= $MAX_TIME) ? $time : $MAX_TIME;
 }
 
+sub get_query_language {
+    my $query = shift;
+    my $language = 'en';
+    my $name;
+    foreach (@foreignTriggers){
+        $name = $_->{lang};
+        foreach (values $_->{triggers}){
+           if($query =~ /$_/){
+               $language = $name;
+           }
+        }
+    }
+    return $language;
+}
+
 sub build_result {
     my $req = shift;
     my $time = parse_query_for_time($req->query_lc);
+    my $triggerLanguage = get_query_language($req->query_lc);
     return "$time",
         structured_answer => {
             id     =>  'timer',
@@ -82,7 +108,8 @@ sub build_result {
             },
             data => {
                 time => "$time",
-                goodie_version => $goodieVersion
+                goodie_version => $goodieVersion,
+                trigger_language => $triggerLanguage,
             },
             templates => {
                 group       => 'base',

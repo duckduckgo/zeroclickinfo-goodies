@@ -8,15 +8,33 @@ DDH.timer = DDH.timer || {};
 
 DDH.timer.build = function(ops) {
     'use strict';
-
+    
     var SOUND_NAME = "alarm-sound",
         soundUrl = '/share/goodie/timer/' + ops.data.goodie_version + '/alarm.mp3',
         soundIsPlaying = false,
         hasShown = false,
         $lastTimerToFinish,
         Timer,
-        cachedPlayer;
-
+        cachedPlayer,
+        triggerLanguage = ops.data.trigger_language;
+    
+    // translations list
+    var _lang = {
+                   'Timer': {'ru': 'Таймер', 'es': 'Temporizador', 'pt': 'Crônometro'},
+                };
+    
+    // if the phrase or the phrase for trigger language is not specified
+    // returns the phrase itself
+    var i18 = function(phrase) {
+       if(typeof _lang[phrase] === 'undefined')
+           return phrase;
+        
+       if(typeof _lang[phrase][triggerLanguage] === 'undefined')
+           return phrase;
+        
+       return _lang[phrase][triggerLanguage];
+    }
+    
     // helper methods
 
     // add zeros to beginning of string
@@ -176,7 +194,7 @@ DDH.timer.build = function(ops) {
         }
 
         // prefill name with value
-        this.$nameInput.val("Timer " + number);
+        this.$nameInput.val( i18('Timer')+" " + number);
     };
 
     $.extend(Timer.prototype, {
