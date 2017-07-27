@@ -164,110 +164,62 @@
             "key": "~"
         }],
         "Chat Commands": [{
-            "val": "Chat Dialog",
-            "key": "[Alt] [T]"
+            "val": "Lists / commands and provides descriptions.",
+            "key": "/help, /?, /allcommands, /allcmds"
         }, {
-            "val": "Diplomacy",
-            "key": "[Alt] [D]"
+            "val": "Starts vote for team surrender.",
+            "key": "/surrender, /ff, /concede, /forfeit"
         }, {
-            "val": "Display Game Time",
-            "key": "F11"
+            "val": "Starts vote for a team with one or more afk (under certain conditions) to remake a game.",
+            "key": "/remake"
         }, {
-            "val": "Display Statistics",
-            "key": "F4"
+            "val": "Plays Champion's joke",
+            "key": "/joke, /j or [Ctrl]+[1]"
         }, {
-            "val": "Display Technology Tree",
-            "key": "F2"
+            "val": "Plays Champion's taunt.",
+            "key": "/taunt, /t or [Ctrl]+[2]"
         }, {
-            "val": "Flare",
-            "key": "[Alt] [F]"
+            "val": "Starts the Champion dance sequence.",
+            "key": "/dance, /d or [Ctrl]+[3]"
         }, {
-            "val": "Go To Archery Range",
-            "key": "[Ctrl] [A]"
+            "val": "Plays Champion's laugh.",
+            "key": "/laugh, /l or [Ctrl]+[4]"
         }, {
-            "val": "Go To Barracks",
-            "key": "[Ctrl] [B]"
+            "val": "Toggles the effect for your Champion if applicable.",
+            "key": "[Ctrl]+[5]"
         }, {
-            "val": "Go To Blacksmith",
-            "key": "[Ctrl] [S]"
+            "val": "Displays your Mastery Emote.",
+            "key": "[Ctrl]+[6]"
         }, {
-            "val": "Go To Castle",
-            "key": "[Ctrl] [V]"
+            "val": "Pauses the game (Only works in certain situations, like tournaments).",
+            "key": "/pause, /stop, /s"
         }, {
-            "val": "Go To Dock",
-            "key": "[Ctrl] [D]"
+            "val": "Adds text to a text file called 'MyNotes.txt'",
+            "key": "/note, /n"
         }, {
-            "val": "Go To Last Notification",
-            "key": "Home"
+            "val": "Enables or disables a filter for profanity ",
+            "key": "/chatfilter"
         }, {
-            "val": "Go To Lumber Camp",
-            "key": "[Ctrl] [Z]"
+            "val": "Will send a message to another player. Summoner names are case sensitive.",
+            "key": "/w or /msg 'summoner name'"
         }, {
-            "val": "Go To Market",
-            "key": "[Ctrl] [M]"
+            "val": "Will send a message to the last player who sent you a message. Note that it will automatically add the recipient after /r.",
+            "key": " /r or /reply"
         }, {
-            "val": "Go To Mill",
-            "key": "[Ctrl] [I]"
+            "val": "Will send a message to all players in the current match (useful if you forgot to press shift + enter).",
+            "key": "/all"
         }, {
-            "val": "Go To Mining Camp",
-            "key": "[Ctrl] [G]"
+            "val": "Will mute all text from a player for the duration of your current game session.",
+            "key": "/mute 'summoner name'"
         }, {
-            "val": "Go To Monastery",
-            "key": "[Ctrl] [Y]"
+            "val": "Will mute a player during this game session and all subsequent game sessions.",
+            "key": "/mute all"
         }, {
-            "val": "Go To Next Idle Military Unit",
-            "key": ","
+            "val": "Will mute all players during this game session and all subsequent game sessions.",
+            "key": "/ignore 'summoner name'"
         }, {
             "val": "Go To Next Idle Villager",
-            "key": "."
-        }, {
-            "val": "Go To Selected Object",
-            "key": "Space Bar"
-        }, {
-            "val": "Go To Siege Workshop",
-            "key": "[Ctrl] [K]"
-        }, {
-            "val": "Go To Stable",
-            "key": "[Ctrl] [L]"
-        }, {
-            "val": "Go To Town Center",
-            "key": "H"
-        }, {
-            "val": "Go To University",
-            "key": "[Ctrl] [U]"
-        }, {
-            "val": "Mini-Map Combat Mode",
-            "key": "[Alt] [C]"
-        }, {
-            "val": "Mini-Map Economic Mode",
-            "key": "[Alt] [R]"
-        }, {
-            "val": "Mini-Map Normal Mode",
-            "key": "[Alt] [N]"
-        }, {
-            "val": "Objectives",
-            "key": "[Alt] [O]"
-        }, {
-            "val": "Pause Game",
-            "key": "F3"
-        }, {
-            "val": "Review Chat Messages Backward",
-            "key": "Page Up"
-        }, {
-            "val": "Review Chat Message Forward",
-            "key": "Page Down"
-        }, {
-            "val": "Save Game",
-            "key": "F12"
-        }, {
-            "val": "Send Chat Message",
-            "key": "Enter"
-        }, {
-            "val": "Slow Game Speed",
-            "key": "Numpad -"
-        }, {
-            "val": "Speed Up Game Speed",
-            "key": "Numpad +"
+            "key": "/ignore all"
         }]
         
     }
