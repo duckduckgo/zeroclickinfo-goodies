@@ -11,8 +11,8 @@
     ],
     "template_type": "keyboard",
     "section_order": [
-        "Unit Commands",
-        "Game Commands",
+        "Hotkeys",
+        "Commands",
         "Villager Build Commands",
         "Military Unit Commands",
         "Archery Range Build Commands",
@@ -27,30 +27,30 @@
         "Scroll Commands"
     ],
     "sections": {
-        "Unit Commands": [{
-            "val": "Attack Ground",
-            "key": "T"
+        "Hotkeys": [{
+            "val": "Use champion's 1st ability. For abilities that target a champion, you must follow this by either left-clicking the champion or pressing F1-F5 to target a team member. Same for W, E, and R.",
+            "key": "Q"
         }, {
-            "val": "Convert",
-            "key": "C"
+            "val": "Use champion's 2nd ability.",
+            "key": "W"
         }, {
-            "val": "Delete Unit",
-            "key": "Delete"
-        }, {
-            "val": "Economic Buildings",
-            "key": "B"
-        }, {
-            "val": "Garrison",
-            "key": "G"
-        }, {
-            "val": "Heal",
+            "val": "Use champion's 3rd ability.",
             "key": "E"
         }, {
-            "val": "Military Buildings",
-            "key": "V"
+            "val": "Use champion's 4th ability (Ultimate).",
+            "key": "R"
         }, {
-            "val": "Pack",
-            "key": "P"
+            "val": "Add an ability point to the champion's 1st ability.",
+            "key": "[Ctrl] [Q]"
+        }, {
+            "val": "Add an ability point to the champion's 2nd ability.",
+            "key": "[Ctrl] [W]"
+        }, {
+            "val": "Add an ability point to the champion's 3rd ability.",
+            "key": "[Ctrl] [E]"
+        }, {
+            "val": "Add an ability point to the champion's ultimate ability.",
+            "key": "[Ctrl] [R]"
         }, {
             "val": "Repair",
             "key": "R"
@@ -67,7 +67,7 @@
             "val": "Unpack",
             "key": "U"
         }],
-        "Game Commands": [{
+        "Commands": [{
             "val": "Chat Dialog",
             "key": "[Alt] [T]"
         }, {
@@ -172,219 +172,7 @@
         }, {
             "val": "Speed Up Game Speed",
             "key": "Numpad +"
-        }],
-        "Villager Build Commands": [{
-            "val": "Archery Range",
-            "key": "A"
-        }, {
-            "val": "Barracks",
-            "key": "B"
-        }, {
-            "val": "Blacksmith",
-            "key": "S"
-        }, {
-            "val": "Bombard Tower",
-            "key": "J"
-        }, {
-            "val": "Castle",
-            "key": "V"
-        }, {
-            "val": "Dock",
-            "key": "D"
-        }, {
-            "val": "Farm",
-            "key": "F"
-        }, {
-            "val": "Fish Trap",
-            "key": "R"
-        }, {
-            "val": "Gate",
-            "key": "/"
-        }, {
-            "val": "House",
-            "key": "E"
-        }, {
-            "val": "Lumber Camp",
-            "key": "Z"
-        }, {
-            "val": "Market",
-            "key": "M"
-        }, {
-            "val": "Mill",
-            "key": "I"
-        }, {
-            "val": "Mining Camp",
-            "key": "G"
-        }, {
-            "val": "Monastery",
-            "key": "Y"
-        }, {
-            "val": "More Buildings",
-            "key": "X"
-        }, {
-            "val": "Outpost",
-            "key": "Q"
-        }, {
-            "val": "Palisade Wall",
-            "key": "P"
-        }, {
-            "val": "Siege Workshop",
-            "key": "K"
-        }, {
-            "val": "Stable",
-            "key": "L"
-        }, {
-            "val": "Stone Wall",
-            "key": "W"
-        }, {
-            "val": "Tower",
-            "key": "T"
-        }, {
-            "val": "Town Center",
-            "key": "N"
-        }, {
-            "val": "University",
-            "key": "U"
-        }, {
-            "val": "Wonder",
-            "key": "O"
-        }],
-        "Military Unit Commands": [{
-            "val": "Aggressive",
-            "key": "A"
-        }, {
-            "val": "Box",
-            "key": "W"
-        }, {
-            "val": "Defensive",
-            "key": "D"
-        }, {
-            "val": "Flank",
-            "key": "F"
-        }, {
-            "val": "Follow",
-            "key": "C"
-        }, {
-            "val": "Guard",
-            "key": "X"
-        }, {
-            "val": "Line",
-            "key": "Q"
-        }, {
-            "val": "No Attack",
-            "key": "O"
-        }, {
-            "val": "Patrol",
-            "key": "Z"
-        }, {
-            "val": "Staggered",
-            "key": "E"
-        }, {
-            "val": "Stand Ground",
-            "key": "N"
-        }],
-        "Archery Range Build Commands": [{
-            "val": "Cavalry Archer, Heavy Cavalry Archer",
-            "key": "C"
-        }, {
-            "val": "Hand Cannoneer",
-            "key": "E"
-        }, {
-            "val": "Skirmisher, Elite Skirmisher",
-            "key": "R"
-        }],
-        "Barracks Build Commands": [{
-            "val": "Swordsmen",
-            "key": "S"
-        }, {
-            "val": "Spearman, Pikeman",
-            "key": "E"
-        }],
-        "Castle Build Commands": [{
-            "val": "Build Trebuchet",
-            "key": "R"
-        }, {
-            "val": "Build Unique Unit",
-            "key": "T"
-        }],
-        "Dock Build Commands": [{
-            "val": "Build Longboat",
-            "key": "L"
-        }, {
-            "val": "Cannon Galleon",
-            "key": "C"
-        }, {
-            "val": "Demolition Ship, Heavy Demolition Ship",
-            "key": "D"
-        }, {
-            "val": "Fire Ship / Fast Fire Ship",
-            "key": "R"
-        }, {
-            "val": "Fishing Ship",
-            "key": "F"
-        }, {
-            "val": "Galley, War Galley, Galleon",
-            "key": "A"
-        }, {
-            "val": "Trade Cog",
-            "key": "T"
-        }, {
-            "val": "Transport",
-            "key": "P"
-        }],
-        "Market Build Commands": [{
-            "val": "Trade Cart",
-            "key": "T"
-        }],
-        "Monastery Build Commands": [{
-            "val": "Monk",
-            "key": "T"
-        }],
-        "Siege Workshop Build Commands": [{
-            "val": "Rams",
-            "key": "R"
-        }, {
-            "val": "Bombard Cannon",
-            "key": "C"
-        }, {
-            "val": "Mangonel, Onager, Siege Onager",
-            "key": "A"
-        }, {
-            "val": "Scorpion, Heavy Scorpion",
-            "key": "N"
-        }],
-        "Stable Build Commands": [{
-            "val": "Camel, Heavy Camel",
-            "key": "C"
-        }, {
-            "val": "Knights",
-            "key": "N"
-        }, {
-            "val": "Scout/Light Cavalry",
-            "key": "T"
-        }],
-        "Town Center Commands": [{
-            "val": "Go Back To Work",
-            "key": "W"
-        }, {
-            "val": "Ring Town Bell",
-            "key": "B"
-        }, {
-            "val": "Create Villager",
-            "key": "C"
-        }],
-        "Scroll Commands": [{
-            "val": "Scroll down",
-            "key": "↓"
-        }, {
-            "val": "Scroll left",
-            "key": "←"
-        }, {
-            "val": "Scroll right",
-            "key": "→"
-        }, {
-            "val": "Scroll up",
-            "key": "↑"
         }]
+        
     }
 }
