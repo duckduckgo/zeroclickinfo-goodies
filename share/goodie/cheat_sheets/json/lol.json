@@ -29,13 +29,13 @@
             "key": "R"
         }, {
             "val": "Add an ability point to the champion's 1st ability.",
-            "key": "[Ctrl]+[Q]"
+            "key": "[Ctrl] + [Q]"
         }, {
             "val": "Add an ability point to the champion's 2nd ability.",
-            "key": "[Ctrl]+[W]"
+            "key": "[Ctrl] + [W]"
         }, {
             "val": "Add an ability point to the champion's 3rd ability.",
-            "key": "[Ctrl]+[E]"
+            "key": "[Ctrl] + [E]"
         }, {
             "val": "Add an ability point to the champion's ultimate ability.",
             "key": "[Ctrl]+[R]"
@@ -53,16 +53,16 @@
             "key": "[Alt]+[R] or [R]+[F1]"
         }, {
             "val": "Smart cast champion's 1st ability.",
-            "key": "[Shift]+[Q]"
+            "key": "[Shift] + [Q]"
         }, {
             "val": "Smart cast champion's 2nd ability.",
-            "key": "[Shift]+[W]"
+            "key": "[Shift] + [W]"
         }, {
             "val": "Smart cast champion's 3rd ability.",
-            "key": "[Shift]+[E]"
+            "key": "[Shift] + [E]"
         }, {
             "val": "Smart cast champion's 4th ability.",
-            "key": "[Shift]+[R]"
+            "key": "[Shift] + [R]"
         }, {
             "val": "Attack Move (Champion moves to point, stopping to attack any enemies along the way).",
             "key": "[A] or [X] or [Shift]+[Right Click]"
@@ -83,7 +83,7 @@
             "key": "F"
         }, {
             "val": "Use consumable item in corresponding inventory slot.",
-            "key": "Numbers [1] to [3] and [5] to [7]"
+            "key": "Numbers [1-3] and [5-7]"
         }, {
             "val": "Use designated active ability items. ",
             "key": "[1-3] and [5-7]"
@@ -119,13 +119,13 @@
             "key": "V"
         }, {
             "val": "Cycle through minion health bar views.",
-            "key": "[Ctrl]+[L]"
+            "key": "[Ctrl] + [L]"
         }, {
             "val": "Turn off champion health bars.",
-            "key": "[Shift]+[L]"
+            "key": "[Shift] + [L]"
         }, {
             "val": "Turn off summoner names above champion health bars.",
-            "key": "[Shift]+[K]"
+            "key": "[Shift] + [K]"
         }, {
             "val": "Open item shop.",
             "key": "P"
@@ -152,10 +152,10 @@
             "key": "Enter"
         }, {
             "val": "Open chat with /all already written.",
-            "key": "[Shift]+[Enter]"
+            "key": "[Shift] + [Enter]"
         }, {
             "val": "Toggle the numeric frames-per-second and latency display.",
-            "key": "[Ctrl]+[F]"
+            "key": "[Ctrl] + [F]"
         }, {
             "val": "Open chat history.",
             "key": "Z"
@@ -174,22 +174,22 @@
             "key": "/remake"
         }, {
             "val": "Plays Champion's joke",
-            "key": "/joke, /j or [Ctrl]+[1]"
+            "key": "/joke, /j or Ctrl+1"
         }, {
             "val": "Plays Champion's taunt.",
-            "key": "/taunt, /t or [Ctrl]+[2]"
+            "key": "/taunt, /t or Ctrl+2"
         }, {
             "val": "Starts the Champion dance sequence.",
-            "key": "/dance, /d or [Ctrl]+[3]"
+            "key": "/dance, /d or Ctrl+3"
         }, {
             "val": "Plays Champion's laugh.",
-            "key": "/laugh, /l or [Ctrl]+[4]"
+            "key": "/laugh, /l or Ctrl+4"
         }, {
             "val": "Toggles the effect for your Champion if applicable.",
-            "key": "[Ctrl]+[5]"
+            "key": "[Ctrl] + [5]"
         }, {
             "val": "Displays your Mastery Emote.",
-            "key": "[Ctrl]+[6]"
+            "key": "[Ctrl] + [6]"
         }, {
             "val": "Pauses the game (Only works in certain situations, like tournaments).",
             "key": "/pause, /stop, /s"
