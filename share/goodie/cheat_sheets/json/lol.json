@@ -1,13 +1,13 @@
 {
     "id": "lol_cheat_sheet",
     "name": "League of Legends Hotkeys And Commands",
-    "description": " This is a cheat sheet for basic Hotkeys and Commands for the popular MOBA game League of Legends (LoL). ",
+    "description": " This is a cheat sheet for basic Hotkeys and Commands for the popular MOBA game League of Legends (LoL).",
     "metadata": {
         "sourceName": "League of Legends Wiki: Hotkeys and commands",
         "sourceUrl": "http://leagueoflegends.wikia.com/wiki/Hotkeys_and_commands"
     },
     "aliases": [
-        "league of legends"
+        "league of legends", "league"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -40,7 +40,7 @@
             "val": "Add an ability point to the champion's ultimate ability.",
             "key": "[Ctrl]+[R]"
         }, {
-            "val": "Cast champion's 1st ability on self (must be a support spell). ",
+            "val": "Cast champion's 1st ability on self (must be a support spell).",
             "key": "[Alt]+[Q] or [Q]+[F1]"
         }, {
             "val": "Cast champion's 2nd ability on self (must be a support spell).",
@@ -85,7 +85,7 @@
             "val": "Use consumable item in corresponding inventory slot.",
             "key": "Numbers [1-3] and [5-7]"
         }, {
-            "val": "Use designated active ability items. ",
+            "val": "Use designated active ability items.",
             "key": "[1-3] and [5-7]"
         }, {
             "val": "Use trinket.",
@@ -115,7 +115,7 @@
             "val": "Open match stats page/leaderboard (unlike O, the screen will disappear when the Tab button is released).",
             "key": "Tab"
         }, {
-            "val": "Toggle retreat ping cursor. Clicking with this hotkey on an allied champion (or their icon in the upper left area of the screen) will show an alert telling that specific champion to fall back.",
+            "val": "Clicking with this hotkey on an allied champion or his icon will alert the summoner to fall back.",
             "key": "V"
         }, {
             "val": "Cycle through minion health bar views.",
@@ -194,10 +194,10 @@
             "val": "Pauses the game (Only works in certain situations, like tournaments).",
             "key": "/pause, /stop, /s"
         }, {
-            "val": "Adds text to a text file called 'MyNotes.txt'",
+            "val": "Adds text to a text file called 'MyNotes.txt'.",
             "key": "/note, /n"
         }, {
-            "val": "Enables or disables a filter for profanity ",
+            "val": "Enables or disables a filter for profanity.",
             "key": "/chatfilter"
         }, {
             "val": "Will send a message to another player. Summoner names are case sensitive.",
@@ -212,15 +212,14 @@
             "val": "Will mute all text from a player for the duration of your current game session.",
             "key": "/mute 'summoner name'"
         }, {
-            "val": "Will mute a player during this game session and all subsequent game sessions.",
+            "val": "Will mute all text from all players for the duration of your current game session.",
             "key": "/mute all"
         }, {
-            "val": "Will mute all players during this game session and all subsequent game sessions.",
+            "val": "Will mute a player during this game session and all subsequent game sessions.",
             "key": "/ignore 'summoner name'"
         }, {
-            "val": "Go To Next Idle Villager",
+            "val": "Will mute all players during this game session and all subsequent game sessions.",
             "key": "/ignore all"
         }]
-        
     }
 }
