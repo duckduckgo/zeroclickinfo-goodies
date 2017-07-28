@@ -9,7 +9,7 @@
     "aliases": [
         "league of legends", "league"
     ],
-    "template_type": "keyboard",
+    "template_type": "terminal",
     "section_order": [
         "Hotkeys",
         "Chat Commands"
