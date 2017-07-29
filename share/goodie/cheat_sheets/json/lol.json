@@ -7,9 +7,10 @@
         "sourceUrl": "http://leagueoflegends.wikia.com/wiki/Hotkeys_and_commands"
     },
     "aliases": [
-        "league of legends", "league"
+        "league of legends",
+        "league"
     ],
-    "template_type": "terminal",
+    "template_type": "keyboard",
     "section_order": [
         "Hotkeys",
         "Chat Commands"
@@ -173,7 +174,7 @@
             "val": "Starts vote for a team with one or more afk (under certain conditions) to remake a game.",
             "key": "/remake"
         }, {
-            "val": "Plays Champion's joke",
+            "val": "Plays Champion's joke.",
             "key": "/joke, /j or Ctrl+1"
         }, {
             "val": "Plays Champion's taunt.",
@@ -200,7 +201,7 @@
             "val": "Enables or disables a filter for profanity.",
             "key": "/chatfilter"
         }, {
-            "val": "Will send a message to another player. Summoner names are case sensitive.",
+            "val": "Will send a message to another player (Summoner names are case sensitive).",
             "key": "/w or /msg 'summoner name'"
         }, {
             "val": "Will send a message to the last player who sent you a message. Note that it will automatically add the recipient after /r.",
