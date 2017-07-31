@@ -1,0 +1,25 @@
+url encode 
+encode url 
+urlencode
+encodeurl
+url escape
+escape url
+urlescape
+escapeurl
+uri encode
+encode uri
+uriencode
+encodeuri
+uri escape
+escape uri
+uriescape
+escapeuri
+
+url decode
+decode url
+urldecode
+decodeurl
+uri decode
+decode uri
+uridecode
+decodeuri

@@ -1,0 +1,13 @@
+.urlencode--wrap {
+    min-width: 700px;
+    margin-bottom: 10px;
+    margin-left: -1em;
+    width: 80vw;
+}
+
+.zci--urlencode {
+    font-family: monospace;
+    resize: vertical;
+    overflow: auto;
+    margin-left: 1em;
+}
