@@ -78,17 +78,20 @@ DDH.text_converter = DDH.text_converter || {};
          * Binary Converter
          ********************************************
          *
+         * zeroPad: text --> padded text
          * toBinary: text --> binary
          * binaryToText: binary --> text
          *
          */
-        toBinary: function( text ) {
-            var binary = "";
+        zeroPad: function( number ) {
+            return "00000000".slice(String(number).length) + number
+        },
 
-            for (var i=0; i < text.length; i++) {
-                binary += text[i].charCodeAt(0).toString(2) + " ";
-            }
-            return binary
+        toBinary: function( text, octets ) {
+            return text.replace(/[\s\S]/g, function(str) {
+                text = TextConverter.zeroPad(str.charCodeAt().toString(2));
+                return !1 == octets ? text : text + " "
+            })
         },
 
         binaryToText: function( text ) {
