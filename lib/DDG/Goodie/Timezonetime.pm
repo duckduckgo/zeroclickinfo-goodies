@@ -24,22 +24,17 @@ my $timezoneMapping = {
     "PST" => "PST8PDT", 
     "CST" => "CST6CDT"
 };
-
-handle query_lc => sub {
-    my ($query) = $_;
     
-    my $timezones = join('|', keys(%$timezoneMapping));
+my $timezones = join('|', keys(%$timezoneMapping));
+
+handle remainder => sub {
+    my $query = $_;
+    
     my $daylightStatus = "";
     
-    # Parsing timezone out of query string
-    $query =~ s/.*\b($timezones)\b.*/$1/ig;
     my $timezone = uc($query);
-    
-    # If timezone is not in hash then return null
-    return unless (exists($timezoneMapping->{$timezone}));
-
-    # Getting corresponding timezone value from hash
-    my $mappedTimezone = $timezoneMapping->{$timezone};
+    my $mappedTimezone = $timezoneMapping->{$timezone} // 0;
+    return unless $mappedTimezone; 
 
     # Get time for desired timezone
     my $tz = DateTime::TimeZone->new( name => $mappedTimezone );
