@@ -19,6 +19,11 @@
 /*
  * The text converter controls
  */
+
+.zci--text_converter .js_convert--select--wrap label {
+    margin-right: 1em;
+}
+
 .zci--text_converter #controls {
     margin: 1em 0 0.3em 0;
 }
@@ -55,7 +60,7 @@
 .is-mobile .zci--text_converter .js_convert--select--wrap label {
     width: 25%;
     display: inline-block;
-    margin-left: 0 !important;
+    margin: 0 !important;
 }
 
 .is-mobile .zci--text_converter .js_convert--select--wrap .frm__select {
