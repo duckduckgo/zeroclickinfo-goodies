@@ -45,7 +45,7 @@ handle remainder => sub {
 
     # Check if timezone is in daylight saving or not    
     if ($tz->is_dst_for_datetime( $dt )) {
-	      $daylightStatus = "$timezone is in daylight saving";
+        $daylightStatus = "$timezone is in daylight saving";
     }
     else {
         $daylightStatus = "$timezone is not in daylight saving";
