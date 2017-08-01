@@ -87,11 +87,11 @@ DDH.text_converter = DDH.text_converter || {};
             return "00000000".slice(String(number).length) + number
         },
 
-        toBinary: function( text, octets ) {
-            return text.replace(/[\s\S]/g, function(str) {
-                text = TextConverter.zeroPad(str.charCodeAt().toString(2));
-                return !1 == octets ? text : text + " "
-            })
+        toBinary: function( text ) {
+            return text.replace(/[\s\S]/g, function( str ) {
+                var octet = TextConverter.zeroPad(str.charCodeAt().toString(2));
+                return octet + " ";
+            });
         },
 
         binaryToText: function( text ) {
