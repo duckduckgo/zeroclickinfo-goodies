@@ -1,0 +1,76 @@
+/*
+ * Input styles
+ */
+
+.zci--loan_calculator .loan_input--section {
+    display: inline-block;
+}
+
+.zci--loan_calculator .loan_input--section label {
+    font-size: 1.1em;
+}
+
+.zci--loan_calculator .loan_input--section input {
+    font-size: 2em;
+    line-height: 1.5em;
+    width: 100%
+}
+
+/*
+ * Loan Bar styles
+ */
+
+.zci--loan_calculator .loan_bar {
+    font-size: 1.2em;
+}
+
+.zci--loan_calculator .loan_bar label {
+    display: block; 
+}
+
+.zci--loan_calculator .loan_bar--info {
+    display: inline-block;
+}
+
+.zci--loan_calculator .loan_bar--info p {
+    font-size: 1.5em
+}
+
+/*
+ * Selector styles
+ */
+
+.zci--loan_calculator .loan_selector {
+    background: #ebebeb;
+    border-color: #c8c8c8;
+    margin: 0.3em 0; 
+    padding: 0.5em 0.3em;
+}
+
+.zci--loan_calculator .dark-bg .loan_selector {
+    background: #4b4b4b;
+    border-color: #434343;
+    color: white;
+}
+
+.zci--loan_calculator .loan_selector form label,
+.zci--loan_calculator .loan_selector form input {
+    display: inline
+}
+
+/*
+ * Loan Bar (Calculated information) styles
+ */
+
+.zci--loan_calculator .loan_bar--info-aditional label,
+.zci--loan_calculator .loan_bar--info-aditional p {
+    float: right;
+}
+
+.zci--loan_calculator .loan_bar--info-left {
+    border-right: 1px solid #e0e0e0;
+}
+
+.zci--loan_calculator #loan_bar--payments {
+    border-right: 1px solid;
+}
