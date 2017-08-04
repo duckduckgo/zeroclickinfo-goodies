@@ -95,7 +95,9 @@ DDH.roman = DDH.roman || {};
     }
     
     function isArabic(input) {
-        return input != '0' && input.match(/\d+/);
+        return input != '0' && 
+               input.match(/\d+/) &&
+               parseInt(input) <= 3999;
     }
     
     /* arabicToRoman expects a non-null string composed of digits.
@@ -190,7 +192,7 @@ DDH.roman = DDH.roman || {};
                     if (input == '') {
                         $converter.output.val('');
                     } else if (! $converter.isInputValid(input)) {
-                        
+                        $converter.ouput.val('');
                     } else {
                         var output = $converter.inputToOutput(input);
                         $converter.output.val(output);
@@ -203,7 +205,7 @@ DDH.roman = DDH.roman || {};
                     if (output == '') {
                         $converter.input.val('');
                     } else if (! $converter.isOutputValid(output)) {
-                        
+                        $converter.input.val('');
                     } else {
                         var input = $converter.outputToInput(output);
                         $converter.input.val(input);
