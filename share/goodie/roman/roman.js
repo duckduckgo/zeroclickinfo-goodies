@@ -192,7 +192,7 @@ DDH.roman = DDH.roman || {};
                     if (input == '') {
                         $converter.output.val('');
                     } else if (! $converter.isInputValid(input)) {
-                        $converter.ouput.val('');
+                        $converter.output.val('');
                     } else {
                         var output = $converter.inputToOutput(input);
                         $converter.output.val(output);
