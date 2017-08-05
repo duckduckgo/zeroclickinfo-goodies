@@ -36,14 +36,14 @@ handle query => sub {
     # These two lists are used to load the converter with an answer. 
     my @roman_number_to_arabic = (
         qr/^convert\s+(\D+)\s+(?:into|in|to)\s*arabic\s*(numerals?)?/i,
-        qr/^roman\s+(\D+)$/i,
-        qr/^arabic\s+(\D+)$/i,
+        qr/^roman\s+(?:numerals?)?\s*(\D+)$/i,
+        qr/^arabic\s+(?:numerals?)?\s*(\D+)$/i,
         qr/^(\D+)\s+(?:into|in|to)?\s+arabic\s*(numerals?)?/i
     );    
     my @arabic_number_to_roman = (
         qr/^convert\s+(\d+)\s+(?:into|in|to)\s*roman\s*(numerals?)?/i,
-        qr/^roman\s+(\d+)$/i,
-        qr/^arabic\s+(\d+)$/i,
+        qr/^roman\s+(?:numerals?)?\s*(\d+)$/i,
+        qr/^arabic\s+(?:numerals?)?\s*(\d+)$/i,
         qr/^(\d+)\s+(?:into|in|to)?\s+roman\s*(numerals?)?/i
     );
     
