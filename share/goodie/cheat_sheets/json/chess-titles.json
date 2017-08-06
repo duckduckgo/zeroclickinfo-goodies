@@ -1,0 +1,106 @@
+{
+    "id": "chess_titles_cheat_sheet",
+    "name": "Chess Titles",
+    "description": "List of FIDE and several national chess titles",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Chess_title"
+    },
+    "aliases": [
+        "fide titles",
+        "uscf titles",
+        "united states chess federation titles"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "FIDE Open Titles",
+        "FIDE Women's Titles",
+        "United States Chess Federation Titles",
+        "Chess Federation of Canada",
+        "English Chess Federation"
+    ],
+    "sections": {
+        "FIDE Open Titles": [
+            {
+                "val": "Candidate Master (CM)",
+                "key": "FIDE rating of at least 2200"
+            },
+            {
+                "val": "FIDE Master (FM)",
+                "key": "FIDE rating of at least 2300"
+            },
+            {
+                "val": "International Master (IM)",
+                "key": "FIDE rating of at least 2400 and 3 norms"
+            },
+            {
+                "val": "Grandmaster (GM)",
+                "key": "FIDE rating of at least 2500 and 3 norms"
+            }
+        ],
+        "FIDE Women's Titles": [
+            {
+                "val": "Woman Candidate Master (WCM)",
+                "key": "FIDE rating of at least 2000"
+            },
+            {
+                "val": "Woman FIDE Master (WFM)",
+                "key": "FIDE rating of at least 2100"
+            },
+            {
+                "val": "Woman International Master (WIM)",
+                "key": "FIDE rating of at least 2200"
+            },
+            {
+                "val": "Woman Grandmaster (WGM)",
+                "key": "FIDE rating of at least 2300"
+            }
+        ],
+        "United States Chess Federation Titles": [
+            {
+                "val": "Senior Master",
+                "key": "USCF rating over 2400"
+            },
+            {
+                "val": "National Master",
+                "key": "USCF rating over 2200"
+            },
+            {
+                "val": "Expert",
+                "key": "USCf rating 2000-2199"
+            },
+            {
+                "val": "Class A",
+                "key": "USCf rating 1800-2099"
+            },
+            {
+                "val": "Class B",
+                "key": "USCf rating 1600-1899"
+            },
+            {
+                "val": "Class C",
+                "key": "USCf rating 1400-1699"
+            },
+            {
+                "val": "Class D",
+                "key": "USCf rating 1200-1499"
+            },
+            {
+                "val": "Class E",
+                "key": "USCf rating 1000-1299"
+            }
+        ],
+        "Chess Federation of Canada": [
+            {
+                "val": "National Master",
+                "key": "CFC rating of at least 2200 and three norms of 2300 or above"
+            }
+        ],
+        "English Chess Federation": [
+            {
+                "val": "National Master",
+                "key": "ECF rating of at least 200"
+            }
+        ]
+    }
+}
