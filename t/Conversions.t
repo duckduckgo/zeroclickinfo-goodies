@@ -2499,7 +2499,58 @@ ddg_goodie_test(
         })
     ),
 
-     # natural language queries
+    # case sensitivity
+    '1 Gb to GB' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'gbit',
+            to_unit => 'GB',
+            physical_quantity => 'digital'
+        })
+    ),
+    '1 GB to Gb' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'GB',
+            to_unit => 'gbit',
+            physical_quantity => 'digital'
+        })
+    ),
+    '1 gb to Gb' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'GB',
+            to_unit => 'gbit',
+            physical_quantity => 'digital'
+        })
+    ),
+    '1 bytes to TiB' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'B',
+            to_unit => 'tebibyte',
+            physical_quantity => 'digital'
+        })
+    ),
+    '1 bytes to tib' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'B',
+            to_unit => 'tebibyte',
+            physical_quantity => 'digital'
+        })
+    ),
+    '10 bytes to Ti' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '10',
+            from_unit => 'B',
+            to_unit => 'tebibit',
+            physical_quantity => 'digital'
+        })
+    ),
+
+
+    # natural language queries
     'unit converter' => test_zci(
         '', structured_answer => make_answer_with_base({
             physical_quantity => 'length',

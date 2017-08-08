@@ -1625,6 +1625,7 @@ unit: pebibit
 symbols: [Pi]
 ---
 aliases:
+  - kib
   - kibibytes
   - kibi byte
   - kibi bytes
@@ -1633,6 +1634,7 @@ unit: kibibyte
 symbols: [KiB]
 ---
 aliases:
+  - mib
   - mebibytes
   - mebi byte
   - mebi bytes
@@ -1641,6 +1643,7 @@ unit: mebibyte
 symbols: [MiB]
 ---
 aliases:
+  - gib
   - gibibytes
   - gibi byte
   - gibi bytes
@@ -1649,12 +1652,13 @@ unit: gibibyte
 symbols: [GiB]
 ---
 aliases:
+  - tib
   - tibibyte
   - tibibytes
   - tibi byte
   - tibi bytes
 type: digital
-unit: tibibyte
+unit: tebibyte
 symbols: [TiB]
 ---
 aliases:
