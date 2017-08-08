@@ -329,13 +329,19 @@ handle query => sub {
 sub get_matches {
     my @input_matches = @_;
     my @output_matches = ();
-
+    
+    OUTER:
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
-             || ($type->{'symbols'} && grep { $_ eq lc $match } @{$type->{'symbols'}})
-             || lc $match eq lc $type->{'unit'}
-             || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
+            if ($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}}) {
+                push(@output_matches,{
+                    type => $type->{'type'},
+                    factor => $type->{'factor'},
+                    unit => $type->{'unit'},
+                    can_be_negative => $type->{'can_be_negative'} || '0'
+                });
+                next OUTER;
+            } elsif(lc $match eq lc $type->{'unit'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
@@ -346,6 +352,7 @@ sub get_matches {
 
         }
     }
+
     return @output_matches;
 }
 

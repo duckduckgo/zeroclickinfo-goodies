@@ -1219,49 +1219,49 @@ aliases:
   - watts
 type: power
 unit: watt
-symbols: [w]
+symbols: [w, W]
 ---
 aliases:
   - kilowatt
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [kw]
+symbols: [kw, kW]
 ---
 aliases:
   - megawatt
   - megawatts
 type: power
 unit: megawatt
-symbols: [mw]
+symbols: [mw, mW]
 ---
 aliases:
   - gigawatt
   - gigawatts
 type: power
 unit: gigawatt
-symbols: [gw]
+symbols: [gw, gW]
 ---
 aliases:
   - terawatt
   - terawatts
 type: power
 unit: terawatt
-symbols: [tw]
+symbols: [tw, tW]
 ---
 aliases:
   - petawatt
   - petawatts
 type: power
 unit: petawatt
-symbols: [pw]
+symbols: [pw, pW]
 ---
 aliases:
   - exawatt
   - exawatts
 type: power
 unit: exawatt
-symbols: [ew]
+symbols: [ew, eW]
 ---
 aliases:
   - metric horsepowers
@@ -1508,100 +1508,100 @@ unit: rankine
 symbols: [°Ra]
 ---
 aliases:
-  - b
   - bit
   - bits
 type: digital
 unit: b
+symbols: [b]
 ---
 aliases:
-  - B
   - byte
   - bytes
 type: digital
 unit: B
+symbols: [B]
 ---
 aliases:
   - kilobit
   - kilobits
 type: digital
 unit: kbit
+symbols: [Kb]
 ---
 aliases:
   - megabit
   - megabits
 type: digital
 unit: mbit
+symbols: [Mb]
 ---
 aliases:
   - gigabit
   - gigabits
 type: digital
 unit: gbit
+symbols: [Gb]
 ---
 aliases:
   - terrabit
   - terrabits
 type: digital
 unit: tbit
+symbols: [Tb]
 ---
 aliases:
-  - KB
-  - KBs
   - kilobyte
   - kilobytes
 type: digital
 unit: KB
+symbols: [KB]
 ---
 aliases:
-  - MB
-  - MBs
   - megabyte
   - megabytes
 type: digital
 unit: MB
+symbols: [MB]
 ---
 aliases:
-  - GB
-  - GBs
   - gigabyte
   - gigabytes
 type: digital
 unit: GB
+symbols: [GB]
 ---
 aliases:
-  - TB
-  - TBs
   - terabyte
   - terabytes
 type: digital
 unit: TB
+symbols: [TB]
 ---
 aliases:
-  - PB
-  - PBs
   - petabyte
   - petabytes
 type: digital
 unit: PB
+symbols: [PB]
 ---
 aliases:
   - kibibit
   - kibibits
   - kibit
   - kibits
-  - kib
 type: digital
 unit: kibibit
+symbols: [Ki]
 ---
 aliases:
   - mebibit
   - mebibits
   - mebit
   - mebits
-  - Mibit
+  - mibit
 type: digital
 unit: mebibit
+symbols: [Mi]
 ---
 aliases:
   - gibibit
@@ -1611,6 +1611,7 @@ aliases:
   - Gibit
 type: digital
 unit: gibibit
+symbols: [Gi]
 ---
 aliases:
   - tebibit
@@ -1618,6 +1619,7 @@ aliases:
   - tibit
 type: digital
 unit: tebibit
+symbols: [Ti]
 ---
 aliases:
   - pebibit
@@ -1625,22 +1627,34 @@ aliases:
   - pibit
 type: digital
 unit: pebibit
+symbols: [Pi]
 ---
 aliases:
+  - kib
   - kibibytes
   - kibi byte
   - kibi bytes
-  - KiB
 type: digital
 unit: kibibyte
+symbols: [KiB]
 ---
 aliases:
+  - mib
   - mebibytes
   - mebi byte
   - mebi bytes
-  - MiB
 type: digital
 unit: mebibyte
+symbols: [MiB]
+---
+aliases:
+  - gib
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+type: digital
+unit: gibibyte
+symbols: [GiB]
 ---
 aliases:
   - gibibyte
@@ -1652,13 +1666,14 @@ type: digital
 unit: gibibyte
 ---
 aliases:
+  - tib
   - tibibyte
   - tibibytes
   - tibi byte
   - tibi bytes
-  - TiB
 type: digital
-unit: tibibyte
+unit: tebibyte
+symbols: [TiB]
 ---
 aliases:
   - pebibyte
@@ -1667,6 +1682,7 @@ aliases:
   - pebi bytes
 type: digital
 unit: pebibyte
+symbols: [PiB]
 ---
 aliases:
   - litre
