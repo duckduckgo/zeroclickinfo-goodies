@@ -1657,7 +1657,6 @@ unit: gibibyte
 symbols: [GiB]
 ---
 aliases:
-=======
   - gibibyte
   - gibibytes
   - gibi byte
