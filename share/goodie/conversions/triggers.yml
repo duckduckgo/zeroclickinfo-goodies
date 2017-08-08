@@ -112,6 +112,8 @@ aliases:
   - dkg
   - dekagram
   - dekagrams
+  - decagram
+  - decagrams
 type: mass
 unit: dekagram
 symbols: [dag, dkg]
@@ -164,6 +166,7 @@ symbols: [st]
 aliases:
   - metric quintal
   - metric quintals
+  - quintal
   - q
 type: mass
 unit: metricquintal
@@ -350,6 +353,7 @@ aliases:
   - millimeters
   - milli meter
   - milli meters
+  - mil
   - mm
   - mms
 type: length
@@ -364,6 +368,7 @@ aliases:
   - micro meter
   - micro meters
   - µms
+  - µm
 type: length
 unit: micrometer
 symbols: [µm]
@@ -1652,6 +1657,16 @@ unit: gibibyte
 symbols: [GiB]
 ---
 aliases:
+=======
+  - gibibyte
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+  - gib
+type: digital
+unit: gibibyte
+---
+aliases:
   - tib
   - tibibyte
   - tibibytes
@@ -2270,6 +2285,10 @@ aliases:
   - bit per second
   - bits per second
   - bps
+  - bits ps
+  - b/ps
+  - bit/ps
+  - bits/ps
 type: data_transfer 
 unit: bitps 
 ---
@@ -2279,6 +2298,14 @@ aliases:
   - kilobit per second
   - kilobits per second
   - kbps
+  - kilobit ps
+  - kilobits ps
+  - kilobit/s
+  - kilobits/s
+  - kilobit/ps
+  - kilobits/ps
+  - kb/s
+  - kb/ps
 type: data_transfer 
 unit: kbitps 
 ---
@@ -2288,7 +2315,10 @@ aliases:
   - megabit per second
   - megabits per second
   - mbps
-  - Mbps
+  - mb/ps
+  - mb ps
+  - mb/s
+  - mb s
 type: data_transfer 
 unit: mbitps 
 ---
@@ -2298,6 +2328,10 @@ aliases:
   - gigabit per second
   - gigabits per second
   - gbps
+  - gb/s
+  - gb s
+  - gb/ps
+  - gb ps
 type: data_transfer 
 unit: gbitps
 ---
@@ -2307,6 +2341,16 @@ aliases:
   - terrabit per second
   - terrabits per second
   - tbps
+  - tb ps
+  - tb/ps
+  - tb s
+  - tb/s
+  - tb per sec
+  - tb per second
+  - terrabit/s 
+  - terrabits/s 
+  - terrabit/ps 
+  - terrabits/ps 
 type: data_transfer 
 unit: tbitps 
 ---
