@@ -1559,7 +1559,7 @@ ddg_goodie_test(
     '155343.1234 gallons to hectolitres' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '155343.1234',
-            from_unit => 'impgallon',
+            from_unit => 'usgallon',
             to_unit => 'hectolitre',
             physical_quantity => 'volume'
         })
@@ -1858,7 +1858,7 @@ ddg_goodie_test(
         '', structured_answer => make_answer({
             raw_input => '1',
             from_unit => 'litre',
-            to_unit => 'impgallon',
+            to_unit => 'usgallon',
             physical_quantity => 'volume'
         })
      ),
@@ -1945,7 +1945,7 @@ ddg_goodie_test(
     'liters per gallon' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'impgallon',
+            from_unit => 'usgallon',
             to_unit => 'litre',
             physical_quantity => 'volume'
         })
@@ -1953,7 +1953,7 @@ ddg_goodie_test(
     'liters per 100 gallon' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '100',
-            from_unit => 'impgallon',
+            from_unit => 'usgallon',
             to_unit => 'litre',
             physical_quantity => 'volume'
         })
@@ -1962,7 +1962,7 @@ ddg_goodie_test(
         '', structured_answer => make_answer({
             raw_input => '100',
             from_unit => 'litre',
-            to_unit => 'impgallon',
+            to_unit => 'usgallon',
             physical_quantity => 'volume'
         })
     ),
@@ -2124,15 +2124,15 @@ ddg_goodie_test(
     'tablespoon to teaspoon' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'imptbsp',
-            to_unit => 'imptsp',
+            from_unit => 'ustbsp',
+            to_unit => 'ustsp',
             physical_quantity => 'volume'
         })
     ),
     '5 cups to us tablespoon' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '5',
-            from_unit => 'impcup',
+            from_unit => 'uscup',
             to_unit => 'ustbsp',
             physical_quantity => 'volume'
         })
@@ -2141,7 +2141,7 @@ ddg_goodie_test(
     'how many ounces in a quart' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'impquart',
+            from_unit => 'usquart',
             to_unit => 'impfluidounce',
             physical_quantity => 'volume'
         })
@@ -2149,7 +2149,7 @@ ddg_goodie_test(
     'ounces in a cup' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'impcup',
+            from_unit => 'uscup',
             to_unit => 'impfluidounce',
             physical_quantity => 'volume'
         })
@@ -2255,7 +2255,7 @@ ddg_goodie_test(
     'fluid ounces to milliliters' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'impfluidounce',
+            from_unit => 'usfluidounce',
             to_unit => 'millilitre',
             physical_quantity => 'volume'
         })
@@ -2496,6 +2496,62 @@ ddg_goodie_test(
             from_unit => 'bitps',
             to_unit => 'terabyteps',
             physical_quantity => 'data_transfer'
+        })
+    ),
+    '4" to cms' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '4',
+            from_unit => 'inch',
+            to_unit => 'cm',
+            physical_quantity => 'length'
+        })
+    ),
+    '0.1 µm in mil' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '0.1',
+            from_unit => 'micrometer',
+            to_unit => 'millimeter',
+            physical_quantity => 'length'
+        })
+    ),
+    '1 kilogram = ? decagram' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'kilogram',
+            to_unit => 'dekagram',
+            physical_quantity => 'mass'
+        })
+    ),
+    '9 GiB to kilobytes' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '9',
+            from_unit => 'gibibyte',
+            to_unit => 'KB',
+            physical_quantity => 'digital'
+        })
+    ),
+    '35 cm equals what in m' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '35',
+            from_unit => 'cm',
+            to_unit => 'meter',
+            physical_quantity => 'length'
+        })
+    ),
+    '450 degrees to celsius' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '450',
+            from_unit => 'fahrenheit',
+            to_unit => 'celsius',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '5 cm ?= m' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '5',
+            from_unit => 'cm',
+            to_unit => 'meter',
+            physical_quantity => 'length'
         })
     ),
 

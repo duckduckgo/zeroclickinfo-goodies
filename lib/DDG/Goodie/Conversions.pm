@@ -103,9 +103,9 @@ my $guard = qr/^
                 (?<question>$question_prefix)\s?
                 (?<left_num>$factor_re*|\d+\/\d+)\s?(?<left_unit>$keys)
                 (?:\s
-                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?(?:\swhat(?:\sin)?)?|make)\sa?|\?\s?=|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*|\d+\/\d+)\s?(?:of\s)?(?<right_unit>$keys)\s?
-                    (?:conver(?:sion|ter)|calculator)?[\?]?
+                    (?:conver(?:sion|ter)|calculator|equals(?:\swhat)?)?[\?]?
                 )?
                $
               /ix;
@@ -155,6 +155,30 @@ sub get_base_information {
     return 'length';
 }
 
+# EXPERIMENTAL
+# If the user is located in the US, we'll show them US type units instead of Imperial
+sub us_locale {
+    my $unit = shift;
+
+    my @q_triggers = qw/q quintal/;
+    my @cup_triggers = qw/cup cups/;
+    my @floz_triggers = ('fluid ounce', 'fluid ounces', 'fluid oz', 'fluid ozs', 'floz', 'fl oz', 'fl. oz', 'fl. ozs');
+    my @gallon_triggers = qw/gal gals gallon gallons/;
+    my @quart_triggers = qw/quart quarts qt qts/;
+    my @tbsp_triggers = qw/tbsp tablespoon tablespoon/;
+    my @tsp_triggers = qw/tsp teaspoon tea spoon/;
+
+    $unit = 'usfluidounce' if grep(/^$unit$/, @floz_triggers);
+    $unit = 'usgallon' if grep(/^$unit$/, @gallon_triggers);
+    $unit = 'usquart' if grep(/^$unit$/, @quart_triggers);
+    $unit = 'ustbsp' if grep(/^$unit$/, @tbsp_triggers);
+    $unit = 'uscup' if grep(/^$unit$/, @cup_triggers);
+    $unit = 'ustsp' if grep(/^$unit$/, @tsp_triggers);
+    $unit = 'usquintal' if grep(/^$unit$/, @q_triggers);
+
+    return $unit;
+}
+
 handle query => sub {
 
     # for natural language queries, settle with default template / data
@@ -199,13 +223,17 @@ handle query => sub {
     my $question = $+{'question'} // "";
     my $connecting_word = $+{'connecting_word'} // "";
 
+    # If the user is in the US, we'll show them US type units, else default to imperial
+    $left_unit = us_locale($left_unit) if $loc->country_code eq 'US';
+    $right_unit = us_locale($right_unit) if $loc->country_code eq 'US';
+
     my $factor = $left_num;
     my @matches = ($left_unit, $right_unit);
 
     # ignore conversion when both units have a number
     return if ($left_num && $right_num);
     return if (length $left_unit <= 3 && !grep(/^$preserved_query$/, @expanded_triggers) && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
-
+    
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
     my @factor1 = (); # conversion factors, not left_num or right_num values
@@ -328,6 +356,25 @@ sub convert {
     my @matches = get_matches(@inputs);
     return if scalar(@matches) < 1;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
+
+    # Handles the ambigous handling of the word 'degrees' in temperature conversions
+    if($matches[0]->{'type'} eq 'angle' && $matches[1]->{'unit'} eq 'fahrenheit') {
+        $matches[0]->{'unit'} = 'celsius';        
+        $matches[0]->{'type'} = 'temperature';
+    }
+    elsif($matches[0]->{'unit'} eq 'fahrenheit' && $matches[1]->{'type'} eq 'angle')   {
+        $matches[1]->{'unit'} = 'celsius';        
+        $matches[1]->{'type'} = 'temperature';
+    }
+
+    if($matches[0]->{'type'} eq 'angle' && $matches[1]->{'unit'} eq 'celsius') {
+        $matches[0]->{'unit'} = 'fahrenheit';
+        $matches[0]->{'type'} = 'temperature';
+    }
+    elsif($matches[0]->{'unit'} eq 'celsius' && $matches[1]->{'type'} eq 'angle')  {
+        $matches[1]->{'unit'} = 'fahrenheit';
+        $matches[1]->{'type'} = 'temperature';
+    }
 
     # Handles ounce (mass) / fl ounce (volume) ambiguity
     if(defined $matches[1]->{'unit'}) {
