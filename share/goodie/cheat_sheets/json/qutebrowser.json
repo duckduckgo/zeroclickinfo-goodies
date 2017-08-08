@@ -1,0 +1,43 @@
+{
+    "id": "qutebrowser_cheat_sheet",
+    "name": "qutebrowser",
+    "description": "qutebrowser default keyboard shortcuts",
+
+    "metadata": {
+        "sourceName": "qutebrowser quickstart guide",
+        "sourceUrl" : "http://qutebrowser.org/doc/quickstart.html"
+    },
+
+    "aliases": [
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
