@@ -302,11 +302,18 @@ sub get_matches {
     my @input_matches = @_;
     my @output_matches = ();
     
+    OUTER:
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
-             || lc $match eq lc $type->{'unit'}
-             || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
+            if ($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}}) {
+                push(@output_matches,{
+                    type => $type->{'type'},
+                    factor => $type->{'factor'},
+                    unit => $type->{'unit'},
+                    can_be_negative => $type->{'can_be_negative'} || '0'
+                });
+                next OUTER;
+            } elsif(lc $match eq lc $type->{'unit'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
@@ -316,11 +323,6 @@ sub get_matches {
             }
 
         }
-    }
-
-    # prevents symbol collisions. outer if suppresses warnings
-    if($output_matches[1]) {
-        splice(@output_matches, 2, 1) if scalar(@output_matches) >= 3;
     }
 
     return @output_matches;
