@@ -320,9 +320,7 @@ sub get_matches {
 
     # prevents symbol collisions. outer if suppresses warnings
     if($output_matches[1]) {
-        if($output_matches[0] eq $output_matches[1]) {
-            splice(@output_matches, 1, 1) if scalar(@output_matches) >= 3;
-        }
+        splice(@output_matches, 2, 1) if scalar(@output_matches) >= 3;
     }
 
     return @output_matches;
