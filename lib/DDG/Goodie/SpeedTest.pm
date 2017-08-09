@@ -16,7 +16,7 @@ if($goodie_version == 999) {
     $image = "share/spice/speed_test/" . $goodie_version . "/img/big_free_img.jpg";
 }
 
-$image = $image . "?" . time();
+$image .= "?" . time();
 
 handle remainder => sub {
     return '',
