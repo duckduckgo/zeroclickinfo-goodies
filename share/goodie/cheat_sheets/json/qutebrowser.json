@@ -14,29 +14,187 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Page Scrolling",
+        "Tab Manipulation",
+        "History",
+        "Page Navigation and Hinting",
+        "Searching",
+        "Bookmarks and Quckmarks",
+        "Copy/Paste",
+        "Modes"
     ],
 
     "sections": {
-        "First Section": [
+        "Page Scrolling": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "j",
+                "val": "scroll down"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "k",
+                "val": "scroll down"
+            },
+            {
+                "key": "j",
+                "val": "scroll up"
+            },
+            {
+                "key": "h",
+                "val": "scroll left"
+            },
+            {
+                "key": "l",
+                "val": "scroll right"
+            },
+            {
+                "key": "gg",
+                "val": "scroll to top"
+            },
+            {
+                "key": "G",
+                "val": "scroll to bottom"
             }
         ],
-        "Second Section": [
+        "Tab Manipulation": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "J",
+                "val": "next tab"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "K",
+                "val": "previous tab"
+            },
+            {
+                "key": "T",
+                "val": "select tab"
+            },
+            {
+                "key": "d",
+                "val": "close tab"
+            },
+            {
+                "key": "u",
+                "val": "undo tab close"
+            },
+            {
+                "key": "co",
+                "val": "close other tabs"
+            }
+        ],
+        "History": [
+            {
+                "key": "H",
+                "val": "backwards in history"
+            },
+            {
+                "key": "L",
+                "val": "forwards in history"
+            }
+        ],
+        "Page Navigation and Hinting": [
+            {
+                "key": "o",
+                "val": "open link"
+            },
+            {
+                "key": "O",
+                "val": "open link in new tab"
+            },
+            {
+                "key": "r",
+                "val": "reload"
+            },
+            {
+                "key": "R",
+                "val": "reload (no cache)"
+            },
+            {
+                "key": "f",
+                "val": "hint (label, links)"
+            },
+            {
+                "key": "F",
+                "val": "hint in new tab"
+            },
+            {
+                "key": ";*",
+                "val": "extended hints"
+            }
+        ],
+        "Searching": [
+            {
+                "key": "/",
+                "val": "search forward"
+            },
+            {
+                "key": "?",
+                "val": "search backwards"
+            },
+            {
+                "key": "n",
+                "val": "search next occurrence"
+            },
+            {
+                "key": "N",
+                "val": "search previous occurrence"
+            }
+        ],
+        "Bookmarks and Quckmarks": [
+            {
+                "key": "b",
+                "val": "load quickmark"
+            },
+            {
+                "key": "B",
+                "val": "load quickmark in new tab"
+            },
+            {
+                "key": "m",
+                "val": "save quickmark"
+            },
+            {
+                "key": ":bookmark-load",
+                "val": "load bookmark"
+            }
+        ],
+        "Copy/Paste": [
+            {
+                "key": "yy",
+                "val": "yank URL to clipboard"
+            },
+            {
+                "key": "pp",
+                "val": "open url from clipboard"
+            },
+            {
+                "key": "Pp",
+                "val": "open url from clipboard in a new tab"
+            },
+            {
+                "key": "yt",
+                "val": "yank page title to clipboard"
+            }
+        ],
+        "Modes": [
+            {
+                "key": "<ESC>",
+                "val": "return to normal mode"
+            },
+            {
+                "key": "i",
+                "val": "insert mode (type text)"
+            },
+            {
+                "key": "Ctrl-v",
+                "val": "passthrough mode"
+            },
+            {
+                "key": "v",
+                "val": "caret mode"
+            },
+            {
+                "key": ":",
+                "val": "command mode (enter a command)"
             }
         ]
     }
