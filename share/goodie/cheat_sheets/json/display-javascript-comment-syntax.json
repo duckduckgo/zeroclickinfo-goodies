@@ -1,0 +1,33 @@
+{
+    "id": "display_javascript_comment_syntax_cheat_sheet",
+    "name": "Javascript Comments",
+    "description": "A simple display to show the commenting syntax for JavaScript.",
+
+    "metadata": {
+        "sourceName": "W3Schools",
+        "sourceUrl" : "https://www.w3schools.com/js/js_comments.asp"
+    },
+
+    "aliases": [
+        "how to comment in javascript", "how to make line comments in javascript", "commenting in javascript"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "JavaScript Commenting"
+    ],
+
+    "sections": {
+        "JavaScript Commenting": [
+            {
+                "key": "//",
+                "val": "Single Line Comment"
+            },
+            {
+                "key": "/* text block */",
+                "val": "Multi-line Comment"
+            }
+        ]
+    }
+}
