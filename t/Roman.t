@@ -10,46 +10,32 @@ zci answer_type => 'roman_numeral_conversion';
 zci is_cached   => 1;
 
 sub build_test {
-    my ($input, $input_value, $output, $output_value) = @_;
-    return test_zci('roman numeral converter', structured_answer => {
+    my ($text, $input, $answer) = @_;
+    return test_zci($text, structured_answer => {
         data => {
-            input => $input,
-            input_value => $input_value,
-            output => $output,
-            output_value => $output_value
+            title => $answer,
+            subtitle => "Roman numeral conversion: $input"
         },
         templates => {
-            group => 'text',
-            options => {
-                subtitle_content => 'DDH.roman.roman'
-            }
+            group => 'text'
         }
     });
 }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Roman )],
-    'roman 15' => build_test('arabic', '15', 'roman', 'XV'),
-    "roman xii" => build_test('roman', 'XII', 'arabic', '12'),
-    "roman mmcml" => build_test('roman', 'MMCML', 'arabic', '2950'),
-    "roman 2344" => build_test('arabic', '2344', 'roman', 'MMCCCXLIV'),
-    "arabic cccxlvi" => build_test('roman', 'CCCXLVI', 'arabic', '346'),
-    'roman MCCCXXXVII' => build_test('roman', 'MCCCXXXVII', 'arabic','1337'),
-    'roman numeral 10' => build_test('arabic', '10', 'roman', 'X'),
-    'roman numeral XVI' => build_test('roman', 'XVI', 'arabic', '16'),
-    'roman 1337' => build_test('arabic', '1337', 'roman','MCCCXXXVII'),
-    'roman IV' => build_test('roman', 'IV', 'arabic', '4'),
-    '1492 in roman numerals' => build_test('arabic', '1492', 'roman', 'MCDXCII'),
-    '10 into roman' => build_test('arabic', '10', 'roman', 'X'),
-    '3999 in roman numeral' => build_test('arabic', '3999', 'roman', 'MMMCMXCIX'),
-    'xiii to arabic' => build_test('roman', 'XIII', 'arabic', '13'),
-    'CXIII to arabic' => build_test('roman', 'CXIII', 'arabic', '113'),
-    'convert XXX into arabic' => build_test('roman', 'XXX', 'arabic', '30'),
-    'convert MMCC to arabic' => build_test('roman', 'MMCC', 'arabic', '2200'),
-    'convert 15 to roman' => build_test('arabic', '15', 'roman', 'XV'),
-    'convert 30 into roman' => build_test('arabic', '30', 'roman', 'XXX'),
-    'convert to arabic' => build_test('roman', '', 'arabic', ''),
-    'foo to arabic numerals' => build_test('roman', '', 'arabic', '')
+    'roman 155' => build_test('CLV (roman numeral conversion)', '155', 'CLV'),
+    "roman xii" => build_test("12 (roman numeral conversion)", 'XII', '12'),
+    "roman mmcml" => build_test("2950 (roman numeral conversion)", 'MMCML', '2950'),
+    "roman 2344" => build_test("MMCCCXLIV (roman numeral conversion)", '2344', 'MMCCCXLIV'),
+    "arabic cccxlvi" => build_test("346 (roman numeral conversion)", 'CCCXLVI', '346'),
+    'roman numeral MCCCXXXVII' => build_test('1337 (roman numeral conversion)', 'MCCCXXXVII', '1337'),
+    'roman 1337' => build_test('MCCCXXXVII (roman numeral conversion)', '1337', 'MCCCXXXVII'),
+    'roman IV' => build_test('4 (roman numeral conversion)', 'IV', '4'),
+    '10 in roman numeral' => build_test('X (roman numeral conversion)', '10', 'X'),
+    '11 in roman numerals' => build_test('XI (roman numeral conversion)', '11', 'XI'),
+    'xiii to arabic' => build_test('13 (roman numeral conversion)', 'XIII', '13'),
+    '20 to roman numerals' => build_test('XX (roman numeral conversion)', '20', 'XX'),
 );
 
 done_testing;
