@@ -902,12 +902,12 @@ DDH.calculator = DDH.calculator || {};
             signal: "high",
             onShow: function() {
 
-                var $calc = $(".zci--calculator");
-                var inputTrapClass = ".tile__display";
-                var $calcInputTrap = $calc.find(inputTrapClass);
+                var $calc = $(".zci--calculator .calculator--wrap");
+                var inputClass = ".tile__display";
+                var $calcInput = $calc.find(inputClass);
 
                 function setFocus() {
-                    $calcInputTrap.focus();
+                    $calcInput.focus();
                 }
 
                 DDG.require('math.js', function() {
@@ -951,19 +951,17 @@ DDH.calculator = DDH.calculator || {};
                      * Sets focus when the calculator is clicked
                      *
                      */
-                    $($calc).on('click mousedown', function(e) {
-                        setFocus();
-                    });
-
-                    $calcInputTrap
-                    .focus(function() {
-                        $calcInputTrap.addClass('selected');
+                    $calc
+                    .on('click mousedown', function(e) {
+                        if (!$calcInput.hasClass('selected')){
+                            $calcInput.addClass('selected');
+                            setFocus();
+                        }
                     })
                     .blur(function() {
-                        $calcInputTrap.removeClass('selected');
-                    });
-
-                    $($calc, $calcInputTrap).mouseup(function (e) {
+                        $calcInput.removeClass('selected');
+                    })
+                    .mouseup(function (e) {
                         e.preventDefault();
                     });
 
@@ -998,7 +996,7 @@ DDH.calculator = DDH.calculator || {};
                      * If a key is pressed the below code is fired and the key reference
                      * is looked up in the KEYCODES hash.
                      */
-                    $calcInputTrap.keypress(function(e){
+                    $calc.keypress(function(e){
 
                         if (e.altKey || e.metaKey || e.ctrlKey) {
                             return;
@@ -1019,7 +1017,7 @@ DDH.calculator = DDH.calculator || {};
                         e.preventDefault();
                     });
 
-                    $calcInputTrap.keydown(function(e){
+                    $calc.keydown(function(e){
                         // Handle Backspace
                         if(e.keyCode === 8) {
                             calculator("C_OPT");

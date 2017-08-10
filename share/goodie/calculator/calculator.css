@@ -12,6 +12,7 @@
 
 .zci--calculator .tile--calculator {
     display: block !important;
+    outline: none;
 }
 
 
