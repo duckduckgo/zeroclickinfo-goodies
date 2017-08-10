@@ -960,9 +960,6 @@ DDH.calculator = DDH.calculator || {};
                     })
                     .blur(function() {
                         $calcInput.removeClass('selected');
-                    })
-                    .mouseup(function (e) {
-                        e.preventDefault();
                     });
 
                     /**
