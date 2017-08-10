@@ -474,9 +474,9 @@ DDH.calculator = DDH.calculator || {};
                 evaluated = true;
                 setCButtonState("C");
                 DDG.pixel.fire(
-                    'iafd', 
-                    'calculator', { 
-                        q: DDG.get_query_encoded() 
+                    'iafd',
+                    'calculator', {
+                        q: DDG.get_query_encoded()
                     });
             }
             return false;
@@ -660,14 +660,14 @@ DDH.calculator = DDH.calculator || {};
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
         if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
-            
+
             // only show Ans if it wasn't an error
             if(display.value !== "") {
                 ExpressionParser.setExpression("Ans: " + display.value);
             } else {
                 ExpressionParser.setExpression("");
             }
-            
+
             display.value = "";
             usingState = false;
             evaluated = false;
@@ -874,9 +874,9 @@ DDH.calculator = DDH.calculator || {};
         } catch(_err) {
             display.value = "";
             DDG.pixel.fire(
-                'iafd', 
-                'calculator', { 
-                    q: DDG.get_query_encoded() 
+                'iafd',
+                'calculator', {
+                    q: DDG.get_query_encoded()
                 }
             );
         }

@@ -670,13 +670,13 @@ input:checked+.tile__ctrl__toggle-slider:before {
     background: rgba(88, 88, 88, 0.75);
 }
 
-.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops, 
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops,
 .dark-bg .zci--calculator .tile__calc .tile__tab__sci .tile__ctrl__btn {
     background: #111;
     font-weight: lighter;
 }
 
-.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops:hover, 
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops:hover,
 .dark-bg .zci--calculator .tile__calc .tile__tab__sci .tile__ctrl__btn:hover {
     background: rgba(17, 17, 17, 0.7);
 }
@@ -743,4 +743,3 @@ input:checked+.tile__ctrl__toggle-slider:before {
 .dark-bg .zci--calculator .tile__calc .tile__past-calc:hover {
     background: #111;
 }
-
