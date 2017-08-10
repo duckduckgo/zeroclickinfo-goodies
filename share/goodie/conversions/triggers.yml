@@ -361,6 +361,7 @@ unit: millimeter
 symbols: [mm]
 ---
 aliases:
+  - micron
   - micrometre
   - micrometres
   - micrometer
