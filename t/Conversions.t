@@ -2604,6 +2604,14 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
+    'nanometer to micron' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'nanometer',
+            to_unit => 'micrometer',
+            physical_quantity => 'length'
+        })
+    ),
 
 
     # natural language queries
