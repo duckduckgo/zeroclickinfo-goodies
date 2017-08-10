@@ -31,6 +31,8 @@
         "D-Link",
         "Edimax",
         "Eminent",
+        "Fortigate",
+        "Generic (try if your brand isn't listed)",
         "Gigabyte",
         "Hawking",
         "Huawei",
@@ -311,6 +313,22 @@
             {
                 "link": "http://192.168.8.1",
                 "key": "192.168.8.1"
+            }
+        ],
+        "Fortigate": [
+            {
+                "link": "http://192.168.1.2",
+                "key": "192.168.1.2"
+            },
+            {
+                "link": "http://192.168.1.99",
+                "key": "192.168.1.99"
+            }
+        ],
+        "Generic (try if your brand isn't listed)": [
+            {
+                "link": "http://192.168.1.1",
+                "key": "192.168.1.1"
             }
         ],
         "Gigabyte": [
