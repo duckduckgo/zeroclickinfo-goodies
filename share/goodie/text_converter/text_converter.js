@@ -37,6 +37,14 @@ DDH.text_converter = DDH.text_converter || {};
                     TextConverter.binaryTohex(from)
                 );
 
+            } else if(from_type === "binary" && to_type === "decimal") {
+                return TextConverter.binaryToDecimal(from);
+
+            } else if(from_type === "hexadecimal" && to_type === "decimal") {
+                return TextConverter.binaryToDecimal(
+                    TextConverter.hexToBinary(from)
+                );
+
             } else if(from_type === "base64" && to_type === "binary") {
                 return TextConverter.hexToBinary(
                     TextConverter.base64ToHex(from)
@@ -157,6 +165,19 @@ DDH.text_converter = DDH.text_converter || {};
             }
             return decimal;
         },
+
+        binaryToDecimal: function(binary) {
+            var octet = binary.replace(/\s/g, "").match(/.{1,8}/g);
+            var dec_cache = [];
+
+            for(var i = 0; i < octet.length; i++) {
+                dec_cache.push(parseInt(octet[i], 2));
+            }
+
+            return dec_cache.join(" ");
+        },
+
+        // 011011010111100100100000011011100110000101101101011001010010000001101001011100110010000001101010011010010110110100111111
 
         decimalToText: function(text) {
             return text.split(/\s/).map(function(val) {
