@@ -34,16 +34,17 @@ DDH.text_converter = DDH.text_converter || {};
 
             } else if(from_type === "binary" && to_type === "base64") {
                 return TextConverter.hexToBase64(
-                    TextConverter.binaryTohex(from)
+                    TextConverter.binaryToHex(from)
                 );
 
             } else if(from_type === "binary" && to_type === "decimal") {
                 return TextConverter.binaryToDecimal(from);
 
             } else if(from_type === "hexadecimal" && to_type === "decimal") {
-                return TextConverter.binaryToDecimal(
-                    TextConverter.hexToBinary(from)
-                );
+                return TextConverter.hexToDecimal(from);
+
+            } else if(from_type === "decimal" && to_type === "hexadecimal") {
+                return TextConverter.decimalToHex(from);
 
             } else if(from_type === "base64" && to_type === "binary") {
                 return TextConverter.hexToBinary(
@@ -127,13 +128,24 @@ DDH.text_converter = DDH.text_converter || {};
             });
         },
 
+        binaryToDecimal: function(binary) {
+            var octet = binary.replace(/\s/g, "").match(/.{1,8}/g);
+            var dec_cache = [];
+
+            for(var i = 0; i < octet.length; i++) {
+                dec_cache.push(parseInt(octet[i], 2));
+            }
+
+            return dec_cache.join(" ");
+        },
+
         binaryToText: function(text) {
             return text.split(/\s/).map(function(val) {
                 return String.fromCharCode(parseInt(val, 2));
             }).join("");
         },
 
-        binaryTohex: function(binaryString) {
+        binaryToHex: function(binaryString) {
             var binaryString = binaryString.replace(/\s/g, "");
             var output = "";
 
@@ -166,18 +178,16 @@ DDH.text_converter = DDH.text_converter || {};
             return decimal;
         },
 
-        binaryToDecimal: function(binary) {
-            var octet = binary.replace(/\s/g, "").match(/.{1,8}/g);
-            var dec_cache = [];
+        decimalToHex: function(number) {
+            var num_split = number.split(" ");
+            var hex_cache = [];
 
-            for(var i = 0; i < octet.length; i++) {
-                dec_cache.push(parseInt(octet[i], 2));
+            for(var i = 0; i < num_split.length; i++) {
+                hex_cache.push(Number(num_split[i]).toString(16).toUpperCase());
             }
-
-            return dec_cache.join(" ");
+            
+            return hex_cache.join(" ");
         },
-
-        // 011011010111100100100000011011100110000101101101011001010010000001101001011100110010000001101010011010010110110100111111
 
         decimalToText: function(text) {
             return text.split(/\s/).map(function(val) {
@@ -280,6 +290,17 @@ DDH.text_converter = DDH.text_converter || {};
                 var raw = acc + ("000" + parseInt(i, 16).toString(2)).substr(-4, 4);
                 return raw.replace(/[^\d]/g, "").replace(/(.{8})/g, "$1 ").trim();
             }, '');
+        },
+
+        hexToDecimal: function(hex) {
+            var hex_split = hex.split(" ");
+            var dec_cache = [];
+
+            for(var i = 0; i < hex_split.length; i++) {
+                dec_cache.push(parseInt(hex_split[i], 16))
+            }
+
+            return dec_cache.join(" ");
         },
 
         hexToBase64: function(str) {
