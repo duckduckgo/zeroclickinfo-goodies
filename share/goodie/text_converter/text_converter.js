@@ -30,7 +30,7 @@ DDH.text_converter = DDH.text_converter || {};
             var from = $convert_from_textarea.val();
 
             if(from_type === "binary" && to_type === "hexadecimal") {
-                return TextConverter.binaryTohex(from);
+                return TextConverter.binaryToHex(from);
 
             } else if(from_type === "binary" && to_type === "base64") {
                 return TextConverter.hexToBase64(
