@@ -56,11 +56,20 @@
             "val": "Detach from session",
             "key": "[Ctrl] [b], [d]"
         }, {
-            "val": "Rename a window",
+            "val": "Rename current window",
             "key": "[Ctrl] [b], [,]"
+        }, {
+            "val": "Close current window",
+            "key": "[Ctrl] [b], [&]"
         }, {
             "val": "List windows",
             "key": "[Ctrl] [b], [w]"
+        }, {
+            "val": "Previous window",
+            "key": "[Ctrl] [b], [{]"
+        }, {
+            "val": "Next window",
+            "key": "[Ctrl] [b], [}]"
         }],
         "Pane Control": [{
             "val": "Split pane horizontally",
@@ -139,6 +148,9 @@
         }, {
             "val": "Re-attach a detached session (and detach it from elsewhere)",
             "key": "tmux attach -d"
+        }, {
+            "val": "Delete session",
+            "key": "tmux kill-session -t"
         }]
     }
 }
