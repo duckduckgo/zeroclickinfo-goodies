@@ -47,23 +47,23 @@
             },
             {
                 "val": "Add an ability point to the champion's ultimate ability.",
-                "key": "[Ctrl]+[R]"
+                "key": "[Ctrl] + [R]"
             },
             {
                 "val": "Cast champion's 1st ability on self (must be a support spell).",
-                "key": "[Alt]+[Q] or [Q]+[F1]"
+                "key": "[Alt] + [Q] or [Q] + [F1]"
             },
             {
                 "val": "Cast champion's 2nd ability on self (must be a support spell).",
-                "key": "[Alt]+[W] or [W]+[F1]"
+                "key": "[Alt] + [W] or [W] + [F1]"
             },
             {
                 "val": "Cast champion's 3rd ability on self (must be a support spell).",
-                "key": "[Alt]+[E] or [E]+[F1]"
+                "key": "[Alt] + [E] or [E] + [F1]"
             },
             {
                 "val": "Cast champion's ultimate ability on self (must be a support spell).",
-                "key": "[Alt]+[R] or [R]+[F1]"
+                "key": "[Alt] + [R] or [R] + [F1]"
             },
             {
                 "val": "Smart cast champion's 1st ability.",
@@ -87,7 +87,7 @@
             },
             {
                 "val": "Command Pet (E.g. Tibbers Tibbers).",
-                "key": "[Alt]+[Right Click]"
+                "key": "[Alt] + [Right Click]"
             },
             {
                 "val": "Stop Command (Champion stops their current course of action).",
@@ -175,11 +175,11 @@
             },
             {
                 "val": "Ping location/Open Radial Menu.",
-                "key": "[Alt]+[Left Click]"
+                "key": "[Alt] + [Left Click]"
             },
             {
                 "val": "Retreat Ping location/Open Radial Menu.",
-                "key": "[Ctrl]+[Left Click]"
+                "key": "[Ctrl] + [Left Click]"
             },
             {
                 "val": "Move camera to corresponding ally champion (camera must be unlocked).",
@@ -229,19 +229,19 @@
             },
             {
                 "val": "Plays Champion's joke.",
-                "key": "/joke, /j or Ctrl+1"
+                "key": "/joke, /j or Ctrl + 1"
             },
             {
                 "val": "Plays Champion's taunt.",
-                "key": "/taunt, /t or Ctrl+2"
+                "key": "/taunt, /t or Ctrl + 2"
             },
             {
                 "val": "Starts the Champion dance sequence.",
-                "key": "/dance, /d or Ctrl+3"
+                "key": "/dance, /d or Ctrl + 3"
             },
             {
                 "val": "Plays Champion's laugh.",
-                "key": "/laugh, /l or Ctrl+4"
+                "key": "/laugh, /l or Ctrl + 4"
             },
             {
                 "val": "Toggles the effect for your Champion if applicable.",
