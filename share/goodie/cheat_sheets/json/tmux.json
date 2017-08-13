@@ -66,10 +66,10 @@
             "key": "[Ctrl] [b], [w]"
         }, {
             "val": "Previous window",
-            "key": "[Ctrl] [b], [{]"
+            "key": "[Ctrl] [b], [\\{]"
         }, {
             "val": "Next window",
-            "key": "[Ctrl] [b], [}]"
+            "key": "[Ctrl] [b], [\\}]"
         }],
         "Pane Control": [{
             "val": "Split pane horizontally",
