@@ -7,7 +7,7 @@
         "sourceUrl": "https://github.com/telegramdesktop/tdesktop"
     },
     "aliases": [
-        "telegram desktop"
+        "telegramdesktop"
     ],
     "template_type": "keyboard",
     "section_order": [
