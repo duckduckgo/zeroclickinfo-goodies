@@ -14,6 +14,30 @@ triggers startend => "roman", "roman numeral", "roman numerals", "roman number",
 zci is_cached => 1;
 zci answer_type => "roman_numeral_conversion";
 
+# These two lists are used to load the converter without any answer.
+my @roman_to_arabic = (
+    qr/^roman$/i,
+    qr/^convert\s+(?:into|to)\s+arabic\s*(numerals?)?$/i
+);
+my @arabic_to_roman = (
+    qr/^arabic$/i,
+    qr/^convert\s+(?:into|to)\s+roman\s*(numerals?)?$/i
+);
+ 
+# These two lists are used to load the converter with an answer. 
+my @roman_number_to_arabic = (
+    qr/^convert\s+(\D+)\s+(?:into|in|to)\s*arabic\s*(numerals?)?/i,
+    qr/^roman\s+(?:numerals?)?\s*(\D+)$/i,
+    qr/^arabic\s+(?:numerals?)?\s*(\D+)$/i,
+    qr/^(\D+)\s+(?:into|in|to)?\s+arabic\s*(numerals?)?/i
+);    
+my @arabic_number_to_roman = (
+    qr/^convert\s+(\d+)\s+(?:into|in|to)\s*roman\s*(numerals?)?/i,
+    qr/^roman\s+(?:numerals?)?\s*(\d+)$/i,
+    qr/^arabic\s+(?:numerals?)?\s*(\d+)$/i,
+    qr/^(\d+)\s+(?:into|in|to)?\s+roman\s*(numerals?)?/i
+);
+
 handle query => sub {
     my ($query) = @_;
 
@@ -22,30 +46,6 @@ handle query => sub {
     my $input_value = '';
     my $output = 'arabic';
     my $output_value = '';
- 
-    # These two lists are used to load the converter without any answer.
-    my @roman_to_arabic = (
-        qr/^roman$/i,
-        qr/^convert\s+(?:into|to)\s+arabic\s*(numerals?)?$/i
-    );
-    my @arabic_to_roman = (
-        qr/^arabic$/i,
-        qr/^convert\s+(?:into|to)\s+roman\s*(numerals?)?$/i
-    );
- 
-    # These two lists are used to load the converter with an answer. 
-    my @roman_number_to_arabic = (
-        qr/^convert\s+(\D+)\s+(?:into|in|to)\s*arabic\s*(numerals?)?/i,
-        qr/^roman\s+(?:numerals?)?\s*(\D+)$/i,
-        qr/^arabic\s+(?:numerals?)?\s*(\D+)$/i,
-        qr/^(\D+)\s+(?:into|in|to)?\s+arabic\s*(numerals?)?/i
-    );    
-    my @arabic_number_to_roman = (
-        qr/^convert\s+(\d+)\s+(?:into|in|to)\s*roman\s*(numerals?)?/i,
-        qr/^roman\s+(?:numerals?)?\s*(\d+)$/i,
-        qr/^arabic\s+(?:numerals?)?\s*(\d+)$/i,
-        qr/^(\d+)\s+(?:into|in|to)?\s+roman\s*(numerals?)?/i
-    );
     
     if (any { $query =~ $_ } @roman_to_arabic) {
         # Default settings, nothing to do.
