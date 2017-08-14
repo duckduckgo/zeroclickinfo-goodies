@@ -8,6 +8,8 @@ DDH.roman = DDH.roman || {};
      * We rely on the substractive notation.
      */
     
+    var initiated = false;
+    
     var romanTable = {
         'I': 1,
         'V': 5,
@@ -180,6 +182,12 @@ DDH.roman = DDH.roman || {};
         
         return {
             onShow: function() {
+                /* Mechanism to avoid the init logic running multiple times. */
+                if (initiated) {
+                    return;
+                }
+                initiated = true;
+                
                 var $converter = buildConverter(input, output);
                 
                 $('.converter__input__label').html($converter.inputLabel);
