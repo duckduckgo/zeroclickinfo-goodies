@@ -7,7 +7,8 @@
         "sourceUrl": "http://leagueoflegends.wikia.com/wiki/Hotkeys_and_commands"
     },
     "aliases": [
-        "league of legends"
+        "league of legends",
+        "league"
     ],
     "template_type": "keyboard",
     "section_order": [
