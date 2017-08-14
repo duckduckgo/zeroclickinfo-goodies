@@ -21,7 +21,7 @@ sub build_test {
         templates => {
             group => 'text',
             options => {
-                subtitle_content => 'DDH.roman.roman'
+                subtitle_content => 'DDH.roman.content'
             }
         }
     });
