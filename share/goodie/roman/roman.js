@@ -8,8 +8,6 @@ DDH.roman = DDH.roman || {};
      * We rely on the substractive notation.
      */
     
-    var initiated = false;
-    
     var romanTable = {
         'I': 1,
         'V': 5,
@@ -180,13 +178,14 @@ DDH.roman = DDH.roman || {};
         var inputValue = ops.data.input_value;
         var outputValue = ops.data.output_value;
         
+        var initiated = false;
+        
         return {
             onShow: function() {
                 /* Mechanism to avoid the init logic running multiple times. */
                 if (initiated) {
                     return;
                 }
-                initiated = true;
                 
                 var $converter = buildConverter(input, output);
                 
@@ -219,6 +218,8 @@ DDH.roman = DDH.roman || {};
                         $converter.input.val(input);
                     }
                 });
+                
+                initiated = true;
             }
         };  
     };
