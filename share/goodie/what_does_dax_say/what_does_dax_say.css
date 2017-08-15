@@ -1,0 +1,10 @@
+.zci--what_does_dax_say .what_does_dax_say__body {
+    font-family: Consolas, Menlo, Monaco, monospace;
+    margin: 1em 0;
+}
+.zci--what_does_dax_say .what_does_dax_say__pre {
+    white-space: pre;
+}
+.zci--what_does_dax_say .what_does_dax_say__bowtie {
+    color: rgb(70, 154, 40);
+}
