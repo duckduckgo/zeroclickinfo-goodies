@@ -1,0 +1,61 @@
+{
+    "id": "binaryinfo_cheat_sheet",
+    "name": "Binary",
+    "description": "Very Basic Information Regarding Binary",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/binary_number"
+    },
+
+    "aliases": [
+        "binary info", "what is binary", "binary"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "What is Binary?",
+        "How to use Binary",
+        "8 Bits of Binary (one byte)"
+    ],
+
+    "sections": {
+        "What is Binary?": [
+            {
+                "key": "Base 2",
+                "val": "Binary is known as a Base 2 number system meaning that numbers are typically represented with either a 1 or a 0"
+            },
+            {
+                "key": "Usage",
+                "val": "The most common usage of the Binary system is within nearly all computers or computer based systems, within these systems each digit is known as a bit"
+            }
+        ],
+        "How to use Binary": [
+            {
+                "key": "Basics",
+                "val": "binary is calculated utilizing 2 to the power of x in which x is a base 10 number starting a 0 and increasing by 1 at each bit.\nBinary always begins with the left most digit being the most significant and the rightmost digit being the least significant (always 2^0).\nBinary starts at 2^0 as the far right digit and increase one number at a time moving to the left\n EX: 2^4 2^3 2^2 2^1 2^0\n\n"
+            },
+            { 
+                "key" : "Base 10 Number 11 in Binary",
+                "val": " 1011"
+            },
+            {
+                "key": "Binary Explanation",
+                "val": "Above is a simple example showing the base 10 number 11 in binary form.  For each bit in which there is a 1 and not a 0 it indicates that the binary number at that location exists.  If there is a 0 the binary number at the specified bit does not exist.  So the bit on the far right represents base 10 number 1 (2^0 = 1), the bit to the left of that represents base 10 number 2 (2^1 = 2).  The third bit would represent base 10 number 4 (2^2 = 4) however since it is represented by a 0 the number is not added.  Finally the furthest left bit represents base 10 number 8 (2^3 = 8).  If you add up the representative numbers by bit location you get base 10 number 11"
+            }
+        ],
+        "8 Bits of Binary (one byte)": [
+            {
+                "key": "128  64   32   16    8    4    2    1",
+                "val": ""
+            
+            },
+            {
+                "key": "Explanation",
+                "val": "The above is a representation of the first 8 bits of a binary number (2^7 = 128 and is bit 8, 2^0 = 1 and is bit 1).  The numbers on top are the base 10 representations.  So if you have the binary number of 11010101 you add the locations of the amount at each bit location (ie 128 + 64 + 16 + 4 + 1 = 213) to get the base 10 number"
+            
+            }
+        ]
+    }
+}
