@@ -1,0 +1,95 @@
+{
+    "_comment": "* Created with DuckDuckHack, User: areid3, Date: 2016-11-23, Time: 02:15 PM",
+    "id": "rocketLeague_cheat_sheet",
+    "name": "Rocket League - How To Play",
+    "description": "Below is a list of default controls for Rocket League on PC (Mouse & Keyboard), players are able to customize all controls.",
+
+    "metadata": {
+        "sourceName": "rocketleague.wikia.com/wiki/Controls",
+        "sourceUrl" : "http://rocketleague.wikia.com/wiki/Controls"
+    },
+
+    "aliases": [
+        "rl"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "In game controls"
+        
+    ],
+
+    "sections": {
+        "In game controls": [
+            {
+                "key": "W",
+                "val": "Accelerate"
+            },
+            {
+                "key": "S",
+                "val": "Reverse"
+            },
+              {
+                "key": "A, D",
+                "val": "Steer"
+            },
+              {
+                "key": "RMB",
+                "val": "Jump"
+            },
+              {
+                "key": "LMB",
+                "val": "Boost"
+            },
+              {
+                "key": "LShift",
+                "val": "Powerslide"
+            },
+              {
+                "key": "LMB",
+                "val": "Skip Replay"
+            },
+              {
+                "key": "WASD",
+                "val": "Air Steer and Pitch"
+            }, 
+            {
+                "key": "LShift",
+                "val": "Air Roll"
+            },
+              {
+                "key": "N/A",
+                "val": "Camera Swivel"
+            },
+              {
+                "key": "Space",
+                "val": "Focus on Ball"
+            },
+            {
+                "key": "MMB",
+                "val": "Rear View"
+            },
+            {
+                "key": "Tab",
+                "val": "Scoreboard"
+            },
+              {
+                "key": "F",
+                "val": "Voice Chat"
+            },
+              {
+                "key": "T",
+                "val": "Text Chat"
+            },
+              {
+                "key": "Y",
+                "val": "Team Text Chat"
+            },
+              {
+                "key": "1,2,3,4",
+                "val": "Quick Chat"
+            }
+        ]
+    }
+}
