@@ -3,11 +3,14 @@
     "name": "Telegram Desktop",
     "description": "List of useful keyboard shortcuts for Telegram Desktop",
     "metadata": {
-        "sourceName": "Telegram Desktop",
-        "sourceUrl": "https://github.com/telegramdesktop/tdesktop"
+        "sourceName": "Telegram Desktop Wiki",
+        "sourceUrl": "https://github.com/telegramdesktop/tdesktop/wiki/Keyboard-Shortcuts"
     },
     "aliases": [
-        "telegramdesktop"
+        "telegramdesktop",
+        "telegram messenger desktop",
+        "desktop telegram",
+        "desktoptelegram"
     ],
     "template_type": "keyboard",
     "section_order": [
