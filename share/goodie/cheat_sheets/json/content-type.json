@@ -1,0 +1,69 @@
+{
+  "id": "content_type_cheat_sheet",
+  "name": "Content Types",
+  "description": "Content-types for several extensions.",
+  "metadata": {
+    "sourceName": "Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Media_type"
+  },
+  "aliases": [
+    "media type",
+    "dataurl types",
+    "mime type",
+    "multipurpose internet mail extensions"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Text",
+    "Image",
+    "Application"
+  ],
+  "sections": {
+    "Text": [
+      {
+        "key": ".css",
+        "val": "text/css"
+      },
+      {
+        "key": ".html",
+        "val": "text/html"
+      },
+      {
+        "key": ".htm",
+        "val": "text/html"
+      },
+      {
+        "key": ".txt",
+        "val": "text/plain"
+      }
+    ],
+    "Image": [
+      {
+        "key": ".gif",
+        "val": "image/gif"
+      },
+      {
+        "key": ".ico",
+        "val": "image/x-icon"
+      },
+      {
+        "key": ".jpeg",
+        "val": "image/jpeg"
+      },
+      {
+        "key": ".png",
+        "val": "image/png"
+      }
+    ],
+    "Application": [
+      {
+        "key": ".js",
+        "val": "application/javascript"
+      },
+      {
+        "key": ".json",
+        "val": "application/json"
+      }
+    ]
+  }
+}
