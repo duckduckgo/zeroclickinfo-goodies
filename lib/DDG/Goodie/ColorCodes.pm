@@ -23,7 +23,7 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmy     => 'cmy',
         cmyk    => 'cmyk',
         cmyb    => 'cmyk',
-        );
+);
 
 # Eliminate NBS_ISCC sub-dictionaries from our lookups.
 # They contain "idiosyncratic" color names (including 'email' in NBS_ISCC::M) which will
@@ -31,7 +31,6 @@ my %types = ( # hash of keyword => Convert::Color prefix
 my $color_dictionaries = join(',', grep { $_ !~ /^nbs-iscc-/ } map { $_->id } Color::Library->dictionaries);
 
 my $typestr = join '|', sort { length $b <=> length $a } keys %types;
-$typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 
 triggers query_raw => qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
@@ -57,15 +56,12 @@ my %trigger_filler = map { $_ => 1 } (qw( code ));
 my $color_mix = Color::Mix->new;
 
 sub percentify {
-    my @out;
-    push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
-    return @out;
+    return map { ($_ <= 1 ? round(($_ * 100))."%" : round($_)) } @_;
 }
 
 handle matches => sub {
 
     my $color;
-    my $filler_count;
     my $inverse;
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
@@ -73,7 +69,7 @@ handle matches => sub {
 
     s/\sto\s(?:$typestr)//;
 
-    $filler_count = 0;
+    my $filler_count = 0;
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
@@ -89,30 +85,29 @@ handle matches => sub {
         }
     }
 
-    return unless $color;                   # Need a color to continue!
+    return unless $color;
     $color =~ s/\sto\s//;
 
     return if $filler_count;
 
     my $alpha = "1";
-    $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
-    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
-        $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
+    $color =~ s/(,\s*|\s+)/,/g;
+    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
+        $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3);
         $type = 'rgb8';
     } elsif ($color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e) { #hack rgba into rgb and extract alpha
         $type = 'rgb8';
     } else {
         try {
-            # See if we can find the color in one of our dictionaries.
             $color = join(',', Convert::Color::Library->new($color_dictionaries . '/' . $color)->as_rgb8->hex);
-            $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
+            $type = 'rgb8';
         };
     }
     
-    my $col = try  { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
-    return unless $col;                                       # Guess not.
+    my $col = try  { Convert::Color->new("$type:$color") };
+    return unless $col;
 
-    if ($inverse) {                                           # We triggered on the inverse, so do the flip.
+    if ($inverse) {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
