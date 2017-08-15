@@ -12,8 +12,15 @@ DDH.cheat_sheets.build = function(ops) {
           path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
 
-        // Change number of columns to show, if mentioned in the cheat sheet
-        if (columns && columns >= 1 && columns <= 4)
+        // Default columns to 2, for `template` and `code` template types
+        if (template_type == 'terminal' || template_type == 'code') {
+            showColumns = 2;
+        }
+
+        // Change number of columns to show, if mentioned in the cheat sheet.
+        // Keep this check below the template_type check (valid for `terminal` and `code`),
+        // so that default 2-column layout can be overwritten using `columns` parameter explicitly
+        if (columns && columns > 1 && columns < 4)
             showColumns = columns;
 
         $.each(section_order, function(i, section) {
