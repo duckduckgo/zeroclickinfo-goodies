@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "prolog syntax", "prolog cheatsheet", "prolog predicates", "prolog predicate"
+        "prolog predicates", "prolog predicate"
     ],
 
     "template_type": "code",
@@ -65,7 +65,7 @@
         "Arithmetic Builtins": [
             {
                 "key": "is/2",
-                "val": "Evaluation: Z is T evaluates the arithmetical term T and the result is unified with the variable Z. X is 3 + 5. X = 8 "
+                "val": "Evaluation: Z is T evaluates the arithmetical term T and the result is unified with the variable Z. X is 3 + 5. X = 8"
             },
             {
                 "key": "=:=",
