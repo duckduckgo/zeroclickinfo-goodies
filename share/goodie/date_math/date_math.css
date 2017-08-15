@@ -1,0 +1,19 @@
+.zci--date_math .input--op-sign {
+  height: 26px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.zci--date_math input[type=number]::-webkit-inner-spin-button,
+.zci--date_math input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.zci--date_math .date--start {
+  width: 100%;
+}
+
+.zci--date_math input[type=number] {
+  -moz-appearance: textfield;
+}

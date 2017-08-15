@@ -1,0 +1,37 @@
+<div class="gw .container" style="margin-bottom:1em">
+  <span class="input--date sixty">
+    <span class="frm g sixty">
+      <p class="frm__desc tx--11">DATE</p>
+      <input type="text" class="frm__input date--start" />
+    </span>
+    <span class="frm input--time input--numeric g forty">
+      <p class="frm__desc tx--11">TIME</p>
+      <input type="text" maxlength='2' pattern='^(2[0-3]|[0-1]?[0-9])$'
+        size='2' class="input--hour frm__input" />
+      <span class="sep--time">:</span>
+      <input type="text" maxlength='2' pattern='^([0-5][0-9]|[0-9])$'
+        size='2' class="input--minute frm__input" />
+      <span class="sep--time">:</span>
+      <input type="text" maxlength='2' pattern='^([0-5][0-9]|[0-9])$'
+        size='2' class="input--second frm__input" />
+    </span>
+  </span>
+  <span class="frm g ten">
+    <p class="frm__desc tx--11">ACTION</p>
+    <span class="btn ddgsi-plus input--op-sign" />
+  </span>
+  <span class="input--op g thirty">
+    <p class="frm__desc pull--left tx--11">DURATION</p>
+    <span class="frm op--select">
+      <input type="number" class="frm__input input--op-amt g forty"/>
+      <span class="frm__select g fifty" style="height:2em">
+        <select class="input--op-type" style="height:2em"/>
+      </span>
+    </span>
+  </span>
+</div>
+
+<div class="result--area">
+  <p class="tx--11">RESULTING DATE</p>
+  <span class="tx--21 tx-clr--slate date--result c-base__title" />
+</div>

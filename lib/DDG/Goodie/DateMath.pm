@@ -7,6 +7,9 @@ with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::NumberStyler';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
+use List::AllUtils qw(firstidx);
+use DateTime::Locale;
+use Try::Tiny;
 
 triggers any => qw(second minute hour day week month year);
 triggers any => qw(seconds minutes hours days weeks months years);
@@ -31,12 +34,6 @@ sub get_action_for {
     return '-' if $action =~ /^(\-|minus|ago|subtract|before)$/i;
 }
 
-sub is_clock_unit {
-    my $unit = shift;
-    return $unit =~ /hour|minute|second/i if defined $unit;
-    return 0;
-}
-
 sub should_use_clock {
     my ($unit, $form) = @_;
     return 1 if is_clock_unit($unit);
@@ -45,14 +42,14 @@ sub should_use_clock {
 }
 
 sub format_result {
-    my ($out_date, $use_clock) = @_;
-    my $output_date = date_output_string($out_date, $use_clock);
+    my ($out_date) = @_;
+    my $output_date = date_output_string($out_date);
     return $output_date;
 }
 
 sub format_input {
-    my ($input_date, $action, $unit, $input_number, $use_clock) = @_;
-    my $in_date    = date_output_string($input_date, $use_clock);
+    my ($input_date, $action, $unit, $input_number) = @_;
+    my $in_date    = date_output_string($input_date);
     my $out_action = "$action $input_number $unit";
     return "$in_date $out_action";
 }
@@ -75,53 +72,53 @@ my $time_12h = time_12h_regex();
 my $relative_dates = relative_dates_regex();
 
 sub build_result {
-    my ($result, $formatted) = @_;
-        return $result, structured_answer => {
-            meta => {
-                signal => 'high',
+    my ($start, $action) = @_;
+    return 'DateMath', structured_answer => {
+        meta => {
+            signal => 'high',
+        },
+        data => {
+            operation => {
+                sign   => $action->{operation},
+                amount => $action->{amount},
+                type   => $action->{type},
             },
-            data => {
-                title    => "$result",
-                subtitle => "$formatted",
+            start_date => $start,
+        },
+        templates => {
+            group   => 'base',
+            options => {
+                content => 'DDH.date_math.content',
             },
-            templates => {
-                group => 'text',
-            },
-        };
-
+        },
+    };
 }
 
 sub get_result_relative {
-    my ($date, $use_clock) = @_;
+    my ($date) = @_;
     return unless $date =~ $relative_dates;
-    my $parsed_date = parse_datestring_to_date($date);
-    my $result = format_result $parsed_date, $use_clock or return;
-    return build_result($result, ucfirst $date);
-}
-
-sub calculate_new_date {
-    my ($compute_number, $unit, $input_date) = @_;
-    my $dur = get_duration $compute_number, $unit;
-    return $input_date->clone->add_duration($dur);
+    $date =~ $ago_re or $date =~ $from_re;
+    my $action = $+{action} or return;
+    my $number = $+{number} or return;
+    my $unit   = $+{unit}   or return;
+    return get_result_action($action, undef, $number, $unit);
 }
 
 sub get_result_action {
-    my ($action, $date, $number, $unit, $use_clock) = @_;
+    my ($action, $date, $number, $unit) = @_;
     $action = get_action_for $action or return;
     my $input_number = str2nbr($number);
     my $style = number_style_for($input_number) or return;
     my $compute_num = $style->for_computation($input_number);
-    my $out_num     = $style->for_display($input_number);
 
     my $input_date = parse_datestring_to_date(
         defined($date) ? $date : "today") or return;
 
-    my $compute_number = $action eq '-' ? 0 - $compute_num : $compute_num;
-    my $out_date = calculate_new_date $compute_number, $unit, $input_date;
-    $unit .= 's' if abs($compute_number) != 1;
-    my $result = format_result($out_date, $use_clock);
-    my $formatted_input = format_input($input_date, $action, $unit, $out_num, $use_clock);
-    return build_result($result, $formatted_input);
+    return build_result($input_date->epoch, {
+            operation => $action,
+            type => $unit,
+            amount => abs($compute_num),
+    });
 }
 
 my $what_re = qr/what ((is|was|will) the )?/i;
@@ -143,11 +140,8 @@ handle query_lc => sub {
     my $unit   = $+{unit};
     my $day_or_time   = $+{day_or_time};
 
-    my $specified_time = $query =~ /$time_24h|$time_12h/;
-    my $use_clock = $specified_time || should_use_clock $unit, $day_or_time;
-
-    return get_result_relative($date, $use_clock) unless defined $number;
-    return get_result_action $action, $date, $number, $unit, $use_clock;
+    return get_result_relative($date) unless defined $number;
+    return get_result_action $action, $date, $number, $unit;
 };
 
 1;
