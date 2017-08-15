@@ -279,7 +279,8 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
         hexToText: function(hex) {
-            return hex.split(/\s/).map(function (val) {
+            var hex = hex.replace(/\s|0x/g, "").match(/.{1,2}/g).join(" ");
+            return hex.split(/\s/).map(function(val) {
                 return String.fromCharCode(parseInt(val, 16));
             }).join("");
         },
