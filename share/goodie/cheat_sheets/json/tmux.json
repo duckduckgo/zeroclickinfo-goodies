@@ -71,7 +71,7 @@
             "val": "Next window",
             "key": "[Ctrl] [b], [n]"
         }, {
-            "val": "Find window",
+            "val": "Search for text in windows",
             "key": "[Ctrl] [f]"
         }],
         "Pane Control": [{
@@ -161,14 +161,20 @@
             "val": "Start a new session",
             "key": "tmux"
         }, {
+            "val": "Start a new session with the name chosen",
+            "key": "tmux new -s <session-name>"
+        }, {
+            "val": "List all sessions",
+            "key": "tmux ls"
+        }, {
             "val": "Re-attach a detached session",
-            "key": "tmux attach"
+            "key": "tmux attach -t <target-session>"
         }, {
             "val": "Re-attach a detached session (and detach it from elsewhere)",
-            "key": "tmux attach -d"
+            "key": "tmux attach -d -t <target-session>"
         }, {
             "val": "Delete session",
-            "key": "tmux kill-session -t"
+            "key": "tmux kill-session -t <target-session>"
         }]
     }
 }
