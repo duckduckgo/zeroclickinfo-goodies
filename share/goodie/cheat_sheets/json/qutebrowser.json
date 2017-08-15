@@ -32,10 +32,6 @@
             },
             {
                 "key": "k",
-                "val": "scroll down"
-            },
-            {
-                "key": "j",
                 "val": "scroll up"
             },
             {
@@ -65,7 +61,7 @@
                 "val": "previous tab"
             },
             {
-                "key": "T",
+                "key": "<num>T",
                 "val": "select tab"
             },
             {
@@ -117,7 +113,7 @@
                 "val": "hint in new tab"
             },
             {
-                "key": ";*",
+                "key": ";<key>",
                 "val": "extended hints"
             }
         ],
@@ -151,10 +147,6 @@
             {
                 "key": "m",
                 "val": "save quickmark"
-            },
-            {
-                "key": ":bookmark-load",
-                "val": "load bookmark"
             }
         ],
         "Copy/Paste": [
@@ -177,7 +169,7 @@
         ],
         "Modes": [
             {
-                "key": "<ESC>",
+                "key": "<esc>",
                 "val": "return to normal mode"
             },
             {
@@ -185,7 +177,7 @@
                 "val": "insert mode (type text)"
             },
             {
-                "key": "Ctrl-v",
+                "key": "ctrl-v",
                 "val": "passthrough mode"
             },
             {
