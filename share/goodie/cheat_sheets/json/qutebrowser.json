@@ -5,7 +5,7 @@
 
     "metadata": {
         "sourceName": "qutebrowser quickstart guide",
-        "sourceUrl" : "http://qutebrowser.org/doc/quickstart.html"
+        "sourceUrl" : "https://qutebrowser.org/doc/quickstart.html"
     },
 
     "aliases": [
@@ -19,7 +19,7 @@
         "History",
         "Page Navigation and Hinting",
         "Searching",
-        "Bookmarks and Quckmarks",
+        "Bookmarks and Quickmarks",
         "Copy/Paste",
         "Modes"
     ],
@@ -80,11 +80,11 @@
         "History": [
             {
                 "key": "H",
-                "val": "backwards in history"
+                "val": "backward in history"
             },
             {
                 "key": "L",
-                "val": "forwards in history"
+                "val": "forward in history"
             }
         ],
         "Page Navigation and Hinting": [
@@ -135,7 +135,7 @@
                 "val": "search previous occurrence"
             }
         ],
-        "Bookmarks and Quckmarks": [
+        "Bookmarks and Quickmarks": [
             {
                 "key": "b",
                 "val": "load quickmark"
