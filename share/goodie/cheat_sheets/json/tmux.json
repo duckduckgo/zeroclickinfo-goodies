@@ -70,9 +70,6 @@
         }, {
             "val": "Next window",
             "key": "[Ctrl] [b], [n]"
-        }, {
-            "val": "Search for text in windows",
-            "key": "[Ctrl] [b], [f]"
         }],
         "Pane Control": [{
             "val": "Split pane horizontally",
