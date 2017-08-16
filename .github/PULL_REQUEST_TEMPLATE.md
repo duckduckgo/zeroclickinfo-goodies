@@ -55,7 +55,7 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
 - [ ] The number of reviews is appropriate for this type of PR
 - [ ] The commit message is clear, coherent and fitting
 
-**Pull Request Review Guidelines**: https://docs.duckduckhack.com/programming-mission/pr-review.html
+**Pull Request Review Guidelines**: https://docs.duckduckhack.com/testing-reference/pr-review.html
 
 <!-- DO NOT REMOVE -->
 ---
