@@ -537,6 +537,7 @@ ddg_goodie_test(
     'e.png' => undef,
     '(929) 665-83-03' => undef,
     '(343) 270-55-66' => undef,
+    '2014 E350' => undef,
     ')1108278829' => undef,
 );
 

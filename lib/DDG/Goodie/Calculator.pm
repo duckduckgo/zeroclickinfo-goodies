@@ -189,6 +189,7 @@ handle query => sub {
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
     return if $query =~ m/^\(\d+\)\s+\d+\d+/;
+    return if $query =~ m/^[2][0-9]{3}\s(?:E|e)/; # Prevents overtriggering on car models
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
     return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|cbrt|cubed?)e?$/i; # stops empty functions at end or with <func>e
