@@ -122,49 +122,45 @@ DDH.roman = DDH.roman || {};
         var previousComponent;
         var romanDigits = '';
         
-        [1000, 100, 10, 1].forEach(function (component) {
-            var leftDigit = Math.floor(arabicValue / component);
+        var components = [1000, 100, 10, 1];
+        for (var i = 0; i < components.length; i++) {
+            var leftDigit = Math.floor(arabicValue / components[i]);
 
             if (leftDigit >= 1 && leftDigit <= 3) {
-                var romanDigit = arabicTable[component].digit.repeat(leftDigit);
+                var romanDigit = arabicTable[components[i]].digit.repeat(leftDigit);
                 romanDigits += romanDigit;
             } else if (leftDigit == 4) {
-                var romanDigit = arabicTable[component].before;
+                var romanDigit = arabicTable[components[i]].before;
                 romanDigits += romanDigit;
             } else if (leftDigit == 5) {
-                var romanDigit = arabicTable[component * 5].digit;
+                var romanDigit = arabicTable[components[i] * 5].digit;
                 romanDigits += romanDigit;
             } else if (leftDigit >= 6 && leftDigit <= 8) {
-                var romanDigit = arabicTable[component * 5].digit;
-                var end = arabicTable[component].digit.repeat(leftDigit - 5);
+                var romanDigit = arabicTable[components[i] * 5].digit;
+                var end = arabicTable[components[i]].digit.repeat(leftDigit - 5);
                 romanDigits += romanDigit + end;
             } else if (leftDigit == 9) {
                 var romanDigit = arabicTable[previousComponent].digit;
-                romanDigits += arabicTable[component].digit + romanDigit;
+                romanDigits += arabicTable[components[i]].digit + romanDigit;
             } else {
                 /* if 0 then there is nothing to do. */
             }
             
-            previousComponent = component;
-            arabicValue -= component * leftDigit;
-        });
+            previousComponent = components[i];
+            arabicValue -= components[i] * leftDigit;
+        };
         
         return romanDigits;
-    }
-    
-    function upperCaseFirstLetter (string) {
-        var first = string.charAt(0);
-        return first.toUpperCase() + string.slice(1);
     }
     
     function buildConverter(input, output) {        
         var $root = DDH.getDOM('roman');
         
         return {
-            inputLabel: upperCaseFirstLetter(input),
+            inputLabel: DDG.capitalize(input),
             isInputValid: validationTable[input],
             input: $root.find('.converter__input__field'),
-            outputLabel: upperCaseFirstLetter(output),
+            outputLabel: DDG.capitalize(output),
             isOutputValid: validationTable[output],
             output: $root.find('.converter__output__field'),
             inputToOutput: conversionTable[input][output],
