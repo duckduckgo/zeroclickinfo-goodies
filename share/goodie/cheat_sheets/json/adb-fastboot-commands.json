@@ -8,9 +8,7 @@
     },
     "aliases": [
         "adb",
-        "fastboot",
-	"adb commands",
-	"fastboot commands"
+        "fastboot"
     ],
     "template_type": "terminal",
     "section_order": [
