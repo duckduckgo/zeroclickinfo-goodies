@@ -57,7 +57,8 @@ handle query => sub {
             $input_value = uc $input_value;
             $output_value = arabic $input_value;
         } else {
-            $input_value = '';
+            # Malformed input (not a roman number), we don't trigger the ia.
+            return;
         }
     } elsif (any { ($input_value) = $query =~ $_ } @arabic_number_to_roman) {
         $input = 'arabic';
@@ -66,7 +67,7 @@ handle query => sub {
         $output_value = Roman $input_value;
     } else {
         # In this case, we do not trigger the ia.  
-        return undef;
+        return;
     }
 
     return 'roman numeral converter', structured_answer => {
