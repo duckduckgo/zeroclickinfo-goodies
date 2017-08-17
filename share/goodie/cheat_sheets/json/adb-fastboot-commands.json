@@ -18,6 +18,10 @@
     "sections": {
         "adb": [
             {
+                "val": "Direct adb to listen on all interfaces for a connection.",
+                "key": "-a"
+            },
+            {
                 "val": "Direct an adb command to the only attached USB device.",
                 "key": "-d"
             },
@@ -30,12 +34,32 @@
                 "key": "-s <serialNumber>"
             },
             {
-                "val": "Prints a list of all attached emulator/device instances.",
-                "key": "devices"
+                "val": "Simple product name like 'sooner', or a relative/absolute path to a product out directory like 'out/target/product/sooner'. If -p is not specified, the ANDROID_PRODUCT_OUT environment variable is used, which must be an absolute path.",
+                "key": "-p <product name or path>"
+            },
+            {
+                "val": "Name of adb server host (default: localhost).",
+                "key": "-H"
+            },
+            {
+                "val": "Port of adb server (default: 5037).",
+                "key": "-P"
+            },
+            {
+                "val": "Prints a list of all attached emulator/device instances ('-l' will also list device qualifiers).",
+                "key": "devices \\[-l\\]"
             },
             {
                 "val": "Prints a list of supported adb commands.",
                 "key": "help"
+            },
+            {
+                "val": "Connect to a device via TCP/IP. Port 5555 is used by default if no port number is specified.",
+                "key": "connect <host>\\[:<port>\\]"
+            },
+            {
+                "val": "Disconnect from a TCP/IP device. Port 5555 is used by default if no port number is specified. Using this command with no additional arguments will disconnect from all connected TCP/IP devices.",
+                "key": "disconnect \\[<host>\\[:<port>\\]\\]"
             },
             {
                 "val": "Prints the adb version number.",
@@ -43,23 +67,31 @@
             },
             {
                 "val": "Prints log data to the screen.",
-                "key": "[logcat [<option>] [<filter-specs>]]"
+                "key": "logcat \\[<option>\\] \\[<filter-specs>\\]"
             },
             {
-                "val": "Prints dumpsys, dumpstate, and logcat data to the screen, for the purposes of bug reporting.",
-                "key": "bugreport"
+                "val": "Return all information from the device that should be included in a zipped bug report.",
+                "key": "bugreport \\[<path>\\]"
             },
             {
                 "val": "Prints a list of available JDWP processes on a given device.",
                 "key": "jdwp"
             },
             {
-                "val": "Pushes an Android application (specified as a full path to an .apk file) to the data file of an emulator/device.",
-                "key": "install <path-to-apk>"
+                "val": "Pushes an Android application to an emulator/device and installs it. (-l: forward lock application) (-r: replace existing application) (-t: allow test packages) (-s: install application on sdcard) (-d: allow version code downgrade (debuggable packages only)) (-g: grant all runtime permissions)",
+                "key": "install [-lrtsdg] <path-to-apk>"
             },
             {
-                "val": "Copies a specified file from an emulator/device instance to your development computer.",
-                "key": "pull <remote> <local>"
+                "val": "Remove this app package from the device. ('-k' means keep the data and cache directories)",
+                "key": "uninstall [-k] <package>"
+            },
+            {
+                "val": "Copies a specified file from an emulator/device instance to your computer. -a preserves the timestamp and mode.",
+                "key": "pull [-a] <remote> <local>"
+            },
+            {
+                "val": "Copy host->device only if changed. -l means list but don't copy.",
+                "key": "sync \\[ <directory> \\]"
             },
             {
                 "val": "Copies a specified file from your development computer to an emulator/device instance.",
@@ -71,7 +103,7 @@
             },
             {
                 "val": "Run PPP over USB. <tty> — the tty for PPP stream. For example dev:/dev/omap_csmi_ttyl. parm]... &mdash zero or more PPP/PPPD options, such as defaultroute, local, notty, etc. Note that you should not automatically start a PDP connection.",
-                "key": "ppp <tty> [parm]..."
+                "key": "ppp <tty> \\[parameters\\]..."
             },
             {
                 "val": "Prints the adb instance serial number string.",
@@ -94,12 +126,16 @@
                 "key": "kill-server"
             },
             {
-                "val": "Starts a remote shell in the target emulator/device instance.",
-                "key": "shell"
+                "val": "Restarts the adbd daemon with root permissions.",
+                "key": "root"
             },
             {
-                "val": "Issues a shell command in the target emulator/device instance and then exits the remote shell.",
-                "key": "shell [<shellCommand>]"
+                "val": "Run emulator console command.",
+                "key": "emu <command>"
+            },
+            {
+                "val": "Run remote shell command (interactive shell if no command given) (-e: choose escape character, or \"none\"; default '~') (-n: don't read from stdin)  (-T: disable PTY allocation) (-t: force PTY allocation) (-x: disable remote exit codes and stdout/stderr separation)",
+                "key": "shell \\[-e escape\\] \\[-n\\] \\[-Tt\\] \\[-x\\] \\[command\\]"
             }
         ],
         "fastboot": [
@@ -153,7 +189,7 @@
             },
             {
                 "val": "Format a flash partition. Can override the fs type and/or size the bootloader reports.",
-                "key": "format[:[<fs type>][:[<size>]] <partition>"
+                "key": "format\\[:\\[<fs type>\\]\\[:\\[<size>\\]\\] <partition>"
             },
             {
                 "val": "Display a bootloader variable.",
@@ -165,27 +201,23 @@
             },
             {
                 "val": "Download and boot kernel.",
-                "key": "boot <kernel> [ <ramdisk> [ <second> ] ]"
+                "key": "boot <kernel> \\[ <ramdisk> \\[ <second> \\] \\]"
             },
             {
                 "val": "Create bootimage and flash it.",
-                "key": "flash:raw boot <kernel> [ <ramdisk> [ <second> ] ]"
+                "key": "flash:raw boot <kernel> \\[ <ramdisk> \\[ <second> \\] \\]"
             },
             {
                 "val": "List all connected devices [with device paths].",
-                "key": "devices [-l]"
+                "key": "devices \\[-l\\]"
             },
             {
                 "val": "Continue with autoboot.",
                 "key": "continue"
             },
             {
-                "val": "Reboot device [into bootloader].",
-                "key": "reboot [bootloader]"
-            },
-            {
                 "val": "Reboot device into bootloader.",
-                "key": "reboot-bootloader"
+                "key": "reboot \\[bootloader|recovery\\]"
             },
             {
                 "val": "help",
