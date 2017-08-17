@@ -49,7 +49,7 @@ ddg_goodie_test(
     'convert 15 to roman' => build_test('arabic', '15', 'roman', 'XV'),
     'convert 30 into roman' => build_test('arabic', '30', 'roman', 'XXX'),
     'convert to arabic' => build_test('roman', '', 'arabic', ''),
-    'foo to arabic numerals' => build_test('roman', '', 'arabic', '')
+    'foo to arabic numerals' => undef
 );
 
 done_testing;
