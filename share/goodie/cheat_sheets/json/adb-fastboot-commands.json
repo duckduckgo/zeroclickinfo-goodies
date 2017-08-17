@@ -43,7 +43,7 @@
             },
             {
                 "val": "Prints log data to the screen.",
-                "key": "logcat [<option>] [<filter-specs>]"
+                "key": "logcat \[<option>\] \[<filter-specs>\]"
             },
             {
                 "val": "Prints dumpsys, dumpstate, and logcat data to the screen, for the purposes of bug reporting.",
