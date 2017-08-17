@@ -3,8 +3,8 @@
     "name": "Adb & Fastboot Commands Cheat Sheet",
     "description": "This cheat sheet provides a list of useful adb & fastboot commands for debugging Android devices. ",
     "metadata": {
-        "sourceName": "List of adb commands - Linuxtopia",
-        "sourceUrl": "http://www.linuxtopia.org/online_books/android/devguide/guide/developing/tools/android_adb_commandsummary.html"
+        "sourceName": "Android Debugging Bridge (adb) - android.com",
+        "sourceUrl": "https://developer.android.com/studio/command-line/adb.html"
     },
     "aliases": [
         "adb",
