@@ -1,29 +1,21 @@
 .zci--roman .converter {
-    font-size: 1.5em;
-    font-weight: bold;
+    width: 100%;
 }
 
 .zci--roman .converter__input, .zci--roman .converter__output {
-    float: left;
-    width: 30%;
+    display: inline-block;
+    margin-top: 1em;
+    margin-left: 0.5em;
 }
 
 .zci--roman .converter__input__label, .zci--roman .converter__output__label {
     display: block;
-    text-align: center;
+    text-align: left;
+    font-size: 1.5em;
 }
 
 .zci--roman .converter__input__field, .zci--roman .converter__output__field {
-    display: block;
     width: 100%;
-    height: 1.5em;
-    font-size: 1.5em;
     text-align: center;
-}
-
-.zci--roman .converter__equal {
-    float: left;
-    width: 10%;
-    margin-top: 2em;
-    text-align: center;
+    font-size: 2em;
 }
