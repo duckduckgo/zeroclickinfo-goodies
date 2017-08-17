@@ -8,6 +8,7 @@ use POSIX;
 use utf8;
 
 triggers startend =>
+    'capacitor',
     'ceramic capacitor',
     'ceramic capacitors',
     'decode ceramic capacitor',
