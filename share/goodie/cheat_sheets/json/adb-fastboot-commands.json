@@ -79,15 +79,15 @@
             },
             {
                 "val": "Pushes an Android application to an emulator/device and installs it. (-l: forward lock application) (-r: replace existing application) (-t: allow test packages) (-s: install application on sdcard) (-d: allow version code downgrade (debuggable packages only)) (-g: grant all runtime permissions)",
-                "key": "install [-lrtsdg] <path-to-apk>"
+                "key": "install \\[-lrtsdg\\] <path-to-apk>"
             },
             {
                 "val": "Remove this app package from the device. ('-k' means keep the data and cache directories)",
-                "key": "uninstall [-k] <package>"
+                "key": "uninstall \\[-k\\] <package>"
             },
             {
                 "val": "Copies a specified file from an emulator/device instance to your computer. -a preserves the timestamp and mode.",
-                "key": "pull [-a] <remote> <local>"
+                "key": "pull \\[-a\\] <remote> <local>"
             },
             {
                 "val": "Copy host->device only if changed. -l means list but don't copy.",
@@ -149,7 +149,7 @@
             },
             {
                 "val": "Write a file to a flash partition.",
-                "key": "flash <partition> [<filename>]"
+                "key": "flash <partition> \\[<filename>\\]"
             },
             {
                 "val": "Locks the device. Prevents flashing.",
@@ -220,8 +220,8 @@
                 "key": "reboot \\[bootloader|recovery\\]"
             },
             {
-                "val": "help",
-                "key": "Show full help menu."
+                "val": "Show full help menu.",
+                "key": "help"
             },
             {
                 "val": "Erase userdata and cache (and format if supported by partition type).",
@@ -269,7 +269,7 @@
             },
             {
                 "val": "Automatically sparse files greater than 'size'. 0 to disable.",
-                "key": "-S <size>[K|M|G]"
+                "key": "-S <size>\\[K|M|G\\]"
             },
             {
                 "val": "Specify slot name to be used if the device supports slots. All operations on partitions that support slots will be done on the slot specified. 'all' can be given to refer to all slots. 'other' can be given to refer to a non-current slot. If this flag is not used, slotted partitions will default to the current active slot.",
@@ -277,7 +277,7 @@
             },
             {
                 "val": "Sets the active slot. If no slot is provided, this will default to the value given by --slot. If slots are not supported, this sets the current slot to be active. This will run after all non-reboot commands.",
-                "key": "-a, --set-active[=<slot>]"
+                "key": "-a, --set-active\\[=<slot>\\]"
             },
             {
                 "val": "Will not flash secondary slots when performing a flashall or update. This will preserve data on other slots.",
