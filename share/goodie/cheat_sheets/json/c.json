@@ -20,7 +20,7 @@
         "Conversion Characters",
         "Escape Sequences",
         "Order of Precedence",
-	"Pointers"
+        "Pointers"
     ],
     "sections": {
         "Arithmetic Operators": [
@@ -283,7 +283,7 @@
                 "key": "[ , ]"
             }
         ],
-	"Pointers": [
+        "Pointers": [
             {
                 "val": "The memory address of the variable",
                 "key": "&"
@@ -300,6 +300,6 @@
                 "val": "Declaring a void pointer",
                 "key": "void *"
             }
-	]
+        ]
     }
 }
