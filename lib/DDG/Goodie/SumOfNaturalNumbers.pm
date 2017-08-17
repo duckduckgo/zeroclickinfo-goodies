@@ -27,11 +27,19 @@ handle remainder => sub {
     # Check if we're getting integers.
     return unless $_ =~ /^(?:from )?(\d+)\s*(to|-)\s*(\d+)$/i;
 
-    if ($1 > $3) {
-	return;
-    } else {
-	my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
-	return 'Sum of natural numbers from ' . commify($1) . ' to ' . commify($3) . ' is ' . commify($sum) . '.';
+    return if ($1 > $3);
+
+    my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
+    my ($from_number, $to_number, $sum) = map { commify($_) } ($1, $3, $sum);
+    my $string_answer = 'Sum of natural numbers from ' . $from_number . ' to ' . $to_number;
+    return $string_answer, structured_answer => {
+        data => {
+            title => "$sum",
+            subtitle => $string_answer
+        },
+        templates => {
+            group => 'text'
+        }
     }
 };
 
