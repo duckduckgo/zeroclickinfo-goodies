@@ -37,6 +37,7 @@ ddg_goodie_test(
     'ceramic capacitor 101' => build_test('100 pF', '101'),
     'ceramic capacitor 330' => build_test('33 pF', '330'),
     '103 ceramic capacitor' => build_test('10 nF', '103'),
+    '103 capacitor' => build_test('10 nF', '103'),
     'ceramic capacitor' => undef,
     'buy ceramic capacitors' => undef,
 );
