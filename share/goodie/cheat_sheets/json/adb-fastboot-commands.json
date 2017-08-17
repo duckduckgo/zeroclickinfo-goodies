@@ -10,7 +10,7 @@
         "adb",
         "fastboot"
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "adb",
         "fastboot"
