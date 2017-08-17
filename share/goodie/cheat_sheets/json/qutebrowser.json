@@ -97,6 +97,14 @@
                 "val": "open link in new tab"
             },
             {
+                "key": "go",
+                "val": "open current url"
+            },
+            {
+                "key": "gO",
+                "val": "open current url link in new tab"
+            },
+            {
                 "key": "r",
                 "val": "reload"
             },
@@ -169,7 +177,7 @@
         ],
         "Modes": [
             {
-                "key": "<esc>",
+                "key": "esc",
                 "val": "return to normal mode"
             },
             {
