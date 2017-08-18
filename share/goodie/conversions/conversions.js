@@ -129,6 +129,7 @@ DDH.conversions = DDH.conversions || {};
 
             // CUSTOM LENGTH UNITS
             {name: 'nauticalmile',          factor: '1.15078 miles'},
+            {name: 'lightyear',             factor: '9460730472580800 meters'},
 
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
@@ -151,7 +152,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'carat',             factor: '0.2 grams'},
             {name: 'atomicmassunit',    factor: '0.000000001660538921 femtograms'},
 
-            // CUSTOM POWER UNIT
+            // CUSTOM POWER UNITS
             {name: 'kilowatt',    factor: '1000 watt'},
             {name: 'megawatt',    factor: '1000 kilowatt'},
             {name: 'gigawatt',    factor: '1000 megawatt'},
@@ -162,13 +163,13 @@ DDH.conversions = DDH.conversions || {};
             // CUSTOM PRESSURE UNITS
             {name: 'barye',     factor: '0.000001 bar'},
             {name: 'Satm',      factor: '1 atm'},
-            {name: 'at',        factor:'0.980665 bar'},
+            {name: 'at',        factor: '0.980665 bar'},
             {name: 'mbar',      factor: '0.001 bar'},
-            {name: 'cbar',      factor:'0.01 bar'},
-            {name: 'dbar',      factor:'0.1 bar'},
-            {name: 'kbar',      factor:'1000 bar'},
-            {name: 'Mbar',      factor:'100000 bar'},
-            {name: 'Gbar',      factor:'100000000 bar'},
+            {name: 'cbar',      factor: '0.01 bar'},
+            {name: 'dbar',      factor: '0.1 bar'},
+            {name: 'kbar',      factor: '1000 bar'},
+            {name: 'Mbar',      factor: '100000 bar'},
+            {name: 'Gbar',      factor: '100000000 bar'},
 
             // CUSTOM SPEED UNITS
             {name: 'knot',     factor: '1.15078 mi/h'},
@@ -501,6 +502,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'yard',           name: 'Yard' },
                 { symbol: 'mile',           name: 'Mile' },
                 { symbol: 'nauticalmile',   name: 'Nautical mile'},
+                { symbol: 'lightyear',      name: 'Light year'},
                 { symbol: 'link',           name: 'Link' },
                 { symbol: 'rod',            name: 'Rod' },
                 { symbol: 'angstrom',       name: 'Angstrom' },
@@ -523,9 +525,9 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'hectogram',      name: 'Hectogram'},
                 { symbol: 'megagram',       name: 'Megagram'},
                 { symbol: 'ton',            name: 'Ton' },
-                { symbol: 'metricton',     name: 'Metric Ton'},
-                { symbol: 'longton',       name: 'Long Ton'},
-                { symbol: 'shortton',      name: 'Short Ton'},
+                { symbol: 'metricton',      name: 'Metric Ton'},
+                { symbol: 'longton',        name: 'Long Ton'},
+                { symbol: 'shortton',       name: 'Short Ton'},
                 { symbol: 'grain',          name: 'Grain' },
                 { symbol: 'dram',           name: 'Dram' },
                 { symbol: 'ounce',          name: 'Ounce' },
@@ -533,10 +535,10 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'hundredweight',  name: 'Hundredweight' },
                 { symbol: 'stick',          name: 'Stick' },
                 { symbol: 'stone',          name: 'Stone' },
-                { symbol: 'metricquintal', name: 'Metric Quintal'},
-                { symbol: 'usquintal',     name: 'US Quintal'},
-                { symbol: 'frenchquintal', name: 'French Quintal'},
-                { symbol: 'troyounce',     name: 'Troy Ounce'},
+                { symbol: 'metricquintal',  name: 'Metric Quintal'},
+                { symbol: 'usquintal',      name: 'US Quintal'},
+                { symbol: 'frenchquintal',  name: 'French Quintal'},
+                { symbol: 'troyounce',      name: 'Troy Ounce'},
                 { symbol: 'slug',           name: 'Slug'},
                 { symbol: 'tola',           name: 'Tola'},
                 { symbol: 'carat',          name: 'Carat'},
