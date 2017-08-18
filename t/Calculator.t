@@ -539,6 +539,7 @@ ddg_goodie_test(
     '(343) 270-55-66' => undef,
     '2014 E350' => undef,
     ')1108278829' => undef,
+    '24score' => undef,
 );
 
 done_testing;
