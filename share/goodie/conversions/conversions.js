@@ -129,7 +129,9 @@ DDH.conversions = DDH.conversions || {};
 
             // CUSTOM LENGTH UNITS
             {name: 'nauticalmile',          factor: '1.15078 miles'},
+            {name: 'astronomicalunit',      factor: '149597870700 meters'},
             {name: 'lightyear',             factor: '9460730472580800 meters'},
+            {name: 'parsec',                factor: '30856775814913673 meters'},
 
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
@@ -504,7 +506,9 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'nauticalmile',   name: 'Nautical mile'},
                 { symbol: 'link',           name: 'Link' },
                 { symbol: 'rod',            name: 'Rod' },
+                { symbol: 'au',             name: 'Astronomical unit'},
                 { symbol: 'lightyear',      name: 'Light year'},
+                { symbol: 'parsec',         name: 'Parsec'},
                 { symbol: 'angstrom',       name: 'Angstrom' },
                 { symbol: 'mil',            name: 'Mil' },
             ],
