@@ -9,6 +9,9 @@
     },
 
     "aliases": [
+        "qute browser",
+        "qute",
+        "qb"
     ],
 
     "template_type": "keyboard",
@@ -173,6 +176,10 @@
             {
                 "key": "yt",
                 "val": "yank page title to clipboard"
+            },
+            {
+                "key": ";y",
+                "val": "yank url of link via hint to clipboard"
             }
         ],
         "Modes": [
@@ -190,7 +197,7 @@
             },
             {
                 "key": "v",
-                "val": "caret mode"
+                "val": "caret mode (select/navigate text)"
             },
             {
                 "key": ":",
