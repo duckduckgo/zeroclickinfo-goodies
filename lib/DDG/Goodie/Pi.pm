@@ -25,9 +25,9 @@ my $PI = '3.14159265358979323846264338327950288419716939937510582097494459230781
 my $PI_max_digits = length($PI)-2;
 
 handle query_raw => sub {
-    
+
     return unless $_ =~ /^(?:pi|π)?\s*(?:to|first)?\s*(?<decimal>\d+)\s*(?:(?:decimal|digit)s?)?\s*(?:of\s+(?:pi|π))?$/i && 
-                        $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
+        $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
 
     my $answer = substr $PI, 0, ( $1 + 2 );
     return $answer, structured_answer => {
