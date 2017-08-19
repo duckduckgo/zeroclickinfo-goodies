@@ -456,7 +456,7 @@ aliases:
   - années-lumière
   - lichtjaar
   - lichtjaren
-  type: length
+type: length
 unit: lightyear
 symbols: [ly]
 ---
