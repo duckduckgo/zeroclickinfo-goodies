@@ -22,10 +22,10 @@ my $PI = '3.14159265358979323846264338327950288419716939937510582097494459230781
          '147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216'.
          '4201989';
 
-my $PI_max_digits = length($PI);
+my $PI_max_digits = length($PI)-2;
 
 handle query_raw => sub {
-
+    
     return unless $_ =~ /^(?:pi|π)?\s*(?:to|first)?\s*(?<decimal>\d+)\s*(?:(?:decimal|digit)s?)?\s*(?:of\s+(?:pi|π))?$/i && 
                         $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
 
