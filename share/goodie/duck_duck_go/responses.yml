@@ -48,7 +48,7 @@ chrome:
   url: https://duck.co/help/desktop/chrome
 community:
   title: "Join our growing community"
-  url: http://duckduckhack.com/
+  url: https://duckduckhack.com/
 develop:
   aliases:
     - developers
@@ -61,7 +61,7 @@ develop:
     - developer
   title: "Want to improve our search results?"
   subtitle: "Visit DuckDuckHack to learn more"
-  url: http://duckduckhack.com/
+  url: https://duckduckhack.com/
 doodle:
   title: "Sometimes Dax gets dressed up for special occasions"
   subtitle: "View our past holiday logos"
@@ -86,7 +86,7 @@ facebook:
 fathead:
   title: "Interested in creating a Fathead Instant Answer?"
   subtitle: "Visit our documentation"
-  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
+  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
 firefox:
   title: "Need help with the Firefox browser?"
   subtitle: "Visit the DuckDuckGo help page for Firefox"
@@ -94,7 +94,7 @@ firefox:
 goodies:
   title: "Interested in creating a Goodie Instant Answer?"
   subtitle: "Visit our documentation"
-  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html
+  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html
 help:
   title: "Need some help?"
   subtitle: "Visit our help page"
@@ -112,7 +112,7 @@ ia:
     - instantanswers
   title: "DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box)"
   subtitle: "Suggest, develop and learn more about Instant Answers at DuckDuckHack"
-  url: http://duckduckhack.com/
+  url: https://duckduckhack.com/
 ie:
   aliases:
     - internetexplorer
@@ -122,15 +122,15 @@ ie:
 irc:
   title: "Want to chat with us on IRC?"
   subtitle: "Visit #duckduckgo on irc.freenode.net"
-  url: http://webchat.freenode.net/?channels=duckduckgo
+  url: https://webchat.freenode.net/?channels=duckduckgo
 longtail:
   title: "Interested in creating a Longtail Instant Answer?"
   subtitle: "Visit our documentation"
-  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
+  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
 opensource:
   title: "Looking for the DuckDuckGo open source projects?"
   subtitle: "Learn more about open source at DuckDuckGo"
-  url: http://duckduckhack.com/
+  url: https://duckduckhack.com/
 opera:
   title: "Need help with the Opera browser?"
   subtitle: "Visit the DuckDuckGo help page for Opera"
@@ -167,8 +167,8 @@ short:
     - shorturl
     - shortdomain
   title: "Need a quicker way to visit DuckDuckGo?"
-  subtitle: "You can also find us at http://ddg.gg"
-  url: http://ddg.gg
+  subtitle: "You can also find us at https://ddg.gg"
+  url: https://ddg.gg
 spice:
   title: "Interested in creating a Spice Instant Answer?"
   subtitle: "Visit our documentation"
@@ -235,4 +235,4 @@ zci:
     - zero-click info
   title: "Zero Click Info is another term for our Instant Answers that show above the search results"
   subtitle: "Learn more about Instant Answers"
-  url: http://duckduckhack.com
+  url: https://duckduckhack.com
