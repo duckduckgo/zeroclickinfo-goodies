@@ -61,13 +61,13 @@ my @help_result = (
         }
     });
 my @irc_result = (
-    'Want to chat with us on IRC? http://webchat.freenode.net/?channels=duckduckgo',
+    'Want to chat with us on IRC? https://webchat.freenode.net/?channels=duckduckgo',
     structured_answer => {
         data => {
             title => 'Want to chat with us on IRC?',
             subtitle_image => undef,
             subtitle_text => 'Visit #duckduckgo on irc.freenode.net',
-            subtitle_url => 'http://webchat.freenode.net/?channels=duckduckgo'
+            subtitle_url => 'https://webchat.freenode.net/?channels=duckduckgo'
         },
         templates => {
             group => 'text',
@@ -109,13 +109,13 @@ my @tor_result = (
         }
     });
 my @shorturl_result = (
-    'Need a quicker way to visit DuckDuckGo? http://ddg.gg',
+    'Need a quicker way to visit DuckDuckGo? https://ddg.gg',
     structured_answer => {
         data => {
             title => 'Need a quicker way to visit DuckDuckGo?',
             subtitle_image => undef,
-            subtitle_text => 'You can also find us at http://ddg.gg',
-            subtitle_url => 'http://ddg.gg'
+            subtitle_text => 'You can also find us at https://ddg.gg',
+            subtitle_url => 'https://ddg.gg'
         },
         templates => {
             group => 'text',
@@ -126,13 +126,13 @@ my @shorturl_result = (
     });
 
 my @zci_result = (
-    'Zero Click Info is another term for our Instant Answers that show above the search results http://duckduckhack.com',
+    'Zero Click Info is another term for our Instant Answers that show above the search results https://duckduckhack.com',
     structured_answer => {
         data => {
             title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
             subtitle_image => undef,
             subtitle_text => 'Learn more about Instant Answers',
-            subtitle_url => 'http://duckduckhack.com'
+            subtitle_url => 'https://duckduckhack.com'
         },
         templates => {
             group => 'text',
