@@ -55,7 +55,6 @@ triggers query_raw => $trigger_and_guard;
 zci is_cached => 1;
 zci answer_type => 'color_code';
 
-my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
 my %trigger_filler = map { $_ => 1 } (qw( code ));
 
 my $color_mix = Color::Mix->new;
@@ -81,8 +80,6 @@ handle query_raw => sub {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
             $type = $types{$q};    # - One of our types.
-        } elsif ($trigger_invert{$q}) {
-            $inverse = 1;          # - An inversion trigger
         } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
             if ($q =~ /(?:^[a-z]+\s)+/) {
                 $filler_count = $filler_count + 1;
