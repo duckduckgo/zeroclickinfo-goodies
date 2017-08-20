@@ -36,7 +36,7 @@ my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
     (?:(inverse|negative|opposite)\s+(?:of)?)?
     (?:
-        red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})|   #handles red: 255 green: 255 blue: 255
+        red:\s*([0-9]{1,3})\s*green:\s*([0-9]{1,3})\s*blue:\s*([0-9]{1,3})| # handles red: x green: y blue: z
         (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|                                 # handles "rgb red color code", "red rgb color code", etc
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                                     # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|                     # handles "rgb color code for red", "red color code for html", etc
@@ -46,7 +46,7 @@ my $trigger_and_guard = qr/^
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
     (?:\sto\s(?:$typestr))?
-    $/ix;
+$/ix;
 
 triggers query_raw => $trigger_and_guard;
 
@@ -68,9 +68,11 @@ handle query_raw => sub {
     my $inverse;
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
-    my @matches = $_ =~ $trigger_and_guard;
-
+    
     s/\sto\s(?:$typestr)//;
+    s/red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})/rgb($1 $2 $3)/;
+
+    my @matches = $_ =~ $trigger_and_guard;
 
     my $filler_count = 0;
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {

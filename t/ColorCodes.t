@@ -103,6 +103,10 @@ ddg_goodie_test(
         'Hex: #FFFFFF ~ RGBA(255, 255, 255, 1) ~ RGB(100%, 100%, 100%) ~ HSL(0, 0%, 100%) ~ CMYB(0%, 0%, 0%, 0%)',
         %basic_answer
     ),
+    'red: 99 green: 60 blue: 176' => test_zci(
+        'Hex: #633CB0 ~ RGBA(99, 60, 176, 1) ~ RGB(39%, 24%, 69%) ~ HSL(260, 49%, 46%) ~ CMYB(44%, 66%, 0%, 31%)'."\n".'Complementary: #89B03C'."\n".'Analogous: #9D3CB0, #3C4FB0',
+        %basic_answer 
+    ),
     # Check the content of the structured answer. Just once.
     'hsl 194 0.53 0.79' => test_zci(
         'Hex: #ADD8E5 ~ RGBA(173, 216, 229, 1) ~ RGB(68%, 85%, 90%) ~ HSL(194, 53%, 79%) ~ CMYB(25%, 6%, 0%, 10%)'."\n".'Complementary: #E6BBAE'."\n".'Analogous: #AEBDE6, #AEE6D7',
