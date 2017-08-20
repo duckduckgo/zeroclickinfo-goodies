@@ -32,9 +32,11 @@ my $color_dictionaries = join(',', grep { $_ !~ /^nbs-iscc-/ } map { $_->id } Co
 
 my $typestr = join '|', sort { length $b <=> length $a } keys %types;
 
+my $inverse_words = qr/inverse|negative|opposite/;
+
 my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
-    (?:(inverse|negative|opposite)\s+(?:of)?)?
+    (?:$inverse_words\s+(?:of)?)?
     (?:
         red:\s*([0-9]{1,3})\s*green:\s*([0-9]{1,3})\s*blue:\s*([0-9]{1,3})| # handles red: x green: y blue: z
         (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|                                 # handles "rgb red color code", "red rgb color code", etc
@@ -44,7 +46,7 @@ my $trigger_and_guard = qr/^
         ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                                    # handles #00f, #0000ff, etc
     )
-    (?:(?:'?s)?\s+(inverse|negative|opposite))?
+    (?:(?:'?s)?\s+$inverse_words)?
     (?:\sto\s(?:$typestr))?
 $/ix;
 
@@ -65,7 +67,7 @@ sub percentify {
 handle query_raw => sub {
 
     my $color;
-    my $inverse;
+    my $inverse = ($_ =~ $inverse_words) ? 1 : 0;
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
     
