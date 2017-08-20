@@ -32,20 +32,23 @@ my $color_dictionaries = join(',', grep { $_ !~ /^nbs-iscc-/ } map { $_->id } Co
 
 my $typestr = join '|', sort { length $b <=> length $a } keys %types;
 
-triggers query_raw => qr/^
+my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
     (?:(inverse|negative|opposite)\s+(?:of)?)?
     (?:
-        (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
-        (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
-        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
-        (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|# handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
+        red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})|   #handles red: 255 green: 255 blue: 255
+        (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|                                 # handles "rgb red color code", "red rgb color code", etc
+        (.*?)\s*(.+?)\brgb(?:\s+code)?|                                     # handles "red rgb code", etc
+        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|                     # handles "rgb color code for red", "red color code for html", etc
+        (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|                               # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
+        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        \#?([0-9a-f]{6})|\#([0-9a-f]{3})                                    # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
     (?:\sto\s(?:$typestr))?
     $/ix;
+
+triggers query_raw => $trigger_and_guard;
 
 zci is_cached => 1;
 zci answer_type => 'color_code';
@@ -59,13 +62,13 @@ sub percentify {
     return map { ($_ <= 1 ? round(($_ * 100))."%" : round($_)) } @_;
 }
 
-handle matches => sub {
+handle query_raw => sub {
 
     my $color;
     my $inverse;
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
-    my @matches = @_;
+    my @matches = $_ =~ $trigger_and_guard;
 
     s/\sto\s(?:$typestr)//;
 
