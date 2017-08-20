@@ -123,7 +123,9 @@ ddg_goodie_test(
     '20 minutes'                 => undef,
     ' 22 minutes'                 => undef,
     '60 minutes'                 => undef,
-    '48 hours  '                   => undef
+    '48 hours  '                   => undef,
+    '5:15 + 32 minutes'          => undef,
+    '3:32 - 8 mins'              => undef
 );
 
 done_testing;

@@ -117,6 +117,13 @@ handle remainder => sub {
     if($raw =~ /^($ambTrgx)$/){
         return;
     }
+    
+    # When query doesn't ask for timer explicitly and just wants time
+    # calculations, don't invoke IA.
+    if($raw !~ /($trgx)/ and $raw =~ /[+-]/) {
+        return;
+    }
+    
     # When the query is empty and we know that the trigger word matches
     # the trigger exactly (whitespace check) we can return a valid result
     if($qry eq '') {
@@ -154,7 +161,7 @@ handle remainder => sub {
     # <startTriggers> <beautifierTriggers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
     # <beautifierTriggers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
     $raw =~ s/($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?//ig;
-
+    
     if($raw eq '') {
         return build_result($req);
     }elsif($raw =~ /^(\s?([\d.]+ ?(m(in((ute)?s?)?)?|s(ec((ond)?s?)?)?|h(ours?)?|hr))\s?)+$/) {
