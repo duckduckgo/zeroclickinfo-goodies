@@ -36,13 +36,13 @@ my $inverse_words = qr/inverse|negative|opposite/;
 
 my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
-    (?:$inverse_words\s+(?:of)?)?
+    (?:$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
         red:\s*([0-9]{1,3})\s*green:\s*([0-9]{1,3})\s*blue:\s*([0-9]{1,3})| # handles red: x green: y blue: z
-        (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|                                 # handles "rgb red color code", "red rgb color code", etc
+        ($typestr)\s*(.+?)\bcolou?r(?:\s+code)?|                                 # handles "rgb red color code", "red rgb color code", etc
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                                     # handles "red rgb code", etc
-        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|                     # handles "rgb color code for red", "red color code for html", etc
-        (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|                               # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
+        ($typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|                     # handles "rgb color code for red", "red color code for html", etc
+        (rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|                               # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
         ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                                    # handles #00f, #0000ff, etc
     )
@@ -68,21 +68,20 @@ handle query_raw => sub {
     my $color;
     my $inverse = ($_ =~ $inverse_words) ? 1 : 0;
 
-    my $type    = 'rgb8';    # Default type, can be overridden below.
+    my $type    = 'rgb8';
     
-    s/\sto\s(?:$typestr)//;
+    s/\sto\s(?:$typestr)?//g;
     s/red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})/rgb($1 $2 $3)/;
 
     my @matches = $_ =~ $trigger_and_guard;
 
-    my $filler_count = 0;
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
             $type = $types{$q};    # - One of our types.
         } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
             if ($q =~ /(?:^[a-z]+\s)+/) {
-                $filler_count = $filler_count + 1;
+                return;
             } else {
                 $color = $q;                    # - A presumed color
             }
@@ -90,9 +89,6 @@ handle query_raw => sub {
     }
 
     return unless $color;
-    $color =~ s/\sto\s//;
-
-    return if $filler_count;
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
