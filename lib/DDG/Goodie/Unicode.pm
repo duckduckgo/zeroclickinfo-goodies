@@ -46,12 +46,20 @@ sub codepoint_description {
     if ($term !~ m{([a-f0-9]+)}i) {
         return;
     }
-
+    
     my $c = hex $1;
     my %i = %{ charinfo($c) };
     return unless $i{name};
 
-    my $info_str = join ' ', chr($c), 'U+' . $i{code}, $i{name};
+    # Perform check for control characters that shouldn't be displayed.
+    my $info_str;
+    my @control_chars = ('202A', '202B', '202C', '202D', '202E', '2066', '2067', '2068', '2069');
+    if (grep {$_ eq uc $term} @control_chars) {
+        $info_str = join ' ', 'U+' . $i{code}, $i{name};
+    } else {
+        $info_str = join ' ', chr($c), 'U+' . $i{code}, $i{name};
+    }
+    
     my %extra;
     if (defined $i{script}) {
         my $s = $i{script};
@@ -116,7 +124,7 @@ sub input_type ($) {
     }
 
     return ($input, $type);
-                }
+}
 
 # Converts a name input to a character
 sub name_to_char {
