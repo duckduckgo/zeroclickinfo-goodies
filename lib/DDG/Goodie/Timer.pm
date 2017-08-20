@@ -8,7 +8,7 @@ zci answer_type => 'timer';
 zci is_cached   => 1;
 
 my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
-# Triggers that are vaild, but not stripped from the resulting query
+# Triggers that are valid, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
 my @baseTriggers = qw(start begin set run);
@@ -161,7 +161,7 @@ handle remainder => sub {
     # <startTriggers> <beautifierTriggers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
     # <beautifierTriggers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
     $raw =~ s/($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?//ig;
-    
+
     if($raw eq '') {
         return build_result($req);
     }elsif($raw =~ /^(\s?([\d.]+ ?(m(in((ute)?s?)?)?|s(ec((ond)?s?)?)?|h(ours?)?|hr))\s?)+$/) {
