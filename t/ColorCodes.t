@@ -48,7 +48,7 @@ sub green_args {
 
 
 ddg_goodie_test(
-	[qw(DDG::Goodie::ColorCodes)],
+    [qw(DDG::Goodie::ColorCodes)],
     'hex color code for cyan' => test_zci(
         'Hex: #00FFFF ~ RGBA(0, 255, 255, 1) ~ RGB(0%, 100%, 100%) ~ HSL(180, 100%, 50%) ~ CMYB(100%, 0%, 0%, 0%)'."\n".'Complementary: #FF0000'."\n".'Analogous: #0080FF, #00FF80',
         %basic_answer 
@@ -86,18 +86,22 @@ ddg_goodie_test(
         'Hex: #633CB0 ~ RGBA(99, 60, 176, 0.5) ~ RGB(39%, 24%, 69%) ~ HSL(260, 49%, 46%) ~ CMYB(44%, 66%, 0%, 31%)'."\n".'Complementary: #89B03C'."\n".'Analogous: #9D3CB0, #3C4FB0',
         %basic_answer 
     ),
-	'#dc5f3c' => test_zci(
-		'Hex: #DC5F3C ~ RGBA(220, 95, 60, 1) ~ RGB(86%, 37%, 24%) ~ HSL(13, 70%, 55%) ~ CMYB(0%, 57%, 73%, 14%)'."\n".'Complementary: #3BB9DB'."\n".'Analogous: #DBAE3B, #DB3B69',
+    '#dc5f3c' => test_zci(
+        'Hex: #DC5F3C ~ RGBA(220, 95, 60, 1) ~ RGB(86%, 37%, 24%) ~ HSL(13, 70%, 55%) ~ CMYB(0%, 57%, 73%, 14%)'."\n".'Complementary: #3BB9DB'."\n".'Analogous: #DBAE3B, #DB3B69',
         %basic_answer
-	),
-	#Colours with no hue shouldn't have complements or analogs
+    ),
+    #Colours with no hue shouldn't have complements or analogs
     '#000000' => test_zci(
         'Hex: #000000 ~ RGBA(0, 0, 0, 1) ~ RGB(0%, 0%, 0%) ~ HSL(0, 0%, 0%) ~ CMYB(0%, 0%, 0%, 100%)',
         %basic_answer   
     ),
-	'#FFFFFF' => test_zci(
+    '#FFFFFF' => test_zci(
         'Hex: #FFFFFF ~ RGBA(255, 255, 255, 1) ~ RGB(100%, 100%, 100%) ~ HSL(0, 0%, 100%) ~ CMYB(0%, 0%, 0%, 0%)',
-        %basic_answer    
+        %basic_answer
+    ),
+    'red: 255 green: 255 blue: 255' => test_zci(
+        'Hex: #FFFFFF ~ RGBA(255, 255, 255, 1) ~ RGB(100%, 100%, 100%) ~ HSL(0, 0%, 100%) ~ CMYB(0%, 0%, 0%, 0%)',
+        %basic_answer
     ),
     # Check the content of the structured answer. Just once.
     'hsl 194 0.53 0.79' => test_zci(
