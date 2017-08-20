@@ -1,0 +1,9 @@
+text:
+  - ascii
+  - ansi
+binary:
+decimal:
+hexadecimal:
+  - hex
+base64:
+rot13:

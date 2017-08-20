@@ -95,7 +95,6 @@ DDH.calculator = DDH.calculator || {};
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
-            .replace(/,/g, '')
 
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
@@ -106,12 +105,13 @@ DDH.calculator = DDH.calculator || {};
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
-            .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
+            .replace(/(EE) ([^)]+)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log(?:\(([^)]+)\)|\s(\d+))/g, RewriteExpression.log10)
+            .replace(/log(?:\(([^),]+)\)|\s(\d+))/g, RewriteExpression.log10)
             .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
-            .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
+            .replace(/(a?sinh?|a?cosh?|a?tanh?)\(?([^)]+)\)?/g, RewriteExpression.trig)
+            .replace(/(\d+)\s?mod(?:ulo)?\s?(\d+)?/g, 'mod($1,$2)')
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
@@ -119,6 +119,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/dozen/g, '12')
 
             // 7. last chance recovers
+            .replace(/(1\/\(\d+\))/, '($1)')
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
             .replace(/\$|£|€/g, '')
@@ -452,62 +453,53 @@ DDH.calculator = DDH.calculator || {};
 
         isExponential = false;
 
-        var normalizedExpression;
-        // a workaround for the mathjs simplify/log|ln bug
-        if(/log|ln|!/.test(display.value)) {
-            normalizedExpression = normalizeExpression(display.value)
-        } else {
-            // helps with rounding errors
-            normalizedExpression = math.simplify(
-                normalizeExpression(display.value)
-            ).toString()                
-        }
+        var normalizedExpression = normalizeExpression(display.value);
 
         try {
             var total = math.eval(
                 normalizedExpression
-            ).toString()
+            ).toFixed(11)
+            total = parseFloat(total).toString();
+            var tree = math.parse(normalizedExpression);
+            var parsed_expression = tree.toString({parenthesis: 'all'});
+            // remove rounding from expression
+            parsed_expression = parsed_expression.replace(/(round\((.+)\), 11)/, '$2');
         } catch(err) {
             if(!expressionFromSearchBar) {
                 display.value = "Error";
                 ExpressionParser.setExpression();
                 setCButtonState("C");
-                return false;
             } else {
                 display.value = "";
                 evaluated = true;
                 setCButtonState("C");
                 DDG.pixel.fire(
-                    'iafd', 
-                    'calculator', { 
-                        q: DDG.get_query_encoded() 
+                    'iafd',
+                    'calculator', {
+                        q: DDG.get_query_encoded()
                     });
-                return false;
             }
-        }
-
-        if(Utils.isNan(total)) {
-            display.value = "Error";
-            setCButtonState("C");
             return false;
         }
 
+        ExpressionParser.setExpression(parsed_expression);
+        evaluated = true;
+        setCButtonState("C");
+        yRootState = false;
+
         // show the user how the calculator evaluated it
-        var tmp_expression = normalizeExpression(display.value);
         if(Utils.isInfinite(total)) {
-            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = "Infinity";
+        } else if(Utils.isNan(total)) {
+            display.value = "Error";
         } else {
-            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = total;
         }
 
-        evaluated = true;
-        setCButtonState("C");
-        yRootState = false;
     }
+
 
     /**
      * Clear
@@ -547,6 +539,10 @@ DDH.calculator = DDH.calculator || {};
             if (ExpressionParser.getExpressionLength() > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
                 ExpressionParser.backspace(4);
                 ParenManager.decrementTotal();
+
+            // if last element is an open paren, backspace 1
+            } else if(display.value.substr(-2, 2) === "% ") {
+                ExpressionParser.backspace(2);
 
             // if last element is an open paren, backspace 1
             } else if(display.value.substr(-1, 1) === "(") {
@@ -657,14 +653,21 @@ DDH.calculator = DDH.calculator || {};
         var rewritten = false;
 
         // resets the display
-        if(display.value === "Error" || display.value === "Infinity" || display.value === "-Infinity") {
+        if(display.value === "Error" ||  display.value === "Infinity" || display.value === "-Infinity") {
             display.value = "";
         }
 
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
         if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
-            ExpressionParser.setExpression("Ans: " + display.value);
+
+            // only show Ans if it wasn't an error
+            if(display.value !== "") {
+                ExpressionParser.setExpression("Ans: " + display.value);
+            } else {
+                ExpressionParser.setExpression("");
+            }
+
             display.value = "";
             usingState = false;
             evaluated = false;
@@ -681,7 +684,6 @@ DDH.calculator = DDH.calculator || {};
             evaluated = false;
         }
 
-
         usingState = true;
 
         // stops first entry being and operand, unless it's a -
@@ -695,8 +697,10 @@ DDH.calculator = DDH.calculator || {};
             return false;
         }
 
-        // opens pseudo paren for 1/(x)
-        if(element === "1/(") {
+        // a guard and opens a psuedo paren for 1/(x)
+        if(element === "1/(" && !Utils.isOperand(display.value[display.value.length-2])) {
+            return false;
+        } else if(element === "1/(") {
             ParenManager.incrementTotal();
         }
 
@@ -735,6 +739,10 @@ DDH.calculator = DDH.calculator || {};
             var expression = display.value.split(" ");
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
+            // if it's an operator, we'll leave the yRootState
+        if(yRootState === true && Utils.isOperand(element)) {
+            yRootState = false;
+        }
 
         // if element is math function or square root, increment paren total
         if(Utils.isMathFunction(element) || element === "√(") {
@@ -752,12 +760,12 @@ DDH.calculator = DDH.calculator || {};
             ParenManager.incrementTotal();
         }
 
+        // if a clear input, delegate to the clear method
         if(element === "C_OPT" || element === "C" || element === "CE") {
-
             clear(element);
 
+        // if `=` we will evaluate the query
         } else if(element === "=") {
-
             evaluate();
 
         } else if(element !== undefined) {
@@ -776,6 +784,7 @@ DDH.calculator = DDH.calculator || {};
                 last_element = last_element.replace(/□/g, element);
                 expression.push(last_element);
                 display.value = expression.join(" ");
+
             } else if(element === "<sup>□</sup>√") {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
@@ -783,9 +792,13 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(y_root);
                 display.value = expression.join(" ");
                 yRootState = true
-            } else if(element === OPEN_CLOSE_SUP || element === "e<sup>□</sup>") {
+
+            // Keeps the user in an exponent state when squaring / cubing
+            } else if(element === OPEN_CLOSE_SUP || element === "e<sup>□</sup>" || element === "<sup>2</sup>" || element === "<sup>3</sup>") {
                 isExponential = true;
                 display.value += element;
+
+            // Breaks out of the exponential state if an operator is added
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
@@ -815,13 +828,17 @@ DDH.calculator = DDH.calculator || {};
 
             } else if(Utils.isMathFunction(element)) {
                 display.value += " " + element;
+
             // if factorial and last element `!`, pop last character and append 1 blank space
             } else if(element === "!" && display.value[display.value.length-2] === "!") {
                 display.value = display.value.substring(0, display.value.length - 1);
                 display.value += element + " ";
+
             // if factorial append 1 blank space
-            } else if(element === "!") {
+            } else if(element === "!" || element === "%") {
                 display.value += element + " ";
+
+            // everything else
             } else {
                 display.value += element;
             }
@@ -857,9 +874,9 @@ DDH.calculator = DDH.calculator || {};
         } catch(_err) {
             display.value = "";
             DDG.pixel.fire(
-                'iafd', 
-                'calculator', { 
-                    q: DDG.get_query_encoded() 
+                'iafd',
+                'calculator', {
+                    q: DDG.get_query_encoded()
                 }
             );
         }
@@ -885,11 +902,12 @@ DDH.calculator = DDH.calculator || {};
             signal: "high",
             onShow: function() {
 
-                var $calc = $(".zci--calculator");
-                var $calcInputTrap = $calc.find(".tile__input-trap");
+                var $calc = $(".zci--calculator .calculator--wrap");
+                var inputClass = ".tile__display";
+                var $calcInput = $calc.find(inputClass);
 
                 function setFocus() {
-                    $calcInputTrap.focus();
+                    $calcInput.focus();
                 }
 
                 DDG.require('math.js', function() {
@@ -932,12 +950,16 @@ DDH.calculator = DDH.calculator || {};
                     /**
                      * Sets focus when the calculator is clicked
                      *
-                     * Sets the focus on the calculator when the Instant answer is first opened.
                      */
-                    $.each([$calc, $calcInputTrap], function(i,v) {
-                        v.click(function(){
-                            setFocus()
-                        })
+                    $calc
+                    .on('click mousedown', function(e) {
+                        if (!$calcInput.hasClass('selected')){
+                            $calcInput.addClass('selected');
+                            setFocus();
+                        }
+                    })
+                    .blur(function() {
+                        $calcInput.removeClass('selected');
                     });
 
                     /**
@@ -971,7 +993,11 @@ DDH.calculator = DDH.calculator || {};
                      * If a key is pressed the below code is fired and the key reference
                      * is looked up in the KEYCODES hash.
                      */
-                    $calcInputTrap.keypress(function(e){
+                    $calc.keypress(function(e){
+
+                        if (e.altKey || e.metaKey || e.ctrlKey) {
+                            return;
+                        }
 
                         var key = e.keyCode || e.charCode;
                         var evt = "";
@@ -985,9 +1011,10 @@ DDH.calculator = DDH.calculator || {};
                         calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
+                        e.preventDefault();
                     });
 
-                    $calcInputTrap.keydown(function(e){
+                    $calc.keydown(function(e){
                         // Handle Backspace
                         if(e.keyCode === 8) {
                             calculator("C_OPT");

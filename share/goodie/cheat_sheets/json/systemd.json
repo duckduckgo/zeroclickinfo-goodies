@@ -1,0 +1,173 @@
+{
+    "id": "systemd_cheat_sheet",
+    "name": "Systemd",
+    "description": "Mantains the system or user services",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "https://www.cheatography.com/tme520/cheat-sheets/systemd/"
+    },
+    "aliases": [
+        "systemctl",
+        "system services",
+        "system service",
+        "system manager"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Services Management",
+        "Investigate and Logs",
+        "System State"
+    ],
+    "sections": {
+        "Services Management": [
+            {
+                "key": "systemctl start <SERVICE>",
+                "val": "Start a SERVICE (not reboot persistent) Ex: systemctl start httpd.service"
+            },
+            {
+                "key": "systemctl stop <SERVICE>",
+                "val": "Stop a SERVICE (not reboot persistent) Ex: systemctl stop httpd.service"
+            },
+            {
+                "key": "systemctl restart <SERVICE>",
+                "val": "Restart a SERVICE Ex: systemctl restart httpd.service"
+            },
+            {
+                "key": "systemctl reload <SERVICE>",
+                "val": "Reloads the configuration files without interrupting pending operations Ex: systemctl reload httpd.service"
+            },
+            {
+                "key": "systemctl condrestart <SERVICE>",
+                "val": "Restarts if the SERVICE is already running Ex: systemctl condrestart httpd.service"
+            },
+            {
+                "key": "systemctl status <SERVICE>",
+                "val": "Shows the status of a SERVICE Ex: systemctl status httpd.service"
+            },
+            {
+                "key": "systemctl list-units --type=service",
+                "val": "Displays the status of all services"
+            },
+            {
+                "key": "systemctl list-unit-files --type=service",
+                "val": "List the services that can be started or stopped"
+            },
+            {
+                "key": "ls /etc/systemd/system/*.wants/",
+                "val": "Print a list of services (alternative)"
+            },
+            {
+                "key": "systemctl enable <SERVICE>",
+                "val": "Start SERVICE at next boot Ex: systemctl enable httpd.service"
+            },
+            {
+                "key": "systemctl disable <SERVICE>",
+                "val": "SERVICE won't be started on next boot Ex: systemctl disable httpd.service"
+            },
+            {
+                "key": "systemctl is-enabled <SERVICE>",
+                "val": "Check if a SERVICE is configured to start in the current environment Ex: systemctl is-enabled httpd.service"
+            },
+            {
+                "key": "systemctl daemon-reload",
+                "val": "Run this command after a change in any configuration file (old or new)"
+            },
+            {
+                "key": "systemctl -H <HOST> status network",
+                "val": "Run any systemctl command remotely"
+            }
+        ],
+        "Investigate and Logs": [
+            {
+                "key": "systemctl get-default",
+                "val": "Determine which target unit is used by default."
+            },
+            {
+                "key": "systemctl set-default multi-user.target",
+                "val": "Change default boot target to multi-user.target"
+            },
+            {
+                "key": "journalctl -b",
+                "val": "Show all messages from last boot"
+            },
+            {
+                "key": "journalctl -b -p err",
+                "val": "Show all messages of priority level ERROR and more from last boot"
+            },
+            {
+                "key": "journalctl -f",
+                "val": "Follow messages as they appear"
+            },
+            {
+                "key": "journalctl -k",
+                "val": "Show only kernal messages"
+            },
+            {
+                "key": "journalctl -u <SERVICE>",
+                "val": "Show logs for SERVICE"
+            },
+            {
+                "key": "journalctl --full",
+                "val": "Display all messages without truncating any"
+            },
+            {
+                "key": "systemctl --state=failed",
+                "val": "Display the services that failed to start"
+            },
+            {
+                "key": "systemctl list-units --type=target",
+                "val": "Show current runlevel"
+            },
+            {
+                "key": "systemctl isolate graphical.target",
+                "val": "Change the current runlevel (target)"
+            },
+            {
+                "key": "systemctl emergency",
+                "val": "Switch to Emergency mode (single user)"
+            },
+            {
+                "key": "systemctl kill <SERVICE>",
+                "val": "Gently kill SERVICE (SIGTERM, 15)"
+            },
+            {
+                "key": "systemd-cgls",
+                "val": "Show the full systemd control group (cgroup) hierarchy as a tree"
+            },
+            {
+                "key": "systemctl list-jobs",
+                "val": "Show jobs"
+            },
+            {
+                "key": "systemctl list-dependencies",
+                "val": "Show units and its dependencies"
+            }
+        ],
+        "System State": [
+            {
+                "key": "systemctl halt",
+                "val": "Halts the system"
+            },
+            {
+                "key": "systemctl poweroff",
+                "val": "Powers off the system"
+            },
+            {
+                "key": "systemctl reboot",
+                "val": "Restarts the system"
+            },
+            {
+                "key": "systemctl suspend",
+                "val": "Suspends the system"
+            },
+            {
+                "key": "systemctl hibernate",
+                "val": "Hibernates the system"
+            },
+            {
+                "key": "systemctl hybrid-sleep",
+                "val": "Hibernates and suspend the system"
+            }
+        ]
+    }
+}

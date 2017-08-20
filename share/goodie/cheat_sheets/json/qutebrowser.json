@@ -1,0 +1,208 @@
+{
+    "id": "qutebrowser_cheat_sheet",
+    "name": "qutebrowser",
+    "description": "qutebrowser default keyboard shortcuts",
+
+    "metadata": {
+        "sourceName": "qutebrowser quickstart guide",
+        "sourceUrl" : "https://qutebrowser.org/doc/quickstart.html"
+    },
+
+    "aliases": [
+        "qute browser",
+        "qute",
+        "qb"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Page Scrolling",
+        "Tab Manipulation",
+        "History",
+        "Page Navigation and Hinting",
+        "Searching",
+        "Bookmarks and Quickmarks",
+        "Copy/Paste",
+        "Modes"
+    ],
+
+    "sections": {
+        "Page Scrolling": [
+            {
+                "key": "j",
+                "val": "scroll down"
+            },
+            {
+                "key": "k",
+                "val": "scroll up"
+            },
+            {
+                "key": "h",
+                "val": "scroll left"
+            },
+            {
+                "key": "l",
+                "val": "scroll right"
+            },
+            {
+                "key": "gg",
+                "val": "scroll to top"
+            },
+            {
+                "key": "G",
+                "val": "scroll to bottom"
+            }
+        ],
+        "Tab Manipulation": [
+            {
+                "key": "J",
+                "val": "next tab"
+            },
+            {
+                "key": "K",
+                "val": "previous tab"
+            },
+            {
+                "key": "<num>T",
+                "val": "select tab"
+            },
+            {
+                "key": "d",
+                "val": "close tab"
+            },
+            {
+                "key": "u",
+                "val": "undo tab close"
+            },
+            {
+                "key": "co",
+                "val": "close other tabs"
+            }
+        ],
+        "History": [
+            {
+                "key": "H",
+                "val": "backward in history"
+            },
+            {
+                "key": "L",
+                "val": "forward in history"
+            }
+        ],
+        "Page Navigation and Hinting": [
+            {
+                "key": "o",
+                "val": "open link"
+            },
+            {
+                "key": "O",
+                "val": "open link in new tab"
+            },
+            {
+                "key": "go",
+                "val": "open current url"
+            },
+            {
+                "key": "gO",
+                "val": "open current url link in new tab"
+            },
+            {
+                "key": "r",
+                "val": "reload"
+            },
+            {
+                "key": "R",
+                "val": "reload (no cache)"
+            },
+            {
+                "key": "f",
+                "val": "hint (label, links)"
+            },
+            {
+                "key": "F",
+                "val": "hint in new tab"
+            },
+            {
+                "key": ";<key>",
+                "val": "extended hints"
+            }
+        ],
+        "Searching": [
+            {
+                "key": "/",
+                "val": "search forward"
+            },
+            {
+                "key": "?",
+                "val": "search backwards"
+            },
+            {
+                "key": "n",
+                "val": "search next occurrence"
+            },
+            {
+                "key": "N",
+                "val": "search previous occurrence"
+            }
+        ],
+        "Bookmarks and Quickmarks": [
+            {
+                "key": "b",
+                "val": "load quickmark"
+            },
+            {
+                "key": "B",
+                "val": "load quickmark in new tab"
+            },
+            {
+                "key": "m",
+                "val": "save quickmark"
+            }
+        ],
+        "Copy/Paste": [
+            {
+                "key": "yy",
+                "val": "yank URL to clipboard"
+            },
+            {
+                "key": "pp",
+                "val": "open url from clipboard"
+            },
+            {
+                "key": "Pp",
+                "val": "open url from clipboard in a new tab"
+            },
+            {
+                "key": "yt",
+                "val": "yank page title to clipboard"
+            },
+            {
+                "key": ";y",
+                "val": "yank url of link via hint to clipboard"
+            }
+        ],
+        "Modes": [
+            {
+                "key": "esc",
+                "val": "return to normal mode"
+            },
+            {
+                "key": "i",
+                "val": "insert mode (type text)"
+            },
+            {
+                "key": "ctrl-v",
+                "val": "passthrough mode"
+            },
+            {
+                "key": "v",
+                "val": "caret mode (select/navigate text)"
+            },
+            {
+                "key": ":",
+                "val": "command mode (enter a command)"
+            }
+        ]
+    }
+}

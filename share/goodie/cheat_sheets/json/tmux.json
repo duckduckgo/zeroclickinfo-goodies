@@ -56,11 +56,20 @@
             "val": "Detach from session",
             "key": "[Ctrl] [b], [d]"
         }, {
-            "val": "Rename a window",
+            "val": "Rename current window",
             "key": "[Ctrl] [b], [,]"
+        }, {
+            "val": "Close current window",
+            "key": "[Ctrl] [b], [&]"
         }, {
             "val": "List windows",
             "key": "[Ctrl] [b], [w]"
+        }, {
+            "val": "Previous window",
+            "key": "[Ctrl] [b], [p]"
+        }, {
+            "val": "Next window",
+            "key": "[Ctrl] [b], [n]"
         }],
         "Pane Control": [{
             "val": "Split pane horizontally",
@@ -75,11 +84,17 @@
             "val": "Previous pane",
             "key": "[Ctrl] [b], [;]"
         }, {
+            "val": "Show pane numbers",
+            "key": "[Ctrl] [b], [q]"
+        }, {
+            "val": "Toggle pane zoom",
+            "key": "[Ctrl] [b], [z]"
+        }, {
+            "val": "Convert pane into a window",
+            "key": "[Ctrl] [b], [!]"
+        }, {
             "val": "Kill current pane",
             "key": "[Ctrl] [b], [x]"
-        }, {
-            "val": "Kill all panes but the current one",
-            "key": "[Ctrl] [b], [!]"
         }, {
             "val": "Swap panes",
             "key": "[Ctrl] [b], [Ctrl] [O]"
@@ -89,6 +104,15 @@
         }, {
             "val": "Transpose two letters (delete and paste)",
             "key": "[Ctrl] [b], [q]"
+        }, {
+            "val": "Move to the previous pane",
+            "key": "[Ctrl] [b], [\\{]"
+        }, {
+            "val": "Move to the next pane",
+            "key": "[Ctrl] [b], [\\}]"
+        }, {
+            "val": "Toggle between pane layouts",
+            "key": "[Ctrl] [b], [Space]"
         }, {
             "val": "Resize pane (make taller)",
             "key": "[Ctrl] [b], [↑]"
@@ -134,11 +158,20 @@
             "val": "Start a new session",
             "key": "tmux"
         }, {
+            "val": "Start a new session with the name chosen",
+            "key": "tmux new -s <session-name>"
+        }, {
+            "val": "List all sessions",
+            "key": "tmux ls"
+        }, {
             "val": "Re-attach a detached session",
-            "key": "tmux attach"
+            "key": "tmux attach -t <target-session>"
         }, {
             "val": "Re-attach a detached session (and detach it from elsewhere)",
-            "key": "tmux attach -d"
+            "key": "tmux attach -d -t <target-session>"
+        }, {
+            "val": "Delete session",
+            "key": "tmux kill-session -t <target-session>"
         }]
     }
 }

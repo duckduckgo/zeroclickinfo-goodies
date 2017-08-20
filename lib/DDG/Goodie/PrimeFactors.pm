@@ -34,7 +34,7 @@ triggers end => (
 sub convert_to_superscripts (_) {
     my $string = $_[0];
     $string =~ tr[+−=()0123456789]
-                [⁺⁻⁼⁽⁾⁰¹²³⁴⁵⁶⁷⁸⁹ⵯ];
+                [⁺⁻⁼⁽⁾⁰¹²³⁴⁵⁶⁷⁸⁹];
     return $string;
 }
 

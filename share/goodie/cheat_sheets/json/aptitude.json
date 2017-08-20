@@ -1,0 +1,158 @@
+{
+    "id": "aptitude_cheat_sheet",
+    "name": "aptitude",
+    "description": "Basic shortcuts for Aptitude, an Ncurses based interface for Apt",
+
+    "metadata": {
+        "sourceName": "Debian reference",
+        "sourceUrl" : "https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_interactive_use_of_aptitude"
+    },
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Basics",
+        "Search patterns",
+        "Package management",
+        "Conflict resolution"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "u",
+                "val": "Update package list"
+            },
+            {
+                "key": "U",
+                "val": "Mark all packages with updates"
+            },
+            {
+                "key": "/",
+                "val": "Find a package"
+            },
+            {
+                "key": "n",
+                "val": "Find next package matching a search <pattern>"
+            },
+            {
+                "key": "N",
+                "val": "Find next package backward matching a search <pattern>"
+            },
+            {
+                "key": "+",
+                "val": "Mark a package for installation"
+            },
+            {
+                "key": "-",
+                "val": "Mark a package for removal"
+            },
+            {
+                "key": "g",
+                "val": "Install/remove marked packages"
+            },
+            {
+                "key": "q",
+                "val": "Quit"
+            }
+        ],
+        "Search patterns": [
+            {
+                "key": "<string>",
+                "val": "Packages whose name contains <string>"
+            },
+            {
+                "key": "!<pattern>",
+                "val": "Packages whose name does not contain <pattern>"
+            },
+            {
+                "key": "~i<pattern>",
+                "val": "Installed packages whose name contains <pattern>"
+            },
+            {
+                "key": "^<pattern>",
+                "val": "Packages whose name starts with <pattern>"
+            },
+            {
+                "key": "<pattern>$",
+                "val": "Packages whose name ends with <pattern>"
+            },
+            {
+                "key": "~c<pattern>",
+                "val": "Removed packages with residual configuration files"
+            },
+            {
+                "key": "~v<pattern>",
+                "val": "Virtual packages whose name contains <pattern>"
+            },
+            {
+                "key": "~d<pattern>",
+                "val": "Packages whose description contains <pattern>"
+            },
+            {
+                "key": "~D<pattern>",
+                "val": "Packages which depend on <pattern>"
+            },
+            {
+                "key": "~R<pattern>",
+                "val": "Dependencies of the package <pattern>"
+            }
+        ],
+        "Package management": [
+            {
+                "key": "L",
+                "val": "Mark a package for reinstallation"
+            },
+            {
+                "key": "_",
+                "val": "Mark a package and its configuration files for removal"
+            },
+            {
+                "key": ":",
+                "val": "Keep a package in its current version"
+            },
+            {
+                "key": "=",
+                "val": "Prevent upgrades of a package"
+            },
+            {
+                "key": "M",
+                "val": "Mark a package as automatically installed"
+            },
+            {
+                "key": "m",
+                "val": "Mark a package as manually installed"
+            },
+            {
+                "key": "F",
+                "val": "Forbid a package version from being installed"
+            }
+        ],
+        "Conflict resolution": [
+            {
+                "key": "e",
+                "val": "Examine a solution"
+            },
+            {
+                "key": "!",
+                "val": "Apply a solution"
+            },
+            {
+                "key": ".",
+                "val": "Next solution"
+            },
+            {
+                "key": ",",
+                "val": "Previous solution"
+            },
+            {
+                "key": "<",
+                "val": "First solution"
+            },
+            {
+                "key": ">",
+                "val": "Last solution"
+            }
+        ]
+    }
+}

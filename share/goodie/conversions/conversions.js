@@ -59,15 +59,40 @@ DDH.conversions = DDH.conversions || {};
             {name: "siderealyear",  factor: "1.00001741 year"},
           
             // CUSTOM DIGITAL UNITS
-            {name: 'kbit',  factor: '1000 b'},
-            {name: 'mbit',  factor: '1000000 b'},
-            {name: 'gbit',  factor: '1000000000 b'},
-            {name: 'tbit',  factor: '1000000000000 b'},
-            {name: 'KB',    factor: '1000 B'},
-            {name: 'MB',    factor: '1000000 B'},
-            {name: 'GB',    factor: '1000000000 B'},
-            {name: 'TB',    factor: '1000 GB'},
-            {name: 'PB',    factor: '1000 TB'},
+            {name: 'kbit',      factor: '1000 b'},
+            {name: 'mbit',      factor: '1000000 b'},
+            {name: 'gbit',      factor: '1000000000 b'},
+            {name: 'tbit',      factor: '1000000000000 b'},
+            {name: 'KB',        factor: '1000 B'},
+            {name: 'MB',        factor: '1000000 B'},
+            {name: 'GB',        factor: '1000000000 B'},
+            {name: 'TB',        factor: '1000 GB'},
+            {name: 'PB',        factor: '1000 TB'},
+            {name: 'kibibit',   factor: '128 B'},
+            {name: 'mebibit',   factor: '131072 B'},
+            {name: 'gibibit',   factor: '1024 mebibit'},
+            {name: 'tebibit',   factor: '1024 gibibit'},
+            {name: 'pebibit',   factor: '1024 tebibit'},
+            {name: 'kibibyte',  factor: '1024 B'},
+            {name: 'mebibyte',  factor: '1024 kibibyte'},
+            {name: 'gibibyte',  factor: '1024 mebibyte'},
+            {name: 'tebibyte',  factor: '1024 gibibyte'},
+            {name: 'pebibyte',  factor: '1024 tebibyte'},
+
+            // CUSTOM DIGITAL TRANSFER UNITS
+            {name: 'bitps',         factor: '1 b'},
+            {name: 'kbitps',        factor: '1000 bitps'},
+            {name: 'mbitps',        factor: '1000 kbitps'},
+            {name: 'gbitps',        factor: '1000 mbitps'},
+            {name: 'tbitps',        factor: '1000 gbitps'},
+            {name: 'kilobyteps',    factor: '8000 bitps'},
+            {name: 'megabyteps',    factor: '1000 kilobyteps'},
+            {name: 'gigabyteps',    factor: '1000 megabyteps'},
+            {name: 'terabyteps',    factor: '1000 gigabyteps'},
+            {name: 'kibps',         factor: '1024 bitps'},
+            {name: 'mibps',         factor: '1024 kibps'},
+            {name: 'gibps',         factor: '1024 mibps'},
+            {name: 'tibps',         factor: '1024 gibps'},
             
             // CUSTOM ANGLE UNITS
             {name: 'microarcsec', factor: '0.000000000004848 rad'},
@@ -76,6 +101,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'rev',         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
+            {name: 'ergfixed',              factor: '0.0000001 joules'}, // math.js bug workaround
             {name: 'kilojoule',             factor: '1000 joules'},
             {name: 'gramcalorie',           factor: '4.184 joules'},
             {name: 'kilocalorie',           factor: '4184 joules'},
@@ -100,6 +126,9 @@ DDH.conversions = DDH.conversions || {};
             {name: 'exaelectronvolt',       factor: '1000 petaelectronvolt'},
             {name: 'zettaelectronvolt',     factor: '1000 exaelectronvolt'},
             {name: 'yottaelectronvolt',     factor: '1000 zettaelectronvolt'},
+
+            // CUSTOM LENGTH UNITS
+            {name: 'nauticalmile',          factor: '1.15078 miles'},
 
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
@@ -131,7 +160,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'exawatt',     factor: '1000 petawatt'},
             
             // CUSTOM PRESSURE UNITS
-            {name: 'barye',     factor: '0.000001 bar' },
+            {name: 'barye',     factor: '0.000001 bar'},
             {name: 'Satm',      factor: '1 atm'},
             {name: 'at',        factor:'0.980665 bar'},
             {name: 'mbar',      factor: '0.001 bar'},
@@ -139,7 +168,24 @@ DDH.conversions = DDH.conversions || {};
             {name: 'dbar',      factor:'0.1 bar'},
             {name: 'kbar',      factor:'1000 bar'},
             {name: 'Mbar',      factor:'100000 bar'},
-            {name: 'Gbar',      factor:'100000000 bar'}
+            {name: 'Gbar',      factor:'100000000 bar'},
+
+            // CUSTOM SPEED UNITS
+            {name: 'knot',     factor: '1.15078 mi/h'},
+
+            // CUSTOM VOLUME UNITS
+            {name: 'impgallon',     factor: '4.54609 liters'},
+            {name: 'usgallon',      factor: '3.7854 liters'},
+            {name: 'usfluidounce',  factor: '0.0295735 liters'},
+            {name: 'impfluidounce', factor: '0.0284131 liters'},
+            {name: 'usquart',       factor: '0.946353 liters'},
+            {name: 'impquart',      factor: '1.13652 liters'},
+            {name: 'uscup',         factor: '0.24 liters'},
+            {name: 'impcup',        factor: '0.284131 liters'},
+            {name: 'ustbsp',        factor: '0.0147868 liters'},
+            {name: 'imptbsp',       factor: '0.0177582 liters'},
+            {name: 'ustsp',         factor: '0.00492892 liters'},
+            {name: 'imptsp',        factor: '0.00591939 liters'},
         ],
 
         // custom units that are not supported by math.js
@@ -175,8 +221,27 @@ DDH.conversions = DDH.conversions || {};
             this.rightValue = $convert_right.val();
         },
 
-        eval: function( expression ) {
-            return math.eval(expression).format({ precision: 6 }).split(" ")[0];
+        // determines the precision of number / number in e-notation
+        // 0.23 --> 2, 0.32214 --> 5, 1 --> 0
+        determinePrecision: function( number ) {
+
+            var match = (''+number).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+            if (!match) { return 0; }
+            return Math.max(
+                0,
+                // Number of digits right of decimal point.
+                (match[1] ? match[1].length : 0)
+                    // Adjusts for scientific notation.
+                    - (match[2] ? +match[2] : 0));
+        },
+
+        // evaluates the function using math.js
+        // the length of the input is used to determine precision unless it's more than 7
+        eval: function( expression, precision ) {
+
+            var prec = Math.max(precision, 7);
+            var ans = math.eval(expression).format({ precision: prec }).split(" ")[0];
+            return parseFloat(ans).toFixed(this.determinePrecision(ans));
         },
 
         convert: function( side ) {
@@ -187,10 +252,10 @@ DDH.conversions = DDH.conversions || {};
             this.setValues();
             if(side === "right") {
                 var expression = this.leftValue + " " + this.leftUnit + " to " + this.rightUnit;
-                $convert_right.val(this.eval(expression));
+                $convert_right.val(this.eval(expression, this.leftValue.length));
             } else {
                 var expression = this.rightValue + " " + this.rightUnit + " to " + this.leftUnit;
-                $convert_left.val(this.eval(expression));
+                $convert_left.val(this.eval(expression, this.rightValue.length));
             }
         },
 
@@ -283,20 +348,49 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['m2', 'sqin']
         },
+        data_transfer: {
+            name: "Data Transfer Rate",
+            units: [
+                { symbol: 'bitps',       name: 'Bits per second'},
+                { symbol: 'kbitps',      name: 'Kilobit per second'},
+                { symbol: 'mbitps',      name: 'Megabit per second'},
+                { symbol: 'gbitps',      name: 'Gigabit per second'},
+                { symbol: 'tbitps',      name: 'Terabit per second'},
+                { symbol: 'kilobyteps',  name: 'Kilobyte per second'},
+                { symbol: 'megabyteps',  name: 'Megabyte per second'},
+                { symbol: 'gigabyteps',  name: 'Gigabyte per second'},
+                { symbol: 'terabyteps',  name: 'Terabyte per second'},
+                { symbol: 'kibps',       name: 'Kibibit per second'},
+                { symbol: 'mibps',       name: 'Mebibit per second'},
+                { symbol: 'gibps',       name: 'Gibibit per second'},
+                { symbol: 'tibps',       name: 'Tebibit per second'},
+            ],
+            defaults: ['bitps', 'kbitps']
+        },
         digital: {
             name: "Digital Storage",
             units: [
-                { symbol: 'b', name: 'Bit' },
-                { symbol: 'B', name: 'Byte' },
-                { symbol: 'kbit', name: 'Kilobit' },
-                { symbol: 'mbit', name: 'Megabit' },
-                { symbol: 'gbit', name: 'Gigabit' },
-                { symbol: 'tbit', name: 'Terrabit' },
-                { symbol: 'KB', name: 'Kilobyte' },
-                { symbol: 'MB', name: 'Megabyte' },
-                { symbol: 'GB', name: 'Gigabyte' },
-                { symbol: 'TB', name: 'Terabyte' },
-                { symbol: 'PB', name: 'Petabyte' },
+                { symbol: 'b',          name: 'Bit' },
+                { symbol: 'B',          name: 'Byte' },
+                { symbol: 'kbit',       name: 'Kilobit' },
+                { symbol: 'mbit',       name: 'Megabit' },
+                { symbol: 'gbit',       name: 'Gigabit' },
+                { symbol: 'tbit',       name: 'Terrabit' },
+                { symbol: 'KB',         name: 'Kilobyte' },
+                { symbol: 'MB',         name: 'Megabyte' },
+                { symbol: 'GB',         name: 'Gigabyte' },
+                { symbol: 'TB',         name: 'Terabyte' },
+                { symbol: 'PB',         name: 'Petabyte' },
+                { symbol: 'kibibit',    name: 'Kibibit' },
+                { symbol: 'mebibit',    name: 'Mebibit' },
+                { symbol: 'gibibit',    name: 'Gibibit' },
+                { symbol: 'tebibit',    name: 'Tebibit' },
+                { symbol: 'pebibit',    name: 'Pebibit' },
+                { symbol: 'kibibyte',   name: 'Kibibyte' },
+                { symbol: 'mebibyte',   name: 'Mebibyte' },
+                { symbol: 'gibibyte',   name: 'Gibibyte' },
+                { symbol: 'tebibyte',   name: 'Tebibyte' },
+                { symbol: 'pebibyte',   name: 'Pebibyte' },
             ],
             defaults: ['b', 'B']
         },
@@ -331,7 +425,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramcalorie',            name: 'Gramcalorie' },
                 { symbol: 'kilocalorie',            name: 'Kilocalorie' },
                 { symbol: 'Wh',                     name: 'Watt Hour' },
-                { symbol: 'erg',                    name: 'Erg' },
+                { symbol: 'ergfixed',               name: 'Erg' },
                 { symbol: 'BTU',                    name: 'BTU' },
                 { symbol: 'electronvolt',           name: 'Electronvolt' },
                 { symbol: 'footpound',              name: 'Foot Pound'},
@@ -391,45 +485,28 @@ DDH.conversions = DDH.conversions || {};
         length: {
             name: "Length",
             units: [
-                { symbol: 'decameter',  name: 'Decameter' },
-                { symbol: 'millimeter', name: 'Millimeter' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'nanometer',  name: 'Nanometer' },
-                { symbol: 'picometer',  name: 'Picometer' },
-                { symbol: 'kilometer',  name: 'Kilometer' },
-                { symbol: 'meter',      name: 'Meter' },
-                { symbol: 'cm',         name: 'Centimeter' },
-                { symbol: 'hectometer', name: 'Hectometer' },
-                { symbol: 'chains',     name: 'Chains' },
-                { symbol: 'inch',       name: 'Inch' },
-                { symbol: 'foot',       name: 'Feet' },
-                { symbol: 'yard',       name: 'Yard' },
-                { symbol: 'mile',       name: 'Mile' },
-                { symbol: 'link',       name: 'Link' },
-                { symbol: 'rod',        name: 'Rod' },
-                { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil' },
+                { symbol: 'decameter',      name: 'Decameter' },
+                { symbol: 'millimeter',     name: 'Millimeter' },
+                { symbol: 'micrometer',     name: 'Micrometer' },
+                { symbol: 'micrometer',     name: 'Micrometer' },
+                { symbol: 'nanometer',      name: 'Nanometer' },
+                { symbol: 'picometer',      name: 'Picometer' },
+                { symbol: 'kilometer',      name: 'Kilometer' },
+                { symbol: 'meter',          name: 'Meter' },
+                { symbol: 'cm',             name: 'Centimeter' },
+                { symbol: 'hectometer',     name: 'Hectometer' },
+                { symbol: 'chains',         name: 'Chains' },
+                { symbol: 'inch',           name: 'Inch' },
+                { symbol: 'foot',           name: 'Feet' },
+                { symbol: 'yard',           name: 'Yard' },
+                { symbol: 'mile',           name: 'Mile' },
+                { symbol: 'nauticalmile',   name: 'Nautical mile'},
+                { symbol: 'link',           name: 'Link' },
+                { symbol: 'rod',            name: 'Rod' },
+                { symbol: 'angstrom',       name: 'Angstrom' },
+                { symbol: 'mil',            name: 'Mil' },
             ],
             defaults: ['meter', 'cm']
-        },
-        liquid_volume: {
-            name: "Liquid Volume",
-            units: [
-                { symbol: 'minim',          name: 'Minim' },
-                { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
-                { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'cup',            name: 'Cup' },
-                { symbol: 'pint',           name: 'Pint' },
-                { symbol: 'quart',          name: 'Quart' },
-                { symbol: 'gallon',         name: 'Gallon' },
-                { symbol: 'beerbarrel',     name: 'Beerbarrel' }, 
-                { symbol: 'oilbarrel',      name: 'Oilbarrel' },
-                { symbol: 'hogshead',       name: 'Hogshead' },
-                { symbol: 'drop',           name: 'Drop' },
-            ],
-            defaults: ['minim', 'fluiddram']
         },
         mass: {
             name: "Mass",
@@ -508,6 +585,17 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['Pa', 'psi']
         },
+        speed: {
+            name: "Speed",
+            units: [
+                { symbol: 'mi/h',   name: 'Miles per hour' },
+                { symbol: 'ft/s',   name: 'Feet per second' },
+                { symbol: 'm/s',    name: 'Metres per second' },
+                { symbol: 'km/h',   name: 'Kilometres per hour'},
+                { symbol: 'knot',   name: 'Knot'},
+            ],
+            defaults: ['mi/h', 'km/h']
+        },
         temperature: {
             name: "Temperature",
             units: [
@@ -530,17 +618,23 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cc',             name: 'Cubic Centimeter' },
                 { symbol: 'cuin',           name: 'Cubic Inch' },
                 { symbol: 'cuft',           name: 'Cubic Foot' },
-                { symbol: 'cups',           name: 'Cups' },
+                { symbol: 'impcup',         name: 'Cup (Imperial)' },
+                { symbol: 'uscup',          name: 'Cup (US Legal)' },
                 { symbol: 'cuyd',           name: 'Cubic Yard' },
-                { symbol: 'pints',          name: 'Pints' },
-                { symbol: 'teaspoon',       name: 'Teaspoon' },
-                { symbol: 'tablespoon',     name: 'Tablespoon' },
+                { symbol: 'pints',          name: 'Pint (US)' },
+                { symbol: 'imptsp',         name: 'Teaspoon (Imperial)' },
+                { symbol: 'ustsp',          name: 'Teaspoon (US)' },
+                { symbol: 'imptbsp',        name: 'Tablespoon (Imperial)' },
+                { symbol: 'ustbsp',         name: 'Tablespoon (US)' },
                 { symbol: 'minim',          name: 'Minim' },
                 { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
+                { symbol: 'impfluidounce',  name: 'Fluid Ounce (Imperial)' },
+                { symbol: 'usfluidounce',   name: 'Fluid Ounce (US)' },
                 { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Imperial Gallon'},
+                { symbol: 'impquart',       name: 'Quart (Imperial)'},
+                { symbol: 'usquart',        name: 'Quart (US)'},
+                { symbol: 'usgallon',       name: 'Gallon (US)'},
+                { symbol: 'impgallon',      name: 'Gallon (Imperial)'},
                 { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
@@ -554,10 +648,18 @@ DDH.conversions = DDH.conversions || {};
         
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
-        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
-        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
         var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
+
+        // default units
+        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
+        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
+
+        // swaps the default unit if they are the same.
+        // This conditional fires when a query such as 1 gram is entered
+        if(rightUnit === leftUnit) {
+            rightUnit = Units[startBase].defaults[0];
+        }
 
         return {
             // anytime this is triggered, we default to a high signal
@@ -590,18 +692,18 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert();
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert() }                            
+                        } catch(e) {}
                     });
 
                     $convert_right.keyup(function( _e ) {
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert("left");
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert("left") }
+                        } catch(e) {}
                     });
                     
                     $convert_left.click(function() {

@@ -39,7 +39,6 @@ ddg_goodie_test(
     'calculator 1 + 5' => build_test(
         "1 + 5"
     ),
-
     'what is 2-2' => build_test(
         '2 - 2'
     ),
@@ -88,17 +87,8 @@ ddg_goodie_test(
     'tanh(1)' => build_test(
         'tanh(1)'
     ),
-    'cotan(1)' => build_test(
-        'cotan(1)'
-    ),
     'sin(1)' => build_test(
         'sin(1)'
-    ),
-    'csc(1)' => build_test(
-        'csc(1)'
-    ),
-    'sec(1)' => build_test(
-        'sec(1)'
     ),
     '$3.43+$34.45' => build_test(
         '$3.43 + $34.45'
@@ -110,7 +100,7 @@ ddg_goodie_test(
         '$3 + $34'
     ),
     '$3,4+$34,4' => build_test(
-        '$3,4 + $34,4'
+        '$3.4 + $34.4'
     ),
     '64*343' => build_test(
         '64 * 343'
@@ -137,10 +127,10 @@ ddg_goodie_test(
         '424334 + 2253828'
     ),
     '4.243,34+22.538,28' => build_test(
-        '4.243,34 + 22.538,28'
+        '4243.34 + 22538.28'
     ),
     'sin(1,0) + 1,05' => build_test(
-        'sin(1,0) + 1,05'
+        'sin(1.0) + 1.05'
     ),
     '21 + 15 x 0 + 5' => build_test(
         '21 + 15 * 0 + 5'
@@ -149,10 +139,7 @@ ddg_goodie_test(
         '0.8158 - 0.8157'
     ),
     '2,90 + 4,6' => build_test(
-        '2,90 + 4,6'
-    ),
-    '2,90 + sec(4,6)' => build_test(
-        '2,90 + sec(4,6)'
+        '2.90 + 4.6'
     ),
     '100 - 96.54' => build_test(
         '100 - 96.54'
@@ -188,7 +175,7 @@ ddg_goodie_test(
         '3 ^ 2 + 4 ^ 2',
     ),
     '2,2 squared' => build_test(
-        '2,2 ^ 2',
+        '2.2 ^ 2',
     ),
     '0.8^2 + 0.6^2' => build_test(
         '0.8 ^ 2 + 0.6 ^ 2',
@@ -239,10 +226,10 @@ ddg_goodie_test(
         '20 * 07'
     ),
     '83.166.167.160/33' => build_test(
-        '83.166.167.160 / 33'
+        '83166167160 / 33'
     ),
     '123.123.123.123/255.255.255.256' => build_test(
-        '123.123.123.123 / 255.255.255.256'
+        '123123123123 / 255255255256'
     ),
     '4E5 +1 ' => build_test(
         '(4 * 10 ^ 5) + 1'
@@ -273,9 +260,6 @@ ddg_goodie_test(
     ),
     'pi*1e9' => build_test(
         'pi * (1 * 10 ^ 9)'
-    ),
-    '1 234 + 5 432' => build_test(
-        '1234 + 5432'
     ),
     '1_234 + 5_432' => build_test(
         '1234 + 5432'
@@ -328,12 +312,6 @@ ddg_goodie_test(
     'log(10 * 2)' => build_test(
         'log(10 * 2)'
     ),
-    'log 88' => build_test(
-        'log88'
-    ),
-    'ln 6' => build_test(
-        'ln6'
-    ),
     '1 + √25 =' => build_test(
         '1 + √25'
     ),
@@ -343,6 +321,141 @@ ddg_goodie_test(
     '$10.80 + 44' => build_test(
         '$10.80 + 44'
     ),
+    '5 modulo 13' => build_test(
+        'mod(5,13)'
+    ),
+    '5 % 13 + 5' => build_test(
+        'mod(5,13) + 5'
+    ),
+    'log(10)' => build_test(
+        'log(10)'
+    ),
+    'log2(10)' => build_test(
+        'log(10,2)'
+    ),
+    'log2(10) * 1234 + 2' => build_test(
+        'log(10,2) * 1234 + 2'
+    ),
+    'log10(1)' => build_test(
+        'log(1)'
+    ),
+    'log 1' => build_test(
+        'log(1)'
+    ),
+    'log 88 + 2' => build_test(
+        'log(88) + 2'
+    ),
+    'log 99 + 9 - 2 * 2' => build_test(
+        'log(99) + 9 - 2 * 2'
+    ),
+    'log5 99 + 9 - 2 * 2' => build_test(
+        'log(99,5) + 9 - 2 * 2'
+    ),
+    'log99 1' => build_test(
+        'log(1,99)'
+    ),
+    'log of 3231 plus 2' => build_test(
+        'log(3231) + 2'
+    ),
+    'log of 99 / 3' => build_test(
+        'log(99) / 3'
+    ),
+    'factorial of 88' => build_test(
+        '88!'
+    ),
+    'factorial 77 + 32' => build_test(
+        '77! + 32'
+    ),
+    '8 * factorial of 77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact of 77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact(77) + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    'fact(20)' => build_test(
+        '20!'
+    ),
+    'fact 20' => build_test(
+        '20!'
+    ),
+
+    ## Trig testing
+    'tan 45' => build_test(
+        'tan(45)'
+    ),
+    'tan 45 deg' => build_test(
+        'tan(45deg)'
+    ),
+    'sin 12 + 1341' => build_test(
+        'sin(12) + 1341'
+    ),
+    '88 + 12341 * 123 + tan(4)' => build_test(
+        '88 + 12341 * 123 + tan(4)'
+    ),
+    'sin 2 + tan 3 - cos 10' => build_test(
+        'sin(2) + tan(3) - cos(10)'
+    ),
+    '75 + sin 75 deg' => build_test(
+        '75 + sin(75deg)'
+    ),
+    'tan(sin 88+2)' => build_test(
+        'tan(sin(88) + 2)'
+    ),
+    'cos(103*232+22)+2' => build_test(
+        'cos(103 * 232 + 22) + 2'
+    ),
+    'cos(103*232+22)+2' => build_test(
+        'cos(103 * 232 + 22) + 2'
+    ),
+    'square root of 25' => build_test(
+        'sqrt(25)'
+    ),
+    '77 * square root 25 + 2' => build_test(
+        '77 * sqrt(25) + 2'
+    ),
+    '77 * cube rt 25 + 2' => build_test(
+        '77 * cbrt(25) + 2'
+    ),
+    'cubic rt of 90' => build_test(
+        'cbrt(90)'
+    ),
+    '99 cubed' => build_test(
+        'cube(99)'
+    ),
+    '2 + cube 66 + 2' => build_test(
+        '2 + cube(66) + 2'
+    ),
+
+    'e2e4'                            => undef,
+    'cosh(4+-)'                       => undef,  
+    '232 * 2 cube'                    => undef, # /cube/ can't be at end, only /cubed/
+    'sine'                            => undef,
+    'loge'                            => undef,
+    'lne'                             => undef, # a search with high click through
+    'cose'                            => undef,
+    'tane'                            => undef,
+    '1e+6'                            => undef,
+    '7/11'                            => undef, # an ambiguity. Probably looking for US store
+    'sec^2-1'                         => undef,
+    '(x^2-1)*(5x^4+2x+1)'             => undef,
+    '88y * 1312'                      => undef,
+    '23x+3x'                          => undef,
+    '3a / 8b'                         => undef,
+    'tan of 88 degrees and radians'   => undef,
+    'sin 88 degrees + sin 10 radians' => undef,
+    '1432 / 28 2'                     => undef,
+    '5 + 88 2'                        => undef,
+    '14 8 - 22'                       => undef,
+    'mod 45 32'                       => undef,
     '$10.80 + £44'                    => undef,
     '€10 + 10 + $.1'                  => undef,
     '€ + € + €'                       => undef,
@@ -412,8 +525,17 @@ ddg_goodie_test(
     '12+5t%' => undef,
     '2002 honda civic ex rim and lug size' => undef,
     '2003 xc90 traction' => undef,
-    '123netflix' => undef
-
+    '123netflix' => undef,
+    '1337X' => undef,
+    '1337X.' => undef,
+    '1337X.' => undef,
+    '706007X' => undef,
+    'etan' => undef,
+    '.exe' => undef,
+    '.elxs' => undef,
+    '.gif' => undef,
+    'e.png' => undef,
+    ')1108278829' => undef,
 );
 
 done_testing;

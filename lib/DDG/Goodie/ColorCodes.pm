@@ -41,7 +41,7 @@ triggers query_raw => qr/^
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
         (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|# handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
@@ -65,6 +65,7 @@ sub percentify {
 handle matches => sub {
 
     my $color;
+    my $filler_count;
     my $inverse;
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
@@ -72,6 +73,7 @@ handle matches => sub {
 
     s/\sto\s(?:$typestr)//;
 
+    $filler_count = 0;
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
@@ -79,12 +81,18 @@ handle matches => sub {
         } elsif ($trigger_invert{$q}) {
             $inverse = 1;          # - An inversion trigger
         } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
-            $color = $q;                    # - A presumed color
+            if ($q =~ /(?:^[a-z]+\s)+/) {
+                $filler_count = $filler_count + 1;
+            } else {
+                $color = $q;                    # - A presumed color
+            }
         }
     }
 
     return unless $color;                   # Need a color to continue!
     $color =~ s/\sto\s//;
+
+    return if $filler_count;
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"

@@ -238,7 +238,7 @@
     [ 0, 0, 1, 3 ]
 ]
 }]}, {
-"root": ["C#"],
+"root": ["C#", "Db"],
 "types": [{
     "name": "maj",
     "variations": [
@@ -345,7 +345,7 @@
     [ 2, 2, 3, 0 ]
 ]
 }]}, {
-"root": ["D#"],
+"root": ["D#", "Eb"],
 "types": [{
     "name": "maj",
     "variations": [
@@ -507,7 +507,7 @@
     [ 3, 0, 1, 3 ]
 ]
 }]}, {
-"root": ["F#"],
+"root": ["F#", "Gb"],
 "types": [{
     "name": "maj",
     "variations": [
@@ -615,7 +615,7 @@
     [ 0, 2, 3, 3 ]
 ]
 }]}, {
-"root": ["G#"],
+"root": ["G#", "Ab"],
 "types": [{
     "name": "maj",
     "variations": [
