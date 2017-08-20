@@ -20,7 +20,7 @@ push(@startTriggers, @baseTriggers);
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTriggers = qw(online);
 #Joins the Timer Value
-my @joiners = qw(for on at to with);
+my @joiners = qw(for on at to with of);
 # StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
 my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
 # Ambigous triggers which should not give Timer IA
