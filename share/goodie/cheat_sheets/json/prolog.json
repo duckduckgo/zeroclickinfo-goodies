@@ -165,7 +165,7 @@
         "Pruning Operators": [
             {
                 "key": "!\/0",
-                "val": "A goal which always succeeds by preventing unwanted backtracking. All clauses below the one with the cut are discarded, as if they did not exist for this particular call and all the alternatives left by the execution of the goals at the left of the cut in that clause are also discarded. The goals at the right of the cut are executed normally"
+                "val": "The \"cut\" operator"
             }
             
         ],
