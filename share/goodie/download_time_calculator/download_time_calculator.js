@@ -122,6 +122,8 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
         // seed the tip calculator with some values
         var init_data = ops.data.data || "100";
         var init_speed = ops.data.speed || "20";
+        var init_dataUnit = ops.data.dataUnit || 8e6;
+        var init_speedUnit = ops.data.speedUnit || 1e6;
 
         return {
             onShow: function() {
@@ -131,6 +133,8 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
                     setUpUnits();
                     $dl_data.val(init_data);
                     $dl_speed.val(init_speed);
+                    $select_data.val(init_dataUnit);
+                    $select_speed.val(init_speedUnit);
                     calculateTime()
                 }
 
