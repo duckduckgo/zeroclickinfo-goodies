@@ -1,0 +1,141 @@
+.zci--download_time_calculator label {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.zci--download_time_calculator input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.zci--download_time_calculator .tips__col {
+    display: inline-block;
+}
+
+.zci--download_time_calculator .tips__col--left {
+    border-right: 1px solid #e0e0e0;
+    padding-right: 2em;
+    margin-right: 2em;
+}
+
+.zci--download_time_calculator .tips__block {
+    margin-bottom: 1em;
+}
+
+.zci--download_time_calculator .tips__label {
+    display: inline-block;
+}
+
+.zci--download_time_calculator .tips__label h4 {
+    padding-bottom: 0px;
+}
+
+.zci--download_time_calculator .tips__label h4 + div {
+    font-size: 1em;
+}
+
+.zci--download_time_calculator .tips__block .tips__amt {
+    font-size: 3em;
+}
+
+/* unit selection bar */
+.zci--download_time_calculator .frm__select {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.zci--download_time_calculator .frm__select:after {
+    height: 100%;
+    width: 30px;
+    margin-top: 0;
+    padding-top: 1.4em;
+    top: 0;
+    right: 0;
+    background-color: #fafafa;
+}
+
+.zci--download_time_calculator .frm__select:after {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.zci--download_time_calculator .frm__select:hover:after {
+    background-color: #fff;
+}
+
+.zci--download_time_calculator .frm__select {
+    display: block;
+    width: 100%;
+    height: 3em;
+    line-height: 3;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+    border-color: #c9c9c9;
+}
+
+.zci--download_time_calculator .frm__select {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    border-top-color: #e0e0e0;
+    border-left-color: #c9c9c9;
+}
+
+.zci--download_time_calculator .frm__select select {
+    width: 100%;
+    height: 3em !important;
+}
+
+/* Mobile */
+.is-mobile .zci--download_time_calculator .tips__col--left {
+    border-right: none;
+    padding-right: 0;
+}
+
+.is-mobile .zci--download_time_calculator .tips__col--right {
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-left: 0;
+}
+
+.is-mobile .zci--download_time_calculator input {
+    font-size: 1.6em;
+    line-height: 1.7em;
+    width: 100%;
+}
+
+.is-mobile .zci--download_time_calculator .tips__block {
+    margin-bottom: 0;
+}
+
+.is-mobile .zci--download_time_calculator .tips__block .tips__label {
+    width: 30%;
+}
+
+.is-mobile .zci--download_time_calculator .tips__block .tips__label h4 {
+    font-size: 3em;
+    padding-top: 0;
+}
+
+.is-mobile .zci--download_time_calculator .tips__block .tips__label h4.tips__label--pp {
+    font-size: 1.3em;
+}
+
+.is-mobile .zci--download_time_calculator .tips__block {
+    display: inline-block;
+    width: 100%
+}
+
+.is-mobile .zci--download_time_calculator .tips__amt {
+    display: inline-block;
+    width: 70%;
+    text-align: right;
+}
