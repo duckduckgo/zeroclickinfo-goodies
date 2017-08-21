@@ -16,7 +16,7 @@ my $unit_prefix = qr/(\s)?(k|m|g|t|kilo|mega|giga|ter(r?)a|)/i;
 my $data_suffix = qr/(\s)?(bit|byte|b)(s?)/i;
 my $speed_suffix = qr/(\s)?((ps)|(per sec(ond)?))/i;
 
-my $indirect = qr/$dec_num$unit_prefix$data_suffix\s.*?\s$dec_num$unit_prefix$data_suffix$speed_suffix/i;
+my $indirect = qr/$dec_num$unit_prefix$data_suffix.*?$dec_num$unit_prefix$data_suffix$speed_suffix/i;
 my $direct = qr/((download|dl|upload)\stime)|(data transfer)/i;
 
 triggers query_lc => qr/.*?$direct|$indirect.*?/;
@@ -62,7 +62,7 @@ handle query => sub {
         };
     }
     
-    return unless (/^.*?(?<dataval>$dec_num)(?<dtpref>$unit_prefix)(?<dtsuff>$data_suffix)\s.*?\s(?<speedval>$dec_num)(?<spdpref>$unit_prefix)(?<spdsuff>$data_suffix)$speed_suffix.*?$/i);
+    return unless (/^.*?(?<dataval>$dec_num)(?<dtpref>$unit_prefix)(?<dtsuff>$data_suffix).*?(?<speedval>$dec_num)(?<spdpref>$unit_prefix)(?<spdsuff>$data_suffix)$speed_suffix.*?$/i);
     
     my ($dataval, $speedval) = ($+{'dataval'}, $+{'speedval'});
     my $style = number_style_for($dataval, $speedval);
