@@ -1,8 +1,6 @@
 package DDG::Goodie::DownloadTimeCalculator;
-# ABSTRACT: Write an abstract here
-
-# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if
-# you are new to instant answer development
+# Download Time Calculator: Calculates time required to
+# download a file given data and connection speed.
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
@@ -11,10 +9,8 @@ use warnings;
 
 zci answer_type => 'download_time_calculator';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 my $dec_num = number_style_regex();
 my $unit_prefix = qr/(\s)?(k|m|g|t|kilo|mega|giga|ter(r?)a|)/i;
 my $data_suffix = qr/(\s)?(bit|byte|b)(s?)/i;
@@ -35,7 +31,6 @@ sub prefix_normalizer {
 
 sub suffix_normalizer {
     my $val = shift;
-    #print $val;
     if($val =~ /^(\s)?(bit|b)(s?)$/) {
         return 1;
     }
@@ -43,21 +38,9 @@ sub suffix_normalizer {
     return 8;
 }
 
-# Handle statement
 handle query => sub {
 
     my $query = $_;
-
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
-
-    # Optional - Regular expression guard
-    # Use this approach to ensure the remainder matches a pattern
-    # I.E. it only contains letters, or numbers, or contains certain words
-    #
-    # return unless qr/^\w+|\d{5}$/;
         
     if($query !~ /$indirect/i) {
         return '', structured_answer => {

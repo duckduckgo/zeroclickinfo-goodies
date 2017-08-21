@@ -117,7 +117,7 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
 
     DDH.download_time_calculator.build = function(ops) {
         
-        // seed the tip calculator with some values
+        // seed the calculator with some values
         var init_data = ops.data.data || "100";
         var init_speed = ops.data.speed || "20";
         var init_dataUnit = ops.data.dataUnit || 8e6;
