@@ -165,7 +165,7 @@
         "Pruning Operators": [
             {
                 "key": "!\/0",
-                "val": "The cut is one of the Prolog operators related to the program control flow. It can be placed anywhere a goal can, and it is written as the predicate !/0. Technically, the cut commits the execution to all the choices made since the parent goal was unified with the head of the clause in which the cut appears. This means that all clauses below the one with the cut are discarded, as if they did not exist for this particular call (so they are not considered if the execution of the current clause fails, in which case the call to the predicate fails), and all the alternatives left by the execution of the goals at the left of the cut in that clause are also discarded. The goals at the right of the cut are executed normally (i.e., they can backtrack)."
+                "val": "A goal which always succeeds by preventing unwanted backtracking. All clauses below the one with the cut are discarded, as if they did not exist for this particular call and all the alternatives left by the execution of the goals at the left of the cut in that clause are also discarded. The goals at the right of the cut are executed normally"
             }
             
         ],
