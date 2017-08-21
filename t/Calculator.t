@@ -540,6 +540,7 @@ ddg_goodie_test(
     '2014 E350' => undef,
     ')1108278829' => undef,
     '24score' => undef,
+    '24 score' => undef,
 );
 
 done_testing;
