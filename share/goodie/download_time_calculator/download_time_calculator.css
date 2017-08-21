@@ -6,11 +6,15 @@
 .zci--download_time_calculator input {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
     font-size: 2em;
     line-height: 1.5em;
     font-weight: bold;
     text-align: center;
+    background-color: #f7f7f7;
+}
+
+.zci--download_time_calculator input:hover {
+    background-color: #ffffff;
 }
 
 .zci--download_time_calculator .tips__col {
@@ -46,7 +50,7 @@
 /* unit selection bar */
 .zci--download_time_calculator .frm__select {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .zci--download_time_calculator .frm__select:after {
@@ -138,4 +142,26 @@
     display: inline-block;
     width: 70%;
     text-align: right;
+}
+
+/* Dark mode */
+
+.dark-bg .zci--download_time_calculator input {
+    background-color: #434343;
+}
+
+.dark-bg .zci--download_time_calculator input:hover {
+    background-color: #4b4b4b;
+}
+
+.dark-bg .zci--download_time_calculator .frm__select {
+    background-color: #434343;
+}
+
+.dark-bg .zci--download_time_calculator .frm__select:hover {
+    background-color: #4b4b4b;
+}
+
+.dark-bg .zci--download_time_calculator .frm__select select {
+    color: #dadada;
 }
