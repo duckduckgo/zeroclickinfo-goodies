@@ -538,6 +538,8 @@ ddg_goodie_test(
     '(929) 665-83-03' => undef,
     '(343) 270-55-66' => undef,
     '2014 E350' => undef,
+    '1994 e34' => undef,
+    '1980 e30' => undef,
     ')1108278829' => undef,
     '24score' => undef,
     '24 score' => undef,
