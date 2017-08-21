@@ -17,33 +17,33 @@
     background-color: #ffffff;
 }
 
-.zci--download_time_calculator .tips__col {
+.zci--download_time_calculator .dl-calc__col {
     display: inline-block;
 }
 
-.zci--download_time_calculator .tips__col--left {
+.zci--download_time_calculator .dl-calc__col--left {
     border-right: 1px solid #e0e0e0;
     padding-right: 2em;
     margin-right: 2em;
 }
 
-.zci--download_time_calculator .tips__block {
+.zci--download_time_calculator .dl-calc__block {
     margin-bottom: 1em;
 }
 
-.zci--download_time_calculator .tips__label {
+.zci--download_time_calculator .dl-calc__label {
     display: inline-block;
 }
 
-.zci--download_time_calculator .tips__label h4 {
+.zci--download_time_calculator .dl-calc__label h4 {
     padding-bottom: 0px;
 }
 
-.zci--download_time_calculator .tips__label h4 + div {
+.zci--download_time_calculator .dl-calc__label h4 + div {
     font-size: 1em;
 }
 
-.zci--download_time_calculator .tips__block .tips__amt {
+.zci--download_time_calculator .dl-calc__block .dl-calc__amt {
     font-size: 3em;
 }
 
@@ -97,12 +97,12 @@
 }
 
 /* Mobile */
-.is-mobile .zci--download_time_calculator .tips__col--left {
+.is-mobile .zci--download_time_calculator .dl-calc__col--left {
     border-right: none;
     padding-right: 0;
 }
 
-.is-mobile .zci--download_time_calculator .tips__col--right {
+.is-mobile .zci--download_time_calculator .dl-calc__col--right {
     width: 100%;
     border-top: 1px solid #e0e0e0;
     margin-top: 1em;
@@ -116,29 +116,29 @@
     width: 100%;
 }
 
-.is-mobile .zci--download_time_calculator .tips__block {
+.is-mobile .zci--download_time_calculator .dl-calc__block {
     margin-bottom: 0;
 }
 
-.is-mobile .zci--download_time_calculator .tips__block .tips__label {
+.is-mobile .zci--download_time_calculator .dl-calc__block .dl-calc__label {
     width: 30%;
 }
 
-.is-mobile .zci--download_time_calculator .tips__block .tips__label h4 {
+.is-mobile .zci--download_time_calculator .dl-calc__block .dl-calc__label h4 {
     font-size: 3em;
     padding-top: 0;
 }
 
-.is-mobile .zci--download_time_calculator .tips__block .tips__label h4.tips__label--pp {
+.is-mobile .zci--download_time_calculator .dl-calc__block .dl-calc__label h4.dl-calc__label--pp {
     font-size: 1.3em;
 }
 
-.is-mobile .zci--download_time_calculator .tips__block {
+.is-mobile .zci--download_time_calculator .dl-calc__block {
     display: inline-block;
     width: 100%
 }
 
-.is-mobile .zci--download_time_calculator .tips__amt {
+.is-mobile .zci--download_time_calculator .dl-calc__amt {
     display: inline-block;
     width: 70%;
     text-align: right;

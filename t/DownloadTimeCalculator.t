@@ -12,22 +12,23 @@ zci is_cached   => 1;
 # Build a structured answer that should match the response from the
 # Perl file.
 sub build_structured_answer {
-    my @test_params = @_;
+    my ($speedval, $dataval, $spdunit, $dtunit) = @_;
 
-    return 'plain text response',
-        structured_answer => {
+    return '', structured_answer => {
 
             data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
+                title    => 'Download Time Calculator',
+                speed => "$speedval",
+                data => "$dataval",
+                speedUnit => $spdunit,
+                dataUnit => $dtunit,
             },
-
+            
             templates => {
                 group => 'text',
-                # options => {
-                #
-                # }
+                options => {
+                    content => 'DDH.download_time_calculator.content'
+                }
             }
         };
 }
@@ -40,9 +41,13 @@ ddg_goodie_test(
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+    'data transfer' => build_test('', '', '', ''),
+    '50 mb at 2 mbps' => build_test('2', '50', 1e6, 1e6),
+    'download time calculator 50 GB at 2 megabytes per second' => build_test('2', '50', 8e6, 8e9),
+    'downloading 1 terabyte of data at 50mbps' => build_test('50', '1', 1e6, 8e12),
+    # Shouldn't trigger
+    'how to download 50 gb' => undef,
+    'Download some app' => undef,
     'bad example query' => undef,
 );
 

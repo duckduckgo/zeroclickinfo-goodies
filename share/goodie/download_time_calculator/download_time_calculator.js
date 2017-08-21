@@ -29,8 +29,6 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
         { symbol: 8e6,       name: 'Megabyte per second'},
         { symbol: 8e9,       name: 'Gigabyte per second'}
     ];
-    
-    var timeUnits = ["seconds", "minutes", "hours"];
         
     /*
      * setUpSelectors
