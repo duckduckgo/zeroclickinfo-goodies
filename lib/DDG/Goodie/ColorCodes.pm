@@ -39,12 +39,12 @@ my $trigger_and_guard = qr/^
     (?:$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
         red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
-        ($typestr)\s*(?<color>.+?)\bcolou?r(?:\s+code)?|                            # handles "rgb red color code", "red rgb color code", etc
-        (?<color>.+?)\brgb(?:\s+code)?|                                             # handles "red rgb code", etc
-        ($typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|                # handles "rgb color code for red", "red color code for html", etc
-        (rgba)\s*:?\s*\(?\s*(?<rgb>.+?)\s*\)?|                                    # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        \#?(?<hex3>[0-9a-f]{6})|\#(?<hex6>[0-9a-f]{3})                                    # handles #00f, #0000ff, etc
+        (<?type>$typestr)\s*(?<color>.+?)\bcolou?r(?:\s+code)?|                            # handles "rgb red color code", "red rgb color code", etc
+        (?<color>.+?)\b(rgb|css|html)(?:\s+code)?|                                             # handles "red rgb code", etc
+        (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|                # handles "rgb color code for red", "red color code for html", etc
+        (rgba)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                                    # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
+        ($typestr)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        \#?(?<color>[0-9a-f]{6})|\#(?<color>[0-9a-f]{3})                                    # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+$inverse_words)?
     (?:\sto\s(?:$typestr))?
@@ -69,26 +69,14 @@ handle query_raw => sub {
     my $inverse = ($_ =~ $inverse_words) ? 1 : 0;
 
     my $type    = 'rgb8';
-    
+
     s/\sto\s(?:$typestr)?//g;
     s/red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})/rgb($1 $2 $3)/;
 
     my @matches = $_ =~ $trigger_and_guard;
 
-    foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
-        # $q now contains the defined normalized matches which can be:
-        if (exists $types{$q}) {
-            $type = $types{$q};    # - One of our types.
-        } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
-            if ($q =~ /(?:^[a-z]+\s)+/) {
-                return;
-            } else {
-                $color = $q;                    # - A presumed color
-            }
-        }
-    }
-
-    return unless $color;
+    $type = $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
+    $color = lc $+{'color'};
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
