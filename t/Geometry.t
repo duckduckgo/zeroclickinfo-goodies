@@ -67,6 +67,22 @@ ddg_goodie_test(
         },
         '<path d="M 0,60 a 25 25 0 0 0 120,0 a 25 25 0 0 0 -120,0" class="fill surface" data-type="surface"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke backface"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke backface" data-type="volume"></path> <path d="M 0,60 a 30 10 0 1 0 120,0 a 25 25 0 0 0 -120,0 a 25 25 0 0 0 120,0" class="stroke volume" data-type="volume"></path>',
     ),
+    'area of an equilateral triangle' => build_test(
+        'equilateral triangle',
+        {
+            area =>      { color => "#F1A031", html => "(a<sup>2</sup>√3)/4", nameCaps => "Area",       symbol => "A" },
+            perimeter => { color => "#5B9E4D", html => "3a",                  nameCaps => "Perimeter",  symbol => "u" }
+        },
+        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',
+    ),
+    'area of a triangle' => build_test(
+        'triangle',
+        {
+            area =>      { color => "#F1A031", html => "bh/2",  nameCaps => "Area", symbol => "A" },
+            perimeter => { color => "#5B9E4D", html => "a+b+c", nameCaps => "Perimeter",  symbol => "u" }
+        },
+        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 0,120" class="stroke special height" data-type="height"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',
+    ),
     # Does Not match to
     'calc banana' => undef,
     'formula of shirt' => undef,
