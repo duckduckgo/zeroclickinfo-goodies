@@ -70,13 +70,13 @@ handle query_raw => sub {
     my $type    = 'rgb8';
 
     s/\sto\s(?:$typestr)?//g;
-    s/red:\s*([0-9]{1,3})\sgreen:\s*([0-9]{1,3})\sblue:\s*([0-9]{1,3})/rgb($1 $2 $3)/;
 
     my @matches = $_ =~ $trigger_and_guard;
 
     $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
-    $color = lc $+{'color'};
-    
+    $color = lc $+{'color'} if defined $+{'color'};
+    $color = "$+{'r'} $+{'g'} $+{'b'}" if defined $+{'r'} and defined $+{'g'} and defined $+{'b'};
+
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
