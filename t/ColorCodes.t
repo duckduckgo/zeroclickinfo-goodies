@@ -9,7 +9,6 @@ use DDG::Test::Goodie;
 zci answer_type => 'color_code';
 zci is_cached => 1;
 
-
 my $green_answer = 'Hex: #00FF00 ~ RGBA(0, 255, 0, 1) ~ RGB(0%, 100%, 0%) ~ HSL(120, 100%, 50%) ~ CMYB(100%, 0%, 100%, 0%)'."\n".'Complementary: #FF00FF'."\n".'Analogous: #00FF80, #80FF00';
 
 my %basic_answer = (

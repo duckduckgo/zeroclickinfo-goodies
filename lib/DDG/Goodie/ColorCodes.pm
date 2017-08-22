@@ -42,7 +42,6 @@ my $trigger_and_guard = qr/^
         red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
         (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|             # handles "rgb color code for red", "red color code for html", etc
         (?<type>$typestr)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                             # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        (<?type>$typestr)\s*(?<color>.+?)\bcolou?r(?:\s+code)?|                         # handles "rgb red color code", "red rgb color code", etc
         (?<color>.+?)\b(rgb|css|html)(?:\s+code)?|                                      # handles "red rgb code", etc
         \#?(?<color>[0-9a-f]{6})|\#(?<color>[0-9a-f]{3})                                # handles #00f, #0000ff, etc
     )
