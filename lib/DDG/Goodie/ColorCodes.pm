@@ -67,15 +67,17 @@ handle query_raw => sub {
     my $color;
     my $inverse = 0;
 
-    my $type    = 'rgb8';
+    my $type = 'rgb8';
 
     s/\sto\s(?:$typestr)?//g;
 
     my @matches = $_ =~ $trigger_and_guard;
 
     $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
-    $color = lc $+{'color'} if defined $+{'color'};
+
     $color = "$+{'r'} $+{'g'} $+{'b'}" if defined $+{'r'} and defined $+{'g'} and defined $+{'b'};
+    $color = lc $+{'color'} if defined $+{'color'};
+
     $inverse = 1 if defined $+{'inv'};
 
     my $alpha = "1";
