@@ -38,13 +38,13 @@ my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
     (?:$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
-        red:\s*([0-9]{1,3})\s*green:\s*([0-9]{1,3})\s*blue:\s*([0-9]{1,3})| # handles red: x green: y blue: z
-        ($typestr)\s*(.+?)\bcolou?r(?:\s+code)?|                            # handles "rgb red color code", "red rgb color code", etc
-        (.+?)\brgb(?:\s+code)?|                                             # handles "red rgb code", etc
-        ($typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|                # handles "rgb color code for red", "red color code for html", etc
-        (rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|                                    # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
+        red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
+        ($typestr)\s*(?<color>.+?)\bcolou?r(?:\s+code)?|                            # handles "rgb red color code", "red rgb color code", etc
+        (?<color>.+?)\brgb(?:\s+code)?|                                             # handles "red rgb code", etc
+        ($typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|                # handles "rgb color code for red", "red color code for html", etc
+        (rgba)\s*:?\s*\(?\s*(?<rgb>.+?)\s*\)?|                                    # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
         ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|                    # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        \#?([0-9a-f]{6})|\#([0-9a-f]{3})                                    # handles #00f, #0000ff, etc
+        \#?(?<hex3>[0-9a-f]{6})|\#(?<hex6>[0-9a-f]{3})                                    # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+$inverse_words)?
     (?:\sto\s(?:$typestr))?
