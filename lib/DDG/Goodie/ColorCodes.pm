@@ -74,9 +74,9 @@ handle query_raw => sub {
 
     my @matches = $_ =~ $trigger_and_guard;
 
-    $type = $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
+    $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
     $color = lc $+{'color'};
-
+    
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
