@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8; # For non ASCII triggers support
 
 use Test::More;
 use DDG::Test::Goodie;
@@ -15,6 +16,8 @@ my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 sub build_structured_answer {
     my $time = shift;
     $time = $time || 0;
+    my $lang = shift;
+    $lang = $lang || 'en';
     return "$time",
         structured_answer => {
             id     =>  'timer',
@@ -26,7 +29,8 @@ sub build_structured_answer {
             },
             data => {
                 time => "$time",
-                goodie_version => $goodieVersion
+                goodie_version => $goodieVersion,
+                trigger_language => $lang,
             },
             templates => {
                 group       => 'base',
@@ -55,6 +59,12 @@ ddg_goodie_test(
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
     'count down timer'       => build_test(),
+    
+    # Foreign language triggers
+    'таймер'                 => build_test('0', 'ru'),
+    'отсчет'                 => build_test('0', 'ru'),
+    'temporizador'           => build_test('0', 'es'),
+    'crônometro'             => build_test('0', 'pt'),
 
     # With initial time
     'timer 15 mins'                                  => build_test('900'),
