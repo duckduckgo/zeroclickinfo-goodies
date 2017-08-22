@@ -54,8 +54,6 @@ triggers query_raw => $trigger_and_guard;
 zci is_cached => 1;
 zci answer_type => 'color_code';
 
-my %trigger_filler = map { $_ => 1 } (qw( code ));
-
 my $color_mix = Color::Mix->new;
 
 sub percentify {
