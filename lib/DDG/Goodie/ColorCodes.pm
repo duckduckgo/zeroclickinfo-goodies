@@ -13,6 +13,7 @@ use Math::Round;
 use Try::Tiny;
 
 my %types = ( # hash of keyword => Convert::Color prefix
+        rgba    => 'rgb8',
         rgb     => 'rgb8',
         hex     => 'rgb8',
         html    => 'rgb8',
@@ -39,11 +40,10 @@ my $trigger_and_guard = qr/^
     (?:$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
         red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
+        (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|             # handles "rgb color code for red", "red color code for html", etc
+        (?<type>$typestr)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                             # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         (<?type>$typestr)\s*(?<color>.+?)\bcolou?r(?:\s+code)?|                         # handles "rgb red color code", "red rgb color code", etc
         (?<color>.+?)\b(rgb|css|html)(?:\s+code)?|                                      # handles "red rgb code", etc
-        (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|             # handles "rgb color code for red", "red color code for html", etc
-        (rgba)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                                        # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        (?<type>$typestr)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                             # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?(?<color>[0-9a-f]{6})|\#(?<color>[0-9a-f]{3})                                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+$inverse_words)?
