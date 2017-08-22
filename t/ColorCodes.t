@@ -77,6 +77,10 @@ ddg_goodie_test(
         'Hex: #202428 ~ RGBA(32, 36, 40, 1) ~ RGB(13%, 14%, 16%) ~ HSL(210, 11%, 14%) ~ CMYB(20%, 10%, 0%, 84%)'."\n".'Complementary: #292521'."\n".'Analogous: #212129, #212929',
         %basic_answer 
     ),
+    'bluishblack html' => test_zci(
+        'Hex: #202428 ~ RGBA(32, 36, 40, 1) ~ RGB(13%, 14%, 16%) ~ HSL(210, 11%, 14%) ~ CMYB(20%, 10%, 0%, 84%)'."\n".'Complementary: #292521'."\n".'Analogous: #212129, #212929',
+        %basic_answer
+    ),
     # Single full HTML check.
     'red html code' => test_zci(
         'Hex: #FF0000 ~ RGBA(255, 0, 0, 1) ~ RGB(100%, 0%, 0%) ~ HSL(0, 100%, 50%) ~ CMYB(0%, 100%, 100%, 0%)'."\n".'Complementary: #00FFFF'."\n".'Analogous: #FF8000, #FF0080',
@@ -114,7 +118,6 @@ ddg_goodie_test(
     ),
     
     # Queries to ignore.
-    'bluishblack html' => undef,
     'HTML email'       => undef,
     'wield color'      => undef,
     'whats the symbolism of the color red' => undef,

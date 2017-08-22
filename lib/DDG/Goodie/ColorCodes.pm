@@ -94,7 +94,6 @@ handle query_raw => sub {
     
     my $col = try  { Convert::Color->new("$type:$color") };
     return unless $col;
-
     if ($inverse) {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
