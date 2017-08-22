@@ -5,7 +5,9 @@
                 <div class="dot {{@key}}" data-type="{{@key}}" style="background-color: {{color}}"></div>
                 <div>
                     <h4>{{nameCaps}}</h4>
+                    {{#if html}}
                     {{symbol}} = {{{html}}}
+                    {{/if}}
                     {{#if result}}
                      = {{result}}
                     {{/if}}

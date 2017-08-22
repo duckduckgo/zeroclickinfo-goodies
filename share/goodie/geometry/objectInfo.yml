@@ -24,6 +24,13 @@ cuboid:
   volume: abc
   surface: 2(ab+ac+bc)
   diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
+hexagon:
+  area: (a<sup>2</sup>3√3)/2
+  perimeter: 6a
+trapezoid:
+  area: h(b1 + b2)/2
+  perimeter: s1 + b1 + s2 + b2
+  height: 
 ---
 volume:
   symbol: "V"
@@ -42,4 +49,7 @@ circumference:
   color: "#5B9E4D"
 diagonal:
   symbol: "e"
+  color: "#4495D4"
+height:
+  symbol: "h"
   color: "#4495D4"
