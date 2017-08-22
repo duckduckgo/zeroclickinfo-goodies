@@ -18,17 +18,6 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
         { symbol: 8e9,       name: 'Gigabyte' },
         { symbol: 8e12,      name: 'Terabyte' }
     ];
-    
-    var speedUnits = [
-        { symbol: 1,         name: 'Bits per second'},
-        { symbol: 1e3,       name: 'Kilobit per second'},
-        { symbol: 1e6,       name: 'Megabit per second'},
-        { symbol: 1e9,       name: 'Gigabit per second'},
-        { symbol: 1e12,      name: 'Terabit per second'},
-        { symbol: 8e3,       name: 'Kilobyte per second'},
-        { symbol: 8e6,       name: 'Megabyte per second'},
-        { symbol: 8e9,       name: 'Gigabyte per second'}
-    ];
         
     /*
      * setUpSelectors
@@ -61,12 +50,10 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
                 + dataUnits[i].name
                 + '</option>'
             );
-        }
-        
-        for(var i = 0 ; i < speedUnits.length ; i++) {
+            
             $select_speed.append(
-                '<option value="' + speedUnits[i].symbol + '">'
-                + speedUnits[i].name
+                '<option value="' + dataUnits[i].symbol + '">'
+                + dataUnits[i].name + ' per second'
                 + '</option>'
             );
         }
@@ -107,7 +94,7 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
         }
         if(time >= 1)
         {
-            result += Math.floor(time);
+            result += time;
             if(time >= 2) result += " seconds, ";
             else result += " second, ";
         }
