@@ -37,7 +37,7 @@ my $inverse_words = qr/inverse|negative|opposite/;
 
 my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
-    (?:$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
+    (?<inv>$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
         red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
         (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|             # handles "rgb color code for red", "red color code for html", etc
@@ -45,7 +45,7 @@ my $trigger_and_guard = qr/^
         (?<color>.+?)\b(rgb|css|html)(?:\s+code)?|                                      # handles "red rgb code", etc
         \#?(?<color>[0-9a-f]{6})|\#(?<color>[0-9a-f]{3})                                # handles #00f, #0000ff, etc
     )
-    (?:(?:'?s)?\s+$inverse_words)?
+    (?<inv>(?:'?s)?\s+$inverse_words)?
     (?:\sto\s(?:$typestr))?
 $/ix;
 
@@ -65,7 +65,7 @@ sub percentify {
 handle query_raw => sub {
 
     my $color;
-    my $inverse = ($_ =~ $inverse_words) ? 1 : 0;
+    my $inverse = 0;
 
     my $type    = 'rgb8';
 
@@ -76,6 +76,7 @@ handle query_raw => sub {
     $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
     $color = lc $+{'color'} if defined $+{'color'};
     $color = "$+{'r'} $+{'g'} $+{'b'}" if defined $+{'r'} and defined $+{'g'} and defined $+{'b'};
+    $inverse = 1 if defined $+{'inv'};
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
