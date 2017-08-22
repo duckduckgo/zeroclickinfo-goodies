@@ -63,13 +63,13 @@ sub percentify {
 handle query_raw => sub {
 
     my $color;
+    my $alpha = "1";
     my $inverse = 0;
-
     my $type = 'rgb8';
 
     s/\sto\s(?:$typestr)?//g;
 
-    my @matches = $_ =~ $trigger_and_guard;
+    $_ =~ $trigger_and_guard;
 
     $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
 
@@ -78,7 +78,6 @@ handle query_raw => sub {
 
     $inverse = 1 if defined $+{'inv'};
 
-    my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
         $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3);
@@ -92,7 +91,7 @@ handle query_raw => sub {
         };
     }
     
-    my $col = try  { Convert::Color->new("$type:$color") };
+    my $col = try { Convert::Color->new("$type:$color") };
     return unless $col;
     if ($inverse) {
         my $orig_rgb = $col->as_rgb8;
@@ -122,11 +121,7 @@ handle query_raw => sub {
     #greyscale colours have no hue and saturation
     my $show_column_2 = !($hsl[0] eq 0 && $hsl[1] eq '0%');
     
-    my $column_2 = '';
-    
-    if ($show_column_2) {
-        $column_2 = "\n" . "Complementary: #$complementary" . "\n" . "Analogous: #$analogous[0], #$analogous[1]";
-    }
+    my $column_2 = $show_column_2 ? "\nComplementary: #$complementary\nAnalogous: #$analogous[0], #$analogous[1]" : '';
     
     return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
     structured_answer => {
