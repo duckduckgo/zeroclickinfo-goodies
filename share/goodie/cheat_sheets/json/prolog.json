@@ -1,0 +1,227 @@
+{
+    "id": "prolog_cheat_sheet",
+    "name": "Prolog",
+    "description": "Overview of basic Prolog predicates",
+
+    "metadata": {
+        "sourceName": "The Computational logic, Languages, Implementation, and Parallelism Laboratory",
+        "sourceUrl" : "http://cliplab.org/~vocal/public_info/seminar_notes/node42.html"
+    },
+
+    "aliases": [
+        "prolog predicates", "prolog predicate"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Arithmetic Terms",
+        "Arithmetic Builtins",
+        "Type Predicates",
+        "Structure Inspection",
+        "Input/Output",
+        "Pruning Operators",
+        "Meta-Logical Predicates",
+        "Meta-Calls (Higher Order)",
+        "Dynamic Program Modification"
+    ],
+
+    "sections": {
+        "Arithmetic Terms": [
+            {
+                "key": "+\/2",
+                "val": "Addition: 3 + 5."
+            },
+            {
+                "key": "+\/1",
+                "val": "Positive prefix (usually unneeded): +3"
+            },
+            {
+                "key": "-\/2",
+                "val": "Subtraction: 5 - 3"
+            },
+            {
+                "key": "-\/1",
+                "val": "Negative prefix: -1"
+            },
+            {
+                "key": "\/ \/2",
+                "val": "Division: 3\/5 = 0.6"
+            },
+            {
+                "key": "\/\/ \/2",
+                "val": "Integer Division: 3\/\/5 = 0"
+            },
+            {
+                "key": "mod\/2",
+                "val": "Module: 5 mod 3 = 2"
+            },
+            {
+                "key": "log\/1",
+                "val": "Logarithm: log(1) = 0.0"
+            }
+            
+        ],
+        "Arithmetic Builtins": [
+            {
+                "key": "is/2",
+                "val": "Evaluation: Z is T evaluates the arithmetical term T and the result is unified with the variable Z. X is 3 + 5. X = 8"
+            },
+            {
+                "key": "=:=",
+                "val": "Arithmetic equality"
+            },
+            {
+                "key": "=\\=",
+                "val": "Arithmetic inequality"
+            },
+            {
+                "key": "<\n>\n=<\n>=",
+                "val": "Order relationship"
+            }
+            
+        ],
+        "Type Predicates": [
+            {
+                "key": "integer(X)",
+                "val": "Check whether X is an integer"
+            },
+            {
+                "key": "float(X)",
+                "val": "Check whether X is a floating point number"
+            },
+            {
+                "key": "number(X)",
+                "val": "Check whether X is a number "
+            },
+            {
+                "key": "atom(X)",
+                "val": "Check whether X is a constant other than number"
+            },
+            {
+                "key": "atomic(X)",
+                "val": "Check whether X is a constant"
+            }
+            
+        ],
+        "Structure Inspection": [
+            {
+                "key": "functor(F, N, A)",
+                "val": "Succeeds when F is a complex structure whose arity is N and whose arity is A. It can be used to build new functors with fresh variables, or to obtain the name and arity of already built functors"
+            },
+            {
+                "key": "arg(F, N, Arg)",
+                "val": "Succeeds when Arg is the N-th argument of functor F. Arguments start numbering at 1"
+            }
+            
+        ],
+        "Input/Output": [
+            {
+                "key": "write(X)",
+                "val": "Write the term X on the current output stream"
+            },
+            {
+                "key": "nl",
+                "val": "Start a new line on the current output stream"
+            },
+            {
+                "key": "read(X)",
+                "val": "Read a term (finished by a full stop) from the current input stream and unify it with X"
+            },
+            {
+                "key": "put(N)",
+                "val": "Write the ASCII character code N. N can be a string of length one"
+            },
+            {
+                "key": "get(X)",
+                "val": "Read the next character code and unify its ASCII code with N"
+            },
+            {
+                "key": "see(File)",
+                "val": "File becomes the current input stream"
+            },
+            {
+                "key": "seeing(File)",
+                "val": "The current input stream is File"
+            },
+            {
+                "key": "seen",
+                "val": "Close the current input stream"
+            },
+            {
+                "key": "tell(File)",
+                "val": "File becomes the current output stream"
+            },
+            {
+                "key": "telling(File)",
+                "val": "The current output stream is File"
+            },
+            {
+                "key": "told",
+                "val": "Close the current output stream"
+            }
+            
+        ],
+        "Pruning Operators": [
+            {
+                "key": "!\/0",
+                "val": "The \"cut\" operator"
+            }
+            
+        ],
+        "Meta-Logical Predicates": [
+            {
+                "key": "var(X)",
+                "val": "X is currently a free variable"
+            },
+            {
+                "key": "nonvar(X)",
+                "val": "X is not a free variable"
+            },
+            {
+                "key": "ground(X)",
+                "val": "X is a term not containing variables"
+            }
+            
+        ],
+        "Meta-Calls (Higher Order)": [
+            {
+                "key": "call(X)",
+                "val": "Accepts a term and calls it as if it appeared in the program text. Thus, call(p(X)) is equivalent to the appearance of p(X) in the program text. The argument X of call(X) (and this is really where the power of meta-calls is) does not need to be explicitly present in the source code, but only correctly instantiated at run-time"
+            },
+            {
+                "key": "findall(Term, Goal, List)",
+                "val": "Leaves in List an instance of Term for each success of Goal"
+            },
+            {
+                "key": "bagof(Term, Goal, List)",
+                "val": "Allows (selective) backtracking on the free variables of the goal"
+            },
+            {
+                "key": "setof(Term, Goal, List)",
+                "val": "Behaves as bagof/3, but in addition the returned list is sorted and has no repetitions"
+            }
+            
+        ],
+        "Dynamic Program Modification": [
+            {
+                "key": "assert(X)\nassertz(X)",
+                "val": "Adds a new fact or clause to the database. Term is asserted as the last fact or clause with the same key predicate"
+            },
+            {
+                "key": "asserta(X)",
+                "val": "Same as assert(X) but adds clause at the beginning of database"
+            },
+            {
+                "key": "retract(X)",
+                "val": "Removes fact or clause X from the database"
+            },
+            {
+                "key": "retractall(X)",
+                "val": "Removes all facts or clauses from the database for which the head unifies with X."
+            }
+            
+        ]        
+        
+    }
+}
