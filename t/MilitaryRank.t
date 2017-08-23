@@ -210,6 +210,10 @@ my @us_army = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
+        meta => {
+            selectedItem => -1,
+            scrollToSelectedItem => 1
+        }
     }
 );
 my @pl_af = (
@@ -354,6 +358,10 @@ my @pl_af = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
+        meta => {
+            selectedItem => -1,
+            scrollToSelectedItem => 1
+        }
     }
 );
 
