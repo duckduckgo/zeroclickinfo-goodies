@@ -79,10 +79,10 @@ handle query_raw => sub {
     $inverse = 1 if defined $+{'inv'};
 
     $color =~ s/(,\s*|\s+)/,/g;
+    $color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e;
+
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
         $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3);
-        $type = 'rgb8';
-    } elsif ($color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e) { #hack rgba into rgb and extract alpha
         $type = 'rgb8';
     } else {
         try {
@@ -92,7 +92,9 @@ handle query_raw => sub {
     }
     
     my $col = try { Convert::Color->new("$type:$color") };
+    
     return unless $col;
+
     if ($inverse) {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
