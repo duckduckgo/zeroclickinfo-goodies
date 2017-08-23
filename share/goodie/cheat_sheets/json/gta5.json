@@ -1,0 +1,93 @@
+{
+    "id": "gta5_cheat_sheet",
+    "name": "GTA5",
+    "description": "displayed as subtitle of the AnswerBar; optional",
+
+    "metadata": {
+        "sourceName": "Game Faqs",
+        "sourceUrl" : "https://www.gamefaqs.com/pc/805606-grand-theft-auto-v/cheats"
+    },
+
+    "aliases": [
+        "grand theft auto 5", "gta v", "gta 5", "gta5", "gta5 cheats"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Cheat Codes I",
+        "Cheat Codes II"
+    ],
+
+    "sections": {
+        "Cheat Codes I": [
+            {
+                "key": "comet",
+                "val": "COMET"
+            },
+            {
+                "key": "Buzzard Attack Helicopter",
+                "val": "BUZZOFF"
+            },
+            {
+                "key": "Change Weather",
+                "val": "MAKEITRAIN"
+            },
+            {
+                "key": "BMX",
+                "val": "BANDIT"
+            },
+            {
+                "key": "Drunk Mode",
+                "val": "LIQUOR"
+            },
+            {
+                "key": "Explosive Ammo",
+                "val": "HIGHEX"
+            },
+            {
+                "key": "Explosive Melee Attack",
+                "val": "HOTHANDS"
+            },
+            {
+                "key": "Give Parachute",
+                "val": "SKYDIVE"
+            }
+        ],
+        "Cheat Codes II": [
+            {
+                "key": "Invincibility",
+                "val": "PAINKILLER"
+            },
+            {
+                "key": "Max Health + Armor",
+                "val": "TURTLE"
+            },
+            {
+                "key": "Moon Gravity",
+                "val": "FLOATER"
+            },
+            {
+                "key": "PCJ-600 Motorcycle",
+                "val": "ROCKET"
+            },
+            {
+                "key": "Raise Wanted Level",
+                "val": "FUGITIVE"
+            },
+            {
+                "key": "Sanchez Dirt Bike",
+                "val": "OFFROAD"
+            },
+            {
+                "key": "Recharge Ability",
+                "val": "POWERUP"
+            },
+            {
+                "key": "Rapid GT",
+                "val": "RAPIDGT"
+            }
+         
+        ]
+    }
+}
