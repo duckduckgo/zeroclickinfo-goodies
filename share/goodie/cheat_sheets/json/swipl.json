@@ -1,0 +1,60 @@
+{
+    "id": "swipl_cheat_sheet",
+    "name": "Swipl Predicates",
+    "description": "Some useful SWI Prolog predicates",
+
+    "metadata": {
+        "sourceName": "swi-prolog official documentation",
+        "sourceUrl" : "http://www.swi-prolog.org/"
+    },
+
+    "aliases": [
+        "prolog", "prolog predicates", "swi prolog", "swi prolog predicates", "prolog list"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "List Predicates",
+        "Collector Predicates"
+    ],
+
+    "sections": {
+        "List Predicates": [
+            {
+                "key": "member(?Elem, ?List)",
+                "val": "True if Elem is a member of List"
+            },
+            {
+                "key": "select(?Elem, ?List1, ?List2)",
+                "val": "True if List1, with Elem removed, results in List2"
+            },
+            {
+                "key": "nth0(?Index, ?List, ?Elem)",
+                "val": "True if Elem is at position Index in List (starts counting from 0, see nth1/3 starting at 1)"
+            },
+            {
+                "key": "permutation(?List1, ?List2)",
+                "val": "True if List1 is an permutation of List2"
+            },
+            {
+                "key": "append(?List1, ?List2, ?List1AndList2)",
+                "val": "True if List1AndList2 is the concatenation of List1 and List2"
+            }
+        ],
+        "Collector Predicates": [
+            {
+                "key": "findall(+Template, :Goal, -Bag)",
+                "val": "Create a list of the instantiations Template gets successively on backtracking over Goal and unify the result with Bag. Succeeds with an empty list if Goal has no solutions"
+            },
+            {
+                "key": "bagof(+Template, :Goal, -Bag)",
+                "val": "Unify Bag with the alternatives of Template. If Goal has free variables besides the one sharing with Template, bagof/3 will backtrack over the alternatives of these free variables, unifying Bag with the corresponding alternatives of Template. Fails when Goal has no solutions"
+            },
+            {
+                "key": "setof(+Template, +Goal, -Set)",
+                "val": "Same as bagof/3, but sorts the result without duplicates"
+            }
+        ]
+    }
+}
