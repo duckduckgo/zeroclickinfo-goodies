@@ -123,6 +123,8 @@ ddg_goodie_test(
     'red color porsche 911' => undef,
     'yoda lightsaber green color' => undef,
     'product red color iphone' => undef,
+    'w3 html5.1' => undef,
+    'w3c html5.1' => undef
 );
 
 done_testing;
