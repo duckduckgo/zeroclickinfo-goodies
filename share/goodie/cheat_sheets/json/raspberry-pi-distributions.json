@@ -1,0 +1,106 @@
+{
+    "id": "raspberry_pi_distributions_cheat_sheet",
+    "name": "Raspberry Pi Distributions",
+    "description": "List of available distributions for the Raspberry Pi",
+
+    "metadata": {
+        "sourceName": "elinux",
+        "sourceUrl" : "http://elinux.org/RPi_Distributions"
+    },
+
+    "aliases": [
+        "rpi distros", "rpi distributions", "raspberry pi distros", "rasp pi distros", "raspberry distros", "rasp pi distributions"
+    ],
+
+    "template_type": "links",
+
+    "section_order": [
+        "General Purpose",
+        "Network Centered",
+        "Multimedia Centered",
+        "Non-Linux"
+    ],
+
+    "sections": {
+        "General Purpose": [
+            {
+                "link": "http://www.raspbian.org",
+                "key": "Raspbian"
+            },
+            {
+                "link": "https://wiki.cdot.senecacollege.ca/wiki/Raspberry_Pi_Fedora_Remix",
+                "key": "Fedora Remix"
+            },
+            {
+                "link": "https://archlinuxarm.org",
+                "key": "Arch Linux ARM"
+            },
+            {
+                "link": "https://wiki.gentoo.org/wiki/Project:ARM",
+                "key": "Gentoo Linux"
+            },
+            {
+                "link": "https://sourceforge.net/projects/bodhilinux/files/ARMHF/Pi/",
+                "key": "Bodhi Linux"
+            },
+            {
+                "link": "http://sarpi.fatdog.eu",
+                "key": "Slackware ARM"
+            }
+        ],
+        "Network Centered": [
+            {
+                "link": "http://docs.kali.org/kali-on-arm/install-kali-linux-arm-raspberry-pi",
+                "key": "Kali Linux"
+            },
+            {
+                "link": "https://v2cloud.com/download/",
+                "key": "V2 Cloud"
+            },
+            {
+                "link": "http://rpitc.blogspot.com.es",
+                "key": "Raspberry Pi Thin Client"
+            },
+            {
+                "link": "http://www.berryterminal.com/doku.php",
+                "key": "BerryTerminal"
+            }
+        ],
+        "Multimedia Centered": [
+            {
+                "link": "https://libreelec.tv",
+                "key": "LibreELEC"
+            },
+            {
+                "link": "http://openelec.tv",
+                "key": "OpenELEC"
+            },
+            {
+                "link": "https://darkimmortal.com/category/raspberry-pi/",
+                "key": "DarkELEC"
+            },
+            {
+                "link": "https://osmc.tv",
+                "key": "OSMC"
+            },
+            {
+                "link": "https://slaxbmc.blogspot.com.es",
+                "key": "SlaXBMCRPi"
+            }
+        ],
+        "Non-Linux": [
+            {
+                "link": "https://developer.microsoft.com/en-US/windows/iot",
+                "key": "Windows 10 IoT"
+            },
+            {
+                "link": "http://ftp.freebsd.org/pub/FreeBSD/snapshots/arm/armv6/ISO-IMAGES/",
+                "key": "FreeBSD"
+            },
+            {
+                "link": "https://www.raspberrypi.org/blog/netbsd-is-here/",
+                "key": "NetBSD"
+            }
+        ]
+    }
+}
