@@ -121,9 +121,9 @@ handle query_raw => sub {
     $complementary = uc($complementary);
     
     #greyscale colours have no hue and saturation
-    my $show_column_2 = !($hsl[0] eq 0 && $hsl[1] eq '0%');
+    my $hide_column_2 = ($hsl[0] eq 0 && $hsl[1] eq '0%');
     
-    my $column_2 = $show_column_2 ? "\nComplementary: #$complementary\nAnalogous: #$analogous[0], #$analogous[1]" : '';
+    my $column_2 = $hide_column_2 ? "" : "\nComplementary: #$complementary\nAnalogous: #$analogous[0], #$analogous[1]";
     
     return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
     structured_answer => {
@@ -133,7 +133,7 @@ handle query_raw => sub {
             rgb => $rgb,
             hslc => $hslc,
             cmyb => $cmyb,
-            show_column_2 => $show_column_2,
+            show_column_2 => !$hide_column_2,
             analogous => \@analogous,
             complementary => $complementary,
         },
