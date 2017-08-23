@@ -1,0 +1,182 @@
+{
+    "id": "lolcode_cheat_sheet",
+    "name": "Lolcode",
+    "description": "LOLCODE is an esoteric programming language. This is an overview of the basic keywords and syntax.",
+
+    "metadata": {
+        "sourceName": "Esolangs-Wiki",
+        "sourceUrl" : "https://esolangs.org/wiki/LOLCODE"
+    },
+
+    "aliases": [
+        "lolcode language", "lolcode esolang"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Data Types", "Escape Sequences", "Basic Syntax"
+    ],
+
+    "sections": {
+        "Data Types":[
+            {
+                "key": "NOOB",
+                "val": "This is the untyped type. All declared variables without a value are of this type and their value is also NOOB"
+            },
+            {
+                "key": "TROOF",
+                "val": "This is the equivalent of a boolean variable. It can have one of two values: WIN (true) and FAIL (false)."
+            },
+            {
+                "key": "NUMBR",
+                "val": "It is an integer"
+            },
+            {
+                "key": "NUMBAR",
+                "val": "It is a float"
+            },
+            {
+                "key": "YARN",
+                "val": "It is a string. YARNs are demarked with double quotation marks with colon (:) as escape character"
+            },
+            {
+                "key": "BUKKIT",
+                "val": "Represents an array."
+            }
+        ],
+        "Escape Sequences": [
+            {
+                "key": ":)",
+                "val": "is a newline (\n)"
+            },
+            {
+                "key": ":>",
+                "val": "is a tab (\t)"
+            },
+            {
+                "key": ":\"",
+                "val": "is a literal double quote (\")"
+            }, 
+            {
+                "key": "::",
+                "val": "is a literal colon (:)"
+            },
+            {
+                "key": ":([hex])",
+                "val": "resolves the hex number into the corresponding Unicode code point."
+            },
+            {
+                "key": ":{[var]}",
+                "val": "interpolates the current value of the enclosed variable, cast as a string."
+            },
+            {
+                "key": ":[[char name]]",
+                "val": "resolves the [char name] in capital letters to the corresponding Unicode normative name."
+            }  
+        ],
+        "Basic Syntax": [
+            {
+                "key": "HAI [version]",
+                "val": "HAI introduces the program and specifies the version."
+            },
+            {
+                "key": "BTW Comment",
+                "val": "Introduces a single line comment."
+            },
+            {
+                "key": "OBTW Comment TLDR",
+                "val": "Introduces a multi line comment."
+            },
+            {
+                "key": "CAN HAS [library]?",
+                "val": "Includes a library for example STDIO, STRING, etc."
+            },
+            {
+                "key": "VISIBLE [string]",
+                "val": "Prints STRING to the standard output stream. To avoid a newline '!' is added outside the string"
+            },
+            {
+                "key": "GIMMEH [var]",
+                "val": "Reads a string from the standard input stream into the variable."
+            },
+            {
+                "key": "I HAS A [var]",
+                "val": "Declares a variable without a value. Its type will be NOOB"
+            },
+            {
+                "key": "I HAS A [var] ITZ [value]",
+                "val": "Declares a variable and assigns a value to it."
+            },
+            {
+                "key": "I HAS A [var] ITZ A [type]",
+                "val": "Declares a variable of the specified type and assigns the initial value of that type to it"
+            },
+            {
+                "key": "I HAS A [var] ITZ LIEK A [other var]",
+                "val": "Declares a variable and copies the contents of the other variable into the newly created variable (only valid if the other variable is a BUKKIT)."
+            },
+            {
+                "key": "[var] R [value]",
+                "val": "Assigns a value to a variable."
+            },
+            {
+                "key": "BOTH SAEM [expression] AN [expression",
+                "val": "Compares two expressions (a variable, a value or another comparison). Returns WIN if both expressions have the same value."
+            },
+            {
+                "key": "DIFFRINT [expression] AN [expression]",
+                "val": "Compares two expressions (a variable, a value or another comparison). Returns WIN if both expressions have different values."
+            },
+            {
+                "key": "BIGGR OF [expression] AN [expression]",
+                "val": "Returns the bigger of the two given expressions."
+            },
+            {
+                "key": "SMALLR OF [expression] AN [expression]",
+                "val": "Returns the smaller of the two given expressions."
+            },
+            {
+                "key": "SUM OF [expression] AN [expression]",
+                "val": "Calculates [expression1] + [expression2]"
+            },
+            {
+                "key": "DIFF OF [expression] AN [expression]",
+                "val": "Calculates [expression1] - [expression2]"
+            },
+            {
+                "key": "PRODUKT OF [expression] AN [expression]",
+                "val": "Calculates [expression1] * [expression2]"
+            },
+            {
+                "key": "QUOSHUNT OF [expression] AN [expression]",
+                "val": "Calculates [expression1] / [expression2]"
+            },
+            {
+                "key": "MOD OF [expression] AN [expression]",
+                "val": "Calculates [expression1] modulo [expression2]"
+            },
+            {
+                "key": "SMOOSH [argument1] AN [argument2] (AN [argument3] (AN [argument4] ...)) MKAY",
+                "val": "Concatenates the given YARNs."
+            },
+            {
+                "key": "MAEK [expression] A [type]",
+                "val": "Explicitly casts the expression to the given type."
+            },
+            {
+                "key": "[variable] IS NOW A [type]",
+                "val": "Explicitly casts a variable to the given type."
+            },
+            {
+                "key": "SRS [var]",
+                "val": "Interprets a YARN variable as an identifier."
+            },
+            {
+                "key": "KTHXBYE",
+                "val": "KTHXBYE terminates the program."
+            }
+        ]
+      
+    }
+}
