@@ -1,0 +1,122 @@
+{
+    "id": "feedly_cheat_sheet",
+    "name": "Feedly",
+    "description": "Keyboard shortcuts",
+
+    "metadata": {
+        "sourceName": "Feedly Knowledge Base",
+        "sourceUrl" : "https://feedly.uservoice.com/knowledgebase/articles/272051-keyboard-shortcuts"
+    },
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Help",
+        "Navigation",
+        "Lists",
+        "Selected story"
+    ],
+
+    "sections": {
+        "Help": [
+            {
+                "key": "?",
+                "val": "Keyboard shortcut help"
+            }
+        ],
+        "Navigation": [
+            {
+                "key": "[g], [t]",
+                "val": "Today"
+            },
+            {
+                "key": "[g], [a]",
+                "val": "All"
+            },
+            {
+                "key": "[g], [f]",
+                "val": "Favorites"
+            },
+            {
+                "key": "[g], [l]",
+                "val": "Read later"
+            },
+            {
+                "key": "[g], [i]",
+                "val": "Index"
+            },
+            {
+                "key": "[g], [o]",
+                "val": "Organize sources"
+            },
+            {
+                "key": "[shift] [j]",
+                "val": "Next source or collection"
+            },
+            {
+                "key": "[shift] [k]",
+                "val": "Previous source or collection"
+            },
+            {
+                "key": "r",
+                "val": "Refresh"
+            }
+        ],
+        "Lists": [
+            {
+                "key": "j",
+                "val": "Inline next story"
+            },
+            {
+                "key": "k",
+                "val": "Inline previous story"
+            },
+            {
+                "key": "n",
+                "val": "Select next story"
+            },
+            {
+                "key": "p",
+                "val": "Select previous story"
+            },
+            {
+                "key": "[shift] [a]",
+                "val": "Mark all as read"
+            }
+        ],
+        "Selected story": [
+            {
+                "key": "o",
+                "val": "Inline/close currently selected story"
+            },
+            {
+                "key": "v",
+                "val": "View original in a new tab"
+            },
+            {
+                "key": "m",
+                "val": "Toggle mark as read"
+            },
+            {
+                "key": "x",
+                "val": "Mark as read and hide"
+            },
+            {
+                "key": "s",
+                "val": "Read later"
+            },
+            {
+                "key": "b",
+                "val": "Buffer"
+            },
+            {
+                "key": "c",
+                "val": "Clip to Evernote"
+            },
+            {
+                "key": "[shift] [v]",
+                "val": "Preview"
+            }
+        ]
+    }
+}
