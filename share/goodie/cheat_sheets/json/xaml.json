@@ -1,0 +1,192 @@
+{
+    "id": "xaml_cheat_sheet",
+    "name": "XAML",
+    "description": "XAML for WPF Cheat Sheet. Extensible Application Markup Language is an XML-based markup language developed by Microsoft. Cheat Sheet includes Data Binding, Styles and Triggers, Resources, Transforms, Brushes, and Layout.",
+
+    "metadata": {
+        "sourceName": "Cheat-Sheets.org",
+        "sourceUrl" : "http://www.cheat-sheets.org/saved-copy/wpfcheatsheet.pdf"
+    },
+
+    "aliases": [
+        "xaml for wpf", "xaml data binding", "xaml styles and triggers", "xaml resources",
+        "xaml transforms", "xaml brushes","xaml layout","xaml snippets"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Data Binding","Styles and Triggers", "Resources", "Transforms", "Brushes", "Layout"
+    ],
+
+    "sections": {
+        "Data Binding": [
+            {
+                "key": "{Binding}",
+                "val": "Binds the current DataContext"
+            },
+            {
+                "key": "{Binding propertyName}",
+                "val": "Binds the property of the current DataContext"
+            },
+            {
+                "key": "{Binding Source={StaticResourceresName}}",
+                "val": "Binds to a staticresource such as a string"
+            },
+            {
+                "key": "{Binding ElementName= elementName, Path= propertyName}",
+                "val": "Binds to the property of the given element"
+            },
+            {
+                "key": "{TemplateBindingpropertyName}",
+                "val": "Binds to the template parents given property inside a ControlTemplate"
+            },
+            {
+                "key": "<XmlDataProvider x:Key=\"name\" Source=\"filePath\" />",
+                "val": "Added to resources to allow xml data binding"
+            },
+            {
+                "key": "IsSynchronizedWithCurrentItem=\"True\"",
+                "val": "Synchronizes elements bound to same data source"
+            }
+        ],
+        "Styles and Triggers": [
+            {
+                "key": "<Style x:Key=”styleName”>",
+                "val": "Style applied to elements that set this style"
+            },
+            {
+                "key": "<SetterProperty=”propertyName”Value=”value”/>",
+                "val": "Setter sets a property of the current target type"
+            },
+            {
+                "key": "<Style.Triggers>",
+                "val": "Holds Triggers to set a style dependant on event"
+            },
+            {
+                "key": "<Trigger Property=”propertyName” Value=”value”>",
+                "val": "Triggered when dependency property is set"
+            },
+            {
+                "key": "<DataTriggerBinding=\"{BindingPath=propertyName}\"Value=\"theValue\">",
+                "val": "Triggered when bound value is set"
+            },
+            {
+                "key": "<EventTriggerRoutedEvent=”eventName”>",
+                "val": "Triggered when the given routed event is fired"
+            }
+        ],
+        "Resources": [
+            {
+                "key": "<element Name.Resources>",
+                "val": "Holds resources accessible to anything under the element"
+            },
+            {
+                "key": "<system:String x:Key=\"resName\">stringValue </system:String>",
+                "val": "Creates a string resource"
+            },
+            {
+                "key": "<SolidColorBrush x:Key=\"resName\"Color=\"colourValue\" />",
+                "val": "Placed inside Resources tag, creates a resource with the value"
+            },
+            {
+                "key": "StaticResource",
+                "val": "Applied once, when needed"
+            },
+            {
+                "key": "DynamicResource",
+                "val": "Applied as the resources changes"
+            },
+            {
+                "key": "Fill=\"{StaticResourceresName}\"",
+                "val": "Sets fill to the resource"
+            }
+        ],
+        "Transforms": [
+            {
+                "key": "LayoutTransform",
+                "val": "Holds transform or group, executed before layout, moves surrounding elements"
+            },
+            {
+                "key": "RenderTransform",
+                "val": "Holds transform or group executed before layout, create overlapping elements"
+            },
+            {
+                "key": "TransformGroup",
+                "val": "Used to hold multiple transforms"
+            },
+            {
+                "key": "RotateTransform",
+                "val": "Rotates the given element by setting Angle, CenterX and CenterY"
+            },
+            {
+                "key": "TranslateTransform",
+                "val": "Moves elements based on X and Y"
+            },
+            {
+                "key": "SkewTransform",
+                "val": "Skews the given element using AngleX AngleY, CenterX and CenterY"
+            },
+            {
+                "key": "MatrixTransform",
+                "val": "Complex transform based on matrix"
+            }
+        ],
+        "Brushes": [
+            {
+                "key": "SolidColorBrush",
+                "val": "A solid colour brush"
+            },
+            {
+                "key": "LinearGradientBrush",
+                "val": "Gradient brush using GradientStops"
+            },
+            {
+                "key": "RadialGradientBrush",
+                "val": "Gradient radiating out from a point"
+            },
+            {
+                "key": "ImageBrush",
+                "val": "Brush from an ImageSource"
+            },
+            {
+                "key": "DrawingBrush",
+                "val": "Brush based on a given GeometryDrawing"
+            },
+            {
+                "key": "VisualBrush",
+                "val": "Brush using a visual elements image"
+            }
+        ],
+        "Layout": [
+            {
+                "key": "Window",
+                "val": "Primary container for windows applications"
+            },
+            {
+                "key": "Page",
+                "val": "Container with navigation support"
+            },
+            {
+                "key": "StackPanel",
+                "val": "Horizontal or Vertical stacking of elements"
+            },
+            {
+                "key": "Grid",
+                "val": "Grid layout via Grid.Row and Grid.Column"
+            },
+            {
+                "key": "Canvas",
+                "val": "Arrange elements using X and Y co-ordinates"
+            },
+            {
+                "key": "WrapPanel",
+                "val": "Horizontal or Vertical wrapping of visual elements as space is available"
+            },
+            {
+                "key": "DockPanel",
+                "val": "Dock elements via DockPannel.Dock"
+            }
+        ]
+    }
+}
