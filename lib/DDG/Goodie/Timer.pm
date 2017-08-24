@@ -7,15 +7,21 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
-# Triggers that are vaild, but not stripped from the resulting query
+my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder', 'pomodoro');
+# Triggers that are valid, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
-my @startTriggers = qw(start begin set run pomodoro);
+
+my @baseTriggers = qw(start begin set run);
+my @startTriggers = ();
+# creates 'start a', 'begin a'
+map { push(@startTriggers, "$_ a") } @baseTriggers; 
+push(@startTriggers, @baseTriggers);
+
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTriggers = qw(online);
 #Joins the Timer Value
-my @joiners = qw(for on at with);
+my @joiners = qw(for on at to with of);
 # StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
 my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
 # Ambigous triggers which should not give Timer IA
@@ -114,6 +120,13 @@ handle remainder => sub {
     if($raw =~ /^($ambTrgx)$/){
         return;
     }
+    
+    # When query doesn't ask for timer explicitly and just wants time
+    # calculations, don't invoke IA.
+    if($raw !~ /($trgx)/ and $raw =~ /[+-]/) {
+        return;
+    }
+    
     # When the query is empty and we know that the trigger word matches
     # the trigger exactly (whitespace check) we can return a valid result
     if($qry eq '') {

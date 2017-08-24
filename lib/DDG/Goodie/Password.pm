@@ -4,6 +4,8 @@ package DDG::Goodie::Password;
 use strict;
 use DDG::Goodie;
 
+use Crypt::URandom qw( urandom );
+
 use List::MoreUtils qw( none );
 use List::Util qw( min max first );
 use Scalar::Util qw( looks_like_number );
@@ -40,6 +42,7 @@ foreach my $value (values %pw_strengths) {
 
 my $strengths = join('|', keys %pw_strengths);
 
+
 handle remainder => sub {
 
     my $query = lc(shift);
@@ -51,8 +54,6 @@ handle remainder => sub {
     }
     
     return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
-
-    srand();                           # Reseed on each request.
 
     my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
@@ -71,7 +72,7 @@ handle remainder => sub {
 
     # Generate random password of the correct length.
     while (scalar @pwgen < $pw_length) {
-        push @pwgen, $list_to_use[int rand scalar @list_to_use];
+        push @pwgen, $list_to_use[saferandom(scalar @list_to_use)];
     }
     if ($pw_strength ne 'low') {
         # Make sure we have the characters we want;
@@ -100,8 +101,13 @@ sub replace_inside_with {
 
     # replace a random character in the original list with
     # with a randomly selected key from our hash.
-    $orig->[int rand scalar @$orig] = $keys[int rand scalar @keys];
+    $orig->[saferandom(scalar @$orig)] = $keys[saferandom(scalar @keys)];
     return;
+}
+
+sub saferandom {
+    my ($range) = @_;
+    return unpack("L", urandom(4)) % $range;
 }
 
 1;

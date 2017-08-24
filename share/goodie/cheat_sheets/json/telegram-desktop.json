@@ -1,0 +1,55 @@
+{
+    "id": "telegram_desktop_cheat_sheet",
+    "name": "Telegram Desktop",
+    "description": "List of useful keyboard shortcuts for Telegram Desktop",
+    "metadata": {
+        "sourceName": "Telegram Desktop Wiki",
+        "sourceUrl": "https://github.com/telegramdesktop/tdesktop/wiki/Keyboard-Shortcuts"
+    },
+    "aliases": [
+        "telegramdesktop",
+        "telegram messenger desktop",
+        "desktop telegram",
+        "desktoptelegram"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Common Shortcuts"
+    ],
+    "sections": {
+        "Common Shortcuts": [
+            {
+                "key": "[Alt] [↑]",
+                "val": "Move to next chat"
+            },
+            {
+                "key": "[Alt] [↓]",
+                "val": "Move to previous chat"
+            },
+            {
+                "key": "[Ctrl] [f]",
+                "val": "Search"
+            },
+            {
+                "key": "[Ctrl] [q]",
+                "val": "Quit Telegram"
+            },
+            {
+                "key": "[ctrl] [l]",
+                "val": "Lock Telegram (if local password is set)"
+            },
+            {
+                "key": "[ctrl] [m]",
+                "val": "Minimize"
+            },
+            {
+                "key": "[ctrl] [w]",
+                "val": "Minimize to system tray"
+            },
+            {
+                "key": "[Delete]",
+                "val": "Delete currently selected message"
+            }
+        ]
+    }
+}

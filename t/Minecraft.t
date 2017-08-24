@@ -125,6 +125,31 @@ ddg_goodie_test(
         )
     ),
 
+    'minecraft make colored hard clay' =>
+    test_zci(
+        'Minecraft Colored Terracotta ingredients: 8 Terracotta + 1 Dye.'
+,
+        make_structured_answer(
+            "Colored Terracotta",
+            "8 Terracotta + 1 Dye",
+            "Used as decoration or building material.",
+            "/share/goodie/minecraft/999/images/colored-terracotta.gif",
+        )
+    ),
+
+    # Same as last but with british spelling of colour
+    'minecraft make coloured hard clay' =>
+    test_zci(
+        'Minecraft Colored Terracotta ingredients: 8 Terracotta + 1 Dye.'
+,
+        make_structured_answer(
+            "Colored Terracotta",
+            "8 Terracotta + 1 Dye",
+            "Used as decoration or building material.",
+            "/share/goodie/minecraft/999/images/colored-terracotta.gif",
+        )
+    ),
+
     'diamond shovel' => undef,
     'craft ladder' => undef,
     'make tnt' => undef,
@@ -140,7 +165,7 @@ ddg_goodie_test(
 sub make_structured_answer {
     my ($name, $ingredients, $description, $image ) = @_;
     my %recipe = (
-	    name => $name,
+        name => $name,
         ingredients => $ingredients,
         description => $description,
         image => $image,

@@ -26,6 +26,7 @@ aliases:
   - sts
   - stone
   - st
+  - stone weight
 type: mass
 unit: stone
 symbols: [st]
@@ -111,6 +112,8 @@ aliases:
   - dkg
   - dekagram
   - dekagrams
+  - decagram
+  - decagrams
 type: mass
 unit: dekagram
 symbols: [dag, dkg]
@@ -163,6 +166,7 @@ symbols: [st]
 aliases:
   - metric quintal
   - metric quintals
+  - quintal
   - q
 type: mass
 unit: metricquintal
@@ -349,6 +353,7 @@ aliases:
   - millimeters
   - milli meter
   - milli meters
+  - mil
   - mm
   - mms
 type: length
@@ -356,6 +361,7 @@ unit: millimeter
 symbols: [mm]
 ---
 aliases:
+  - micron
   - micrometre
   - micrometres
   - micrometer
@@ -363,6 +369,7 @@ aliases:
   - micro meter
   - micro meters
   - µms
+  - µm
 type: length
 unit: micrometer
 symbols: [µm]
@@ -403,6 +410,16 @@ aliases:
   - miles
 type: length
 unit: mile
+---
+aliases:
+  - nautical mile
+  - nautical miles
+  - naut mile
+  - naut miles
+  - nautical mi
+  - nautical
+type: length
+unit: nauticalmile
 ---
 aliases:
   - yd
@@ -470,6 +487,7 @@ aliases:
   - square hectometers
   - hectare
   - hectares
+  - hektar
 type: area
 unit: hectare
 symbols: [ha]
@@ -957,7 +975,7 @@ aliases:
   - joules
 type: energy
 unit: joule
-symbols: [J]
+symbols: [j]
 ---
 aliases:
   - kilojs
@@ -969,7 +987,7 @@ aliases:
   - kilo-joules
 type: energy
 unit: kilojoule
-symbols: [J]
+symbols: [kj]
 ---
 aliases:
   - watt hour
@@ -979,7 +997,7 @@ aliases:
   - Wh
 type: energy
 unit: Wh
-symbols: [Wh]
+symbols: [wh]
 ---
 aliases:
   - ergon
@@ -987,7 +1005,7 @@ aliases:
   - erg
   - ergs
 type: energy
-unit: erg
+unit: ergfixed
 ---
 aliases:
   - fp
@@ -1007,7 +1025,7 @@ aliases:
   - eV
 type: energy
 unit: electronvolt
-symbols: [eV]
+symbols: [ev]
 ---
 aliases:
   - decielectron volt
@@ -1177,7 +1195,7 @@ aliases:
   - british thermal units
 type: energy
 unit: BTU
-symbols: [BTU]
+symbols: [btu]
 ---
 aliases:
   - calorie
@@ -1202,49 +1220,49 @@ aliases:
   - watts
 type: power
 unit: watt
-symbols: [W]
+symbols: [w, W]
 ---
 aliases:
   - kilowatt
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [kW]
+symbols: [kw, kW]
 ---
 aliases:
   - megawatt
   - megawatts
 type: power
 unit: megawatt
-symbols: [MW]
+symbols: [mw, mW]
 ---
 aliases:
   - gigawatt
   - gigawatts
 type: power
 unit: gigawatt
-symbols: [GW]
+symbols: [gw, gW]
 ---
 aliases:
   - terawatt
   - terawatts
 type: power
 unit: terawatt
-symbols: [TW]
+symbols: [tw, tW]
 ---
 aliases:
   - petawatt
   - petawatts
 type: power
 unit: petawatt
-symbols: [PW]
+symbols: [pw, pW]
 ---
 aliases:
   - exawatt
   - exawatts
 type: power
 unit: exawatt
-symbols: [EW]
+symbols: [ew, eW]
 ---
 aliases:
   - metric horsepowers
@@ -1491,74 +1509,181 @@ unit: rankine
 symbols: [°Ra]
 ---
 aliases:
-  - b
   - bit
   - bits
 type: digital
 unit: b
+symbols: [b]
 ---
 aliases:
-  - B
   - byte
   - bytes
 type: digital
 unit: B
+symbols: [B]
 ---
 aliases:
   - kilobit
   - kilobits
 type: digital
 unit: kbit
+symbols: [Kb]
 ---
 aliases:
   - megabit
   - megabits
 type: digital
 unit: mbit
+symbols: [Mb]
 ---
 aliases:
   - gigabit
   - gigabits
 type: digital
 unit: gbit
+symbols: [Gb]
 ---
 aliases:
   - terrabit
   - terrabits
 type: digital
 unit: tbit
+symbols: [Tb]
 ---
 aliases:
-  - KB
-  - KBs
   - kilobyte
   - kilobytes
 type: digital
 unit: KB
+symbols: [KB]
 ---
 aliases:
-  - MB
-  - MBs
   - megabyte
   - megabytes
 type: digital
 unit: MB
+symbols: [MB]
 ---
 aliases:
-  - GB
-  - GBs
   - gigabyte
   - gigabytes
 type: digital
 unit: GB
+symbols: [GB]
 ---
 aliases:
-  - TB
-  - TBs
   - terabyte
   - terabytes
 type: digital
 unit: TB
+symbols: [TB]
+---
+aliases:
+  - petabyte
+  - petabytes
+type: digital
+unit: PB
+symbols: [PB]
+---
+aliases:
+  - kibibit
+  - kibibits
+  - kibit
+  - kibits
+type: digital
+unit: kibibit
+symbols: [Ki]
+---
+aliases:
+  - mebibit
+  - mebibits
+  - mebit
+  - mebits
+  - mibit
+type: digital
+unit: mebibit
+symbols: [Mi]
+---
+aliases:
+  - gibibit
+  - gibibits
+  - gibit
+  - gibits
+  - Gibit
+type: digital
+unit: gibibit
+symbols: [Gi]
+---
+aliases:
+  - tebibit
+  - tebibits
+  - tibit
+type: digital
+unit: tebibit
+symbols: [Ti]
+---
+aliases:
+  - pebibit
+  - pebibits
+  - pibit
+type: digital
+unit: pebibit
+symbols: [Pi]
+---
+aliases:
+  - kib
+  - kibibytes
+  - kibi byte
+  - kibi bytes
+type: digital
+unit: kibibyte
+symbols: [KiB]
+---
+aliases:
+  - mib
+  - mebibytes
+  - mebi byte
+  - mebi bytes
+type: digital
+unit: mebibyte
+symbols: [MiB]
+---
+aliases:
+  - gib
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+type: digital
+unit: gibibyte
+symbols: [GiB]
+---
+aliases:
+  - gibibyte
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+  - gib
+type: digital
+unit: gibibyte
+---
+aliases:
+  - tib
+  - tibibyte
+  - tibibytes
+  - tibi byte
+  - tibi bytes
+type: digital
+unit: tebibyte
+symbols: [TiB]
+---
+aliases:
+  - pebibyte
+  - pebibytes
+  - pebi byte
+  - pebi bytes
+type: digital
+unit: pebibyte
+symbols: [PiB]
 ---
 aliases:
   - litre
@@ -1589,6 +1714,7 @@ aliases:
   - milli-liters
   - ml
   - mls
+  - mils
 type: volume
 unit: millilitre
 ---
@@ -1712,8 +1838,18 @@ unit: cuft
 aliases:
   - cup
   - cups
+  - imp cup
+  - imp cups
+  - imperial cup
+  - imperial cups
 type: volume
-unit: cups
+unit: impcup
+---
+aliases:
+  - us cup
+  - us cups
+type: volume
+unit: uscup
 ---
 aliases:
   - decalitre
@@ -1757,8 +1893,40 @@ type: volume
 unit: fluiddram
 ---
 aliases:
-  - fluidounce
-  - fluidounces
+  - us fluidounce
+  - us fluidounces
+  - us fluid ounce
+  - us fluid ounces
+  - us fluid oz
+  - us fluid ozs
+  - us floz
+  - us fl oz
+  - us fl. oz
+  - us fl. ozs
+type: volume
+unit: usfluidounce
+---
+aliases:
+  - imperial fluidounce
+  - imperial fluidounces
+  - imperial fluid ounce
+  - imperial fluid ounces
+  - imperial fluid oz
+  - imperial fluid ozs
+  - imperial floz
+  - imperial fl oz
+  - imperial fl. oz
+  - imperial fl. ozs
+  - imp fluidounce
+  - imp fluidounces
+  - imp fluid ounce
+  - imp fluid ounces
+  - imp fluid oz
+  - imp fluid ozs
+  - imp floz
+  - imp fl oz
+  - imp fl. oz
+  - imp fl. ozs
   - fluid ounce
   - fluid ounces
   - fluid oz
@@ -1768,15 +1936,27 @@ aliases:
   - fl. oz
   - fl. ozs
 type: volume
-unit: fluidounce
+unit: impfluidounce
 ---
 aliases:
   - gallon
   - gallons
   - gal
   - gals
+  - imp gallon
+  - imp gallons
+  - imperial gallon
+  - imperial gallons
 type: volume
-unit: gallon
+unit: impgallon
+---
+aliases:
+  - us gal
+  - us gals
+  - us gallon
+  - us gallons
+type: volume
+unit: usgallon
 ---
 aliases:
   - gill
@@ -1827,16 +2007,36 @@ aliases:
   - pints
   - pt
   - pts
+  - us pint
+  - us pints
+  - us pt
+  - us pts
 type: volume
 unit: pints
+---
+aliases:
+  - us quart
+  - us quarts
+  - us qt
+  - us qts
+type: volume
+unit: usquart
 ---
 aliases:
   - quart
   - quarts
   - qt
   - qts
+  - imperial quart
+  - imperial quarts
+  - imperial qt
+  - imperial qts
+  - imp quart
+  - imp quarts
+  - imp qt
+  - imp qts
 type: volume
-unit: quart
+unit: impquart
 ---
 aliases:
   - tsp
@@ -1849,8 +2049,38 @@ aliases:
   - teaspoons
   - tea spoon
   - tea spoons
+  - imperial tsp
+  - imperial tsp.
+  - imperial tsps
+  - imperial tsps.
+  - imperial teaspoon
+  - imperial teaspoons
+  - imperial tea spoon
+  - imperial tea spoons
+  - imp tsp
+  - imp tsp.
+  - imp tsps
+  - imp tsps.
+  - imp teaspoon
+  - imp teaspoons
+  - imp tea spoon
+  - imp tea spoons
 type: volume
-unit: teaspoon
+unit: imptsp
+---
+aliases:
+  - us tsp
+  - us tsp.
+  - us tsps
+  - us tsps.
+  - us tsp
+  - us tsp.
+  - us teaspoon
+  - us teaspoons
+  - us tea spoon
+  - us tea spoons
+type: volume
+unit: ustsp
 ---
 aliases:
   - tbsp
@@ -1863,8 +2093,32 @@ aliases:
   - tablespoons
   - table spoon
   - table spoons
+  - imperial tbsp
+  - imperial tbsp.
+  - imperial tbsps
+  - imperial tbsps.
+  - imperial tbsp
+  - imperial tbsp.
+  - imperial tablespoon
+  - imperial tablespoons
+  - imperial table spoon
+  - imperial table spoons
 type: volume
-unit: tablespoon
+unit: imptbsp
+---
+aliases:
+  - us tbsp
+  - us tbsp.
+  - us tbsps
+  - us tbsps.
+  - us tbsp
+  - us tbsp.
+  - us tablespoon
+  - us tablespoons
+  - us table spoon
+  - us table spoons
+type: volume
+unit: ustbsp
 ---
 aliases:
   - hertz
@@ -1916,6 +2170,7 @@ aliases:
   - giga hertz
   - giga herts
   - GHz
+  - ghz
   - giga hz
 type: frequency
 unit: gigahertz
@@ -1998,6 +2253,8 @@ aliases:
   - miles ph 
   - mile ph
   - mph
+  - miles/hour
+  - mi/hour
 type: speed
 unit: mi/h
 ---
@@ -2009,6 +2266,8 @@ aliases:
   - kmh
   - kmph
   - kph
+  - kilometers/hour
+  - km/hour
 type: speed
 unit: km/h
 ---
@@ -2019,3 +2278,150 @@ aliases:
   - kt
 type: speed
 unit: knot
+---
+aliases:
+  - bit per sec
+  - bits per sec
+  - bit per second
+  - bits per second
+  - bps
+  - bits ps
+  - b/ps
+  - bit/ps
+  - bits/ps
+type: data_transfer 
+unit: bitps 
+---
+aliases:
+  - kilobit per sec
+  - kilobits per sec
+  - kilobit per second
+  - kilobits per second
+  - kbps
+  - kilobit ps
+  - kilobits ps
+  - kilobit/s
+  - kilobits/s
+  - kilobit/ps
+  - kilobits/ps
+  - kb/s
+  - kb/ps
+type: data_transfer 
+unit: kbitps 
+---
+aliases:
+  - megabit per sec
+  - megabits per sec
+  - megabit per second
+  - megabits per second
+  - mbps
+  - mb/ps
+  - mb ps
+  - mb/s
+  - mb s
+type: data_transfer 
+unit: mbitps 
+---
+aliases:
+  - gigabit per sec
+  - gigabits per sec
+  - gigabit per second
+  - gigabits per second
+  - gbps
+  - gb/s
+  - gb s
+  - gb/ps
+  - gb ps
+type: data_transfer 
+unit: gbitps
+---
+aliases:
+  - terrabit per sec
+  - terrabits per sec
+  - terrabit per second
+  - terrabits per second
+  - tbps
+  - tb ps
+  - tb/ps
+  - tb s
+  - tb/s
+  - tb per sec
+  - tb per second
+  - terrabit/s 
+  - terrabits/s 
+  - terrabit/ps 
+  - terrabits/ps 
+type: data_transfer 
+unit: tbitps 
+---
+aliases:
+  - kilobyte per sec
+  - kilobytes per sec
+  - kilobyte per second
+  - kilobytes per second
+  - kb per sec
+  - kb per second
+type: data_transfer 
+unit: kilobyteps
+---
+aliases:
+  - megabyte per sec
+  - megabytes per sec
+  - megabyte per second
+  - megabytes per second
+  - mb per sec
+  - mb per second
+type: data_transfer 
+unit: megabyteps
+---
+aliases:
+  - gigabyte per sec
+  - gigabytes per sec
+  - gigabyte per second
+  - gigabytes per second
+  - gb per sec
+  - gb per second
+type: data_transfer 
+unit: gigabyteps
+---
+aliases:
+  - terabyte per sec
+  - terabytes per sec
+  - terabyte per second
+  - terabytes per second
+  - tb per second
+  - tb per sec
+type: data_transfer 
+unit: terabyteps
+---
+aliases:
+  - kibibit per sec
+  - kibibits per sec
+  - kibibit per second
+  - kibibits per second
+type: data_transfer 
+unit: kibps
+---
+aliases:
+  - mibibit per sec
+  - mibibits per sec
+  - mibibit per second
+  - mibibits per second
+type: data_transfer 
+unit: mibps
+---
+aliases:
+  - gibibit per sec
+  - gibibits per sec
+  - gibibit per second
+  - gibibits per second
+type: data_transfer 
+unit: gibps
+---
+aliases:
+  - tibibit per sec
+  - tibibits per sec
+  - tibibit per second
+  - tibibits per second
+type: data_transfer 
+unit: tibps

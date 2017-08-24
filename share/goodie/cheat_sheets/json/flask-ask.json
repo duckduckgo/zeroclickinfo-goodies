@@ -1,0 +1,120 @@
+{
+    "id": "flask_ask_cheat_sheet",
+    "name": "Flask-Ask",
+    "description": "Flask-Ask is a Flask extension that makes building Alexa skills for the Amazon Echo easier",
+
+    "metadata": {
+        "sourceName": "Flask-Ask",
+        "sourceUrl" : "https://alexatutorial.com/flask-ask/"
+    },
+
+    "aliases": [
+        "flask alexa skill kit", "python flask ask", "flask-ask"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Installation",
+        "Handling Requests",
+        "Converting Slots Values to Python Data Types",
+        "Context Locals",
+        "Building Response",
+        "Minimal Voice User Interface"
+    ],
+
+    "sections": {
+        "Installation": [
+            {
+                "key": "pip install flask-ask",
+                "val": "Installs flask-ask"
+            }
+        ],
+        "Minimal Voice User Interface": [
+            {
+                "key": "[Filename: app.py][from flask import Flask, render_template\nfrom flask_ask import Ask, statement\n\napp = Flask(__name__)\nask = Ask(app, '/')\n\n@ask.intent('HelloIntent')\ndef hello(firstname):\n\ttext = render_template('hello', firstname=firstname)\n\treturn statement(text).simple_card('Hello', text)\n\nif __name__ == '__main__':\n\tapp.run(debug=True)",
+                "val": "Sample minimal viable code"
+            },
+            {
+                "key": "[Filename: templates.yaml][hello: Hello, \\{\\{ firstname \\}\\}]",
+                "val": "Jinja template loader"
+            }
+        ],
+        "Handling Requests": [
+            {
+                "key": "@ask.launch\ndef launched():\n\treturn question('Welcome to Foo')",
+                "val": "The launch decorator handles launch requests"
+            },
+            {
+                "key": "@ask.intent('HelloWorldIntent')\ndef hello():\n\treturn statement('Hello, world')",
+                "val": "The intent decorator handles intent requests"
+            },
+            {
+                "key": "@ask.session_ended\ndef session_ended():\n\treturn \"\", 200",
+                "val": "The session_ended decorator is for the session ended request"
+            },
+            {
+                "key": "@ask.on_session_started\ndef new_session():\n\tlog.info('new session started')",
+                "val": "Launch and intent requests can both start sessions. Avoid duplicate code with the on_session_started callback"
+            },
+            {
+                "key": "@ask.intent('WeatherIntent', mapping=\\{'city': 'City'\\})\ndef weather(city):\n\treturn statement('I predict great weather for \\{\\}'.format(city))",
+                "val": "Tell Flask-Ask when slot and view function parameter names differ with mapping"
+            },
+            {
+                "key": "@ask.intent('HelloIntent', default=\\{'name': 'World'\\})\ndef hello(name):\n\treturn statement('Hello, \\{\\}'.format(name))",
+                "val": "Use the default parameter for default values instead of None"
+            }
+        ],
+        "Converting Slots Values to Python Data Types":[
+            {
+                "key": "@ask.intent('AddIntent', convert=\\{'x': int, 'y': int\\})\ndef add(x, y):\n\tz = x + y\n\t   return statement('\\{\\} plus \\{\\} equals \\{\\}'.format(x, y, z))",
+                "val": "Above, x and y will both be passed to int() and thus converted to int instances."
+            },
+            {
+                "key": "convert=\\{'the_date': 'date'\\}",
+                "val": "Converts '2015-11-24', '2015-W48-WE', or '201X' into a datetime.date"
+            },
+            {
+                "key": "convert=\\{'appointment_time': 'time'\\}",
+                "val": "Converts '06:00', '14:15', or '23:59' into a datetime.time."
+            },
+            {
+                "key": "convert=\\{'ago': 'timedelta'\\}",
+                "val": "Converts 'PT10M', 'PT45S', or 'P2YT3H10M' into a datetime.timedelta."
+            },
+            {
+                "key": "[\"slots\": \\{\n\t\"age\": \\{\n\t\t\"name\": \"age\",\n\t\t\"value\": \"?\"\n\t\\}\n\\}][from flask_ask import statement, question, convert_errors\n\n@ask.intent('AgeIntent', convert=\\{'age': int\\})\ndef say_age(age):\n\tif 'age' in convert_errors:\n\t\t# since age failed to convert, it keeps its string\n\t\t# value (e.g. \"?\") for later interrogation.\n\t\treturn question(\"Can you please repeat your age?\")\n\t# conversion guaranteed to have succeeded\n\t# age is an int\n\treturn statement(\"Your age is \\{\\}\".format(age))]",
+                "val": "Handling Conversion Errors"
+            }
+        ],
+        "Context Locals": [
+            {
+                "key": "from flask import App, request, session\nfrom flask_ask import (\n\tAsk,\n\trequest as ask_request,\n\tsession as ask_session,\n\tversion\n)",
+                "val": "Use both Flask and Flask-Ask context locals in the same module"
+            }
+        ],
+        "Building Response": [
+            {
+                "key": "@ask.intent('SampleStatement')\ndef all_your_base():\n\treturn statement('This is a smaple statement.')",
+                "val": "Statement closes the session"
+            },
+            {
+                "key": "@ask.intent('SampleQuestion')\ndef make_appointment():\n\treturn question(\"What is foo?\") \\\n.reprompt(\"Reprompting. What is foo?\")",
+                "val": "Asking with question prompts the user for a response while keeping the session open with a reprompt"
+            },
+            {
+                "key": "session.attributes\\['date'\\] = date",
+                "val": "Session management: stores session date variable"
+            },
+            {
+                "key": "@ask.intent('SampleSimpleCardIntent')\ndef all_your_base():\n\treturn statement('Sample simple card') \\\n.simple_card(title='CATS says...', content='Make your time')",
+                "val": "Simple cards display a title and message"
+            },
+            {
+                "key": "@ask.intent('SampleStandardCardIntent')\ndef all_your_base():\n\treturn statement('Sample Standard card') \\\n.standard_card(title='CATS says...',\ntext='Make your time',\n          small_image_url='https://example.com/small.png',\n                      large_image_url='https://example.com/large.png')",
+                "val": "Standard cards are like simple cards but they also support small and large image URLs"
+            }
+        ]
+    }
+}

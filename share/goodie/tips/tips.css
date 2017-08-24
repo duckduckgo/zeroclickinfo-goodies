@@ -1,0 +1,92 @@
+.zci--tips label {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.zci--tips input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.zci--tips .tips__col {
+    display: inline-block;
+}
+
+.zci--tips .tips__col--left {
+    border-right: 1px solid #e0e0e0;
+    padding-right: 2em;
+    margin-right: 2em;
+}
+
+.zci--tips .tips__block {
+    margin-bottom: 1em;
+}
+
+.zci--tips .tips__label {
+    display: inline-block;
+}
+
+.zci--tips .tips__label h4 {
+    padding-bottom: 0px;
+}
+
+.zci--tips .tips__label h4 + div {
+    font-size: 1em;
+}
+
+.zci--tips .tips__block .tips__amt {
+    font-size: 3em;
+}
+
+/* Mobile */
+.is-mobile .zci--tips .tips__col--left {
+    border-right: none;
+    padding-right: 0;
+}
+
+.is-mobile .zci--tips .tips__col--right {
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-left: 0;
+}
+
+.is-mobile .zci--tips input {
+    font-size: 1.6em;
+    line-height: 1.7em;
+    width: 100%;
+}
+
+.is-mobile .zci--tips .tips__block {
+    margin-bottom: 0;
+}
+
+.is-mobile .zci--tips .tips__block .tips__label {
+    width: 30%;
+}
+
+.is-mobile .zci--tips .tips__block .tips__label h4 {
+    font-size: 3em;
+    padding-top: 0;
+}
+
+.is-mobile .zci--tips .tips__block .tips__label h4.tips__label--pp {
+    font-size: 1.3em;
+}
+
+.is-mobile .zci--tips .tips__block {
+    display: inline-block;
+    width: 100%
+}
+
+.is-mobile .zci--tips .tips__amt {
+    display: inline-block;
+    width: 70%;
+    text-align: right;
+}

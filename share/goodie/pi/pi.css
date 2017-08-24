@@ -1,3 +1,4 @@
-h3.zci__caption {
-	font-size: 1.32em;
+.zci--pi h3.c-base__title {
+    font-size: 1.32em;
+    word-wrap: break-word;
 }

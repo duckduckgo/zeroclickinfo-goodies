@@ -1,0 +1,194 @@
+{
+   "id": "haskell_cheat_sheet",
+   "name": "Haskell",
+   "description": "Overview of Haskell syntax and common features",
+
+   "metadata": {
+      "sourceName": "Haskell",
+      "sourceUrl" : "https://www.haskell.org/"
+   },
+
+   "aliases": [
+      "haskell language",
+      "hs"
+   ],
+
+   "template_type": "code",
+
+   "section_order": [
+      "Data Types",
+      "Basic Mathematical Operations",
+      "Comparators",
+      "IO",
+      "Enumerations",
+      "Lists",
+      "Tuples",
+      "Functions",
+      "Control Flow"
+   ],
+
+   "sections": {
+      "Data Types": [
+         {
+            "key": "1",
+            "val": "Integer"
+         },
+         {
+            "key": "1.42",
+            "val": "Float"
+         },
+         {
+            "key": "\"abc\"",
+            "val": "String"
+         },
+         {
+            "key": "'a'",
+            "val": "Char"
+         },
+         {
+            "key": "True",
+            "val": "Bool"
+         },
+         {
+            "key": "[1, 2, 3]",
+            "val": "[Int]"
+         },
+         {
+            "key": "(1, 4.2)",
+            "val": "(Int, Float)"
+         }
+      ],
+      "Basic Mathematical Operations": [
+         {
+            "key": "Num",
+            "val": "Basic numeric typeclass"
+         },
+         {
+            "key": "Integral",
+            "val": "Numeric typeclass including integral numbers"
+         },
+         {
+            "key": "Fractional",
+            "val": "Numeric typeclass including fractional numbers (supports real division)"
+         },
+         {
+            "key": "(+) :: Num a => a -> a -> a",
+            "val": "Numeric addition"
+         },
+         {
+            "key": "(/) :: Fractional a => a -> a -> a",
+            "val": "Division"
+         },
+         {
+            "key": "div :: Integral a => a -> a -> a",
+            "val": "Integer division"
+         }
+      ],
+      "Comparators": [
+         {
+            "key": "A == B",
+            "val": "A is equal to B"
+         },
+         {
+            "key": "A /= B",
+            "val": "A is not equal to B"
+         },
+         {
+            "key": "A < B",
+            "val": "A is less than B"
+         },
+         {
+            "key": "A <= B",
+            "val": "A is less than or equal to B"
+         },
+         {
+            "key": "A > B",
+            "val": "A is greater than B"
+         },
+         {
+            "key": "A >= B",
+            "val": "A is greater than or equal to B"
+         }
+      ],
+      "IO": [
+         {
+            "key": "putStrLn \"Hello!\"",
+            "val": "Prints the string \"Hello!\""
+         },
+         {
+            "key": "getLine",
+            "val": "Reads the input"
+         }
+      ],
+      "Enumerations": [
+         {
+            "key": "[start..stop]",
+            "val": "Creates a list containing all values between start and stop"
+         },
+         {
+            "key": "[start,next..stop]",
+            "val": "Same as above but with a different step"
+         },
+         {
+            "key": "[start..]",
+            "val": "Iterates from start to the maximum bound (if any)"
+         }
+      ],
+      "Lists": [
+         {
+            "key": "[]",
+            "val": "Empty list"
+         },
+         {
+            "key": "[1, 2, 3] !! 1",
+            "val": "Returns the first element of the list"
+         },
+         {
+            "key": "[1, 2] ++ [3, 4]",
+            "val": "Joins the two lists together"
+         },
+         {
+            "key": "'A' : ['B', 'C']",
+            "val": "Adds the letter A to the head of the list"
+         },
+         {
+            "key": "[x + y | x <- [1,2], y <- [1..5]]",
+            "val": "List comprehension"
+         },
+         {
+            "key": "[x | x <- [1..10], x > 7]",
+            "val": "List comprehension with guards"
+         }
+      ],
+      "Tuples": [
+         {
+            "key": "fst : (a, b) -> a",
+            "val": "Accesses the first element of a tuple (only works on pair)"
+         },
+         {
+            "key": "snd : (a, b) -> b",
+            "val": "Accesses the second element of a tuple (only works on pair)"
+         }
+      ],
+      "Functions": [
+         {
+            "key": "f x y ...",
+            "val": "Calls a function with the given parameters"
+         },
+         {
+            "key": "func x y = x + y",
+            "val": "Declaration of a simple function that adds two variables"
+         },
+         {
+            "key": "(\\x y -> x + y) 2 3",
+            "val": "Anonymous function that adds two variables"
+         }
+      ],
+      "Control Flow": [
+         {
+            "key": "if cond then x else y",
+            "val": "If expression"
+         }
+      ]
+   }
+}
