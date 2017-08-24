@@ -52,7 +52,7 @@
         ],
         "Text Styles": [
             {
-                "key": "*emphasis",
+                "key": "*emphasis*",
                 "val": "Emphasis"
             },
             {
