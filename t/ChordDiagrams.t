@@ -46,13 +46,49 @@ structured_answer => {
         }
     },
 }),
+'Eb uke tabs' => test_zci(
+'chord_diagrams',
+structured_answer => {
+    id => 'chord_diagrams',
+    name => 'Music',
+    data => re(qr/.*/),
+    templates => {
+        group => "base",
+        detail => 0,
+        options => {
+            content => 'DDH.chord_diagrams.detail'
+        },
+        variants => {
+            tile => 'narrow'
+        }
+    },
+}),
+'A   major guitar tab' => test_zci(
+'chord_diagrams',
+structured_answer => {
+    id => 'chord_diagrams',
+    name => 'Music',
+    data => re(qr/.*/),
+    templates => {
+        group => "base",
+        detail => 0,
+        options => {
+            content => 'DDH.chord_diagrams.detail'
+        },
+        variants => {
+            tile => 'narrow'
+        }
+    },
+}),
 # check that certain things don't trigger it:
 'C# programming' => undef,
 'C programming' => undef,
 'D programming' => undef,
 'guitar chord finder' => undef,
 'guitar chord fminute' => undef,
-'G' => undef
+'G' => undef,
+'A sharp tabs' => undef,
+'randomstring guitar chords' => undef
 );
 
 done_testing;

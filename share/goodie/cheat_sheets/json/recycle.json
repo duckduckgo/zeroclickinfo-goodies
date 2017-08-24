@@ -1,0 +1,121 @@
+{
+  "id": "recycle_cheat_sheet",
+  "name": "Recycle",
+  "description": "Plastic resin number definitions, recyclability, and examples",
+  "metadata": {
+    "sourceName": "Public Broadcasting Service (PBS)",
+    "sourceUrl": "http://www-tc.pbs.org/strangedays/pdf/StrangeDaysSmartPlasticsGuide.pdf"
+  },
+  "aliases": [
+    "resin",
+    "resin numbers",
+    "resin number",
+    "resin recycling",
+    "resin recycle",
+    "plastic",
+    "plastic recycle",
+    "recycle numbers",
+    "recycle number",
+    "plastic number",
+    "plastic numbers",
+    "plastic recycling"
+  ],
+  "template_type": "reference",
+  "section_order": [
+    "Resin Numbers",
+    "Recyclability",
+    "Examples"
+  ],
+  "sections": {
+    "Resin Numbers": [
+      {
+        "key": "1",
+        "val": "PolyEthylene Terephthalate (PET)"
+      },
+      {
+        "key": "2",
+        "val": "High Density PolyEthylene (HDPE)"
+      },
+      {
+        "key": "3",
+        "val": "Polyvinyl Chloride (PVC OR V)"
+      },
+      {
+        "key": "4",
+        "val": "Low Density PolyEthylene (LDPE)"
+      },
+      {
+        "key": "5",
+        "val": "PolyPropylene (PP)"
+      },
+      {
+        "key": "6",
+        "val": "PolyStyrene (PS)"
+      },
+      {
+        "key": "7",
+        "val": "Mixed (Other)"
+      }
+    ],
+    "Recyclability": [
+      {
+        "key": "1",
+        "val": "PET is one of the most easily recycled plastics"
+      },
+      {
+        "key": "2",
+        "val": "HDPE is easily recycled"
+      },
+      {
+        "key": "3",
+        "val": "PVC is one of the least recyclable plastics due to additives"
+      },
+      {
+        "key": "4",
+        "val": "LDPE is not usually recycled"
+      },
+      {
+        "key": "5",
+        "val": "PP is not easily recycled"
+      },
+      {
+        "key": "6",
+        "val": "Recycling PS is possible, but not normally economically viable"
+      },
+      {
+        "key": "7",
+        "val": "Mixed resin plastics like #7 are difficult, if not impossible, to recycle"
+      }
+    ],
+    "Examples": [
+      {
+        "key": "1",
+        "val": "beverage bottles (e.g., soft drink and water bottles), some detergent and cleaning containers, some food containers and bottles (e.g., peanut butter containers)"
+      },
+      {
+        "key": "2",
+        "val": "milk jugs, water jugs, laundry detergent containers, shampoo bottles, motor oil, and some plastic bags"
+      },
+      {
+        "key": "3",
+        "val": "clear food packaging, cling wrap, some detergents and window cleaner bottles, some plastic squeeze bottles, cooking oil and peanut butter jars, vinyl pipes, shower curtains, flooring, home siding, and window and door frames"
+      },
+      {
+        "key": "4",
+        "val": "bread bags, frozen food bags, grocery bags, most plastic wraps"
+      },
+      {
+        "key": "5",
+        "val": "deli soup containers, syrup containers, yogurt containers, margarine containers, disposable diapers, outdoor carpet, house wrap, and clouded plastic containers (e.g., baby bottles and straws)"
+      },
+      {
+        "key": "6",
+        "val": "CD cases, disposeable cutlery, and styrofoam containers (e.g., food containers, packaging, insulation, egg cartons, and building insulation)"
+      },
+      {
+        "key": "7",
+        "val": "lids, medical storage containers, electronics, most plastic baby bottles, 5-gallon water bottles, “sport” water bottles, metal food can liners, clear plastic “sippy” cups, and some clear plastic cutlery"
+      }
+    ]
+  }
+}

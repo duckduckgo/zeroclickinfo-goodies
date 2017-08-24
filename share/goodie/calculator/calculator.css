@@ -12,6 +12,7 @@
 
 .zci--calculator .tile--calculator {
     display: block !important;
+    outline: none;
 }
 
 
@@ -653,4 +654,92 @@ input:checked+.tile__ctrl__toggle-slider:before {
         position: relative;
         margin-top: 0;
     }
+}
+
+/*
+ * DARK THEME
+ */
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl__btn {
+    background: #2B2B2B;
+    border: 1px solid #414141;
+    color: #fdfdfd;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl__btn:hover {
+    background: rgba(88, 88, 88, 0.75);
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops,
+.dark-bg .zci--calculator .tile__calc .tile__tab__sci .tile__ctrl__btn {
+    background: #111;
+    font-weight: lighter;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--ops:hover,
+.dark-bg .zci--calculator .tile__calc .tile__tab__sci .tile__ctrl__btn:hover {
+    background: rgba(17, 17, 17, 0.7);
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl__toggle {
+    background: #111;
+    border: 1px solid #414141;
+    color: #fdfdfd;
+}
+
+.dark-bg .zci--calculator .tile__ctrl__toggle-slider {
+    background: #2B2B2B;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__display__main {
+    background: #2B2B2B;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--important {
+    background: rgb(220, 140, 0);
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__ctrl--important:hover {
+    background: rgba(220, 140, 0, 0.7);
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__display {
+    background: #2B2B2B;
+    border: 1px solid #414141;
+    box-shadow: none;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__display__main {
+    color: #fdfdfd;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__display.selected {
+    box-shadow: inset -1px -1px 0px #61a0c7, inset 1px 1px 0px #61a0c7;
+}
+
+.dark-bg .zci--calculator .tile__calc__col {
+    border-bottom: none;
+}
+
+/* history */
+
+.dark-bg .zci--calculator .tile__calc .tile__history {
+    background-color: #111;
+    border: 1px solid #414141;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__past-calc {
+    background: #2B2B2B;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__past-result {
+    color: #fdfdfd;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__past-calc {
+    border-bottom: 1px solid #414141;
+}
+
+.dark-bg .zci--calculator .tile__calc .tile__past-calc:hover {
+    background: #111;
 }

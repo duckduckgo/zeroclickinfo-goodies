@@ -399,6 +399,12 @@
         }, {
             "val": "jump to middle of screen",
             "key": "M"
+        }, {
+            "val": "jump to 3rd instance of character x forward from cursor on current line.",
+            "key": "3, f, x"
+        }, {
+            "val": "jump to 3rd instance of character x back from cursor on current line.",
+            "key": "3, F, x"
         }],
         "Screen Movement": [{
             "val": "move screen up by half page",

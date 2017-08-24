@@ -5,7 +5,6 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-
 my @generic_trigs = ('tip calculator', 'calculate tip', 'tips calculator', 'calculate tips', 'bill tip', 'tip cost');
 triggers any => @generic_trigs;
 triggers any => 'tip', 'tips', 'of';
@@ -19,7 +18,8 @@ handle query_lc => sub {
 
     # sets up the vanilla UI with default values
     # no values should be pased to the front-end
-    if($_ ~~ @generic_trigs) {
+    my $query = $_;
+    if(grep { $_ eq $query } @generic_trigs) {
         return '', structured_answer => {
             data => {
                 title => "Tip Calculator",

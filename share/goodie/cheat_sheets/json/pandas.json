@@ -92,7 +92,7 @@
         }],
         "Aggregate": [{
             "val": "Spliting the data into groups and apply fucntions to each groups indivdually",
-            "key": "[df.groupby('column1'.sum())] [df.groupby(\\['column1','column2'\\]).count()]"
+            "key": "[df.groupby('column1').sum()] [df.groupby(\\['column1','column2'\\]).count()]"
         }, {
             "val": "Pivot table helps to genrate data structure. it has three components index, columns and values",
             "key": "pd.pivot_table(df,values='column1',index=['column2','column3'],columns=['column4'])"

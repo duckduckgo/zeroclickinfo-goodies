@@ -34,7 +34,9 @@ ddg_goodie_test(
     'π to 6 digits' => build_test("3.141592", 6),
 
     'pi ff' => undef,
-    'pi 3f2' => undef
+    'pi 3f2' => undef,
+    'pi 1001' => undef,
+    'pi 1002' => undef,
 );
 
 done_testing;

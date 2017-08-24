@@ -7,6 +7,9 @@ rectangle:
   area: ab
   perimeter: 2(a+b)
   diagonal: √(a<sup>2</sup>+b<sup>2</sup>)
+triangle:
+  area: bh/2
+  perimeter: a+b+c
 equilateral triangle:
   area: (a<sup>2</sup>√3)/4
   perimeter: 3a

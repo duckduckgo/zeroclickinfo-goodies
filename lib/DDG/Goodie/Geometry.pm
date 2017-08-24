@@ -1,12 +1,8 @@
 package DDG::Goodie::Geometry;
 # ABSTRACT: Write an abstract here
 
-# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if
-# you are new to instant answer development
-
 use DDG::Goodie;
 use strict;
-
 
 use YAML::XS 'LoadFile';
 use Data::Dumper;
@@ -22,6 +18,7 @@ foreach my $word (@keyWords) {
     push(@finalWords, $word);
     push(@finalWords, $word.' of');
     push(@finalWords, $word.' of a');
+    push(@finalWords, $word.' of an');
 }
 
 triggers any => @finalWords;
@@ -38,7 +35,7 @@ handle remainder => sub {
 
     my %dataFormula;
     # Fill dataFormula with values for handlebar to parse
-    foreach my $key (keys $shape) {
+    foreach my $key (keys %{$shape}) {
 
        $dataFormula{$key} = {
             'nameCaps' => ucfirst($key),

@@ -15,7 +15,15 @@ handle remainder => sub {
     my $u = unidecode $_;
     # unidecode output sometimes contains trailing spaces
     $u =~ s/\s+$//;
-    return $u;
+    return $u,
+    structured_answer => {
+        data => {
+            title => $u
+        },
+        templates => {
+            group => "text"
+        }
+    }
 };
 
 1;
