@@ -1,0 +1,30 @@
+Nutrient,Unit,1Value per 100 g,"1 cup, sliced = 109.0g","1 large = 206.0g","1 medium = 167.0g","1 small = 144.0g",
+Proximates
+"Water",g,85.46,93.15,176.05,142.72,123.06
+"Energy",kcal,58,63,119,97,84
+"Protein",g,0.44,0.48,0.91,0.73,0.63
+"Total lipid (fat)",g,0.19,0.21,0.39,0.32,0.27
+"Carbohydrate, by difference",g,13.61,14.83,28.04,22.73,19.60
+"Fiber, total dietary",g,2.8,3.1,5.8,4.7,4.0
+"Sugars, total",g,9.59,10.45,19.76,16.02,13.81
+Minerals
+"Calcium, Ca",mg,5,5,10,8,7
+"Iron, Fe",mg,0.15,0.16,0.31,0.25,0.22
+"Magnesium, Mg",mg,5,5,10,8,7
+"Phosphorus, P",mg,12,13,25,20,17
+"Potassium, K",mg,120,131,247,200,173
+"Sodium, Na",mg,1,1,2,2,1
+"Zinc, Zn",mg,0.04,0.04,0.08,0.07,0.06
+Vitamins
+"Thiamin",mg,0.019,0.021,0.039,0.032,0.027
+"Riboflavin",mg,0.025,0.027,0.052,0.042,0.036
+"Niacin",mg,0.126,0.137,0.260,0.210,0.181
+"Vitamin B-6",mg,0.037,0.040,0.076,0.062,0.053
+"Vitamin A, RAE",µg,5,5,10,8,7
+"Vitamin A, IU",IU,100,109,206,167,144
+"Vitamin E (alpha-tocopherol)",mg,0.18,0.20,0.37,0.30,0.26
+"Vitamin K (phylloquinone)",µg,3.2,3.5,6.6,5.3,4.6
+Lipids
+"Fatty acids, total trans",g,0.000,0.000,0.000,0.000,0.000
+Amino Acids
+Other

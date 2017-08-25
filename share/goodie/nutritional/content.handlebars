@@ -1,19 +1,9 @@
-
-<h3>Nutrition Info</h3>
-
-<div>
+<div class="frm">
   <div class="frm__select">
     <select>
-      <option>Yo</option>
-      <option>Yo</option>
-      <option>Yo</option>
-    </select>
-  </div>
-  <div class="frm__select">
-    <select>
-      <option>Yo</option>
-      <option>Yo</option>
-      <option>Yo</option>
+      {{#each headings}}
+        <option>{{this}}</option>
+      {{/each}}
     </select>
   </div>
 </div>
@@ -21,12 +11,12 @@
 <table class="record__body">
   <tbody>
     <tr class="record__row">
-      <td class="record__cell record__cell--key">Calories:</td>
-      <td class="record__cell record__cell--key">99</td>
+      <td class="record__cell record__cell--key t-l">Calories:</td>
+      <td class="record__cell record__cell--key t-l">{{calories}}</td>
     </tr>
     <tr class="record__row">
-      <td class="record__cell record__cell--key">Protein</td>
-      <td class="record__cell record__cell--key">79</td>
+      <td class="record__cell record__cell--key t-l">Protein:</td>
+      <td class="record__cell record__cell--key t-l">{{protein}}</td>
     </tr>
   </body>
 </table>
