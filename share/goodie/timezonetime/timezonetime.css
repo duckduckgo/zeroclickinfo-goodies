@@ -1,0 +1,13 @@
+.zci--timezonetime .timezone {
+    min-width: 20em;
+}
+
+.zci--timezonetime .timezone .timezone_name {
+    display: line-block;
+}
+
+.zci--timezonetime .timezone .timezone_time {
+    display: line-block;
+    float: right;
+    text-align: right;
+}
