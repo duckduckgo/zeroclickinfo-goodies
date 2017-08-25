@@ -65,7 +65,7 @@ ddg_goodie_test(
             volume =>   { color => "#DE5833", html => "4/3πr<sup>3</sup>", nameCaps => "Volume",    symbol => "V" },
             surface =>  { color => "#F1A031", html => "4πr<sup>2</sup>",   nameCaps => "Surface",   symbol => "S" },
         },
-        '<path d="M 0,60 a 25 25 0 0 0 120,0 a 25 25 0 0 0 -120,0" class="fill surface" data-type="surface"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke backface"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke backface" data-type="volume"></path> <path d="M 0,60 a 30 10 0 1 0 120,0 a 25 25 0 0 0 -120,0 a 25 25 0 0 0 120,0" class="stroke volume" data-type="volume"></path>',
+        '<path d="M 0,60 a 25 25 0 0 0 120,0 a 25 25 0 0 0 -120,0" class="fill surface" data-type="surface"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke special"></path> <path d="M 0,60 a 30 10 0 0 1 120,0" class="stroke special" data-type="volume"></path> <path d="M 0,60 a 30 10 0 1 0 120,0 a 25 25 0 0 0 -120,0 a 25 25 0 0 0 120,0" class="stroke volume" data-type="volume"></path>',
     ),
     'area of an equilateral triangle' => build_test(
         'equilateral triangle',
@@ -81,7 +81,23 @@ ddg_goodie_test(
             area =>      { color => "#F1A031", html => "bh/2",  nameCaps => "Area", symbol => "A" },
             perimeter => { color => "#5B9E4D", html => "a+b+c", nameCaps => "Perimeter",  symbol => "u" }
         },
-        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 0,120" class="stroke special height" data-type="height"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',
+        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 0,120" class="stroke special height" data-type="height"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',			
+    ),
+    'volume of cylinder' => build_test(
+        'cylinder',
+        {
+            volume =>   { color => "#DE5833", html => "πr<sup>2</sup>h", nameCaps => "Volume",    symbol => "V" },
+            surface =>  { color => "#F1A031", html => "2πr(h+r)",   nameCaps => "Surface",   symbol => "S" },
+        },
+        '<path d="M 0,20 a 30 10 0 0 1 120,0 v 80 a 30 10 0 0 1 -120,0 v -80" class="fill surface" data-type="surface"></path> <path d="M 0,100 a 30 10 0 0 1 120,0" class="stroke special"></path> <path d="M 0,20 a 30 10 0 0 0 120,0 v 80 a 30 10 0 0 1 -120,0 v -80 a 30 10 0 0 1 120,0 a 30 10 0 0 1 -120 0" class="fill volume" data-type="volume"></path> <path d="M 0,20 a 30 10 0 0 0 120,0 a 30 10 0 0 0 -120,0 v 80 a 30 10 0 0 0 120,0 v -80" class="stroke"></path>',
+    ),
+    'geometry of cone' => build_test(
+        'cone',
+        {
+            volume =>   { color => "#DE5833", html => "(πr<sup>2</sup>h)/3", nameCaps => "Volume",    symbol => "V" },
+            surface =>  { color => "#F1A031", html => "πr(l+r)",   nameCaps => "Surface",   symbol => "S" },
+        },
+        '<path d="M 0,100 a 30 10 0 0 0 120,0 a 45 10 0 0 0 -120,0 l 60 -80 l 60 80 a 45 10 0 0 0 -120,0" class="fill surface" data-type="surface"></path> <path d="M 0,100 a 45 10 0 0 1 120,0" class="stroke special"></path> <path d="M 0,100 a 30 10 0 0 0 120,0 a 45 10 0 0 0 -120,0 l 60 -80 l 60 80 a 45 10 0 0 0 -120,0" class="fill volume" data-type="volume"></path> <path d="M 0,100 l 60 -80 l 60 80 a 30 10 0 0 1 -120,0" class="stroke"></path>',
     ),
     # Does Not match to
     'calc banana' => undef,
