@@ -29,7 +29,6 @@ sub build_structured_answer {
         }
     };
 }
-
 # Use this to build expected results for your tests.
 sub build_test { test_zci( build_structured_answer(@_) ) }
 
