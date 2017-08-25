@@ -5,6 +5,8 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
+use YAML::XS qw/LoadFile/;
+
 use DateTime;
 use DateTime::TimeZone;
 
@@ -15,51 +17,35 @@ triggers start => ("what time in", "what time is it in", "time in");
 triggers startend => ("time", "now time", "time now");
 
 # Mapping short timezone names to one used by DateTime:Timezone module
-my $timezoneMapping = {
-    "IST" => "Asia/Kolkata", 
-    "EST" => "EST", 
-    "UTC" => "UTC", 
-    "GMT" => "GMT",
-    "BST" => "Europe/London", 
-    "PST" => "PST8PDT", 
-    "CST" => "CST6CDT"
-};
-    
-my $timezones = join('|', keys(%$timezoneMapping));
+my $timezoneMapping = LoadFile(share('abbreviations.yaml'));
 
 handle remainder => sub {
     my $query = $_;
     
-    my $daylightStatus = "";
-    
     my $timezone = uc($query);
-    my $mappedTimezone = $timezoneMapping->{$timezone} // 0;
-    return unless $mappedTimezone; 
+    my $mappedTimezones = $timezoneMapping->{$timezone} // 0;
+    return unless $mappedTimezones; 
 
-    # Get time for desired timezone
-    my $tz = DateTime::TimeZone->new( name => $mappedTimezone );
-    my $dt = DateTime->now();
-    my $offset = $tz->offset_for_datetime($dt);
-    $dt->add(seconds => $offset);
-    my $time = $dt->hms(':');
-
-    # Check if timezone is in daylight saving or not    
-    if ($tz->is_dst_for_datetime( $dt )) {
-        $daylightStatus = "$timezone is in daylight saving";
-    }
-    else {
-        $daylightStatus = "$timezone is not in daylight saving";
-    }
+    # Get time for desired timezones
+    my @times = map {
+        my $dt = DateTime->now();
+        my $offset = DateTime::TimeZone->offset_as_seconds($_->{offset});
+        $dt->add(seconds => $offset);
+        { name => $_->{name}, time => $dt->hms(':') };
+    } @{$mappedTimezones};
     
-    return "$time $timezone $daylightStatus",
+    return "times in $timezone",
         structured_answer => {
-
             data => {
-                title       => "$time $timezone",
-                subtitle    => "$daylightStatus",
+                title => "Timezone $timezone",
+                list => \@times
             },
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.timezonetime.content',
+                    moreAt => 0
+                }
             }
         };
 };
