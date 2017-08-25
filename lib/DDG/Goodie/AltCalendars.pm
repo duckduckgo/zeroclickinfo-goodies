@@ -15,7 +15,7 @@ my $year_definitions = decode_json($definitions_json);
 my %year_map_with_aliases = map { 
   my $name = $_; 
   map { $_ => $name } ($name, @{$year_definitions->{$name}->{'aliases'} // []}) 
-} (keys $year_definitions);
+} (keys %{$year_definitions});
 
 triggers any => keys %year_map_with_aliases;
 
