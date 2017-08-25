@@ -29,6 +29,7 @@ sub build_structured_answer {
         }
     };
 }
+
 # Use this to build expected results for your tests.
 sub build_test { test_zci( build_structured_answer(@_) ) }
 
@@ -80,7 +81,8 @@ ddg_goodie_test(
             area =>      { color => "#F1A031", html => "bh/2",  nameCaps => "Area", symbol => "A" },
             perimeter => { color => "#5B9E4D", html => "a+b+c", nameCaps => "Perimeter",  symbol => "u" }
         },
-        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 0,120" class="stroke special height" data-type="height"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',
+        '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 0,120" class="stroke special height" data-type="height"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',			
+    ),
     'volume of cylinder' => build_test(
         'cylinder',
         {
@@ -88,7 +90,7 @@ ddg_goodie_test(
             surface =>  { color => "#F1A031", html => "2πr(h+r)",   nameCaps => "Surface",   symbol => "S" },
         },
         '<path d="M 0,20 a 30 10 0 0 1 120,0 v 80 a 30 10 0 0 1 -120,0 v -80" class="fill surface" data-type="surface"></path> <path d="M 0,100 a 30 10 0 0 1 120,0" class="stroke special"></path> <path d="M 0,20 a 30 10 0 0 0 120,0 v 80 a 30 10 0 0 1 -120,0 v -80 a 30 10 0 0 1 120,0 a 30 10 0 0 1 -120 0" class="fill volume" data-type="volume"></path> <path d="M 0,20 a 30 10 0 0 0 120,0 a 30 10 0 0 0 -120,0 v 80 a 30 10 0 0 0 120,0 v -80" class="stroke"></path>',
-   ),
+    ),
     'geometry of cone' => build_test(
         'cone',
         {
