@@ -28,10 +28,10 @@ handle remainder => sub {
 
     # Get time for desired timezones
     my @times = map {
-        my $dt = DateTime->now();
+        my $dt = DateTime->now(time_zone => 'UTC');
         my $offset = DateTime::TimeZone->offset_as_seconds($_->{offset});
         $dt->add(seconds => $offset);
-        { name => $_->{name}, time => $dt->hms(':') };
+        { name => $_->{name}, time => $dt->hms(':'), offset => $_->{offset} };
     } @{$mappedTimezones};
     
     return "times in $timezone",
