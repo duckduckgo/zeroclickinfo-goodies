@@ -1,0 +1,694 @@
+---
+A:
+  - name: Alpha Time Zone
+    offset: +1:00
+ACDT:
+  - name: Australian Central Daylight Time
+    offset: +10:30
+ACST:
+  - name: Australian Central Standard Time
+    offset: +9:30
+ACT:
+  - name: Acre Time
+    offset: -5:00
+ACWST:
+  - name: Australian Central Western Standard Time
+    offset: +8:45
+ADT:
+  - name: Arabia Daylight Time
+    offset: +3:00
+  - name: Atlantic Daylight Time
+    offset: -3:00
+AEDT:
+  - name: Australian Eastern Daylight Time
+    offset: +11:00
+AEST:
+  - name: Australian Eastern Standard Time
+    offset: +10:00
+AFT:
+  - name: Afghanistan Time
+    offset: +4:30
+AKDT:
+  - name: Alaska Daylight Time
+    offset: -8:00
+AKST:
+  - name: Alaska Standard Time
+    offset: -9:00
+ALMT:
+  - name: Alma-Ata Time
+    offset: +6:00
+AMST:
+  - name: Amazon Summer Time
+    offset: -3:00
+  - name: Armenia Summer Time
+    offset: +5:00
+AMT:
+  - name: Amazon Time
+    offset: -4:00
+  - name: Armenia Time
+    offset: +4:00
+ANAST:
+  - name: Anadyr Summer Time
+    offset: +12:00
+ANAT:
+  - name: Anadyr Time
+    offset: +12:00
+AQTT:
+  - name: Aqtobe Time
+    offset: +5:00
+ART:
+  - name: Argentina Time
+    offset: -3:00
+AST:
+  - name: Arabia Standard Time
+    offset: +3:00
+  - name: Atlantic Standard Time
+    offset: -4:00
+AWDT:
+  - name: Australian Western Daylight Time
+    offset: +9:00
+AWST:
+  - name: Australian Western Standard Time
+    offset: +8:00
+AZOST:
+  - name: Azores Summer Time
+    offset: +0:00
+AZOT:
+  - name: Azores Time
+    offset: -1:00
+AZST:
+  - name: Azerbaijan Summer Time
+    offset: +5:00
+AZT:
+  - name: Azerbaijan Time
+    offset: +4:00
+AoE:
+  - name: Anywhere on Earth
+    offset: -12:00
+B:
+  - name: Bravo Time Zone
+    offset: +2:00
+BNT:
+  - name: Brunei Darussalam Time
+    offset: +8:00
+BOT:
+  - name: Bolivia Time
+    offset: -4:00
+BRST:
+  - name: Brasília Summer Time
+    offset: -2:00
+BRT:
+  - name: Brasília Time
+    offset: -3:00
+BST:
+  - name: Bangladesh Standard Time
+    offset: +6:00
+  - name: Bougainville Standard Time
+    offset: +11:00
+  - name: British Summer Time
+    offset: +1:00
+BTT:
+  - name: Bhutan Time
+    offset: +6:00
+C:
+  - name: Charlie Time Zone
+    offset: +3:00
+CAST:
+  - name: Casey Time
+    offset: +8:00
+CAT:
+  - name: Central Africa Time
+    offset: +2:00
+CCT:
+  - name: Cocos Islands Time
+    offset: +6:30
+CDT:
+  - name: Central Daylight Time
+    offset: -5:00
+  - name: Cuba Daylight Time
+    offset: -4:00
+CEST:
+  - name: Central European Summer Time
+    offset: +2:00
+CET:
+  - name: Central European Time
+    offset: +1:00
+CHADT:
+  - name: Chatham Island Daylight Time
+    offset: +13:45
+CHAST:
+  - name: Chatham Island Standard Time
+    offset: +12:45
+CHOST:
+  - name: Choibalsan Summer Time
+    offset: +9:00
+CHOT:
+  - name: Choibalsan Time
+    offset: +8:00
+CHUT:
+  - name: Chuuk Time
+    offset: +10:00
+CIDST:
+  - name: Cayman Islands Daylight Saving Time
+    offset: -4:00
+CIST:
+  - name: Cayman Islands Standard Time
+    offset: -5:00
+CKT:
+  - name: Cook Island Time
+    offset: -10:00
+CLST:
+  - name: Chile Summer Time
+    offset: -3:00
+CLT:
+  - name: Chile Standard Time
+    offset: -4:00
+COT:
+  - name: Colombia Time
+    offset: -5:00
+CST:
+  - name: Central Standard Time
+    offset: -6:00
+  - name: China Standard Time
+    offset: +8:00
+  - name: Cuba Standard Time
+    offset: -5:00
+CVT:
+  - name: Cape Verde Time
+    offset: -1:00
+CXT:
+  - name: Christmas Island Time
+    offset: +7:00
+ChST:
+  - name: Chamorro Standard Time
+    offset: +10:00
+D:
+  - name: Delta Time Zone
+    offset: +4:00
+DAVT:
+  - name: Davis Time
+    offset: +7:00
+DDUT:
+  - name: Dumont-d'Urville Time
+    offset: +10:00
+E:
+  - name: Echo Time Zone
+    offset: +5:00
+EASST:
+  - name: Easter Island Summer Time
+    offset: -5:00
+EAST:
+  - name: Easter Island Standard Time
+    offset: -6:00
+EAT:
+  - name: Eastern Africa Time
+    offset: +3:00
+ECT:
+  - name: Ecuador Time
+    offset: -5:00
+EDT:
+  - name: Eastern Daylight Time
+    offset: -4:00
+EEST:
+  - name: Eastern European Summer Time
+    offset: +3:00
+EET:
+  - name: Eastern European Time
+    offset: +2:00
+EGST:
+  - name: Eastern Greenland Summer Time
+    offset: +0:00
+EGT:
+  - name: East Greenland Time
+    offset: -1:00
+EST:
+  - name: Eastern Standard Time
+    offset: -5:00
+F:
+  - name: Foxtrot Time Zone
+    offset: +6:00
+FET:
+  - name: Further-Eastern European Time
+    offset: +3:00
+FJST:
+  - name: Fiji Summer Time
+    offset: +13:00
+FJT:
+  - name: Fiji Time
+    offset: +12:00
+FKST:
+  - name: Falkland Islands Summer Time
+    offset: -3:00
+FKT:
+  - name: Falkland Island Time
+    offset: -4:00
+FNT:
+  - name: Fernando de Noronha Time
+    offset: -2:00
+G:
+  - name: Golf Time Zone
+    offset: +7:00
+GALT:
+  - name: Galapagos Time
+    offset: -6:00
+GAMT:
+  - name: Gambier Time
+    offset: -9:00
+GET:
+  - name: Georgia Standard Time
+    offset: +4:00
+GFT:
+  - name: French Guiana Time
+    offset: -3:00
+GILT:
+  - name: Gilbert Island Time
+    offset: +12:00
+GMT:
+  - name: Greenwich Mean Time
+    offset: +0:00
+GST:
+  - name: Gulf Standard Time
+    offset: +4:00
+  - name: South Georgia Time
+    offset: -2:00
+GYT:
+  - name: Guyana Time
+    offset: -4:00
+H:
+  - name: Hotel Time Zone
+    offset: +8:00
+HADT:
+  - name: Hawaii-Aleutian Daylight Time
+    offset: -9:00
+HAST:
+  - name: Hawaii-Aleutian Standard Time
+    offset: -10:00
+HKT:
+  - name: Hong Kong Time
+    offset: +8:00
+HOVST:
+  - name: Hovd Summer Time
+    offset: +8:00
+HOVT:
+  - name: Hovd Time
+    offset: +7:00
+I:
+  - name: India Time Zone
+    offset: +9:00
+ICT:
+  - name: Indochina Time
+    offset: +7:00
+IDT:
+  - name: Israel Daylight Time
+    offset: +3:00
+IOT:
+  - name: Indian Chagos Time
+    offset: +6:00
+IRDT:
+  - name: Iran Daylight Time
+    offset: +4:30
+IRKST:
+  - name: Irkutsk Summer Time
+    offset: +9:00
+IRKT:
+  - name: Irkutsk Time
+    offset: +8:00
+IRST:
+  - name: Iran Standard Time
+    offset: +3:30
+IST:
+  - name: India Standard Time
+    offset: +5:30
+  - name: Irish Standard Time
+    offset: +1:00
+  - name: Israel Standard Time
+    offset: +2:00
+JST:
+  - name: Japan Standard Time
+    offset: +9:00
+K:
+  - name: Kilo Time Zone
+    offset: +10:00
+KGT:
+  - name: Kyrgyzstan Time
+    offset: +6:00
+KOST:
+  - name: Kosrae Time
+    offset: +11:00
+KRAST:
+  - name: Krasnoyarsk Summer Time
+    offset: +8:00
+KRAT:
+  - name: Krasnoyarsk Time
+    offset: +7:00
+KST:
+  - name: Korea Standard Time
+    offset: +9:00
+KUYT:
+  - name: Kuybyshev Time
+    offset: +4:00
+L:
+  - name: Lima Time Zone
+    offset: +11:00
+LHDT:
+  - name: Lord Howe Daylight Time
+    offset: +11:00
+LHST:
+  - name: Lord Howe Standard Time
+    offset: +10:30
+LINT:
+  - name: Line Islands Time
+    offset: +14:00
+M:
+  - name: Mike Time Zone
+    offset: +12:00
+MAGST:
+  - name: Magadan Summer Time
+    offset: +12:00
+MAGT:
+  - name: Magadan Time
+    offset: +11:00
+MART:
+  - name: Marquesas Time
+    offset: -9:30
+MAWT:
+  - name: Mawson Time
+    offset: +5:00
+MDT:
+  - name: Mountain Daylight Time
+    offset: -6:00
+MHT:
+  - name: Marshall Islands Time
+    offset: +12:00
+MMT:
+  - name: Myanmar Time
+    offset: +6:30
+MSD:
+  - name: Moscow Daylight Time
+    offset: +4:00
+MSK:
+  - name: Moscow Standard Time
+    offset: +3:00
+MST:
+  - name: Mountain Standard Time
+    offset: -7:00
+MUT:
+  - name: Mauritius Time
+    offset: +4:00
+MVT:
+  - name: Maldives Time
+    offset: +5:00
+MYT:
+  - name: Malaysia Time
+    offset: +8:00
+N:
+  - name: November Time Zone
+    offset: -1:00
+NCT:
+  - name: New Caledonia Time
+    offset: +11:00
+NDT:
+  - name: Newfoundland Daylight Time
+    offset: -2:30
+NFT:
+  - name: Norfolk Time
+    offset: +11:00
+NOVST:
+  - name: Novosibirsk Summer Time
+    offset: +7:00
+NOVT:
+  - name: Novosibirsk Time
+    offset: +7:00
+NPT:
+  - name: Nepal Time
+    offset: +5:45
+NRT:
+  - name: Nauru Time
+    offset: +12:00
+NST:
+  - name: Newfoundland Standard Time
+    offset: -3:30
+NUT:
+  - name: Niue Time
+    offset: -11:00
+NZDT:
+  - name: New Zealand Daylight Time
+    offset: +13:00
+NZST:
+  - name: New Zealand Standard Time
+    offset: +12:00
+O:
+  - name: Oscar Time Zone
+    offset: -2:00
+OMSST:
+  - name: Omsk Summer Time
+    offset: +7:00
+OMST:
+  - name: Omsk Standard Time
+    offset: +6:00
+ORAT:
+  - name: Oral Time
+    offset: +5:00
+P:
+  - name: Papa Time Zone
+    offset: -3:00
+PDT:
+  - name: Pacific Daylight Time
+    offset: -7:00
+PET:
+  - name: Peru Time
+    offset: -5:00
+PETST:
+  - name: Kamchatka Summer Time
+    offset: +12:00
+PETT:
+  - name: Kamchatka Time
+    offset: +12:00
+PGT:
+  - name: Papua New Guinea Time
+    offset: +10:00
+PHOT:
+  - name: Phoenix Island Time
+    offset: +13:00
+PHT:
+  - name: Philippine Time
+    offset: +8:00
+PKT:
+  - name: Pakistan Standard Time
+    offset: +5:00
+PMDT:
+  - name: Pierre & Miquelon Daylight Time
+    offset: -2:00
+PMST:
+  - name: Pierre & Miquelon Standard Time
+    offset: -3:00
+PONT:
+  - name: Pohnpei Standard Time
+    offset: +11:00
+PST:
+  - name: Pacific Standard Time
+    offset: -8:00
+  - name: Pitcairn Standard Time
+    offset: -8:00
+PWT:
+  - name: Palau Time
+    offset: +9:00
+PYST:
+  - name: Paraguay Summer Time
+    offset: -3:00
+PYT:
+  - name: Paraguay Time
+    offset: -4:00
+  - name: Pyongyang Time
+    offset: +8:30
+Q:
+  - name: Quebec Time Zone
+    offset: -4:00
+QYZT:
+  - name: Qyzylorda Time
+    offset: +6:00
+R:
+  - name: Romeo Time Zone
+    offset: -5:00
+RET:
+  - name: Reunion Time
+    offset: +4:00
+ROTT:
+  - name: Rothera Time
+    offset: -3:00
+S:
+  - name: Sierra Time Zone
+    offset: -6:00
+SAKT:
+  - name: Sakhalin Time
+    offset: +11:00
+SAMT:
+  - name: Samara Time
+    offset: +4:00
+SAST:
+  - name: South Africa Standard Time
+    offset: +2:00
+SBT:
+  - name: Solomon Islands Time
+    offset: +11:00
+SCT:
+  - name: Seychelles Time
+    offset: +4:00
+SGT:
+  - name: Singapore Time
+    offset: +8:00
+SRET:
+  - name: Srednekolymsk Time
+    offset: +11:00
+SRT:
+  - name: Suriname Time
+    offset: -3:00
+SST:
+  - name: Samoa Standard Time
+    offset: -11:00
+SYOT:
+  - name: Syowa Time
+    offset: +3:00
+T:
+  - name: Tango Time Zone
+    offset: -7:00
+TAHT:
+  - name: Tahiti Time
+    offset: -10:00
+TFT:
+  - name: French Southern and Antarctic Time
+    offset: +5:00
+TJT:
+  - name: Tajikistan Time
+    offset: +5:00
+TKT:
+  - name: Tokelau Time
+    offset: +13:00
+TLT:
+  - name: East Timor Time
+    offset: +9:00
+TMT:
+  - name: Turkmenistan Time
+    offset: +5:00
+TOST:
+  - name: Tonga Summer Time
+    offset: +14:00
+TOT:
+  - name: Tonga Time
+    offset: +13:00
+TRT:
+  - name: Turkey Time
+    offset: +3:00
+TVT:
+  - name: Tuvalu Time
+    offset: +12:00
+U:
+  - name: Uniform Time Zone
+    offset: -8:00
+ULAST:
+  - name: Ulaanbaatar Summer Time
+    offset: +9:00
+ULAT:
+  - name: Ulaanbaatar Time
+    offset: +8:00
+UTC:
+  - name: Coordinated Universal Time
+    offset: +0:00
+UYST:
+  - name: Uruguay Summer Time
+    offset: -2:00
+UYT:
+  - name: Uruguay Time
+    offset: -3:00
+UZT:
+  - name: Uzbekistan Time
+    offset: +5:00
+V:
+  - name: Victor Time Zone
+    offset: -9:00
+VET:
+  - name: Venezuelan Standard Time
+    offset: -4:00
+VLAST:
+  - name: Vladivostok Summer Time
+    offset: +11:00
+VLAT:
+  - name: Vladivostok Time
+    offset: +10:00
+VOST:
+  - name: Vostok Time
+    offset: +6:00
+VUT:
+  - name: Vanuatu Time
+    offset: +11:00
+W:
+  - name: Whiskey Time Zone
+    offset: -10:00
+WAKT:
+  - name: Wake Time
+    offset: +12:00
+WARST:
+  - name: Western Argentine Summer Time
+    offset: -3:00
+WAST:
+  - name: West Africa Summer Time
+    offset: +2:00
+WAT:
+  - name: West Africa Time
+    offset: +1:00
+WEST:
+  - name: Western European Summer Time
+    offset: +1:00
+WET:
+  - name: Western European Time
+    offset: +0:00
+WFT:
+  - name: Wallis and Futuna Time
+    offset: +12:00
+WGST:
+  - name: Western Greenland Summer Time
+    offset: -2:00
+WGT:
+  - name: West Greenland Time
+    offset: -3:00
+WIB:
+  - name: Western Indonesian Time
+    offset: +7:00
+WIT:
+  - name: Eastern Indonesian Time
+    offset: +9:00
+WITA:
+  - name: Central Indonesian Time
+    offset: +8:00
+WST:
+  - name: West Samoa Time
+    offset: +13:00
+  - name: Western Sahara Summer Time
+    offset: +1:00
+WT:
+  - name: Western Sahara Standard Time
+    offset: +0:00
+X:
+  - name: X-ray Time Zone
+    offset: -11:00
+Y:
+  - name: Yankee Time Zone
+    offset: -12:00
+YAKST:
+  - name: Yakutsk Summer Time
+    offset: +10:00
+YAKT:
+  - name: Yakutsk Time
+    offset: +9:00
+YAPT:
+  - name: Yap Time
+    offset: +10:00
+YEKST:
+  - name: Yekaterinburg Summer Time
+    offset: +6:00
+YEKT:
+  - name: Yekaterinburg Time
+    offset: +5:00
+Z:
+  - name: Zulu Time Zone
+    offset: +0:00
