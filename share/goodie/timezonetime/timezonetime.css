@@ -2,11 +2,11 @@
     min-width: 20em;
 }
 
-.zci--timezonetime .timezone .timezone_name {
+.zci--timezonetime .timezone .timezone__name {
     display: line-block;
 }
 
-.zci--timezonetime .timezone .timezone_time {
+.zci--timezonetime .timezone .timezone__time {
     display: line-block;
     float: right;
     text-align: right;

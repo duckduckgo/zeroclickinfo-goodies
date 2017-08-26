@@ -31,14 +31,16 @@ handle remainder => sub {
         my $dt = DateTime->now(time_zone => 'UTC');
         my $offset = DateTime::TimeZone->offset_as_seconds($_->{offset});
         $dt->add(seconds => $offset);
-        { name => $_->{name}, time => $dt->hms(':'), offset => $_->{offset} };
+        { name => $_->{name},
+          time => $dt->hms(':'), 
+          offset => $_->{offset} };
     } @{$mappedTimezones};
     
     return "times in $timezone",
         structured_answer => {
             meta => {
                 sourceName => 'timeanddate',
-                sourceURL => 'https://www.timeanddate.com/time/zones/'
+                sourceUrl => 'https://www.timeanddate.com/time/zones/'
             },
             data => {
                 title => "Timezone $timezone",
@@ -48,7 +50,6 @@ handle remainder => sub {
                 group => 'list',
                 options => {
                     list_content => 'DDH.timezonetime.content',
-                    moreAt => 0
                 }
             }
         };
