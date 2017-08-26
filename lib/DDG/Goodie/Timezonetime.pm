@@ -27,12 +27,13 @@ handle remainder => sub {
     return unless $mappedTimezones; 
 
     # Get time for desired timezones
+    my $dt = DateTime->now(time_zone => 'UTC');
     my @times = map {
-        my $dt = DateTime->now(time_zone => 'UTC');
         my $offset = DateTime::TimeZone->offset_as_seconds($_->{offset});
-        $dt->add(seconds => $offset);
+        my $dt_clone = $dt->clone;
+        $dt_clone->add(seconds => $offset);
         { name => $_->{name},
-          time => $dt->hms(':'), 
+          time => $dt_clone->hms(':'), 
           offset => $_->{offset} };
     } @{$mappedTimezones};
     
