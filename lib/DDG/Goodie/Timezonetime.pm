@@ -50,7 +50,7 @@ handle remainder => sub {
             templates => {
                 group => 'list',
                 options => {
-                    list_content => 'DDH.timezonetime.content',
+                    list_content => 'DDH.timezonetime.content'
                 }
             }
         };
