@@ -36,6 +36,10 @@ handle remainder => sub {
     
     return "times in $timezone",
         structured_answer => {
+            meta => {
+                sourceName => 'timeanddate',
+                sourceURL => 'https://www.timeanddate.com/time/zones/'
+            },
             data => {
                 title => "Timezone $timezone",
                 list => \@times
