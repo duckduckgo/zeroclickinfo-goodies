@@ -48,7 +48,7 @@
             },
             {
                 "link": "http://nodeguide.com/",
-                "key": "Node.js guide"
+                "key": "Node.js Guide"
             },
             {
                 "link": "http://howtonode.org/express-mongodb",
@@ -139,7 +139,7 @@
                 "key": "Pluralsight courses (paid)"
             },
             {
-                "link": "https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwj6oMvR35nTAhWFuY8KHfC-BFoQFggZMAA&url=https%3A%2F%2Fwww.udemy.com%2Funderstand-nodejs%2F&usg=AFQjCNF3WkS8cFyYrTgzgd5V_S1ANKkZJw&sig2=rD4t8JYDPvQKjwAMzQnH7Q",
+                "link": "https://www.udemy.com/understand-nodejs/",
                 "key": "Udemy Learn and understand Nodejs (paid)"
             },
             {
@@ -150,7 +150,7 @@
         "Screencasts": [
             {
                 "link": "http://learnallthenodes.com/",
-                "key": "Learn All The Nodes"
+                "key": "Learn All the Nodes"
             },
             {
                 "link": "http://nodetuts.com/",
@@ -196,7 +196,7 @@
             },
             {
                 "link": "http://jsbooks.revolunet.com/",
-                "key": "Most detailed list of free JavaScript Books"
+                "key": "A detailed list of free JavaScript Books"
             },
             {
                 "link": "http://book.mixu.net/node/index.html",
@@ -236,7 +236,7 @@
             },
             {
                 "link": "http://howtonode.org/",
-                "key": "How To Node"
+                "key": "How to Node"
             },
             {
                 "link": "http://dailyjs.com/",
