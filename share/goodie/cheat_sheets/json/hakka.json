@@ -1,0 +1,159 @@
+{
+    "id": "hakka_cheat_sheet",
+    "name": "Hakka",
+    "description": "Daily hakka usage and phrases",
+
+    "metadata": {
+        "sourceName": "Omniglot",
+        "sourceUrl" : "http://www.omniglot.com/language/phrases/hakka.php"
+    },
+
+    "aliases": [
+        "kejia"
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+        "Basic",
+        "Greeting",
+	"Etiquette",
+	"Ask Questions"
+    ],
+
+    "sections": {
+        "Basic": [
+            {
+                "key": "Reply to 'How are you?'",
+                "val": "𠊎好",
+		"trn": "ngai2 ho3"
+            },
+            {
+                "key": "Hello (on phone)",
+                "val": "噯",
+		"trn": "oi"
+            },
+	    {
+		"key": "Goodbye",
+		"val": "再見",
+		"trn": "tsai5 gien5"
+	    },
+	    {
+		"key": "Good luck!",
+		"val": "祝你好运",
+		"trn": "zhuk ngi ho yun"
+	    },
+	    {
+		"key": "I don't know",
+		"vak": "我不知",
+		"trn": "ngai m' di"
+	    },
+	    {
+		"key": "Excuse me",
+		"val": "請問",
+		"trn": "ts'iang3 mun5"
+	    }
+        ],
+        "Greeting": [
+            {
+                "key": "Hello (General greeting)",
+                "val": "你好",
+		"trn": "ngi2 ho3"
+            },
+            {
+                "key": "Pleased to meet you",
+                "val": "安高興見到你",
+		"trn": "on1 go1hin1 gien5 do5 ngi2"
+            },
+	    {
+                "key": "Good morning",
+                "val": "安早",
+                "trn": "on1 zo3"
+            },
+            {
+                "key": "Good afternoon",
+                "val": "食晝沒?",
+                "trn": "siit8 zu5 mut8"
+            },
+	    {
+                "key": "Good evening!",
+                "val": "食夜沒",
+                "trn": "siit8 ia5 mut8"
+            },
+            {
+                "key": "Good night",
+                "val": "晚安",
+                "trn": "van3 on1"
+            }
+        ],
+	"Etiquette": [
+	    {
+                "key": "Welcome",
+                "val": "歡迎",
+                "trn": "fon2 ngiang2"
+            },
+            {
+                "key": "Have a good journey",
+                "val": "一帆風順",
+                "trn": "it7 fam2 fung1 sun5"
+            },
+            {
+                "key": "Excuse me",
+                "val": "請問",
+                "trn": "ts'iang3 mun5"
+            },
+            {
+                "key": "Sorry",
+                "val": "失禮",
+                "trn": "siit7 li1"
+            },
+	    {
+                "key": "Please",
+                "val": "请你",
+                "trn": "qin ngi"
+            },
+            {
+                "key": "Thank you",
+                "val": "多謝",
+                "trn": "do1 sia5"
+            },
+	    {
+                "key": "Reply to thank you",
+                "val": "唔駛客氣",
+                "trn": "m1 sii3 hak7 hi5"
+            }		
+	],
+	"Ask Questions": [
+	    {
+                "key": "Where are you from?",
+                "val": "你在奈仔來個?",
+                "trn": "ngi2 hoi nai5 e3 loi2 ge5?"
+            },
+            {
+                "key": "Please say that again",
+                "val": "你可以再講冇？",
+                "trn": "ngi2 ko3 i1 zai5 gong3 mo?"
+            },
+            {
+                "key": "Do you speak English?",
+                "val": "你曉唔曉得講英文?",
+                "trn": "ngi2 hiau3 m1 hiau3 det7 gong3 in1 vun2?"
+            },
+            {
+                "key": "How much is this?",
+                "val": "這個幾多錢？",
+                "trn": "ia ke ki3 to1 ts'ien2?"
+            },
+            {
+                "key": "Where's the toilet?",
+                "val": "廁所係奈嘢？",
+                "trn": "tse5 so3 hoi5 nai5e?"
+            },
+            {
+                "key": "Do you speak Hakka",
+                "val": "你講客家話",
+                "trn": "ngi2 gong3 hak7 ga1 fa3?"
+            }
+	]
+    }
+}
