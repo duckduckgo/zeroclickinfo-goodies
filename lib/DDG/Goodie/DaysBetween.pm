@@ -6,7 +6,7 @@ use DDG::Goodie;
 use DateTime;
 with 'DDG::GoodieRole::Dates';
 
-triggers start => "days between", "days", "daysbetween", "days_between", "number of days between", "how many days between", "number of days from", "days from", "days since", "how many days since", "number of days since";
+triggers start => "days between", "days", "daysbetween", "days_between", "number of days between", "how many days between", "number of days from", "days from", "days since", "how many days since", "number of days since", "days until";
 
 # 'Days since' will calculate days from the specified date to the present date, therefore answer cannot be cached
 zci is_cached => 0;
@@ -16,7 +16,7 @@ my $datestring_regex = datestring_regex();
 my @months  = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
 
 handle remainder => sub {
-    return unless ($_ =~ qr/^($datestring_regex)$/i) || ($_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i);
+    return unless ($_ =~ qr/($datestring_regex) (?:(?:and|to|until) )?($datestring_regex)(?:[,]? inclusive)?$/i) || ($_ =~ qr/($datestring_regex)$/i);
     my ($date1, $date2);
     if ($1 && $2) {
         ($date1, $date2) = parse_all_datestrings_to_date($1, $2);
