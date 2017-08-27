@@ -14,8 +14,8 @@ sub build_answer {
     return "Phonetic: " . $answer,
         structured_answer => {
             data => {
-                title => "Phonetic: " . $word,
-                subtitle => $answer,
+                title => $answer,
+                subtitle => "Phonetic: " . $word,
             },
             templates => {
                 group => 'text',
