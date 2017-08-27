@@ -22,14 +22,12 @@ sub human2dog {
 handle remainder => sub {
     my ($input, $from, $to, $result);
 
-    #From dog years to human years
-    if (/^(\d+)(((\s)|(\s+(years|year))|(\s+human+\s+(years|year)+\s))+from)?$/) {
+    if (/(\d+)( (human )?(year[s]?)? ?from)/) {
         $input = $1;
         $from = "Dog Years";
         $to = "Human Years";
         $result = dog2human($1);
-    #From human years to dog years
-    } elsif (/^(\d+)(((\s)|(\s+(years|year)+\s)|(\s+human+\s+(years|year)+\s))+(in|to|into|as))?$/) {
+    } elsif (/(\d+)( (human )?(year[s]?)? ?(to|into|in|as))/) {
         $input = $1;
         $from = "Human Years";
         $to = "Dog Years";
