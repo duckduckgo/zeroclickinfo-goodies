@@ -9,8 +9,6 @@ use DDG::Test::Goodie;
 zci answer_type => 'dog_years_converter';
 zci is_cached   => 1;
 
-# Build a structured answer that should match the response from the
-# Perl file.
 sub build_structured_answer {
     my ($input, $from, $to, $result) = @_;
 
@@ -26,7 +24,6 @@ sub build_structured_answer {
     };
 }
 
-# Use this to build expected results for your tests.
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(

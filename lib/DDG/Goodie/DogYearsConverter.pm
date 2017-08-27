@@ -33,7 +33,7 @@ handle remainder => sub {
         $to = "Dog Years";
         $result = human2dog($1);
     }
-    return unless ($input);    # Didn't hit any conditions.
+    return unless ($input);
 
     return qq/Dog Year Conversion: $input ($from) = $result ($to)/,
         structured_answer => {
