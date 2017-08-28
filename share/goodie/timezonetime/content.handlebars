@@ -1,4 +1,7 @@
 <div class="timezone">
-  <span class="timezone__name">{{name}}</span>
-  <span class="timezone__time">{{time}} (UTC {{offset}})</span>
+  <div class="timezone__name">{{name}}</div>
+  <div class="timezone__datetime">
+    <span class="timezone__datetime__time">{{time}} (UTC {{offset}})</span>
+    <span class="timezone__datetime__date">{{dayName}}, {{monthName}} {{day}}, {{year}}</span>
+  </div>
 </div>

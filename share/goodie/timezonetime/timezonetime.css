@@ -1,13 +1,28 @@
 .zci--timezonetime .timezone {
-    min-width: 20em;
+    width: 100%;
+    height: 2.5em;
 }
 
-.zci--timezonetime .timezone .timezone__name {
-    display: line-block;
+.zci--timezonetime .timezone > * {
+    vertical-align: middle;
 }
 
-.zci--timezonetime .timezone .timezone__time {
-    display: line-block;
+.zci--timezonetime .timezone__name {
+    display: inline-block;
+    float: left;
+}
+
+.zci--timezonetime .timezone__datetime {
+    display: inline-block;
     float: right;
     text-align: right;
+}
+
+.zci--timezonetime .timezone__datetime__time {
+    display: block;
+
+}
+
+.zci--timezonetime .timezone__datetime__date {
+    display: block;
 }

@@ -41,8 +41,12 @@ handle remainder => sub {
         my $dt_clone = $dt->clone;
         $dt_clone->add(seconds => $_->{offset_seconds});
         push @times, { name => $_->{name}, 
-                       time => $dt_clone->hms(':'), 
-                       offset => $_->{offset} };
+                       time => $dt_clone->hms(':'),
+                       offset => $_->{offset},
+                       day => $dt_clone->day,
+                       dayName => $dt_clone->day_name,
+                       monthName => $dt_clone->month_name,
+                       year => $dt_clone->year };
     }
     
     return "times in $timezone",
