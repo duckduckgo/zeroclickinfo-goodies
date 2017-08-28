@@ -93,7 +93,7 @@
             },
             {
                 "key": "gtt",
-                "val": "drop"
+                "val": "drops"
             },
             {
                 "key": "µgtt",
@@ -102,11 +102,11 @@
         ],
         "Conversions": [
             {
-                "key": "gr 1 = 60 mg",
+                "key": "1 g = 15 gr",
                 "val": ""
             },
             {
-                "key": "gr 15 = 1 g",
+                "key": "1 gr = 60 mg",
                 "val": ""
             },
             {
@@ -114,7 +114,7 @@
                 "val": ""
             },
             {
-                "key": "1 oz = 30 mL",
+                "key": "1 fl. oz = 30 mL",
                 "val": ""
             },
             {
@@ -173,11 +173,11 @@
             },
             {
                 "key": "Mixtures and Solutions",
-                "val": "Desired Dosage ÷ Stock Strength x Stock Volume = Amt of Solution To Be Given"
+                "val": "Desired Dosage ÷ Stock Strength x Stock Volume = Amount of Solution To Be Given"
             },
             {
                 "key": "IV Rate - mL per hour and minute",
-                "val": "Total IV Volume ÷ Time (hr or min) = mL per hr or min"
+                "val": "Total IV Volume (in mL) ÷ Time (hr or min) = mL per hr or min"
             },
             {
                 "key": "IV Rate - drops per minute",
@@ -191,7 +191,7 @@
         "Hematology Values": [
             {
                 "key": "RBC",
-                "val": "M: 4.5-5.5; F: 4.0-4.9 x10^5/mL"
+                "val": "Male: 4.5-5.5; Female: 4.0-4.9 x10^5/mL"
             },
             {
                 "key": "WBC",
@@ -203,11 +203,11 @@
             },
             {
                 "key": "Hgb",
-                "val": "M: 13.5-16.5; F: 12-15 g/dL"
+                "val": "Male: 13.5-16.5; Female: 12-15 g/dL"
             },
             {
                 "key": "Hct",
-                "val": "M: 41-50%; F: 36-44%"
+                "val": "Male: 41-50%; Female: 36-44%"
             },
             {
                 "key": "MCV",
@@ -293,7 +293,7 @@
             },
             {
                 "key": "Uric Acid",
-                "val": "M: 2.6-6; F: 3.5-7.52"
+                "val": "Male: 2.6-6; Female: 3.5-7.52"
             }
         ],
         "Chemistry Values": [
@@ -311,7 +311,7 @@
             },
             {
                 "key": "Creatinine Clearance",
-                "val": "M: 90-138; F: 85-132 mL/min"
+                "val": "Male: 90-138; Female: 85-132 mL/min"
             },
             {
                 "key": "Albumin",
@@ -380,11 +380,11 @@
                 "val": "7.35-7.45"
             },
             {
-                "key": "Partial Pressure of CO2",
+                "key": "Partial Pressure of CO₂",
                 "val": "35-45 mmHg"
             },
             {
-                "key": "Partial Pressure of O2",
+                "key": "Partial Pressure of O₂",
                 "val": "80-100 mmHg"
             },
             {
@@ -393,7 +393,7 @@
             },
             {
                 "key": "Base Excess",
-                "val": "-2-+2"
+                "val": "between -2 and +2 mEq/L"
             },
             {
                 "key": "Oxygen Saturation",
