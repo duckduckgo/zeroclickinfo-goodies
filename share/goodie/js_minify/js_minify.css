@@ -17,6 +17,11 @@
     cursor: default;
 }
 
+.zci--js_minify select.frm__select {
+    width: 100%;
+    height: 3em !important;
+    margin-bottom: 1em;
+}
 
 /* Mobile */
 .is-mobile .zci--js_minify .js_minify--action_box {

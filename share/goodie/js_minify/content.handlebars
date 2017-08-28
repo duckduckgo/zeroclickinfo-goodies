@@ -1,5 +1,12 @@
 <div class="gw">
+
     <div class="g js_minify--wrap fifty frm">
+
+        <select class="frm__select" id="lang_select">
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+
         <textarea name="js_minify--input" class="js_minify--input whole tx--12 frm__text" rows="{{cols}}" cols="60" placeholder="Paste code here..."></textarea>
     </div>
 
@@ -11,6 +18,7 @@
 
 <div class="gw">
     <div class="g js_minify--action_box fifty">
-        <button class="btn btn--skeleton" disabled>Minify Code</button>
+        <button class="btn btn--skeleton" id="minify" disabled>Minify</button>
+        <button class="btn btn--skeleton" id="prettify" disabled>Prettify</button>
     </div>
 </div>
