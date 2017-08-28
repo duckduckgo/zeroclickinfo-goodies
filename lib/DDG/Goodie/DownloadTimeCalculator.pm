@@ -30,7 +30,8 @@ sub prefix_normalizer {
     if($val =~ /^k.*/i) { return 1e3; }
     elsif($val =~ /^m.*/i) { return 1e6; }
     elsif($val =~ /^g.*/i) { return 1e9; }
-    else { return 1e12; }
+    elsif($val =~ /^t.*/i) { return 1e12; }
+    else { return 1; }
 }
 
 # Differentiate between bit/byte.

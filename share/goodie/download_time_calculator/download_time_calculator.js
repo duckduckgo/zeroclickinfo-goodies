@@ -92,9 +92,9 @@ DDH.download_time_calculator = DDH.download_time_calculator || {};
             else result += " minute, ";
             time %= 60;
         }
-        if(time >= 1)
+        if(time >= 1 || result === "")
         {
-            result += time;
+            result += Math.ceil(time);
             if(time >= 2) result += " seconds, ";
             else result += " second, ";
         }
