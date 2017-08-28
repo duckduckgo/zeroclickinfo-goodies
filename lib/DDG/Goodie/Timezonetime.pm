@@ -19,6 +19,14 @@ triggers startend => ("time", "now time", "time now");
 # Mapping short timezone names to one used by DateTime:Timezone module
 my $timezoneMapping = LoadFile(share('abbreviations.yaml'));
 
+# Add a field (offset_seconds) with offsets converted to seconds.
+for my $abbreviation (keys %{$timezoneMapping}) {
+    for my $timezone (@{$timezoneMapping->{$abbreviation}}) {
+        my $seconds = DateTime::TimeZone->offset_as_seconds($timezone->{offset});
+        $timezone->{offset_seconds} = $seconds;
+    }
+}
+
 handle remainder => sub {
     my $query = $_;
     
@@ -28,14 +36,14 @@ handle remainder => sub {
 
     # Get time for desired timezones
     my $dt = DateTime->now(time_zone => 'UTC');
-    my @times = map {
-        my $offset = DateTime::TimeZone->offset_as_seconds($_->{offset});
+    my @times = (); 
+    for (@{$mappedTimezones}) {
         my $dt_clone = $dt->clone;
-        $dt_clone->add(seconds => $offset);
-        { name => $_->{name},
-          time => $dt_clone->hms(':'), 
-          offset => $_->{offset} };
-    } @{$mappedTimezones};
+        $dt_clone->add(seconds => $_->{offset_seconds});
+        push @times, { name => $_->{name}, 
+                       time => $dt_clone->hms(':'), 
+                       offset => $_->{offset} };
+    }
     
     return "times in $timezone",
         structured_answer => {
