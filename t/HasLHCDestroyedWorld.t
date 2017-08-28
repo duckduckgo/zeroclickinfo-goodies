@@ -40,7 +40,7 @@ ddg_goodie_test(
     'has the lhc destroyed the earth yet'                   => test_zci(@no),
     'has the lhc destroyed the earth'                       => test_zci(@no),
 
-
+    'in science fiction has the large hadron collider destroyed the world' => undef,
     'large hadron collider'                                 => undef,
     'could the large hadron collider destroyed the world'   => undef,
     'will the large hadron collider destroy the earth'      => undef
