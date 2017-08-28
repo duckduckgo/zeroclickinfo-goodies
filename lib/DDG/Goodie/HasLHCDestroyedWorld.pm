@@ -8,14 +8,14 @@ use strict;
 zci answer_type => 'has_lhcdestroyed_world';
 zci is_cached => 1;
 
-triggers any => 'has the large hadron collider destroyed the world',
+triggers start => 'has the large hadron collider destroyed the world',
                 'has the lhc destroyed the world',
                 'has the large hadron collider destroyed the earth',
                 'has the lhc destroyed the earth';
 
 # Handle statement
 handle remainder => sub {
-
+    return unless /^(yet)?$/;
     return "Nope.",
         structured_answer => {
             id => 'has_lhcdestroyed_world',
