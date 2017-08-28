@@ -76,7 +76,7 @@ handle query_lc => sub {
     # Superscript for km3, mi3, km2 or mi2 
     if($result =~ m/(km|mi)(\d)/) {
         my ($symbol, $superscript) = ($1, $2);
-        my $unisuper = $superscript =~ tr/0123456789/⁰ⁱ²³⁴⁵⁶⁷⁸⁹/r;
+        my $unisuper = unicode_superscript($superscript);
         $result =~ s/$symbol$superscript/$symbol$unisuper/;
     }
     
@@ -84,7 +84,7 @@ handle query_lc => sub {
     # Convert x to unicode
     if($result =~ m/x\s(10)(\d\d)/) {
         my ($number, $exponent) = ($1, $2);
-        my $uniexp = $exponent =~ tr/0123456789/⁰ⁱ²³⁴⁵⁶⁷⁸⁹/r;
+        my $uniexp = unicode_superscript($exponent);
         $result =~ s/$number$exponent/$number$uniexp/;
         $result =~ s/x/×/;
     }
@@ -115,4 +115,6 @@ handle query_lc => sub {
         }
     };
 };
+
+sub unicode_superscript { return $_[0] =~ tr/0123456789/⁰ⁱ²³⁴⁵⁶⁷⁸⁹/r }
 1;
