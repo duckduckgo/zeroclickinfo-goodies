@@ -543,6 +543,7 @@ ddg_goodie_test(
     ')1108278829' => undef,
     '24score' => undef,
     '24 score' => undef,
+    '06026/6126' => undef,
 );
 
 done_testing;
