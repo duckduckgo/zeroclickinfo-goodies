@@ -1,0 +1,404 @@
+{
+    "id": "nursing_cheat_sheet",
+    "name": "Nursing",
+    "description": "Quick reference guide to nursing topics",
+
+    "metadata": {
+        "sourceName": "nurseslabs",
+        "sourceUrl" : "https://nurseslabs.com/tag/cheat-sheets/"
+    },
+    
+
+    "aliases": [
+        "dosage calculation", "dosage conversion", "dosage", "dosage math", "nursing math", "nursing dosage", "nursing calculation", "lab values"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Abbreviations",
+        "Conversions",
+        "Calculating Dosages",
+        "Hematology Values",
+        "Serum Electrolytes Values",
+        "Arterial Blood Gas Values",
+        "Chemistry Values",
+        "Differential Count Values",
+        "Urinalysis Values",
+        "Lipoproteins and Triglycerides Values",
+        "Coagulation Studies Values"
+    ],
+
+    "sections": {
+        "Abbreviations": [
+            {
+                "key": "cc",
+                "val": "cubic centimeter"
+            },
+            {
+                "key": "DD",
+                "val": "Desired Dose"
+            },
+            {
+                "key": "IM",
+                "val": "Intramuscular"
+            },
+            {
+                "key": "IO",
+                "val": "Intraosseous"
+            },
+            {
+                "key": "SL",
+                "val": "Sublingual"
+            },
+            {
+                "key": "IV",
+                "val": "Intravenous"
+            },
+            {
+                "key": "IVP",
+                "val": "Intravenous Push"
+            },
+            {
+                "key": "Kg",
+                "val": "Kilogram"
+            },
+            {
+                "key": "gm",
+                "val": "gram"
+            },
+            {
+                "key": "mg",
+                "val": "milligram"
+            },
+            {
+                "key": "mcg",
+                "val": "microgram"
+            },
+            {
+                "key": "mEq",
+                "val": "milliequivalent"
+            },
+            {
+                "key": "L",
+                "val": "Liter"
+            },
+            {
+                "key": "mL",
+                "val": "mililiter"
+            },
+            {
+                "key": "µg",
+                "val": "microgram"
+            },
+            {
+                "key": "gtt",
+                "val": "drops"
+            },
+            {
+                "key": "µgtt",
+                "val": "micro drop"
+            }
+        ],
+        "Conversions": [
+            {
+                "key": "1 g = 15 gr",
+                "val": ""
+            },
+            {
+                "key": "1 gr = 60 mg",
+                "val": ""
+            },
+            {
+                "key": "2.54 cm = 1 in",
+                "val": ""
+            },
+            {
+                "key": "1 fl. oz = 30 mL",
+                "val": ""
+            },
+            {
+                "key": "1 cup = 8 oz",
+                "val": ""
+            },
+            {
+                "key": "1 cup = 240 mL",
+                "val": ""
+            },
+            {
+                "key": "1 quart = 2 pints",
+                "val": ""
+            },
+            {
+                "key": "1 pint = 2 cups",
+                "val": ""
+            },
+            {
+                "key": "1 tsp = 5 mL",
+                "val": ""
+            },
+            {
+                "key": "1 Tbsp = 3 tsp = 15 mL",
+                "val": ""
+            },
+            {
+                "key": "1 lb = 16 oz",
+                "val": ""
+            },
+            {
+                "key": "lb = kg × 2.2; kg = lb ÷ 2.2",
+                "val": ""
+            },
+            {
+                "key": "F = C x 1.8 + 32; C = (F - 32)/1.8",
+                "val": ""
+            },
+            {
+                "key": "mL = L × 1,000; L = mL ÷ 1,000",
+                "val": ""
+            },
+            {
+                "key": "mg = g × 1,000; g = mg ÷ 1,000",
+                "val": ""
+            },
+            {
+                "key": "mcg = mg × 1,000; mg = mcg ÷ 1,000",
+                "val": ""
+            }
+        ], 
+           "Calculating Dosages": [
+            {
+                "key": "Tablet Dosages",
+                "val": "Desired Dosage ÷ Stock Strength = Number of Tablets"
+            },
+            {
+                "key": "Mixtures and Solutions",
+                "val": "Desired Dosage ÷ Stock Strength x Stock Volume = Amount of Solution To Be Given"
+            },
+            {
+                "key": "IV Rate - mL per hour and minute",
+                "val": "Total IV Volume (in mL) ÷ Time (hr or min) = mL per hr or min"
+            },
+            {
+                "key": "IV Rate - drops per minute",
+                "val": "[Total IV Volume ÷ Time (min)] x Drop Factor = Drops per min"
+            },
+            {
+                "key": "IV Rate - Remaining Time of Infusion",
+                "val": "[Volume Remaining (mL) ÷ Drops per min] x Drop Factor = Mins Remaining"
+            }
+        ],
+        "Hematology Values": [
+            {
+                "key": "RBC",
+                "val": "Male: 4.5-5.5; Female: 4.0-4.9 x10^5/mL"
+            },
+            {
+                "key": "WBC",
+                "val": "4,500-10,000 cells/mcL"
+            },
+            {
+                "key": "Platelets",
+                "val": "100,000-450,000 cells/mcL"
+            },
+            {
+                "key": "Hgb",
+                "val": "Male: 13.5-16.5; Female: 12-15 g/dL"
+            },
+            {
+                "key": "Hct",
+                "val": "Male: 41-50%; Female: 36-44%"
+            },
+            {
+                "key": "MCV",
+                "val": "80-100 fL"
+            }
+        ],
+        "Differential Count Values": [    
+            {
+                "key": "Neutrophils",
+                "val": "54-62%"
+            },
+            {
+                "key": "Eosinophils",
+                "val": "1-3%"
+            },
+            {
+                "key": "Basophils",
+                "val": "0-0.75%"
+            },
+            {
+                "key": "Lymphocytes",
+                "val": "25-33%"
+            },
+            {
+                "key": "Monocytes",
+                "val": "3-7%"
+            }
+        ],
+        "Serum Electrolytes Values": [
+            {
+                "key": "Sodium",
+                "val": "135-145 mEq/L"
+            },
+            {
+                "key": "Potassium",
+                "val": "3.5-5.5 mEq/L"
+            },
+            {
+                "key": "Chloride",
+                "val": "95-105 mEq/L"
+            },
+            {
+                "key": "Calcium",
+                "val": "8.5-10.9 mEq/L"
+            },
+            {
+                "key": "Calcium, ionized",
+                "val": "2.24-2.46 mEq/L"
+            },
+            {
+                "key": "Magnesium",
+                "val": "1.5-2.5 mEq/L"
+            },
+            {
+                "key": "Phosphorus",
+                "val": "2.5-4.5 mEq/L"
+            }
+        ],
+        "Urinalysis Values": [
+            {
+                "key": "Volume",
+                "val": "30 mL/hour; 1,000-2,000 mL/day"
+            },
+            {
+                "key": "Specific Gravity",
+                "val": "1.010-1.020"
+            },
+            {
+                "key": "pH",
+                "val": "4.5-8"
+            },
+            {
+                "key": "Casts",
+                "val": "1-24"
+            },
+            {
+                "key": "Glucose",
+                "val": "None"
+            },
+            {
+                "key": "Protein",
+                "val": "None"
+            },
+            {
+                "key": "Uric Acid",
+                "val": "Male: 2.6-6; Female: 3.5-7.52"
+            }
+        ],
+        "Chemistry Values": [
+            {
+                "key": "Glucose",
+                "val": "Adults: 70-110 mg/dL"
+            },
+            {
+                "key": "Blood Urea Nitrogen",
+                "val": "Adults: 7-18; Child: 5-20; Infant: 5-15 mg/dL"
+            },
+            {
+                "key": "Serum Creatinine",
+                "val": "0.6-1.35 mg/dL"
+            },
+            {
+                "key": "Creatinine Clearance",
+                "val": "Male: 90-138; Female: 85-132 mL/min"
+            },
+            {
+                "key": "Albumin",
+                "val": "3.4-5.0 g/dL"
+            },
+            {
+                "key": "Bilirubin",
+                "val": "< 1.0 mg/dL"
+            },
+            {
+                "key": "Uric Acid",
+                "val": "3.5-7.5 mg/dL"
+            },
+            {
+                "key": "Cratinine Phosphokinase",
+                "val": "21-198 units/L"
+            }
+        ],  
+        "Coagulation Studies Values": [
+            {
+                "key": "Prothrombin Time",
+                "val": "11-14 sec"
+            },
+            {
+                "key": "Partial Thromboplastin Time",
+                "val": "25-35 sec"
+            },
+            {
+                "key": "International Normalized Ratio",
+                "val": "0.8-1.2"
+            },
+            {
+                "key": "Activated Partial Thromboplastin Time",
+                "val": "1.5-2.5"
+            },
+            {
+                "key": "Fibrinogen",
+                "val": "203-377 mg/dL"
+            },
+            {
+                "key": "Bleeding Time",
+                "val": "1-6 min"
+            }
+        ],
+        "Lipoproteins and Triglycerides Values": [
+            {
+                "key": "Total Cholesterol",
+                "val": "Ideal: below 200; Borderline: 200—240; High: above 240 mg/dL"
+            },
+            {
+                "key": "Low Density Lipoprotein",
+                "val": "< 70 mg/dL"
+            },
+            {
+                "key": "High Density Lipoprotein",
+                "val": "< 60 mg/dL"
+            },
+            {
+                "key": "Triglycerides",
+                "val": "Normal: below 150; Borderline high: 150—199; High: 200—499; Very high: above 500 Normal: below 150 mg/dL"
+            }
+        ],
+        "Arterial Blood Gas Values": [
+            {
+                "key": "pH",
+                "val": "7.35-7.45"
+            },
+            {
+                "key": "Partial Pressure of CO₂",
+                "val": "35-45 mmHg"
+            },
+            {
+                "key": "Partial Pressure of O₂",
+                "val": "80-100 mmHg"
+            },
+            {
+                "key": "Bicarbonate",
+                "val": "22-26 mEq/L"
+            },
+            {
+                "key": "Base Excess",
+                "val": "between -2 and +2 mEq/L"
+            },
+            {
+                "key": "Oxygen Saturation",
+                "val": "95-100%"
+            }  
+        ]    
+    }
+}
