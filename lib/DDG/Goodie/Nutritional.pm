@@ -20,6 +20,10 @@ foreach(@lines) {
   if ($i == 0) {
       my @line = split(",", $_);
       shift @line;
+      shift @line;
+      map {
+        $_ =~ s/^\s+|\s+$|"//g;
+      } @line;
       $info{"headings"} = \@line;
   }
 
