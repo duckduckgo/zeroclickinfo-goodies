@@ -16,11 +16,9 @@ zci answer_type => "roman_numeral_conversion";
 
 # These two lists are used to load the converter without any answer.
 my @roman_to_arabic = (
-    qr/^roman$/i,
     qr/^convert\s+(?:into|to)\s+arabic\s*(numerals?)?$/i
 );
 my @arabic_to_roman = (
-    qr/^arabic$/i,
     qr/^convert\s+(?:into|to)\s+roman\s*(numerals?)?$/i
 );
  
