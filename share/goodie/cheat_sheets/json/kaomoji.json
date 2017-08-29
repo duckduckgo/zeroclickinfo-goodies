@@ -1,0 +1,451 @@
+{
+	"id": "kaomoji_cheat_sheet",
+	"name": "Kaomoji",
+	"description": "A popular emoticon style made up of Japanese characters and grammar punctuation",
+	"template_type": "code",
+	"section_order": [
+		"Emotions",
+		"Actions",
+		"Animals"
+	],
+	"aliases": [
+		"japanese emoticons"
+	],
+	"sections": {
+		"Emotions": [{
+				"val": "angry facing left",
+				"key": "(ू˃̣̣̣̣̣̣︿˂̣̣̣̣̣̣ ू)"
+			},
+			{
+				"val": "angry facing right",
+				"key": "(　ﾟДﾟ)＜!!"
+			},
+			{
+				"val": "arms raised in anger",
+				"key": "ヽ(≧Д≦)ノ"
+			},
+			{
+				"val": "arms up from excitement",
+				"key": "ヾ(@^▽^@)ノ"
+			},
+			{
+				"val": "blank look",
+				"key": "(◎_◎;)"
+			},
+			{
+				"val": "craziness",
+				"key": "( ┐΄✹ਊ✹)┐"
+			},
+			{
+				"val": "crazy eyes",
+				"key": "(｡☉౪ ⊙｡)"
+			},
+			{
+				"val": "crazy flailing arms",
+				"key": "ヘ（。□°）ヘ"
+			},
+			{
+				"val": "excited",
+				"key": "(*≧∀≦*)"
+			},
+			{
+				"val": "excited facing left",
+				"key": "╰(✧∇✧╰)"
+			},
+			{
+				"val": "excited facing right",
+				"key": "(/^▽^)/"
+			},
+			{
+				"val": "excited love",
+				"key": "٩(๑∂▿∂๑)۶♡"
+			},
+			{
+				"val": "fists raised in anger",
+				"key": "٩(๑`ȏ´๑)۶"
+			},
+			{
+				"val": "flipping the bird",
+				"key": "凸(｀0´)凸"
+			},
+			{
+				"val": "happy",
+				"key": "(*^▽^*)"
+			},
+			{
+				"val": "happy with high energy",
+				"key": "– =͟͟͞͞ ( ꒪౪꒪)ฅ✧"
+			},
+			{
+				"val": "hungry",
+				"key": "v(۝)v"
+			},
+			{
+				"val": "hungry drooling",
+				"key": "Σ_(꒪ཀ꒪」∠)_"
+			},
+			{
+				"val": "hungry licking lips",
+				"key": "⊱(*⁍ ڡ ⁍*)⊰"
+			},
+			{
+				"val": "I love you",
+				"key": "(๑′ᴗ‵๑)Ｉ Lᵒᵛᵉᵧₒᵤ♥"
+			},
+			{
+				"val": "indifferent",
+				"key": "乁( ◔ ౪◔)ㄏ"
+			},
+			{
+				"val": "joy",
+				"key": "(* ^ ω ^)"
+			},
+			{
+				"val": "love",
+				"key": "(♡°▽°♡)"
+			},
+			{
+				"val": "love",
+				"key": "(∩˃o˂∩)♡"
+			},
+			{
+				"val": "love eyes",
+				"key": "(｡♥‿♥｡)"
+			},
+			{
+				"val": "meh",
+				"key": "ʅ（‾◡◝）ʃ"
+			},
+			{
+				"val": "pain",
+				"key": "ヘ（。□°）ヘ"
+			},
+			{
+				"val": "quizzical look",
+				"key": "ಠ_ರೃ"
+			},
+			{
+				"val": "sad",
+				"key": "(︶︹︺)"
+			},
+			{
+				"val": "sad with tears",
+				"key": "(个_个)"
+			},
+			{
+				"val": "shaking an arm",
+				"key": "໒( ⇀ ‸ ↼ )७"
+			},
+			{
+				"val": "shrug",
+				"key": "¯\\_(ツ)_/¯"
+			},
+			{
+				"val": "shy",
+				"key": "(#^.^#)"
+			},
+			{
+				"val": "shy love",
+				"key": "(⸝⸝⍢⸝⸝) ෆ"
+			},
+			{
+				"val": "sickness",
+				"key": "(๑-﹏-๑)"
+			},
+			{
+				"val": "smile",
+				"key": "( ⋂‿⋂’)"
+			},
+			{
+				"val": "sobbing",
+				"key": ".·´¯`(>▂<)´¯`·."
+			},
+			{
+				"val": "success fist",
+				"key": "( •̀ᄇ• ́)ﻭ✧"
+			},
+			{
+				"val": "surprise",
+				"key": "（・□・；）"
+			},
+			{
+				"val": "whatever!",
+				"key": "╮(＾▽＾)╭"
+			},
+			{
+				"val": "Why?!",
+				"key": "ლ(ಠ_ಠლ)"
+			},
+			{
+				"val": "intrigued",
+				"key": "(•᷉ुε ू•᷈,)"
+			}
+		],
+		"Actions": [{
+				"val": "apologizing",
+				"key": "๑•́ㅿ•̀๑) ᔆᵒʳʳᵞ"
+			},
+			{
+				"val": "bowing",
+				"key": "m(_ _)m"
+			},
+			{
+				"val": "bowling",
+				"key": "（*´∀｀）つ＝＝＝＝＝＝＝＝●ⅲⅲⅲ"
+			},
+			{
+				"val": "catch ball",
+				"key": "(／_^)／ 　　　　　　●　＼(^_＼)"
+			},
+			{
+				"val": "coffee",
+				"key": "( -_-)>c[_]"
+			},
+			{
+				"val": "dancing",
+				"key": "(~‾▿‾)~"
+			},
+			{
+				"val": "facepalm",
+				"key": "(－‸ლ)"
+			},
+			{
+				"val": "fight with swords",
+				"key": "(∩ ͡ ° ʖ ͡ °) ⊃-(===>"
+			},
+			{
+				"val": "fight with weapons",
+				"key": "(҂‾ ▵‾)︻デ═一 (˚▽˚’!)/"
+			},
+			{
+				"val": "flipping a table over",
+				"key": "(╯°□°）╯︵ ┻━┻"
+			},
+			{
+				"val": "happiness dance",
+				"key": "〜(^∇^〜）"
+			},
+			{
+				"val": "head scratching",
+				"key": "｢(ﾟﾍﾟ)"
+			},
+			{
+				"val": "hiding",
+				"key": "ﾍ(･_|"
+			},
+			{
+				"val": "hugging",
+				"key": "(⊃｡•́‿•̀｡)⊃"
+			},
+			{
+				"val": "I see what you did there",
+				"key": "(¬‿¬)"
+			},
+			{
+				"val": "kicking and punching",
+				"key": "( #`⌂´)/┌┛"
+			},
+			{
+				"val": "kissing",
+				"key": "( ˘ ³˘)♥"
+			},
+			{
+				"val": "laughing",
+				"key": "(ᗒᗜᗕ)՛̵̖"
+			},
+			{
+				"val": "music",
+				"key": "(๑´▿｀๑)♫•*¨*•.¸¸♪✧"
+			},
+			{
+				"val": "ping pong",
+				"key": "( ^o)ρ┳┻┳°σ(o^ )"
+			},
+			{
+				"val": "running",
+				"key": "ε=ε=ε=┌(๑ʘ∀ʘ)┘"
+			},
+			{
+				"val": "saluting",
+				"key": "∠(*ﾟ∇ﾟ*)"
+			},
+			{
+				"val": "seriously?",
+				"key": "（；¬＿¬)"
+			},
+			{
+				"val": "singing",
+				"key": "(*￣0￣)θ～♪"
+			},
+			{
+				"val": "sleeping",
+				"key": "(-, – )…zzzZZZ"
+			},
+			{
+				"val": "stifling laughter",
+				"key": "(*´艸`*)"
+			},
+			{
+				"val": "stretching",
+				"key": "ᕙ(⇀‸↼‶)ᕗ"
+			},
+			{
+				"val": "swimming",
+				"key": "人人人人　へ( ﾟｪﾟ)＿ 人人人人"
+			},
+			{
+				"val": "thinking about love",
+				"key": "(´ ▽｀).。ｏ♡"
+			},
+			{
+				"val": "thinking real hard",
+				"key": "Σ(-᷅_-᷄๑)"
+			},
+			{
+				"val": "throwing a bomb",
+				"key": "( ･O･)ﾉ⌒●~*"
+			},
+			{
+				"val": "throwing up",
+				"key": "(ﾟ×ﾟlll)"
+			},
+			{
+				"val": "waving flag of surrender",
+				"key": "(￣^￣)尸"
+			},
+			{
+				"val": "whistling",
+				"key": "(˳˘ ɜ˘)˳ ♬♪♫"
+			},
+			{
+				"val": "winking",
+				"key": "(^_-)"
+			},
+			{
+				"val": "writing",
+				"key": "＿〆(。。)"
+			},
+			{
+				"val": "yawning",
+				"key": "（-＾〇＾-）"
+			}
+		],
+		"Animals": [{
+				"val": "bat",
+				"key": "/|\\( ;,;)/|\\"
+			},
+			{
+				"val": "bear",
+				"key": "ʕ•͡-•ʔ"
+			},
+			{
+				"val": "bird",
+				"key": "(°<°)"
+			},
+			{
+				"val": "bulldog",
+				"key": "ヾ(〓￣(∵エ∵)￣〓)"
+			},
+			{
+				"val": "cat",
+				"key": "(=^･ｪ･^=)"
+			},
+			{
+				"val": "cat with paws",
+				"key": "ฅ^•ﻌ•^ฅ"
+			},
+			{
+				"val": "cow",
+				"key": "( ఠൠఠ )"
+			},
+			{
+				"val": "crab",
+				"key": "V=(° °)=V"
+			},
+			{
+				"val": "dog",
+				"key": "∪･ω･∪"
+			},
+			{
+				"val": "fat bird",
+				"key": " ˏ₍•ɞ•₎ˎ"
+			},
+			{
+				"val": "fish",
+				"key": "(°))<<"
+			},
+			{
+				"val": "fluffy cat",
+				"key": "₍˄·͈༝·͈˄₎ฅ˒˒"
+			},
+			{
+				"val": "insect",
+				"key": "ૂི•̮͡• ૂ ྀ"
+			},
+			{
+				"val": "jellyfish",
+				"key": "@:≈"
+			},
+			{
+				"val": "laughing bird",
+				"key": "⊹⋛⋋( ՞ਊ ՞)⋌⋚⊹"
+			},
+			{
+				"val": "llama",
+				"key": "༼ (`・ㅅ ・´) ༽"
+			},
+			{
+				"val": "monkey",
+				"key": "⊂((・⊥・))⊃"
+			},
+			{
+				"val": "pedo bear",
+				"key": "ᶘ ᵒᴥᵒᶅ"
+			},
+			{
+				"val": "pig",
+				"key": "( ´(00)`)"
+			},
+			{
+				"val": "porcupine",
+				"key": ":: (•ᴥ• )́`́’́`́’⻍"
+			},
+			{
+				"val": "rabbit",
+				"key": "／(^ x ^)＼"
+			},
+			{
+				"val": "seal",
+				"key": "(◕ᴥ◕)"
+			},
+			{
+				"val": "sheep",
+				"key": "Ꮚ˘ꈊ˘Ꮚ"
+			},
+			{
+				"val": "snake",
+				"key": "～>`)～～～"
+			},
+			{
+				"val": "spider",
+				"key": "/╲/\\(╭•̀ﮧ •́╮)/\\╱\\"
+			},
+			{
+				"val": "squid",
+				"key": "＜コ：ミ"
+			},
+			{
+				"val": "turtle",
+				"key": ".=.e"
+			},
+			{
+				"val": "whale",
+				"key": ". ><\\{\\{\\{o ______)"
+			},
+			{
+				"val": "Winnie the Pooh",
+				"key": "ʕ •́؈•̀ ₎ "
+			}
+		]
+	}
+}
