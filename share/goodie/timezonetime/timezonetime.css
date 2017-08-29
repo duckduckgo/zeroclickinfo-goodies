@@ -3,19 +3,16 @@
     height: 2.5em;
 }
 
-.zci--timezonetime .timezone > * {
-    vertical-align: middle;
-}
-
 .zci--timezonetime .timezone__name {
     display: inline-block;
+    margin: auto 0 auto 0;
     float: left;
 }
 
 .zci--timezonetime .timezone__datetime {
     display: inline-block;
     float: right;
-    text-align: right;
+    text-align: center;
 }
 
 .zci--timezonetime .timezone__datetime__time {
