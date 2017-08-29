@@ -3,6 +3,7 @@ DDH.nutritional = DDH.nutritional || {};
 (function(DDH) {
     "use strict";
 
+    var initialized = false;
     var nutritional_cache = {};
 
     function init(data) {
@@ -10,11 +11,14 @@ DDH.nutritional = DDH.nutritional || {};
         delete data["headings"]; 
 
         for(var i = 0; i < headings.length; i++) {
-          console.log(headings[i]);         
+          nutritional_cache[headings[i]] = []; 
           for(var key in data) {
-            console.log("Key -> " + key);
-            console.log("Vals -> " + data[key]);
-            console.log("Vals len -> " + data[key].length);
+
+            if(data[key].length > 6) { data[key].shift(); }
+            var tmp_obj = {};
+            tmp_obj[key.toLowerCase().replace(/\s+/g, "_")] = data[key][i];
+            nutritional_cache[headings[i]].push(tmp_obj);
+
           }
         }
 
@@ -24,8 +28,6 @@ DDH.nutritional = DDH.nutritional || {};
     DDH.nutritional.build = function(ops) {
 
         var headings = ops.data.information["headings"];
-        var protein = ops.data.information["Protein"];
-
         init(ops.data.information);
 
         return {
@@ -48,10 +50,8 @@ DDH.nutritional = DDH.nutritional || {};
             
             onShow: function() {
 
-                // var $dom = $(".zci--nutritional");
-                // $dom.find(".my-special-class").click(function(){
-                //
-                // });
+                var $dom = $(".zci--nutritional");
+                initialized = true;
 
             }
         };
