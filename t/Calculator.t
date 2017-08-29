@@ -544,6 +544,10 @@ ddg_goodie_test(
     '24score' => undef,
     '24 score' => undef,
     '06026/6126' => undef,
+    '7/7/2014' => undef,
+    '2/3/09' => undef,
+    '21/12/2012' => undef,
+    '12/21/2012' => undef,
 );
 
 done_testing;
