@@ -1,9 +1,9 @@
 {
     "id": "fusion360_cheat_sheet",
     "name": "fusion360",
-    "description": "CAD/CAM software",
+    "description": "Fusion360 Keyboard shortcuts",
     "metadata": {
-        "sourceName": "Fusion360"
+        "sourceName": "fusion360"
     },
     "template_type": "keyboard",
     "section_order": [
@@ -12,7 +12,7 @@
         "Model_workspace",
         "Sculpt_workplace",
         "CAM_workspace",
-        "Mosue/Touchpad"
+        "Mouse/Touchpad"
     ],
     "sections": {
         "System": [
