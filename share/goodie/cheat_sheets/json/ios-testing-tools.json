@@ -13,8 +13,12 @@
     ],
 
     "template_type": "code",
+    
+    "section_order": [
+       "Tools for iOS Testing"
+    ],
 
-  "sections": {
+    "sections": {
         "Tools for iOS Testing": [
             {
                 "key": "Mallory proxy",
