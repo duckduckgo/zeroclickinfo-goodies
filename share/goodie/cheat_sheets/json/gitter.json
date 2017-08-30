@@ -9,7 +9,7 @@
 	},
 
 	"aliases": [
-		"gitter"
+		"gitter", "Gitter"
 	],
 
 	"template_type": "code",
@@ -74,9 +74,6 @@
 			{
 				"key": "`//collapse`",
 				"val": "Command to tidy up chat history"
-			},
-			{
-
 			}
 		]
 	}
