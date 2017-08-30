@@ -110,6 +110,70 @@ ddg_goodie_test(
                                  "CST")
 );
 
+# Time fixed at the end of a day for UTC, hence we can observe that some
+# timezones are a day after.
+set_fixed_time('2015-06-16T23:59:14Z');
+
+ddg_goodie_test(
+    ['DDG::Goodie::Timezonetime'],
+    
+    'time in cest' => build_test([{ name => "Central European Summer Time",
+                                    offset => "+2:00",
+                                    time => "01:59:14",
+                                    day => 17,
+                                    dayName => "Wednesday",
+                                    monthName => "June",
+                                    year => 2015 }],
+                                 "CEST"),
+    'time now ist' => build_test([{ name => "India Standard Time",
+                                    offset => "+5:30",
+                                    time => "05:29:14",
+                                    day => 17,
+                                    dayName => "Wednesday",
+                                    monthName => "June",
+                                    year => 2015},
+                                  { name => "Irish Standard Time",
+                                    offset => "+1:00",
+                                    time => "00:59:14",
+                                    day => 17,
+                                    dayName => "Wednesday",
+                                    monthName => "June",
+                                    year => 2015 },
+                                  { name => "Israel Standard Time",
+                                    offset => "+2:00",
+                                    time => "01:59:14",
+                                    day => 17,
+                                    dayName => "Wednesday",
+                                    monthName => "June",
+                                    year => 2015 }],
+                                 "IST")
+);
+
+# Time is fixed at the beginning of a day for UTC, hence we can observe
+# that some timezones are a day before.
+set_fixed_time('2015-06-16T00:30:12Z');
+
+ddg_goodie_test(
+   ['DDG::Goodie::Timezonetime'],
+   
+   'time in gft' => build_test([{ name => "French Guiana Time",
+                                  offset => "-3:00",
+                                  time => "21:30:12",
+                                  day => 15,
+                                  dayName => "Monday",
+                                  monthName => "June",
+                                  year => 2015 }],
+                               "GFT"),
+   'time now hadt' => build_test([{ name => "Hawaii-Aleutian Daylight Time",
+                                    offset => "-9:00",
+                                    time => "15:30:12",
+                                    day => 15,
+                                    dayName => "Monday",
+                                    monthName => "June",
+                                    year => 2015 }],
+                                 "HADT")
+);
+
 # INFO: Freezes time for below tests.
 set_fixed_time('2016-01-03T09:36:53Z');
 
