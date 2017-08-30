@@ -1,7 +1,7 @@
 {
     "id": "regex_security_cheat_sheet",
     "name": "Regex Security",
-    "description": "A list of common security issues generally faced when using Regex in softwares which might invalidate data",
+    "description": "List of security issues faced when using Regex which might invalidate data",
 
     "metadata": {
         "sourceUrl": "https://code.tutsplus.com/tutorials/advanced-regular-expression-tips-and-techniques--net-11011",
