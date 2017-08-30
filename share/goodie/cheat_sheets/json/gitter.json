@@ -1,0 +1,53 @@
+{
+    "id": "gitter_cheat_sheet",
+    "name": "Gitter",
+    "description": "General commands for using Gitter",
+
+    "metadata": {
+        "sourceName": "Gitter cheatsheet",
+        "sourceUrl" : "https://trentmillar.github.io/cheatsheet/2016/12/28/gitter-cheatsheet"
+    },
+
+    "aliases": [
+        "gitter"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Sanity Commands",
+        "Room Commands",
+        "Message Commands"
+    ],
+
+    "sections": {
+        "Sanity Commands": [
+            {
+                "key": "`//ban @username`",
+                "val": "Command to block a user"
+            },
+            {
+                "key": "`//unban @username`",
+                "val": "Command to unblock a user"
+            },
+            {
+                "key": "`//notify-all`",
+                "val": "Notify-all will turn on all notifications including muted ones"
+            },
+            {
+                "key": "`//notify-mute`",
+                "val": "Use notify-mute if you get too many notification pop-ups"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
