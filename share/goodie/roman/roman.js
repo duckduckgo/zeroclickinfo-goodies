@@ -42,6 +42,11 @@ DDH.roman = DDH.roman || {};
         'arabic': isArabic
     };
     
+    var rangeTable = {
+        'roman': isRomanNumberInRange,
+        'arabic': isArabicNumberInRange
+    };
+    
     var conversionTable = {
         'roman': { 'arabic': romanToArabic },
         'arabic': { 'roman': arabicToRoman }
@@ -60,6 +65,16 @@ DDH.roman = DDH.roman || {};
         var r = /^M{0,3}(?:D?C{0,3}|C[DM])(?:L?X{0,3}|X[LC])(?:V?I{0,3}|I[VX])$/i;
         return input != '' && 
                input.match(r);
+    }
+    
+    /* isRomanNumberInRange expects a non-null string representing a 
+     * roman number.
+     *
+     * It always returns true because a valid roman number is in range.
+     */
+    
+    function isRomanNumberInRange(input) {
+        return true;
     }
     
     /* romanToArabic expects a non-null string representing a roman number.
@@ -95,9 +110,18 @@ DDH.roman = DDH.roman || {};
     }
     
     function isArabic(input) {
-        return input != '0' && 
-               input.match(/\d+/) &&
-               parseInt(input) <= 3999;
+        return input != '0' && input.match(/\d+/);
+    }
+    
+    /* isArabicNumberInRange expects an integer.
+     * 
+     * We limit the valid range to [1,3999] because the greatest roman
+     * number represented by ascii characters is MMMCMXCIX (3999).
+     */ 
+    
+    function isArabicNumberInRange(input) {
+        var number = parseInt(input);
+        return number >= 1 && number <= 3999;
     }
     
     /* arabicToRoman expects a non-null string composed of digits.
@@ -156,13 +180,58 @@ DDH.roman = DDH.roman || {};
     function buildConverter(input, output) {        
         var $root = DDH.getDOM('roman');
         
+        var $arabicWarning = $root.find('.converter__messages__arabic');
+        var $romanWarning = $root.find('.converter__messages__roman');
+       
+        /* The following four closures capture the two previous DOM elements.
+         * Hence, we build a warning table to display the right information.
+         * Warnings are displayed by making the font weight bold and increasing
+         * the font size. 
+         */
+        
+        function raiseArabicWarning() {
+            $arabicWarning.css('font-weight', 'bold');
+            $arabicWarning.css('font-size', '1.5em');
+        }
+        
+        function unraiseArabicWarning() {
+            $arabicWarning.css('font-weight', 'normal');
+            $arabicWarning.css('font-size', '1em');
+        }
+        
+        function raiseRomanWarning() {
+            $romanWarning.css('font-weight', 'bold');
+            $romanWarning.css('font-size', '1.5em');
+        }
+        
+        function unraiseRomanWarning() {
+            $romanWarning.css('font-weight', 'normal');
+            $romanWarning.css('font-size', '1em');
+        }
+        
+        var raiseWarningTable = {
+            'roman': raiseRomanWarning,
+            'arabic': raiseArabicWarning
+        };
+        
+        var unraiseWarningTable = {
+            'roman': unraiseRomanWarning,
+            'arabic': unraiseArabicWarning
+        };
+        
         return {
             inputLabel: DDG.capitalize(input),
             isInputValid: validationTable[input],
+            isInputInRange: rangeTable[input],
             input: $root.find('.converter__input__field'),
+            raiseInputWarning: raiseWarningTable[input],
+            unraiseInputWarning: unraiseWarningTable[input],
             outputLabel: DDG.capitalize(output),
             isOutputValid: validationTable[output],
+            isOutputInRange: rangeTable[output],
             output: $root.find('.converter__output__field'),
+            raiseOutputWarning: raiseWarningTable[output],
+            unraiseOutputWarning: unraiseWarningTable[output],
             inputToOutput: conversionTable[input][output],
             outputToInput: conversionTable[output][input]
         };
@@ -190,13 +259,34 @@ DDH.roman = DDH.roman || {};
                 $converter.input.val(inputValue);
                 $converter.output.val(outputValue);
                 
+                /* Just in case the input provided by the server was out 
+                 * of range.  In this case, we immediately raise a warning.
+                 */
+                
+                if (! $converter.isInputInRange()) {
+                    $converter.raiseInputWarning();
+                }
+                
+                /* There are four cases to discriminate related to inputs.
+                 * 
+                 * - empty input
+                 * - syntactically incorrect input
+                 * - out of range input
+                 * - valid input
+                 */
+                
                 $converter.input.keyup(function (e) {
                     var input = $converter.input.val();
                     if (input == '') {
                         $converter.output.val('');
                     } else if (! $converter.isInputValid(input)) {
                         $converter.output.val('');
+                    } else if (! $converter.isInputInRange(input)) {
+                        $converter.output.val('');
+                        $converter.raiseInputWarning();
                     } else {
+                        $converter.unraiseInputWarning();
+                        
                         var output = $converter.inputToOutput(input);
                         $converter.output.val(output);
                     }
@@ -209,7 +299,12 @@ DDH.roman = DDH.roman || {};
                         $converter.input.val('');
                     } else if (! $converter.isOutputValid(output)) {
                         $converter.input.val('');
+                    } else if (! $converter.isOutputInRange(output)) {
+                        $converter.input.val('');
+                        $converter.raiseOutputWarning();
                     } else {
+                        $converter.unraiseOutputWarning();
+                        
                         var input = $converter.outputToInput(output);
                         $converter.input.val(input);
                     }

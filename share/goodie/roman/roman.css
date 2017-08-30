@@ -19,3 +19,7 @@
     text-align: center;
     font-size: 2em;
 }
+
+.zci--roman .converter__messages {
+    margin-top: 1em;
+}
