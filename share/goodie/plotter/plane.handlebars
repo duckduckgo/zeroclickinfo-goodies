@@ -1,0 +1,14 @@
+<div>
+<svg width="200" height="200">
+<rect x="0" y="0" width="200" height="200"
+  style="fill:blue;stroke:pink;stroke-width:2;fill-opacity:0.1;stroke-opacity:0.9" />
+<line x1="0" x2="200" y1="100" y2="100" style="stroke:red;stroke-width:1"/>
+<line x1="100" x2="100" y1="0" y2="200" style="stroke:red;stroke-width:1"/>
+{{#if is_point}}<circle cx="{{point_x}}" cy="{{point_y}}" r="3" fill="red" />{{/if}}
+{{#if is_line}}<line x1="{{x1}}" x2="{{x2}}" y1 = "{{y1}}" y2="{{y2}}" style="stroke:red;stroke-width:1" />{{/if}}
+<text x="5" y="90" fill="blue">{{x_axis_start}}</text>
+<text x="155" y="90" fill="blue">{{x_axis_end}}</text>
+<text x="100" y="25" fill="blue">{{y_axis_start}}</text>
+<text x="100" y="160" fill="blue">{{y_axis_end}}</text>
+</svg>
+</div>
