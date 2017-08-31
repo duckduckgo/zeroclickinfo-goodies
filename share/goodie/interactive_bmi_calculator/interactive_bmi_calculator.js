@@ -33,7 +33,7 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
     function getCategory(bmi) {
         if (bmi < 18.5)
             return "Underweight: < 18.5";
-        if(bmi >= 18.5 && bmi <= 24.9)
+        if(bmi >= 18.5 && bmi < 25)
             return "Normal Weight: 18.5 - 24.9";
         if(bmi >= 25 && bmi <= 29.9)
             return "Overweight: 25 - 29.9";
