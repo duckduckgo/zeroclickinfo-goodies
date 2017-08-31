@@ -3,8 +3,12 @@
     "name": "fusion360",
     "description": "Fusion360 Keyboard shortcuts",
     "metadata": {
-        "sourceName": "fusion360"
+        "sourceName": "fusion360",
+        "sourceUrl":"https://www.cadlinecommunity.co.uk/hc/en-us/articles/210361725-Fusion-360-Keyboard-Shortcuts"
     },
+    "aliases": [
+        "Fusion 360"
+  ],
     "template_type": "keyboard",
     "section_order": [
         "System",
