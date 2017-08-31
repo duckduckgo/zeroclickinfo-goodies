@@ -7,9 +7,9 @@ zci is_cached   => 1;
 
 triggers start => "2048", "play 2048", "game 2048";
 
-handle query_lc => sub {
+handle remainder => sub {
 
-    return unless $_;
+    return unless $_ eq '';
 
     return '',
     structured_answer => {
