@@ -1,24 +1,24 @@
-#bmi_unit_switches { 
+.zci--interactive_bmi_calculator .bmi_unit_switches {
     cursor: pointer;
     margin-top: 1.5em;
 }
 
-#category {
+.zci--interactive_bmi_calculator .category {
     margin-left: 2%;
 }
 
-.bmi_var.bmi_error {
+.zci--interactive_bmi_calculator .bmi_var.bmi_error {
     border: 1px solid #de5833;
 }
 
-.block-display {
+.zci--interactive_bmi_calculator .block-display {
     display: block;
 }
 
-#bmi_height_ft {
+.zci--interactive_bmi_calculator .bmi_height_ft {
     margin-right: 4%;
 }
 
-.bold {
+.zci--interactive_bmi_calculator .bold {
     font-weight: 600;
 }

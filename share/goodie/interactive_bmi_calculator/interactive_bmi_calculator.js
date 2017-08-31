@@ -16,7 +16,7 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
         $("." + selected).removeClass(selected + bold).addClass(unselected);
 
         var units = is_metric? "metric" : "imperial";
-        $("#bmi_" + units).addClass(selected + bold).removeClass(unselected);
+        $(".bmi_" + units).addClass(selected + bold).removeClass(unselected);
 
         if(is_metric) {
             $weight.attr("placeholder", "kg");
@@ -42,8 +42,8 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
     }
 
     function resetValues() {
-        $("#bmi_result").html("");
-        $("#category").html("");
+        $(".bmi_result").html("");
+        $(".category").html("");
         $weight.val("");
         $height_ft.val("");
         $height_in.val("");
@@ -59,9 +59,9 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
 
                 hasShown = true;
 
-                $height_ft = $("#bmi_height_ft"),
-                $height_in = $("#bmi_height_in"),
-                $weight    = $("#bmi_weight");
+                $height_ft = $(".bmi_height_ft"),
+                $height_in = $(".bmi_height_in"),
+                $weight    = $(".bmi_weight");
                 updateUnits();
 
                 $(".bmi_var").keydown(function(evt) {
@@ -98,8 +98,8 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
                                 bmi = bmi_arr[0];
                             }
 
-                            $("#bmi_result").html(bmi);
-                            $("#category").html(getCategory(bmi));
+                            $(".bmi_result").html(bmi);
+                            $(".category").html(getCategory(bmi));
                         } else {
                             if ((!$.isNumeric(height)) || (height === 0)) {
                                 $height_in.addClass(error);
@@ -114,7 +114,7 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
                 });
 
                 $(".bmi_switch").click(function(evt) {
-                    is_metric = $(this).attr("id") === "bmi_metric";
+                    is_metric = $(this).hasClass("bmi_metric");
                     updateUnits();
 
                     //Update settings in the cloud too
