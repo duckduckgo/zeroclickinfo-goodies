@@ -242,8 +242,14 @@ DDH.roman = DDH.roman || {};
         var output = ops.data.output;
         var inputValue = ops.data.input_value;
         var outputValue = ops.data.output_value;
+
+        /* State variables.
+         * initiated: avoid init logic running multiple times.
+         * warning: has a warning been raised?
+         */ 
         
         var initiated = false;
+        var warning = false;
         
         return {
             onShow: function() {
@@ -264,6 +270,7 @@ DDH.roman = DDH.roman || {};
                  */
                 
                 if (! $converter.isInputInRange()) {
+                    warning = true;
                     $converter.raiseInputWarning();
                 }
                 
@@ -282,11 +289,15 @@ DDH.roman = DDH.roman || {};
                     } else if (! $converter.isInputValid(input)) {
                         $converter.output.val('');
                     } else if (! $converter.isInputInRange(input)) {
+                        warning = true;
                         $converter.output.val('');
                         $converter.raiseInputWarning();
                     } else {
-                        $converter.unraiseInputWarning();
-                        
+                        if (warning) {
+                            warning = false;
+                            $converter.unraiseInputWarning();
+                            $converter.unraiseOutputWarning();
+                        }
                         var output = $converter.inputToOutput(input);
                         $converter.output.val(output);
                     }
@@ -300,11 +311,15 @@ DDH.roman = DDH.roman || {};
                     } else if (! $converter.isOutputValid(output)) {
                         $converter.input.val('');
                     } else if (! $converter.isOutputInRange(output)) {
+                        warning = true;
                         $converter.input.val('');
                         $converter.raiseOutputWarning();
                     } else {
-                        $converter.unraiseOutputWarning();
-                        
+                        if (warning) {
+                            warning = false;
+                            $converter.unraiseOutputWarning();
+                            $converter.unraiseInputWarning();
+                        }
                         var input = $converter.outputToInput(output);
                         $converter.input.val(input);
                     }
