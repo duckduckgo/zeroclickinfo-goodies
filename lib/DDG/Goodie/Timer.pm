@@ -71,7 +71,11 @@ sub parse_query_for_time {
 
 sub build_result {
     my $req = shift;
+    my $autoPlay = 1;
     my $time = parse_query_for_time($req->query_lc);
+    if ($time == 1500 && $req->query_lc =~ /pomodoro/) {
+        $autoPlay = 0;
+    }
     return "$time",
         structured_answer => {
             id     =>  'timer',
@@ -83,6 +87,7 @@ sub build_result {
             },
             data => {
                 time => "$time",
+                should_autostart => $autoPlay,
                 goodie_version => $goodieVersion
             },
             templates => {
