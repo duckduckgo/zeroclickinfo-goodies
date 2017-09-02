@@ -436,7 +436,7 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-    '20000 ängströms' => test_zci(
+    '20000 ångströms' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '20000',
             from_unit => 'angstrom',
