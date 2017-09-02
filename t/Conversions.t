@@ -436,6 +436,38 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    '20000 ångströms to cm' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '20000',
+            from_unit => 'angstrom',
+            to_unit => 'cm',
+            physical_quantity => 'length'
+        })
+    ),
+    '1 light-year in nanometres' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'lightyear',
+            to_unit => 'nanometer',
+            physical_quantity => 'length'
+        })
+    ),
+    '0.1 astronomische einheit in kilometer' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '0.1',
+            from_unit => 'astronomicalunit',
+            to_unit => 'kilometer',
+            physical_quantity => 'length'
+        })
+    ),
+    '12 parsecs in light years' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '12',
+            from_unit => 'parsec',
+            to_unit => 'lightyear',
+            physical_quantity => 'length'
+        })
+    ),
     # TEMPERATURE
     '1 degree fahrenheit to celsius' => test_zci(
         '',

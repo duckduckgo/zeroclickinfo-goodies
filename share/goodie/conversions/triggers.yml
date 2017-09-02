@@ -433,11 +433,60 @@ symbols: [yd]
 ---
 aliases:
   - angstrom
+  - angstroms
   - ångström
-  - Å
+  - ångströms
+  - ångstrom
+  - ångstroms
+  - å
 type: length
 unit: angstrom
 ---
+aliases:
+  - lightyear
+  - lightyears
+  - light year
+  - light years
+  - light-year
+  - light-years
+  - lichtjahr
+  - lichtjahre
+  - lichtjahren
+  - année-lumière
+  - années-lumière
+  - lichtjaar
+  - lichtjaren
+type: length
+unit: lightyear
+symbols: [ly]
+---
+aliases:
+  - astronomicalunit
+  - astronomicalunits
+  - astronomical unit
+  - astronomical units
+  - unité astronomique
+  - unités astronomiques
+  - astronomische einheit
+  - astronomische einheiten
+  - au
+  - aus
+  - ua
+type: length
+unit: astronomicalunit
+symbols: [AU]
+---
+aliases:
+  - parsec
+  - parsecs
+  - parallax second
+  - parallax seconds
+  - pc
+  - pcs
+type: length
+unit: parsec
+symbols: [pc]
+--- 
 aliases:
   - ft
   - international foot
