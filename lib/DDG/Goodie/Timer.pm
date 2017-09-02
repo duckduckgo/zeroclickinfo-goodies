@@ -65,7 +65,7 @@ sub parse_query_for_time {
         }
         $query =~ s/$timer_re//;
     }
-		return 25*60 if ($time == 0 && $orig_query =~ /pomodoro/);
+    return 25*60 if ($time == 0 && $orig_query =~ /pomodoro/);
     return ($time <= $MAX_TIME) ? $time : $MAX_TIME;
 }
 
