@@ -16,7 +16,7 @@ my $datestring_regex = datestring_regex();
 my @months  = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
 
 handle remainder => sub {
-    return unless ($_ =~ qr/($datestring_regex) (?:(?:and|to|until) )?($datestring_regex)(?:[,]? inclusive)?$/i) || ($_ =~ qr/($datestring_regex)$/i);
+    return unless ($_ =~ qr/^($datestring_regex) (?:(?:and|to|until) )?($datestring_regex)(?:[,]? inclusive)?$/i) || ($_ =~ qr/^($datestring_regex)$/i);
     my ($date1, $date2);
     if ($1 && $2) {
         ($date1, $date2) = parse_all_datestrings_to_date($1, $2);
