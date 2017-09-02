@@ -7,10 +7,11 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
+my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder', 'pomodoro');
 # Triggers that are valid, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
+
 my @baseTriggers = qw(start begin set run);
 my @startTriggers = ();
 # creates 'start a', 'begin a'
@@ -41,7 +42,8 @@ sub normalize_time_format {
 }
 
 sub parse_query_for_time {
-    my $query = shift;
+    my $query = shift;	    
+    my $orig_query = $query;   
     $query =~ s/^\s*//;
     $query =~ s/(timer|online)\s*//gi;
     $query =~ s/(?!\a)s/sec/i;
@@ -63,6 +65,7 @@ sub parse_query_for_time {
         }
         $query =~ s/$timer_re//;
     }
+		return 25*60 if ($time == 0 && $orig_query =~ /pomodoro/);
     return ($time <= $MAX_TIME) ? $time : $MAX_TIME;
 }
 

@@ -55,7 +55,10 @@ ddg_goodie_test(
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
     'count down timer'       => build_test(),
-
+    'pomodoro timer'         => build_test('1500'),
+    'pomodoro countdown'     => build_test('1500'),
+    'online pomodoro timer'  => build_test('1500'),			
+				
     # With initial time
     'timer 15 mins'                                  => build_test('900'),
     'timer 77 mins 13 secs'                          => build_test('4633'),
@@ -102,10 +105,18 @@ ddg_goodie_test(
     '20 mins'                                        => build_test('1200'),
     'timer 20 minutes'                               => build_test('1200'),
     'timer 60 minutes'                               => build_test('3600'),
+    
+    # Pomodoro queries
+    'pomodoro timer for 10 mins'                     => build_test('600'),
+    'pomodoro countDown for 20 mins'                 => build_test('1200'),
+    'set pomodoro timer for 30 mins'                 => build_test('1800'),
+				
+    # Queries with 'a'
     'start a timer for 20 minutes'                   => build_test('1200'),
     'set a timer to 60 minutes'                      => build_test('3600'),
     'set a timer of 60 minutes'                      => build_test('3600'),
-    'timer of 5:15 mins'                             => build_test('315'),          
+    'timer of 5:15 mins'                             => build_test('315'),  
+    
     # Should not trigger
     'start 30 minutes for timer' => undef,
     'run with timer'             => undef,
@@ -121,11 +132,14 @@ ddg_goodie_test(
     'countdown.js 10 minutes'    => undef,
     'five-alarm'                 => undef, # issue 1937
     '20 minutes'                 => undef,
-    ' 22 minutes'                 => undef,
+    '22 minutes'                 => undef,
     '60 minutes'                 => undef,
-    '48 hours  '                   => undef,
+    '48 hours'                   => undef,
+    'pomodoro tomato'            => undef,
+    '48 hours  '                 => undef,
     '5:15 + 32 minutes'          => undef,
     '3:32 - 8 mins'              => undef
+
 );
 
 done_testing;
