@@ -52,6 +52,7 @@ ddg_goodie_test(
     'weekdays between 2015-02-02 and 2016-02-02'                 => undef,    
     'number of days between 2014-02-02 and 2015-02-02 inclusive' => build_test('02 Feb 2014', '02 Feb 2015', 366, $test_inclusive),
     'days since 2016-07-31'                                      => build_test('31 Jul 2016', '03 Aug 2016', 3, ''),
+    'days until 2017-09-05'                                      => build_test('02 Sep 2017', '05 Sep 2017', 3, ''),
     'days between jan 1 2012 and jan 1 123456'                   => undef,
 );
 
