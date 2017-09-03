@@ -6,7 +6,7 @@ use DDG::Goodie;
 zci answer_type => "interactive_bmi_calculator";
 zci is_cached   => 1;
 
-triggers startend => "bmi calculator", "body mass index", "calculate bmi", "bmi formula", "how to calculate bmi";
+triggers startend => "bmi calculator", "body mass index calculator", "calculate bmi", "bmi formula", "how to calculate bmi";
 
 handle query_lc => sub {
     my $text = 'Body Mass Index Calculator';

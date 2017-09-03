@@ -11,10 +11,8 @@ zci is_cached   => 1;
 
 my $text = 'Body Mass Index Calculator';
 
-ddg_goodie_test(
-    ['DDG::Goodie::InteractiveBmiCalculator'],
-    'body mass index' => test_zci(
-        $text,
+sub build_test {
+    return test_zci($text,
         structured_answer => {
             id => 'interactive_bmi_calculator',
             name => 'BMI Calculator',
@@ -29,6 +27,19 @@ ddg_goodie_test(
             }
         }
     )
+}
+
+ddg_goodie_test(
+    ['DDG::Goodie::InteractiveBmiCalculator'],
+    'body mass index calculator'      => build_test(),
+    'bmi calculator'                  => build_test(),
+    'calculate bmi'                   => build_test(),
+    'bmi formula'                     => build_test(),
+    'how to calculate bmi'            => build_test(),
+    
+    #Invalid queries
+    'what is body mass index'    => undef,
+    'body mass index categories' => undef
 );
 
 done_testing;
