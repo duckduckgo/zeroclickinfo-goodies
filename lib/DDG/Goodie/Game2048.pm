@@ -9,7 +9,7 @@ triggers start => "2048", "play 2048", "game 2048";
 
 handle query_lc => sub {
 
-    return unless $_ =~ /^(2048|play 2048|game 2048).*/;
+    return unless $_ =~ /^(2048|play 2048|game 2048)(\s+.*)*$/;
 
     return '',
     structured_answer => {
