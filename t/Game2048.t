@@ -41,8 +41,9 @@ ddg_goodie_test(
     'what is 2048?' => undef,
     'how to play 2048' => undef,
     '204823 34232' => undef,
+    '123:play 2048:12398' => undef,
     '2400:cb00:2048:1::6817:f2fe' => undef,
-    '123:play 2048:12398' => undef
+    '2048:6093:99ca:bc7:0:0:0:0' => undef,
     
 );
 
