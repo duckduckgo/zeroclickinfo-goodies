@@ -41,7 +41,11 @@ ddg_goodie_test(
     '2 years from dog years'        => build_test('2', 'Dog Years', 'Human Years', '0.285714285714286'),
     '2 human years from dog years'  => build_test('2', 'Dog Years', 'Human Years', '0.285714285714286'),
     'dog years' => undef,
-    'human years' => undef
+    'human years' => undef,
+    'what is a dog year' => undef,
+    'how old is my pet in dog years' => undef,
+    'what are dog years' => undef,
+    'how old is my cat in dog years' => undef
 );
 
 done_testing;
