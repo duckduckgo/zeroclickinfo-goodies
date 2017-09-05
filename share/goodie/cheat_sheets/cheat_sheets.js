@@ -108,7 +108,13 @@ DDH.cheat_sheets.build = function(ops) {
 
     var wasShown = false; // keep track whether onShow was run yet
 
+    // Use metadata from DDH.cheat_sheet_id
+    var data = ops.data;
+    data.meta = DDH[ops.dynamic_id].meta;
+    data.meta.name = data.meta.name.replace(/\s*cheat sheet\s*/i, '');
+
     return {
+        data: data,
         onShow: function() {
             // make sure this function is only run once, the first time
             // the IA is shown otherwise things will get initialized more than once

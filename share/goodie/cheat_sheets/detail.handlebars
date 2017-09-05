@@ -1,20 +1,20 @@
-<h3 class="c-base__title">{{name}}</h3>
-<h4 class="c-base__sub">{{description}}</h4>
+<h3 class="c-base__title">{{meta.name}}</h3>
+<h4 class="c-base__sub">{{meta.description}}</h4>
 
 <div class="cheatsheet__container compressed" >
     {{#cheatsheets_ordered sections section_order columns template_type}}
       <div class="cheatsheet__section {{template.type}}{{#if showhide}} showhide is-hidden {{/if}}">
-      <h6 class="cheatsheet__title tx-clr--slate">{{name}}</h6>
+      <h6 class="cheatsheet__title tx-clr--slate">{{meta.name}}</h6>
         {{{include template.path}}}
       </div>
     {{/cheatsheets_ordered}}
 </div>
 
 <div class="cheatsheet__footer c-list__links">
-    <a class="c-list__link  chomp--link  {{#if metadata.sourceUrl}}sep--after{{/if}} can-expand">
+    <a class="c-list__link  chomp--link  {{#if meta.src_url}}sep--after{{/if}} can-expand">
         <i class="chomp--link__icn"></i>
         <span class="chomp--link__mr">Show More</span>
         <span class="chomp--link__ls">Show Less</span>
     </a>
-    <span>{{{moreAt metadata 'none' className="c-list__link"}}}</span>
+    <span>{{{moreAt meta.src_url meta.src_name className="c-list__link"}}}</span>
 </div>
