@@ -14,9 +14,7 @@ my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 sub build_structured_answer {
     my $time = shift;
-    my $autoPlay = shift;
-    $autoPlay = $autoPlay || 0;
-    $time = $time || 0;    
+    my $autoPlay = shift;   
     return "$time",
         structured_answer => {
             id     =>  'timer',
@@ -46,18 +44,18 @@ ddg_goodie_test(
         'DDG::Goodie::Timer'
     ],
     # With no initial time
-    'timer'                  => build_test(),
-    'online timer'           => build_test(),
-    'timer online'           => build_test(),
-    'online alarm'           => build_test(),
-    'countdown online'       => build_test(),
-    'online timer'           => build_test(),
-    'online alarm'           => build_test(),
-    'countdown online'       => build_test(),
-    'timer online for '      => build_test(),
-    'Countdown timer'        => build_test(),
-    'Online Countdown timer' => build_test(),
-    'count down timer'       => build_test(),
+    'timer'                  => build_test('0',1),
+    'online timer'           => build_test('0',1),
+    'timer online'           => build_test('0',1),
+    'online alarm'           => build_test('0',1),
+    'countdown online'       => build_test('0',1),
+    'online timer'           => build_test('0',1),
+    'online alarm'           => build_test('0',1),
+    'countdown online'       => build_test('0',1),
+    'timer online for '      => build_test('0',1),
+    'Countdown timer'        => build_test('0',1),
+    'Online Countdown timer' => build_test('0',1),
+    'count down timer'       => build_test('0',1),
     'pomodoro timer'         => build_test('1500',0),
     'pomodoro countdown'     => build_test('1500',0),
     'online pomodoro timer'  => build_test('1500',0),			
