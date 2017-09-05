@@ -5,16 +5,9 @@ DuckDuckHack is currently in Maintenance mode
 Please read before submitting: https://duckduckhack.com
 ***
 
-Use the appropriate format for your Pull Request title above ^^^^^:
+Use the following format for your Pull Request title above ^^^^^:
 
-If this is a bug fix:
 {IA Name}: {Description of change}
-
-If this is a New Instant Answer:
-New {IA Name} Goodie
-
-If this is something else:
-{Tests/Docs/Other}: {Short Description}
 
 -->
 
