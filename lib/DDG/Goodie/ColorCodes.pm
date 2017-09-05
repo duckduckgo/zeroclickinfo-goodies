@@ -78,7 +78,7 @@ handle query_lc => sub {
 
     $inverse = 1 if defined $+{'inv'};
 
-    $color =~ s/(,\s*|\s+)/,/g;
+    $color =~ s/,?\s+/,/g;
     $color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e;
 
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
