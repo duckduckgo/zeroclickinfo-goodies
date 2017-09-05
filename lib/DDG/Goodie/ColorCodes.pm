@@ -60,7 +60,7 @@ sub percentify {
     return map { ($_ <= 1 ? round(($_ * 100))."%" : round($_)) } @_;
 }
 
-handle query_raw => sub {
+handle query_lc => sub {
 
     my $color;
     my $alpha = "1";
