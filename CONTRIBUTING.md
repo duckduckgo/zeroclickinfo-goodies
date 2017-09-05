@@ -10,6 +10,11 @@
 
 * * *
 
+# In Maintenance
+
+DuckDuckHack is now in maintenance mode. We are only accepting pull requests for essential bug fixes. For more information see [duckduckhack.com](https://duckduckhack.com). 
+
+
 ## Contents
 
 - [Our Core Values](https://duckduckhack.com/contributing.html#our-core-values)
