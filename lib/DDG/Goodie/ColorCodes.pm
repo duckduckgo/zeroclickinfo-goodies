@@ -13,6 +13,7 @@ use Math::Round;
 use Try::Tiny;
 
 my %types = ( # hash of keyword => Convert::Color prefix
+        rgba    => 'rgb8',
         rgb     => 'rgb8',
         hex     => 'rgb8',
         html    => 'rgb8',
@@ -23,7 +24,7 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmy     => 'cmy',
         cmyk    => 'cmyk',
         cmyb    => 'cmyk',
-        );
+);
 
 # Eliminate NBS_ISCC sub-dictionaries from our lookups.
 # They contain "idiosyncratic" color names (including 'email' in NBS_ISCC::M) which will
@@ -31,88 +32,70 @@ my %types = ( # hash of keyword => Convert::Color prefix
 my $color_dictionaries = join(',', grep { $_ !~ /^nbs-iscc-/ } map { $_->id } Color::Library->dictionaries);
 
 my $typestr = join '|', sort { length $b <=> length $a } keys %types;
-$typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 
-triggers query_raw => qr/^
+my $inverse_words = qr/inverse|negative|opposite/;
+
+my $trigger_and_guard = qr/^
     (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
-    (?:(inverse|negative|opposite)\s+(?:of)?)?
+    (?<inv>$inverse_words\s+(?:of)?(?:\s?the\s?)?)?
     (?:
-        (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
-        (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
-        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
-        (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|# handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
+        red:\s*(?<r>[0-9]{1,3})\s*green:\s*(?<g>[0-9]{1,3})\s*blue:\s*(?<b>[0-9]{1,3})| # handles red: x green: y blue: z
+        (?<type>$typestr)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(?<color>.+?)|             # handles "rgb color code for red", "red color code for html", etc
+        (?<type>$typestr)\s*:?\s*\(?\s*(?<color>.+?)\s*\)?|                             # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        (?<color>.+?)\b(rgb|css|html)(?:\s+code)?|                                      # handles "red rgb code", etc
+        \#?(?<color>[0-9a-f]{6})|\#(?<color>[0-9a-f]{3})                                # handles #00f, #0000ff, etc
     )
-    (?:(?:'?s)?\s+(inverse|negative|opposite))?
+    (?<inv>(?:'?s)?\s+$inverse_words)?
     (?:\sto\s(?:$typestr))?
-    $/ix;
+$/ix;
+
+triggers query_raw => $trigger_and_guard;
 
 zci is_cached => 1;
 zci answer_type => 'color_code';
 
-my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
-my %trigger_filler = map { $_ => 1 } (qw( code ));
-
 my $color_mix = Color::Mix->new;
 
 sub percentify {
-    my @out;
-    push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
-    return @out;
+    return map { ($_ <= 1 ? round(($_ * 100))."%" : round($_)) } @_;
 }
 
-handle matches => sub {
+handle query_lc => sub {
 
     my $color;
-    my $filler_count;
-    my $inverse;
-
-    my $type    = 'rgb8';    # Default type, can be overridden below.
-    my @matches = @_;
-
-    s/\sto\s(?:$typestr)//;
-
-    $filler_count = 0;
-    foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
-        # $q now contains the defined normalized matches which can be:
-        if (exists $types{$q}) {
-            $type = $types{$q};    # - One of our types.
-        } elsif ($trigger_invert{$q}) {
-            $inverse = 1;          # - An inversion trigger
-        } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
-            if ($q =~ /(?:^[a-z]+\s)+/) {
-                $filler_count = $filler_count + 1;
-            } else {
-                $color = $q;                    # - A presumed color
-            }
-        }
-    }
-
-    return unless $color;                   # Need a color to continue!
-    $color =~ s/\sto\s//;
-
-    return if $filler_count;
-
     my $alpha = "1";
-    $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
-    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
-        $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
-        $type = 'rgb8';
-    } elsif ($color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e) { #hack rgba into rgb and extract alpha
+    my $inverse = 0;
+    my $type = 'rgb8';
+
+    s/\sto\s(?:$typestr)?//g;
+
+    $_ =~ $trigger_and_guard;
+
+    $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
+
+    $color = "$+{'r'} $+{'g'} $+{'b'}" if defined $+{'r'} and defined $+{'g'} and defined $+{'b'};
+    $color = lc $+{'color'} if defined $+{'color'};
+
+    $inverse = 1 if defined $+{'inv'};
+
+    $color =~ s/,?\s+/,/g;
+    $color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e;
+
+    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {
+        $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3);
         $type = 'rgb8';
     } else {
         try {
-            # See if we can find the color in one of our dictionaries.
             $color = join(',', Convert::Color::Library->new($color_dictionaries . '/' . $color)->as_rgb8->hex);
-            $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
+            $type = 'rgb8';
         };
     }
     
-    my $col = try  { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
-    return unless $col;                                       # Guess not.
+    my $col = try { Convert::Color->new("$type:$color") };
+    
+    return unless $col;
 
-    if ($inverse) {                                           # We triggered on the inverse, so do the flip.
+    if ($inverse) {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
@@ -138,13 +121,9 @@ handle matches => sub {
     $complementary = uc($complementary);
     
     #greyscale colours have no hue and saturation
-    my $show_column_2 = !($hsl[0] eq 0 && $hsl[1] eq '0%');
+    my $hide_column_2 = ($hsl[0] eq 0 && $hsl[1] eq '0%');
     
-    my $column_2 = '';
-    
-    if ($show_column_2) {
-        $column_2 = "\n" . "Complementary: #$complementary" . "\n" . "Analogous: #$analogous[0], #$analogous[1]";
-    }
+    my $column_2 = $hide_column_2 ? "" : "\nComplementary: #$complementary\nAnalogous: #$analogous[0], #$analogous[1]";
     
     return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
     structured_answer => {
@@ -154,7 +133,7 @@ handle matches => sub {
             rgb => $rgb,
             hslc => $hslc,
             cmyb => $cmyb,
-            show_column_2 => $show_column_2,
+            show_column_2 => !$hide_column_2,
             analogous => \@analogous,
             complementary => $complementary,
         },
