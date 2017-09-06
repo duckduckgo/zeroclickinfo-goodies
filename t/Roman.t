@@ -13,6 +13,7 @@ sub build_test {
     my ($input, $input_value, $output, $output_value) = @_;
     return test_zci('roman numeral converter', structured_answer => {
         data => {
+            subtitle => 'Accepts inputs from 1 - 3999, I - MMMCMXCIX',
             input => $input,
             input_value => $input_value,
             output => $output,
@@ -21,7 +22,7 @@ sub build_test {
         templates => {
             group => 'text',
             options => {
-                subtitle_content => 'DDH.roman.content'
+                title_content => 'DDH.roman.content',
             }
         }
     });
