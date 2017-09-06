@@ -24,16 +24,16 @@ my @arabic_to_roman = (
  
 # These two lists are used to load the converter with an answer. 
 my @roman_number_to_arabic = (
-    qr/^convert\s+(\D+)\s+(?:into|in|to)\s*arabic\s*(numerals?)?/i,
+    qr/^convert\s+(\D+)\s+(?:into|in|to)\s*arabic\s*(numerals?)?$/i,
     qr/^roman\s+(?:numerals?)?\s*(\D+)$/i,
     qr/^arabic\s+(?:numerals?)?\s*(\D+)$/i,
-    qr/^(\D+)\s+(?:into|in|to)?\s+arabic\s*(numerals?)?/i
+    qr/^([ivxlcdm]+)\s+(?:into|in|to)?\s+arabic\s*(numerals?)?$/i
 );    
 my @arabic_number_to_roman = (
-    qr/^convert\s+(\d+)\s+(?:into|in|to)\s*roman\s*(numerals?)?/i,
+    qr/^convert\s+(\d+)\s+(?:into|in|to)\s*roman\s*(numerals?)?$/i,
     qr/^roman\s+(?:numerals?)?\s*(\d+)$/i,
     qr/^arabic\s+(?:numerals?)?\s*(\d+)$/i,
-    qr/^(\d+)\s+(?:into|in|to)?\s+roman\s*(numerals?)?/i
+    qr/^(\d+)\s+(?:into|in|to)?\s+roman\s*(numerals?)?$/i
 );
 
 handle query => sub {
@@ -62,6 +62,7 @@ handle query => sub {
         $input_value = $input_value;
         $output_value = Roman $input_value;
     } else {
+        $input_value = '';
         return unless any { $query =~ $_ } @roman_to_arabic;
     }
 
@@ -75,7 +76,8 @@ handle query => sub {
         templates => {
             group => 'text',
             options => {
-                subtitle_content => 'DDH.roman.content'
+                title_content => 'DDH.roman.content',
+                subtitle_content => 'Accepts inputs from 1 - 3999, I - MMMCMXCIX'
             }
         }    
     };
