@@ -2,24 +2,34 @@
     width: 100%;
 }
 
-.zci--roman .converter__input, .zci--roman .converter__output {
+.zci--roman .converter__input,
+.zci--roman .converter__output {
     display: inline-block;
-    margin-top: 1em;
-    margin-left: 0.5em;
+    margin-bottom: 2em;
 }
 
-.zci--roman .converter__input__label, .zci--roman .converter__output__label {
+.zci--roman .converter__input {
+    margin-right: 1em;
+}
+
+.zci--roman .converter__input__label,
+.zci--roman .converter__output__label {
     display: block;
     text-align: left;
     font-size: 1.5em;
 }
 
-.zci--roman .converter__input__field, .zci--roman .converter__output__field {
+.zci--roman .converter__input__field,
+.zci--roman .converter__output__field {
     width: 100%;
     text-align: center;
     font-size: 2em;
 }
 
-.zci--roman .converter__messages {
-    margin-top: 1em;
+.is-mobile .zci--roman .converter__input {
+    margin-right: 0em;
+}
+
+.is-mobile .zci--roman .converter__output {
+    margin-top: 2em;
 }
