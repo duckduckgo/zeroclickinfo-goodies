@@ -1,0 +1,121 @@
+{
+    "id": "urdf_cheat_sheet",
+    "name": "URDF",
+    "description": "Unified Robot Description Format (URDF), an XML format for representing a robot model",
+
+    "metadata": {
+        "sourceName": "ROS wiki",
+        "sourceUrl" : "http://wiki.ros.org/urdf"
+    },
+
+    "aliases": [
+        "unified robot description format"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Joint Types",
+        "Joint Attributes",
+        "Joint Elements",
+        "Link Attributes",
+        "Link Elements"
+    ],
+
+    "sections": {
+        "Joint Types": [
+            {
+                "key": "revolute",
+                "val": "1 limited revolute DOF"
+            },
+            {
+                "key": "continuous",
+                "val": "1 revolute DOF"
+            },
+            {
+                "key": "prismatic",
+                "val": "1 limited prismatic DOF"
+            },
+            {
+                "key": "fixed",
+                "val": "0 DOF"
+            },
+            {
+                "key": "floating",
+                "val": "6 DOF"
+            },
+            {
+            "key": "planar",
+                "val": "2 DOF"
+            }
+        ],
+        "Joint Attributes": [
+            {
+                "key": "name",
+                "val": "required"
+            },
+            {
+                "key": "type",
+                "val": "required"
+            }
+        ],
+        "Link Attributes": [
+            {
+                "key": "name",
+                "val": "required"
+            }
+        ],
+        "Joint Elements": [
+            {
+                "key": "origin",
+                "val": "optional (defaults to origin)"
+            },
+            {
+                "key": "parent",
+                "val": "required"
+            },
+            {
+                "key": "child",
+                "val": "required"
+            },
+            {
+                "key": "axis",
+                "val": "optional (defaults to (1,0,0))"
+            },
+            {
+                "key": "calibration",
+                "val": "optional"
+            },
+            {
+                "key": "dynamics",
+                "val": "optional"
+            },
+            {
+                "key": "limit",
+                "val": "required only for revolute or prismatic joints"
+            },
+            {
+                "key": "mimic",
+                "val": "optional"
+            },
+            {
+                "key": "safety_controller",
+                "val": "optional"
+            }
+        ],
+        "Link Elements": [
+            {
+                "key": "inertial",
+                "val": "optional"
+            },
+            {
+                "key": "visual",
+                "val": "optional"
+            },
+            {
+            "key": "collision",
+                "val": "optional"
+            }
+        ]
+    }
+}

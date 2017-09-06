@@ -1,0 +1,182 @@
+{
+    "id": "scapy_cheat_sheet",
+    "name": "Scapy",
+    "description": "Basic Scapy Functions and Methods",
+
+    "metadata": {
+        "sourceName": "SecDev",
+        "sourceUrl" : "http://www.secdev.org/projects/scapy/doc/usage.html"
+    },
+
+    "aliases": [
+        "python scapy"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Data Import and Export Functions",
+        "Packet Send and Receive Functions",
+        "Packet Creation and Manipulation Functions",
+        "Packet Methods",
+        "Miscellaneous Functions"
+        
+    ],
+
+    "sections": {
+        "Data Import and Export Functions": [
+            {
+                "key": "rdpcap(file)",
+                "val": "Read a pcap file and return a packet list"
+            },
+            {
+                "key": "wrpcap(file, pktlist)",
+                "val": "Write a list of packets to a pcap file"
+            }
+        ],
+        "Packet Creation and Manipulation Functions": [
+            {
+                "key": "Ether()",
+                "val": "Create an Ethernet Packet"
+            },
+            {
+                "key": "IP()",
+                "val": "Create an IP Packet"
+            },
+            {
+                "key": "TCP()",
+                "val": "Create a TCP Packet"
+            },
+            {
+                "key": "UDP()",
+                "val": "Create a UDP Packet"
+            },
+            {
+                "key": "fuzz()",
+                "val": "Transform a layer into a fuzzy layer by replacing some default values by random objects"
+            },
+            {
+                "key": "/",
+                "val": "Operator to stack packet layers"
+            }
+        ],
+        "Packet Methods": [
+            {
+                "key": "summary()",
+                "val": "Display an one-line summary"
+            },
+            {
+                "key": "show()",
+                "val": "Display a developed view of the packet"
+            },
+            {
+                "key": "show2()",
+                "val": "Display same as show but on the assembled packet (checksum is calculated, for instance)"
+            },
+            {
+                "key": "sprintf()",
+                "val": "Display a format string filled with fields values of the packet"
+            },
+            {
+                "key": "command()",
+                "val": "Return a Scapy command that can generate the packet"
+            },
+            {
+                "key": "psdump()",
+                "val": "Draws a PostScript diagram of the packet with explained dissection (needs PyX)"
+            },
+            {
+                "key": "pdfdump()",
+                "val": "Draws a PDF of the packet with explained dissection (needs PyX)"
+            }
+        ],
+        "Packet Send and Receive Functions": [
+            {
+                "key": "send()",
+                "val": "Send packets at layer 3"
+            },
+            {
+                "key": "sendp()",
+                "val": "Send packets at layer 2"
+            },
+            {
+                "key": "sniff()",
+                "val": "Sniff packets"
+            },
+            {
+                "key": "sendpfast()",
+                "val": "Send packets at layer 2 using tcpreplay for performance"
+            },
+            {
+                "key": "sr()",
+                "val": "Send and receive packets at layer 3"
+            },
+            {
+                "key": "sr1()",
+                "val": "Send packets at layer 3 and return only the first answer"
+            },
+            {
+                "key": "srflood()",
+                "val": "Flood and receive packets at layer 3"
+            },
+            {
+                "key": "srloop()",
+                "val": "Send a packet at layer 3 in loop and print the answer each time"
+            },
+            {
+                "key": "srp()",
+                "val": "Send and receive packets at layer 2"
+            },
+            {
+                "key": "srp1()",
+                "val": "Send packets at layer 2 and return only the first answer"
+            },
+            {
+                "key": "srpflood()",
+                "val": "Flood and receive packets at layer 2"
+            },
+            {
+                "key": "srploop()",
+                "val": "Send a packet at layer 2 in loop and print the answer each time"
+            },
+            {
+                "key": "srbt()",
+                "val": "Send and receive using a bluetooth socket"
+            },
+            {
+                "key": "srbt1()",
+                "val": "Send and receive 1 packet using a bluetooth socket"
+            }
+        ],
+        "Miscellaneous Functions": [
+            {
+                "key": "str()",
+                "val": "Convert a packet into a hex string"
+            },
+            {
+                "key": "ls()",
+                "val": "Display the list of fields values of a pkt"
+            },
+            {
+                "key": "hexdump()",
+                "val": "Display a hexadecimal dump of a pkt"
+            },
+            {
+                "key": "hexdiff()",
+                "val": "Show differences between 2 binary strings"
+            },
+            {
+                "key": "lsc()",
+                "val": "List scapy user commands"
+            },
+            {
+                "key": "arping()",
+                "val": "Send ARP who-has requests to determine which hosts are up"
+            },
+            {
+                "key": "traceroute()",
+                "val": "Instant TCP traceroute on a list of IP addresses"
+            }
+        ]
+    }
+}

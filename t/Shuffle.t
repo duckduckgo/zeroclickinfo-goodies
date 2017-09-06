@@ -62,16 +62,8 @@ ddg_goodie_test(
     # Example queries
     'shuffle [1, 2, 3, 4]'   => build_test([1, 2, 3, 4]),
     'a..h in a random order' => build_test(['a'..'h']),
-    # Different types of brackets
-    'shuffle [1, 2]' => build_test([1, 2]),
-    'shuffle (1, 2)' => build_test([1, 2]),
-    'shuffle {1, 2}' => build_test([1, 2]),
-    # In words
-    'shuffle 1 and 2 and 3'  => build_test([1, 2, 3]),
-    'shuffle 1, 2, and 3'    => build_test([1, 2, 3]),
-    'shuffle 1 and 2, and 3' => build_test([1, 2, 3]),
     # Ranges
-    'shuffle (1..3)'   => build_test([1, 2, 3]),
+    'shuffle [1..3]'   => build_test([1, 2, 3]),
     'shuffle a..c'     => build_test(['a', 'b', 'c']),
     'shuffle 1..30'    => build_test([1..30]), # Max items with range
     'shuffle 1..31'    => undef, # Too many range items

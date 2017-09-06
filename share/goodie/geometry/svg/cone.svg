@@ -1,0 +1,4 @@
+<path d="M 0,100 a 30 10 0 0 0 120,0 a 45 10 0 0 0 -120,0 l 60 -80 l 60 80 a 45 10 0 0 0 -120,0" class="fill surface" data-type="surface"></path>
+<path d="M 0,100 a 45 10 0 0 1 120,0" class="stroke special"></path>
+<path d="M 0,100 a 30 10 0 0 0 120,0 a 45 10 0 0 0 -120,0 l 60 -80 l 60 80 a 45 10 0 0 0 -120,0" class="fill volume" data-type="volume"></path>
+<path d="M 0,100 l 60 -80 l 60 80 a 30 10 0 0 1 -120,0" class="stroke"></path>

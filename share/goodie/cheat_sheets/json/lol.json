@@ -1,0 +1,296 @@
+{
+    "id": "lol_cheat_sheet",
+    "name": "League of Legends Hotkeys And Commands",
+    "description": " This is a cheat sheet for basic Hotkeys and Commands for the popular MOBA game League of Legends (LoL).",
+    "metadata": {
+        "sourceName": "League of Legends Wiki: Hotkeys and commands",
+        "sourceUrl": "http://leagueoflegends.wikia.com/wiki/Hotkeys_and_commands"
+    },
+    "aliases": [
+        "league of legends",
+        "league"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Hotkeys",
+        "Chat Commands"
+    ],
+    "sections": {
+        "Hotkeys": [
+            {
+                "val": "Use champion's 1st ability. For abilities that target a champion, you must follow this by either left-clicking the champion or pressing F1-F5 to target a team member. Same for W, E, and R.",
+                "key": "Q"
+            },
+            {
+                "val": "Use champion's 2nd ability.",
+                "key": "W"
+            },
+            {
+                "val": "Use champion's 3rd ability.",
+                "key": "E"
+            },
+            {
+                "val": "Use champion's 4th ability (Ultimate).",
+                "key": "R"
+            },
+            {
+                "val": "Add an ability point to the champion's 1st ability.",
+                "key": "[Ctrl] + [Q]"
+            },
+            {
+                "val": "Add an ability point to the champion's 2nd ability.",
+                "key": "[Ctrl] + [W]"
+            },
+            {
+                "val": "Add an ability point to the champion's 3rd ability.",
+                "key": "[Ctrl] + [E]"
+            },
+            {
+                "val": "Add an ability point to the champion's ultimate ability.",
+                "key": "[Ctrl] + [R]"
+            },
+            {
+                "val": "Cast champion's 1st ability on self (must be a support spell).",
+                "key": "[Alt] + [Q] or [Q] + [F1]"
+            },
+            {
+                "val": "Cast champion's 2nd ability on self (must be a support spell).",
+                "key": "[Alt] + [W] or [W] + [F1]"
+            },
+            {
+                "val": "Cast champion's 3rd ability on self (must be a support spell).",
+                "key": "[Alt] + [E] or [E] + [F1]"
+            },
+            {
+                "val": "Cast champion's ultimate ability on self (must be a support spell).",
+                "key": "[Alt] + [R] or [R] + [F1]"
+            },
+            {
+                "val": "Smart cast champion's 1st ability.",
+                "key": "[Shift] + [Q]"
+            },
+            {
+                "val": "Smart cast champion's 2nd ability.",
+                "key": "[Shift] + [W]"
+            },
+            {
+                "val": "Smart cast champion's 3rd ability.",
+                "key": "[Shift] + [E]"
+            },
+            {
+                "val": "Smart cast champion's 4th ability.",
+                "key": "[Shift] + [R]"
+            },
+            {
+                "val": "Attack Move (Champion moves to point, stopping to attack any enemies along the way).",
+                "key": "[A] or [X] or [Shift]+[Right Click]"
+            },
+            {
+                "val": "Command Pet (E.g. Tibbers Tibbers).",
+                "key": "[Alt] + [Right Click]"
+            },
+            {
+                "val": "Stop Command (Champion stops their current course of action).",
+                "key": "S"
+            },
+            {
+                "val": "Hold Command (Hold works like Stop, but is toggled while held down).",
+                "key": "H"
+            },
+            {
+                "val": "Cast 1st Summoner spell.",
+                "key": "D"
+            },
+            {
+                "val": "Cast 2nd Summoner spell.",
+                "key": "F"
+            },
+            {
+                "val": "Use consumable item in corresponding inventory slot.",
+                "key": "Numbers [1-3] and [5-7]"
+            },
+            {
+                "val": "Use designated active ability items.",
+                "key": "[1-3] and [5-7]"
+            },
+            {
+                "val": "Use trinket.",
+                "key": "4"
+            },
+            {
+                "val": "Recall",
+                "key": "B"
+            },
+            {
+                "val": "Close current window, such as the shop.",
+                "key": "Esc"
+            },
+            {
+                "val": "Open champion statistics page.",
+                "key": "C"
+            },
+            {
+                "val": "Toggle alert ping cursor.",
+                "key": "G"
+            },
+            {
+                "val": "Toggle camera lock on champion.",
+                "key": "Y"
+            },
+            {
+                "val": "Center camera on champion (holding Space will hold the camera on the champion until released).",
+                "key": "Space"
+            },
+            {
+                "val": "Open match stats page/leaderboard.",
+                "key": "O"
+            },
+            {
+                "val": "Open match stats page/leaderboard (unlike O, the screen will disappear when the Tab button is released).",
+                "key": "Tab"
+            },
+            {
+                "val": "Clicking with this hotkey on an allied champion or his icon will alert the summoner to fall back.",
+                "key": "V"
+            },
+            {
+                "val": "Cycle through minion health bar views.",
+                "key": "[Ctrl] + [L]"
+            },
+            {
+                "val": "Turn off champion health bars.",
+                "key": "[Shift] + [L]"
+            },
+            {
+                "val": "Turn off summoner names above champion health bars.",
+                "key": "[Shift] + [K]"
+            },
+            {
+                "val": "Open item shop.",
+                "key": "P"
+            },
+            {
+                "val": "Scroll camera in the corresponding direction.",
+                "key": "Arrow Keys"
+            },
+            {
+                "val": "Ping location/Open Radial Menu.",
+                "key": "[Alt] + [Left Click]"
+            },
+            {
+                "val": "Retreat Ping location/Open Radial Menu.",
+                "key": "[Ctrl] + [Left Click]"
+            },
+            {
+                "val": "Move camera to corresponding ally champion (camera must be unlocked).",
+                "key": "F2-F5"
+            },
+            {
+                "val": "Take a screenshot.",
+                "key": "F12"
+            },
+            {
+                "val": "Removes HUD.",
+                "key": "[Alt] + [+]"
+            },
+            {
+                "val": "Create chat cursor.",
+                "key": "Enter"
+            },
+            {
+                "val": "Open chat with /all already written.",
+                "key": "[Shift] + [Enter]"
+            },
+            {
+                "val": "Toggle the numeric frames-per-second and latency display.",
+                "key": "[Ctrl] + [F]"
+            },
+            {
+                "val": "Open chat history.",
+                "key": "Z"
+            },
+            {
+                "val": "Hold down to select or target only champions when using champion abilities or summoner spells.",
+                "key": "~"
+            }
+        ],
+        "Chat Commands": [
+            {
+                "val": "Lists / commands and provides descriptions.",
+                "key": "/help, /?, /allcommands, /allcmds"
+            },
+            {
+                "val": "Starts vote for team surrender.",
+                "key": "/surrender, /ff, /concede, /forfeit"
+            },
+            {
+                "val": "Starts vote for a team with one or more afk (under certain conditions) to remake a game.",
+                "key": "/remake"
+            },
+            {
+                "val": "Plays Champion's joke.",
+                "key": "/joke, /j or Ctrl + 1"
+            },
+            {
+                "val": "Plays Champion's taunt.",
+                "key": "/taunt, /t or Ctrl + 2"
+            },
+            {
+                "val": "Starts the Champion dance sequence.",
+                "key": "/dance, /d or Ctrl + 3"
+            },
+            {
+                "val": "Plays Champion's laugh.",
+                "key": "/laugh, /l or Ctrl + 4"
+            },
+            {
+                "val": "Toggles the effect for your Champion if applicable.",
+                "key": "[Ctrl] + [5]"
+            },
+            {
+                "val": "Displays your Mastery Emote.",
+                "key": "[Ctrl] + [6]"
+            },
+            {
+                "val": "Pauses the game (Only works in certain situations, like tournaments).",
+                "key": "/pause, /stop, /s"
+            },
+            {
+                "val": "Adds text to a text file called 'MyNotes.txt'.",
+                "key": "/note, /n"
+            },
+            {
+                "val": "Enables or disables a filter for profanity.",
+                "key": "/chatfilter"
+            },
+            {
+                "val": "Will send a message to another player (Summoner names are case sensitive).",
+                "key": "/w or /msg 'summoner name'"
+            },
+            {
+                "val": "Will send a message to the last player who sent you a message. Note that it will automatically add the recipient after /r.",
+                "key": " /r or /reply"
+            },
+            {
+                "val": "Will send a message to all players in the current match (useful if you forgot to press shift + enter).",
+                "key": "/all"
+            },
+            {
+                "val": "Will mute all text from a player for the duration of your current game session.",
+                "key": "/mute 'summoner name'"
+            },
+            {
+                "val": "Will mute all text from all players for the duration of your current game session.",
+                "key": "/mute all"
+            },
+            {
+                "val": "Will mute a player during this game session and all subsequent game sessions.",
+                "key": "/ignore 'summoner name'"
+            },
+            {
+                "val": "Will mute all players during this game session and all subsequent game sessions.",
+                "key": "/ignore all"
+            }
+        ]
+    }
+}

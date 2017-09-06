@@ -10,3 +10,22 @@ json minify
 json minifier
 minify json
 minifier json
+css minify
+css minifier
+minify css
+minify css
+minify stylesheet
+minify stylesheets
+minify style sheet
+minify style sheets
+stylesheet minifier
+style sheet minifier
+css prettify
+css prettifier
+prettify css
+prettify stylesheet
+prettify style sheet
+stylesheet prettify
+style sheet prettify
+stylesheet prettifier
+style sheet prettifier

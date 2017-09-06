@@ -18,7 +18,7 @@ triggers query => qr'^
     \d+\%=?$ |
     what\sis| calculat(e|or) | solve | math | log\sof | fact(?:orial?)?(\s+of)? |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
-    sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acos | asin | arcsin | cosh |
+    sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acosh? | asinh? | arcsin | cosh |
     deg(?:rees?)? | rad(?:ians?)? |
     squared | sqrt | cbrt | \d+\s?mod(?:ulo)?\s?\d+ | dozen | pi |
     (?:cub(?:ed?|ic)|sq(?:uare)?)\s?r(?:oo)?t(?:\sof)? | cubed? |
@@ -65,7 +65,7 @@ my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Lo
 ## prepares the query to interpreted by the calculator front-end
 sub prepare_for_frontend {
     my ($query, $style) = @_;
-    
+
     # Equals varies by output type.
     $query =~ s/\=$//;
     $query =~ s/(\d)[ _](\d)/$1$2/g;     # Squeeze out spaces and underscores.
@@ -119,7 +119,7 @@ sub rewriteQuery {
 # log of 5 --> log(5), log2 8 --> log(8,2), log321 --> log(321)
 sub rewriteFunctions {
     my ($query) = @_;
-   
+
     # Preprocesses modulo operations
     $query =~ s/(\d+)(?:\s+?mod(?:ulo)?\s+?|\s+%\s+?)(\d+)/mod($1|$2)/;
 
@@ -185,16 +185,21 @@ handle query => sub {
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if $query =~ /\d+(?:X|x)\.?$/; # websites such as 1337X
+    return if $query =~ /score$/;
     return if $query =~ /^(?:\.\w+)/; # Probably looking at file extensions
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
+    return if $query =~ m/^\(\d+\)\s+\d+\d+/;
+    return if $query =~ m/^(?:19[8-9][0-9]|20[0-9]{2})\s(?:E|e)\d+$/; # Prevents overtriggering on car models
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
     return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|cbrt|cubed?)e?$/i; # stops empty functions at end or with <func>e
     return if $query =~ m#(?:x(\^|/)|(\^|/)x)#; # stops triggering on what is most likely algebra
+    return if $query =~ m#^\d{1,2}/\d{1,2}/\d{2,4}$#;
+    return if $query =~ m#^0\d+/\d+$#;
 
     # some shallow preprocessing of the query
-    $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i; 
+    $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i;
     $query =~ s/\s//g;
     # return based on the query type
     return unless $query =~ m/[0-9τπe]|tau|pi/;
@@ -229,7 +234,7 @@ handle query => sub {
     while (my ($name, $constant) = each %named_constants) {
         $query =~ s#\b$name\b#($name)#ig;
     }
-    my @numbers = $tmp_expr =~ m/$number_re/g; 
+    my @numbers = $tmp_expr =~ m/$number_re/g;
     my $style = number_style_for(@numbers);
     return unless $style;
 

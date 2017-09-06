@@ -1,0 +1,148 @@
+{
+    "id": "xlrd_cheat_sheet",
+    "name": "Xlrd",
+    "description": "XLRD Cheat sheet. xlrd is an extension used for reading 'xls' files. To read worxbooks, add 'from xlrd import workbook'",
+
+    "metadata": {
+        "sourceName": "Python Excel",
+        "sourceUrl" : "https://github.com/python-excel/tutorial/raw/master/python-excel.pdf"
+    },
+
+    "aliases": [
+        "python xls files"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Workbooks",
+        "Sheets",
+        "Rows and Columns",
+        "Cells",
+        "Cell Contents"
+    ],
+
+    "sections": {
+        "Workbooks": [
+            {
+                "key": "book=open_workbook(contents=mmap(f.fileno(),0,access=ACCESS_READ))",
+                "val": "Opnen workbook from mmap"
+            },
+            {
+                "key": "book=open_workbook(file_contents=aString)",
+                "val": "Open workbook from file content as string"
+            },
+            {
+                "key": "book=open_workbook(filename)",
+                "val": "Open workbook from file"
+            }
+        ],
+        "Sheets": [
+            {
+                "key": "sheets=book.sheets()",
+                "val": "Get the list of sheets"
+            },
+            {
+                "key": "nSheets=book.nsheets",
+                "val": "Get the number of sheets in the book"
+            },
+            {
+                "key": "names=book.sheet_names()",
+                "val": "Get the list of sheet names"
+            },
+            {
+                "key": "sheet=book.sheet_by_index(i)",
+                "val": "Get sheet #i in the book"
+            },
+            {
+                "key": "sheet=book.sheet_by_name(name)",
+                "vaL": "Get a sheet by name"
+            }
+        ],
+        "Rows and Columns": [
+            {
+                "key": "sheet.nrows",
+                "val": "Number of rows in a sheet"
+            },
+            {
+                "key": "sheet.ncols",
+                "val": "Number of comumns in a sheet"
+            },
+            {
+                "key": "row=sheet.row(ind)",
+                "val": "Return the cells int the row whose index is ind"
+            },
+            {
+                "key": "col=sheet.col(ind)",
+                "val": "Return the cells in the column whose index is ind"
+            }
+        ],
+        "Cells": [
+            {
+                "key": "sheet.cell(row,col)",
+                "val": "Get a cell from the sheet according to row and col"
+            },
+            {
+                "key": "sheet.row_slice(rowInd, startInd)",
+                "val": "Return the cells of row rowInd whose column indexes are >= startInd"
+            },
+            {
+                "key": "sheet.row_slice(rowInd, startInd, endInd)",
+                "val": "Return the cells of row rowInd whose column indexes are >= startInd and < endInd"
+            },
+                        {
+                "key": "sheet.col_slice(colInd, startInd)",
+                "val": "Return the cells of column colInd whose row indexes are >= startInd"
+            },
+            {
+                "key": "sheet.row_slice(rowInd, startInd, endInd)",
+                "val": "Return the cells of column colInd whose row indexes are >= startInd and < endInd"
+            }
+        ],
+        "Cell Contents": [
+            {
+                "key": "cell.value",
+                "val": "The cell's value"
+            },
+            {
+                "key": "cell.ctype",
+                "val": "The cells type. One of xlrd.XL_CELL_TEXT, xlrd.XL_CELL_NUMBER, xlrd.XL_CELL_DATE, xlrd.XL_CELL_BOOLEAN, xlrd.XL_CELL_ERROR, xlrd.XL_CELL_EMPTY, xlrd.XL_CELL_BLANK"
+            },
+            {
+                "key": "sheet.col_values(colInd, startInd)",
+                "val": "The list of cell values of column colInd whose row indexes are >= startInd"                
+            },
+            {
+                "key": "sheet.col_values(colInd, startInd, endInd)",
+                "val": "The list of cell values of column colInd whose row indexes are >= startInd and < endInd"                
+                
+            },
+                        {
+                "key": "sheet.col_types(colInd, startInd)",
+                "val": "The list of cell types of column colInd whose row indexes are >= startInd"                
+            },
+            {
+                "key": "sheet.col_types(colInd, startInd, endInd)",
+                "val": "The list of cell types of column colInd whose row indexes are >= startInd and < endInd"                
+                
+            },
+            {
+                "key": "sheet.row_values(rowInd, startInd)",
+                "val": "The list of cell values of row rowInd whose column indexes are >= startInd"                
+            },
+            {
+                "key": "sheet.col_values(colInd, startInd, endInd)",
+                "val": "The list of cell values of row rowInd whose column indexes are >= startInd and < endInd"                
+                
+            },
+                        {
+                "key": "sheet.col_types(colInd, startInd)",
+                "val": "The list of cell types of row rowInd whose column indexes are >= startInd"                
+            },
+            {
+                "key": "sheet.col_types(colInd, startInd, endInd)",
+                "val": "The list of cell types of row rowInd whose column indexes are >= startInd and < endInd"                   
+            }
+        ]
+    }
+}

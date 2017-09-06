@@ -20,8 +20,8 @@ handle remainder => sub {
             id => "js_minify",
 
             data => {
-                title => 'JavaScript Minifier',
-                subtitle => 'Enter code below, then click the button to minify'
+                title => 'Minifier',
+                subtitle => 'Enter code below, then click the button to minify or prettify'
             },
 
             templates => {

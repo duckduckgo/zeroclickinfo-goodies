@@ -9,7 +9,7 @@ use Unicode::Char ();              # For name -> codepoint lookup
 use Encode qw/encode_utf8/;
 
 use constant {
-    CODEPOINT_RE => qr/^ \s* (?:U \+?|\\(?:u|x{(?=.*}))) (?<codepoint> [a-f0-9]{4,6})}? \s* $/xi,
+    CODEPOINT_RE => qr/^ \s* (?:U \+?|\\(?:u|x\{(?=.*\}))) (?<codepoint> [a-f0-9]{4,6})\}? \s* $/xi,
     NAME_RE      => qr/^ (?<name> [A-Z][A-Z\s]+) $/xi,
     CHAR_RE      => qr/^ \s* (?<char> .) \s* $/x,
     UNICODE_RE   => qr/^ (?:unicode|emoji|utf-(?:8|16|32)) \s+ (.+) $/xi,

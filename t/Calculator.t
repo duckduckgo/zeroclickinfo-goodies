@@ -436,7 +436,7 @@ ddg_goodie_test(
     ),
 
     'e2e4'                            => undef,
-    'cosh(4+-)'                       => undef,  
+    'cosh(4+-)'                       => undef,
     '232 * 2 cube'                    => undef, # /cube/ can't be at end, only /cubed/
     'sine'                            => undef,
     'loge'                            => undef,
@@ -535,7 +535,19 @@ ddg_goodie_test(
     '.elxs' => undef,
     '.gif' => undef,
     'e.png' => undef,
+    '(929) 665-83-03' => undef,
+    '(343) 270-55-66' => undef,
+    '2014 E350' => undef,
+    '1994 e34' => undef,
+    '1980 e30' => undef,
     ')1108278829' => undef,
+    '24score' => undef,
+    '24 score' => undef,
+    '06026/6126' => undef,
+    '7/7/2014' => undef,
+    '2/3/09' => undef,
+    '21/12/2012' => undef,
+    '12/21/2012' => undef,
 );
 
 done_testing;

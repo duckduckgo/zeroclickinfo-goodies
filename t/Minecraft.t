@@ -127,26 +127,26 @@ ddg_goodie_test(
 
     'minecraft make colored hard clay' =>
     test_zci(
-        'Minecraft Colored Hardened Clay ingredients: 8 Hardened Clay + 1 Dye.'
+        'Minecraft Colored Terracotta ingredients: 8 Terracotta + 1 Dye.'
 ,
         make_structured_answer(
-            "Colored Hardened Clay",
-            "8 Hardened Clay + 1 Dye",
+            "Colored Terracotta",
+            "8 Terracotta + 1 Dye",
             "Used as decoration or building material.",
-            "/share/goodie/minecraft/999/images/colored-hardened-clay.png",
+            "/share/goodie/minecraft/999/images/colored-terracotta.gif",
         )
     ),
 
     # Same as last but with british spelling of colour
     'minecraft make coloured hard clay' =>
     test_zci(
-        'Minecraft Colored Hardened Clay ingredients: 8 Hardened Clay + 1 Dye.'
+        'Minecraft Colored Terracotta ingredients: 8 Terracotta + 1 Dye.'
 ,
         make_structured_answer(
-            "Colored Hardened Clay",
-            "8 Hardened Clay + 1 Dye",
+            "Colored Terracotta",
+            "8 Terracotta + 1 Dye",
             "Used as decoration or building material.",
-            "/share/goodie/minecraft/999/images/colored-hardened-clay.png",
+            "/share/goodie/minecraft/999/images/colored-terracotta.gif",
         )
     ),
 

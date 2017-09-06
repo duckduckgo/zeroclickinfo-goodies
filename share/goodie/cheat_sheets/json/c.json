@@ -19,7 +19,8 @@
         "Other Operators",
         "Conversion Characters",
         "Escape Sequences",
-        "Order of Precedence"
+        "Order of Precedence",
+        "Pointers"
     ],
     "sections": {
         "Arithmetic Operators": [
@@ -280,6 +281,24 @@
             {
                 "val": "Comma - associativity goes from left to right",
                 "key": "[ , ]"
+            }
+        ],
+        "Pointers": [
+            {
+                "val": "The memory address of the variable",
+                "key": "&"
+            },
+            {
+                "val": "The memory address of the element inside an array",
+                "key": "&a[i]"
+            },
+            {
+                "val": "Declaring a pointer to a variable",
+                "key": "*"
+            },
+            {
+                "val": "Declaring a void pointer",
+                "key": "void *"
             }
         ]
     }

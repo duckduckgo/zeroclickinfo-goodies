@@ -18,7 +18,7 @@ my $animations = LoadFile(share('data.yml'));
 
 sub build_response() {
 
-    my $demo_count = keys $animations;
+    my $demo_count = keys %{$animations};
     
     my @result = ();
     

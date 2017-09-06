@@ -112,6 +112,8 @@ aliases:
   - dkg
   - dekagram
   - dekagrams
+  - decagram
+  - decagrams
 type: mass
 unit: dekagram
 symbols: [dag, dkg]
@@ -164,6 +166,7 @@ symbols: [st]
 aliases:
   - metric quintal
   - metric quintals
+  - quintal
   - q
 type: mass
 unit: metricquintal
@@ -350,6 +353,7 @@ aliases:
   - millimeters
   - milli meter
   - milli meters
+  - mil
   - mm
   - mms
 type: length
@@ -357,6 +361,7 @@ unit: millimeter
 symbols: [mm]
 ---
 aliases:
+  - micron
   - micrometre
   - micrometres
   - micrometer
@@ -364,6 +369,7 @@ aliases:
   - micro meter
   - micro meters
   - µms
+  - µm
 type: length
 unit: micrometer
 symbols: [µm]
@@ -427,11 +433,60 @@ symbols: [yd]
 ---
 aliases:
   - angstrom
+  - angstroms
   - ångström
-  - Å
+  - ångströms
+  - ångstrom
+  - ångstroms
+  - å
 type: length
 unit: angstrom
 ---
+aliases:
+  - lightyear
+  - lightyears
+  - light year
+  - light years
+  - light-year
+  - light-years
+  - lichtjahr
+  - lichtjahre
+  - lichtjahren
+  - année-lumière
+  - années-lumière
+  - lichtjaar
+  - lichtjaren
+type: length
+unit: lightyear
+symbols: [ly]
+---
+aliases:
+  - astronomicalunit
+  - astronomicalunits
+  - astronomical unit
+  - astronomical units
+  - unité astronomique
+  - unités astronomiques
+  - astronomische einheit
+  - astronomische einheiten
+  - au
+  - aus
+  - ua
+type: length
+unit: astronomicalunit
+symbols: [AU]
+---
+aliases:
+  - parsec
+  - parsecs
+  - parallax second
+  - parallax seconds
+  - pc
+  - pcs
+type: length
+unit: parsec
+symbols: [pc]
+--- 
 aliases:
   - ft
   - international foot
@@ -1214,49 +1269,49 @@ aliases:
   - watts
 type: power
 unit: watt
-symbols: [w]
+symbols: [w, W]
 ---
 aliases:
   - kilowatt
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [kw]
+symbols: [kw, kW]
 ---
 aliases:
   - megawatt
   - megawatts
 type: power
 unit: megawatt
-symbols: [mw]
+symbols: [mw, mW]
 ---
 aliases:
   - gigawatt
   - gigawatts
 type: power
 unit: gigawatt
-symbols: [gw]
+symbols: [gw, gW]
 ---
 aliases:
   - terawatt
   - terawatts
 type: power
 unit: terawatt
-symbols: [tw]
+symbols: [tw, tW]
 ---
 aliases:
   - petawatt
   - petawatts
 type: power
 unit: petawatt
-symbols: [pw]
+symbols: [pw, pW]
 ---
 aliases:
   - exawatt
   - exawatts
 type: power
 unit: exawatt
-symbols: [ew]
+symbols: [ew, eW]
 ---
 aliases:
   - metric horsepowers
@@ -1503,82 +1558,181 @@ unit: rankine
 symbols: [°Ra]
 ---
 aliases:
-  - b
   - bit
   - bits
 type: digital
 unit: b
+symbols: [b]
 ---
 aliases:
-  - B
   - byte
   - bytes
 type: digital
 unit: B
+symbols: [B]
 ---
 aliases:
   - kilobit
   - kilobits
 type: digital
 unit: kbit
+symbols: [Kb]
 ---
 aliases:
   - megabit
   - megabits
 type: digital
 unit: mbit
+symbols: [Mb]
 ---
 aliases:
   - gigabit
   - gigabits
 type: digital
 unit: gbit
+symbols: [Gb]
 ---
 aliases:
   - terrabit
   - terrabits
 type: digital
 unit: tbit
+symbols: [Tb]
 ---
 aliases:
-  - KB
-  - KBs
   - kilobyte
   - kilobytes
 type: digital
 unit: KB
+symbols: [KB]
 ---
 aliases:
-  - MB
-  - MBs
   - megabyte
   - megabytes
 type: digital
 unit: MB
+symbols: [MB]
 ---
 aliases:
-  - GB
-  - GBs
   - gigabyte
   - gigabytes
 type: digital
 unit: GB
+symbols: [GB]
 ---
 aliases:
-  - TB
-  - TBs
   - terabyte
   - terabytes
 type: digital
 unit: TB
+symbols: [TB]
 ---
 aliases:
-  - PB
-  - PBs
   - petabyte
   - petabytes
 type: digital
 unit: PB
+symbols: [PB]
+---
+aliases:
+  - kibibit
+  - kibibits
+  - kibit
+  - kibits
+type: digital
+unit: kibibit
+symbols: [Ki]
+---
+aliases:
+  - mebibit
+  - mebibits
+  - mebit
+  - mebits
+  - mibit
+type: digital
+unit: mebibit
+symbols: [Mi]
+---
+aliases:
+  - gibibit
+  - gibibits
+  - gibit
+  - gibits
+  - Gibit
+type: digital
+unit: gibibit
+symbols: [Gi]
+---
+aliases:
+  - tebibit
+  - tebibits
+  - tibit
+type: digital
+unit: tebibit
+symbols: [Ti]
+---
+aliases:
+  - pebibit
+  - pebibits
+  - pibit
+type: digital
+unit: pebibit
+symbols: [Pi]
+---
+aliases:
+  - kib
+  - kibibytes
+  - kibi byte
+  - kibi bytes
+type: digital
+unit: kibibyte
+symbols: [KiB]
+---
+aliases:
+  - mib
+  - mebibytes
+  - mebi byte
+  - mebi bytes
+type: digital
+unit: mebibyte
+symbols: [MiB]
+---
+aliases:
+  - gib
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+type: digital
+unit: gibibyte
+symbols: [GiB]
+---
+aliases:
+  - gibibyte
+  - gibibytes
+  - gibi byte
+  - gibi bytes
+  - gib
+type: digital
+unit: gibibyte
+---
+aliases:
+  - tib
+  - tibibyte
+  - tibibytes
+  - tibi byte
+  - tibi bytes
+type: digital
+unit: tebibyte
+symbols: [TiB]
+---
+aliases:
+  - pebibyte
+  - pebibytes
+  - pebi byte
+  - pebi bytes
+type: digital
+unit: pebibyte
+symbols: [PiB]
 ---
 aliases:
   - litre
@@ -2173,3 +2327,150 @@ aliases:
   - kt
 type: speed
 unit: knot
+---
+aliases:
+  - bit per sec
+  - bits per sec
+  - bit per second
+  - bits per second
+  - bps
+  - bits ps
+  - b/ps
+  - bit/ps
+  - bits/ps
+type: data_transfer 
+unit: bitps 
+---
+aliases:
+  - kilobit per sec
+  - kilobits per sec
+  - kilobit per second
+  - kilobits per second
+  - kbps
+  - kilobit ps
+  - kilobits ps
+  - kilobit/s
+  - kilobits/s
+  - kilobit/ps
+  - kilobits/ps
+  - kb/s
+  - kb/ps
+type: data_transfer 
+unit: kbitps 
+---
+aliases:
+  - megabit per sec
+  - megabits per sec
+  - megabit per second
+  - megabits per second
+  - mbps
+  - mb/ps
+  - mb ps
+  - mb/s
+  - mb s
+type: data_transfer 
+unit: mbitps 
+---
+aliases:
+  - gigabit per sec
+  - gigabits per sec
+  - gigabit per second
+  - gigabits per second
+  - gbps
+  - gb/s
+  - gb s
+  - gb/ps
+  - gb ps
+type: data_transfer 
+unit: gbitps
+---
+aliases:
+  - terrabit per sec
+  - terrabits per sec
+  - terrabit per second
+  - terrabits per second
+  - tbps
+  - tb ps
+  - tb/ps
+  - tb s
+  - tb/s
+  - tb per sec
+  - tb per second
+  - terrabit/s 
+  - terrabits/s 
+  - terrabit/ps 
+  - terrabits/ps 
+type: data_transfer 
+unit: tbitps 
+---
+aliases:
+  - kilobyte per sec
+  - kilobytes per sec
+  - kilobyte per second
+  - kilobytes per second
+  - kb per sec
+  - kb per second
+type: data_transfer 
+unit: kilobyteps
+---
+aliases:
+  - megabyte per sec
+  - megabytes per sec
+  - megabyte per second
+  - megabytes per second
+  - mb per sec
+  - mb per second
+type: data_transfer 
+unit: megabyteps
+---
+aliases:
+  - gigabyte per sec
+  - gigabytes per sec
+  - gigabyte per second
+  - gigabytes per second
+  - gb per sec
+  - gb per second
+type: data_transfer 
+unit: gigabyteps
+---
+aliases:
+  - terabyte per sec
+  - terabytes per sec
+  - terabyte per second
+  - terabytes per second
+  - tb per second
+  - tb per sec
+type: data_transfer 
+unit: terabyteps
+---
+aliases:
+  - kibibit per sec
+  - kibibits per sec
+  - kibibit per second
+  - kibibits per second
+type: data_transfer 
+unit: kibps
+---
+aliases:
+  - mibibit per sec
+  - mibibits per sec
+  - mibibit per second
+  - mibibits per second
+type: data_transfer 
+unit: mibps
+---
+aliases:
+  - gibibit per sec
+  - gibibits per sec
+  - gibibit per second
+  - gibibits per second
+type: data_transfer 
+unit: gibps
+---
+aliases:
+  - tibibit per sec
+  - tibibits per sec
+  - tibibit per second
+  - tibibits per second
+type: data_transfer 
+unit: tibps

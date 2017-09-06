@@ -29,48 +29,81 @@ DDH.text_converter = DDH.text_converter || {};
             var to_type = $convert_to_select.val();
             var from = $convert_from_textarea.val();
 
-            // We first need to convert the from type to ascii
-            if(from_type !== "text") {
-                 switch(from_type) {
+            if(from_type === "binary" && to_type === "hexadecimal") {
+                return TextConverter.binaryToHex(from);
+
+            } else if(from_type === "binary" && to_type === "base64") {
+                return TextConverter.hexToBase64(
+                    TextConverter.binaryToHex(from)
+                );
+
+            } else if(from_type === "binary" && to_type === "decimal") {
+                return TextConverter.binaryToDecimal(from);
+
+            } else if(from_type === "hexadecimal" && to_type === "decimal") {
+                return TextConverter.hexToDecimal(from);
+
+            } else if(from_type === "decimal" && to_type === "hexadecimal") {
+                return TextConverter.decimalToHex(from);
+
+            } else if(from_type === "base64" && to_type === "binary") {
+                return TextConverter.hexToBinary(
+                    TextConverter.base64ToHex(from)
+                );
+
+            } else if(from_type === "base64" && to_type === "hexadecimal") {
+                return TextConverter.base64ToHex(from);
+
+            } else if(from_type === "hexadecimal" && to_type === "binary") {
+                return TextConverter.hexToBinary(from);
+
+            } else if(from_type === "hexadecimal" && to_type === "base64") {
+                return TextConverter.hexToBase64(from);
+
+            } else { // We can convert the from type to ascii to the to_type
+                
+                if (from_type !== "text") {
+                     switch(from_type) {
+                        case "binary":
+                            from = TextConverter.binaryToText(from);
+                            break;
+                        case "decimal":
+                            from = TextConverter.decimalToText(from);
+                            break;
+                        case "rot13":
+                            from = TextConverter.rot13(from);
+                            break;
+                        case "base64":
+                            from = TextConverter.base64Decoder(from);
+                            break;
+                        case "hexadecimal":
+                            from = TextConverter.hexToText(from);
+                            break;
+                        default:
+                            return from; // DEFAULT: return the original text
+                    }               
+                }
+
+                // then map it to the /to/ type
+                switch(to_type) {
                     case "binary":
-                        from = TextConverter.binaryToText(from);
+                        return TextConverter.toBinary(from);
                         break;
                     case "decimal":
-                        from = TextConverter.decimalToText(from);
+                        return TextConverter.toDecimal(from);
                         break;
                     case "rot13":
-                        from = TextConverter.rot13(from);
+                        return TextConverter.rot13(from);
                         break;
                     case "base64":
-                        from = TextConverter.base64Decoder(from);
+                        return TextConverter.base64Encoder(from);
                         break;
                     case "hexadecimal":
-                        from = TextConverter.hexToText(from);
+                        return TextConverter.toHex(from);
                         break;
                     default:
                         return from; // DEFAULT: return the original text
-                }               
-            }
-
-            // then map it to the /to/ type
-            switch(to_type) {
-                case "binary":
-                    return TextConverter.toBinary(from);
-                    break;
-                case "decimal":
-                    return TextConverter.toDecimal(from);
-                    break;
-                case "rot13":
-                    return TextConverter.rot13(from);
-                    break;
-                case "base64":
-                    return TextConverter.base64Encoder(from);
-                    break;
-                case "hexadecimal":
-                    return TextConverter.toHex(from);
-                    break;
-                default:
-                    return from; // DEFAULT: return the original text
+                }
             }
         },
 
@@ -78,23 +111,54 @@ DDH.text_converter = DDH.text_converter || {};
          * Binary Converter
          ********************************************
          *
+         * zeroPad: text --> padded text
          * toBinary: text --> binary
          * binaryToText: binary --> text
+         * binaryTohex: binary --> hex
          *
          */
-        toBinary: function( text ) {
-            var binary = "";
-
-            for (var i=0; i < text.length; i++) {
-                binary += text[i].charCodeAt(0).toString(2) + " ";
-            }
-            return binary
+        zeroPad: function(number) {
+            return "00000000".slice(String(number).length) + number
         },
 
-        binaryToText: function( text ) {
-            return text.split(/\s/).map(function (val) {
+        toBinary: function(text) {
+            return text.replace(/[\s\S]/g, function(str) {
+                var octet = TextConverter.zeroPad(str.charCodeAt().toString(2));
+                return octet + " ";
+            });
+        },
+
+        binaryToDecimal: function(binary) {
+            var octet = binary.replace(/\s/g, "").match(/.{1,8}/g);
+            var dec_cache = [];
+
+            for(var i = 0; i < octet.length; i++) {
+                dec_cache.push(parseInt(octet[i], 2));
+            }
+
+            return dec_cache.join(" ");
+        },
+
+        binaryToText: function(text) {
+            return text.split(/\s/).map(function(val) {
                 return String.fromCharCode(parseInt(val, 2));
             }).join("");
+        },
+
+        binaryToHex: function(binaryString) {
+            var binaryString = binaryString.replace(/\s/g, "");
+            var output = "";
+
+            // For every 4 bits in the binary string
+            for(var i = 0; i < binaryString.length; i += 4) {
+                var bytes = binaryString.substr(i, 4);
+                var decimal = parseInt(bytes, 2); // convert to dec then hex
+                var hex = decimal.toString(16);
+
+                output += hex;
+            }
+
+            return output.replace(/[^\dA-Za-z]/g, "").replace(/(.{2})/g, "$1 ").trim();
         },
 
         /**
@@ -105,7 +169,7 @@ DDH.text_converter = DDH.text_converter || {};
          * decimalToText: decimal --> text
          *
          */
-        toDecimal: function( text ) {
+        toDecimal: function(text) {
             var decimal = "";
 
             for (var i=0; i < text.length; i++) {
@@ -114,8 +178,19 @@ DDH.text_converter = DDH.text_converter || {};
             return decimal;
         },
 
-        decimalToText: function( text ) {
-            return text.split(/\s/).map(function (val) {
+        decimalToHex: function(number) {
+            var num_split = number.split(" ");
+            var hex_cache = [];
+
+            for(var i = 0; i < num_split.length; i++) {
+                hex_cache.push(Number(num_split[i]).toString(16).toUpperCase());
+            }
+            
+            return hex_cache.join(" ");
+        },
+
+        decimalToText: function(text) {
+            return text.split(/\s/).map(function(val) {
                 return String.fromCharCode(parseInt(val, 10));
             }).join("");
         },
@@ -124,13 +199,13 @@ DDH.text_converter = DDH.text_converter || {};
          * Rot13 Encoder/Decoder
          ********************************************
          *
-         * text --> rot13
          * rot13 --> text
          *
-         * This is the inversion of itself!
+         * This is the inversion of itself.
+         * If the input isn't ascii (or <original> -> <ascii>) then this will fail.
          *
          */
-        rot13: function( input ) {
+        rot13: function(input) {
             return input.replace(/[a-zA-Z]/g, function(c) {
                 return String.fromCharCode( 
                     // this is a ternery statement, and the first arg is also a ternery statement
@@ -148,14 +223,27 @@ DDH.text_converter = DDH.text_converter || {};
          *
          * base64Encoder: text --> encoded base64
          * base64Decoder: encoded base64 --> text
+         * base64ToHex: encoded base64 --> hex
          *
          */
-        base64Encoder: function( input ) {
-            return window.btoa(input);
+        base64Encoder: function(input) {
+            return window.btoa(unescape(encodeURIComponent(input)));
         },
 
-        base64Decoder: function( input ) {
-            return window.atob(input);
+        base64Decoder: function(input) {
+            return window.atob(unescape(encodeURIComponent(input)));
+        },
+
+        base64ToHex: function(base64) {
+            var raw = atob(base64);
+            var hex_cache = '';
+
+            for ( var i = 0; i < raw.length; i++ ) {
+                var hex = raw.charCodeAt(i).toString(16)
+                hex_cache += (hex.length == 2 ? hex: "0" + hex);
+            }
+
+            return hex_cache.replace(/[^\dA-Za-z]/g, "").replace(/(.{2})/g, "$1 ").trim();
         },
 
         /**
@@ -164,34 +252,62 @@ DDH.text_converter = DDH.text_converter || {};
          *
          * toHex: text --> hex
          * hexToText: hex --> text
+         * hexToBinary: hex --> binary
+         * hexToBase64: hex --> base64 encoded hex
          *
          */
-        toHex: function( text ) {
+        toHex: function(text) {
             var tmp_array = [];
-            var pretty_result = "";
+            var hex_result = "";
 
-            for (var i = 0 ; i < text.length ; i++)  {
+            for(var i = 0; i < text.length; i++)  {
                 var hex = Number(text.charCodeAt(i)).toString(16);
                 tmp_array.push(hex);
             }
 
-            var result = tmp_array.join('');
+            var result = tmp_array.join("");
 
             // this is for presentation for the user only
-            for ( var j = 0 ; j <= result.length ; j++ ) {
-                if ( j % 2 ) {
-                    pretty_result += result.charAt(j) + ' ';
+            for(var j = 0; j <= result.length; j++) {
+                if(j % 2) {
+                    hex_result += result.charAt(j) + " ";
                 } else {
-                    pretty_result += result.charAt(j);
+                    hex_result += result.charAt(j);
                 } 
             }
-            return pretty_result;
+            return hex_result;
         },
 
-        hexToText: function( hex ) {
-            return hex.split(/\s/).map(function (val) {
+        hexToText: function(hex) {
+            var hex = hex.replace(/\s|0x/g, "").match(/.{1,2}/g).join(" ");
+            return hex.split(/\s/).map(function(val) {
                 return String.fromCharCode(parseInt(val, 16));
             }).join("");
+        },
+
+        hexToBinary: function(hex) {
+            var hex = hex.replace(/\s|0x/g, "");
+            return hex.split("").reduce(function(acc, i) {
+                var raw = acc + ("000" + parseInt(i, 16).toString(2)).substr(-4, 4);
+                return raw.replace(/[^\d]/g, "").replace(/(.{8})/g, "$1 ").trim();
+            }, '');
+        },
+
+        hexToDecimal: function(hex) {
+            var hex_split = hex.split(" ");
+            var dec_cache = [];
+
+            for(var i = 0; i < hex_split.length; i++) {
+                dec_cache.push(parseInt(hex_split[i], 16))
+            }
+
+            return dec_cache.join(" ");
+        },
+
+        hexToBase64: function(str) {
+          return btoa(String.fromCharCode.apply(null,
+            str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" "))
+          );
         },
 
     } // TextConverter Obj
@@ -246,7 +362,7 @@ DDH.text_converter = DDH.text_converter || {};
 
                 // swaps the selects around if they are the new select is equalilant to the opposite
                 var previous;
-                $convert_selects.on('focus', function () {
+                $convert_selects.on("focus", function () {
                     previous = this.value;
                 }).change(function() {
                     Interface.swapSelects(previous, this.value, this.id);

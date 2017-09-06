@@ -1,0 +1,154 @@
+{
+    "id": "age_of_empires_cheat_sheet",
+    "name": "Age of Empires Cheat Codes",
+    "description": "List of Age of Empires cheat codes",
+
+    "metadata": {
+        "sourceName": "GameFAQs",
+        "sourceUrl" : "https://www.gamefaqs.com/pc/90380-age-of-empires/cheats"
+    },
+
+    "aliases": [
+        "aoe1", "rise of rome", "age of empires resources"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Resources",
+        "Unit Creation",
+        "Unit Modification",
+        "Game Mechanics"
+    ],
+
+    "sections": {
+        "Resources": [
+            {
+                "key": "PEPPERONI PIZZA",
+                "val": "1000 food"
+            },
+            {
+                "key": "COINAGE",
+                "val": "1000 gold"
+            },
+            {
+                "key": "QUARRY",
+                "val": "1000 stone"
+            },
+            {
+                "key": "WOODSTOCK",
+                "val": "1000 wood"
+            }
+        ],
+        "Unit Creation": [
+            {
+                "key": "BIGDADDY",
+                "val": "black sports car with a rocket launcher"
+            },
+            {
+                "key": "PHOTON MAN",
+                "val": "Create a guy in a white suit with a quick- fire laser gun"
+            },
+            {
+                "key": "E=MC2 TROOPER",
+                "val": "Creates a guy in a white suit with a slow- firing nuke gun"
+            },
+            {
+                "key": "Big Momma",
+                "val": "Creates a White Sports Car"
+            },
+            {
+                "key": "POW",
+                "val": "Creates baby with rocket launcher"
+            },
+            {
+                "key": "Stormbilly",
+                "val": "Creates some sort of walker"
+            }
+        ],
+        "Unit Modification": [
+            {
+                "key": "UPSIDFLINTMOBILE",
+                "val": "Accelerates your Chariot Archers"
+            },
+            {
+                "key": "King Arthur",
+                "val": "Changes all birds into Dragons"
+            },
+            {
+                "key": "HOYOHOYO",
+                "val": "Priests are faster and stronger"
+            },
+            {
+                "key": "MEDUSA",
+                "val": "Transforms villagers to Medusas"
+            },
+            {
+                "key": "DARK RAIN",
+                "val": "Turns a Bowman into a Composite Bowman which turns into a tree when not moving"
+            },
+            {
+                "key": "BIG BERTHA",
+                "val": "Turns Heavy Catapults into Big Berthas"
+            },
+            {
+                "key": "BLACK RIDER",
+                "val": "Turns Horse Archers into Black Riders"
+            },
+            {
+                "key": "ICBM",
+                "val": "Your Ballistas and Helepolis have a 99+1 range"
+            },
+            {
+                "key": "JACK BE NIMBLE",
+                "val": "Your catapults and stone throwers fire villagers, cows, etc."
+            },
+            {
+                "key": "FLYING DUTCHMAN",
+                "val": "Upgrade your Catapult Tiremes/Juggernauts into Flying Dutchmen"
+            }
+        ],
+        "Game Mechanics": [
+            {
+                "key": "DIEDIEDIE",
+                "val": "All enemy units die"
+            },
+            {
+                "key": "STEROIDS",
+                "val": "Buildings and units are created instantly"
+            },
+            {
+                "key": "GAIA",
+                "val": "Gives you control over nature (but lose control over your own civilization)"
+            },
+            {
+                "key": "KILLX",
+                "val": "Kill player X"
+            },
+            {
+                "key": "NO FOG",
+                "val": "Removes the fog of war"
+            },
+            {
+                "key": "REVEAL MAP",
+                "val": "Reveals the map"
+            },
+            {
+                "key": "die die die",
+                "val": "Win the battle"
+            },
+            {
+                "key": "HARI KARI",
+                "val": "You lose the game"
+            },
+            {
+                "key": "RESIGN",
+                "val": "You resign"
+            },
+            {
+                "key": "HOME RUN",
+                "val": "You win the game"
+            }
+        ]
+    }
+}

@@ -1,0 +1,179 @@
+{
+    "id": "diskpart_cheat_sheet",
+    "name": "Diskpart",
+    "description": "Diskpart is a command-line disk partitioning utility in windows 2000 and later, replacing its predecessor fdisk.",
+    
+    "metadata": {
+        "sourceName": "Microsoft",
+        "sourceUrl": "https://technet.microsoft.com/en-us/library/cc766465(v=ws.10).aspx"
+    },
+    
+    "aliases": [
+        "windows diskpart command", "cmd diskpart"
+    ],
+    
+    "template_type": "terminal",
+    
+    "section_order": [
+        "Create a new partition and format a partition", "Commands you may then issue at the DISKPART prompt", "Commands to Manage Basic Disks", "Commands to Manage Dynamic Disks", "Commands to Convert Disks"
+    ],
+    
+    "sections": {
+        "Create a new partition and format a partition": [
+            {
+                "key": "SELECT DISK",
+                "val": "Selects the specified disk and shifts the focus to it."
+            },
+            {
+                "key": "CREATE PARTITION PRIMARY",
+                "val": "Creates a primary partition on the current basic disk."
+            },
+            {
+                "key": "ASSIGN",
+                "val": "Assigns a drive letter or mount point to the volume with focus."
+            },
+            {
+                "key": "SELECT PARTITION",
+                "val": "Selects the specified partition and gives it focus."
+            },
+            {
+                "key": "FORMAT",
+                "val": "Formats the volume or partition."
+            }
+        ],
+        
+        "Commands you may then issue at the DISKPART prompt": [
+            {
+                "key": "LIST DISK",
+                "val": "Displays a list of disks and information about them."
+            },
+            {
+                "key": "LIST PARTITION",
+                "val": "Displays the partitions listed in the partition table of the current disk."
+            },
+            {
+                "key": "LIST VOLUME",
+                "val": "Displays a list of basic and dynamic volumes on all disks."
+            },
+            {
+                "key": "SELECT VOLUME",
+                "val": "Selects the specified volume and shifts the focus to it."
+            },
+            {
+                "key": "SELECT PARTITION",
+                "val": "Selects the specified partition and gives it focus."
+            },
+            {
+                "key": "DETAIL DISK",
+                "val": "Displays the properties of the selected disk and the volumes on that disk."
+            },
+            {
+                "key": "DETAIL PARTITION",
+                "val": "Displays the properties of the selected partition."
+            },
+            {
+                "key": "DETAIL VOLUME",
+                "val": "Displays the disks on which the current volume resides."
+            },
+            {
+                "key": "REM",
+                "val": "Provides a way to add comments to a script."
+            },
+            {
+                "key": "EXIT",
+                "val": "Exits the DiskPart command interpreter."
+            }
+        ],
+        
+        "Commands to Manage Basic Disks": [
+            {
+                "key": "ASSIGN",
+                "val": "Assigns a drive letter or mount point to the volume with focus."
+            },
+            {
+                "key": "CREATE PARTITION Extended",
+                "val": "Creates an extended partition on the current drive."
+            },
+            {
+                "key": "CREATE PARTITION Logical",
+                "val": "Creates a logical drive in the extended partition."
+            },
+            {
+                "key": "DELETE PARTITION",
+                "val": "Deletes the partition with focus."
+            },
+            {
+                "key": "REMOVE",
+                "val": "Removes a drive letter or mount point from the volume with focus."
+            }
+        ],
+        "Commands to Manage Dynamic Disks": [
+            {
+                "key": "ADD disk",
+                "val": "Mirrors the simple volume with focus to the specified disk."
+            },
+            {
+                "key": "BREAK disk",
+                "val": "Breaks the mirrored volume with focus into two simple volumes."
+            },
+            {
+                "key": "CREATE VOLUME Simple",
+                "val": "Creates a simple volume."
+            },
+            {
+                "key": "CREATE VOLUME Stripe",
+                "val": "Creates a striped volume by using two or more specified dynamic disks."
+            },
+            {
+                "key": "CREATE VOLUME Raid",
+                "val": "Creates a RAID-5 volume on three or more specified dynamic disks."
+            },
+            {
+                "key": "DELETE DISK",
+                "val": "Deletes a missing dynamic disk from the disk list."
+            },
+            {
+                "key": "DELETE VOLUME",
+                "val": "Deletes the selected volume."
+            },
+            {
+                "key": "EXTEND",
+                "val": "Extends the volume with focus into the next contiguous unallocated space."
+            },
+            {
+                "key": "IMPORT",
+                "val": "Imports a foreign disk group into the local computer's disk group."
+            },
+            {
+                "key": "ONLINE",
+                "val": "Brings an offline disk or volume with focus online."
+            },
+            {
+                "key": "RETAIN",
+                "val": "Prepares an existing dynamic simple volume to use as a boot or system volume."
+            }
+        ],
+        "Commands to Convert Disks": [
+            {
+                "key": "CONVERT mbr",
+                "val": "Converts an empty basic disk with the GUID Partition Table (GPT) partition style to a basic disk with the master boot record (MBR) partition style."
+            },
+            {
+                "key": "CONVERT gpt",
+                "val": "Converts an empty basic disk with the master boot record (MBR) partition style into a basic disk with the GUID partition table (GPT) partition style."
+            },
+            {
+                "key": "CONVERT dynamic",
+                "val": "Converts a basic disk into a dynamic disk. Any existing partitions on the disk become simple volumes."
+            },
+            {
+                "key": "CONVERT basic",
+                "val": "Converts an empty dynamic disk into a basic disk."
+            },
+            {
+                "key": "CLEAN",
+                "val": "Removes any and all partition or volume formatting from the disk with focus."
+            }
+        ]
+    }
+}
