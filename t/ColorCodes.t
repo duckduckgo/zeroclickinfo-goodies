@@ -111,7 +111,7 @@ ddg_goodie_test(
         %basic_answer 
     ),
     'rgb(217,37,50)' => test_zci(
-        'Hex: #D92532 ~ RGBA(217, 37, 50, 1) ~ RGB(85%, 15%, 20%) ~ HSL() ~ CMYB()',
+        'Hex: #D92532 ~ RGBA(217, 37, 50, 1) ~ RGB(85%, 15%, 20%) ~ HSL(356, 71%, 50%) ~ CMYB(0%, 83%, 77%, 15%)'."\n".'Complementary: #25D9CD'."\n".'Analogous: #D97325, #D9258B',
         %basic_answer
     ),
     # Check the content of the structured answer. Just once.
