@@ -62,12 +62,13 @@ handle query => sub {
         $input_value = $input_value;
         $output_value = Roman $input_value;
     } else {
-        $input_value = '';
+        $input_value = ''; # because of previous assignments with undef.
         return unless any { $query =~ $_ } @roman_to_arabic;
     }
 
     return 'roman numeral converter', structured_answer => {
         data => {
+            subtitle => 'Accepts inputs from 1 - 3999, I - MMMCMXCIX',
             input => $input,
             input_value => $input_value,
             output => $output,
@@ -77,7 +78,6 @@ handle query => sub {
             group => 'text',
             options => {
                 title_content => 'DDH.roman.content',
-                subtitle_content => 'Accepts inputs from 1 - 3999, I - MMMCMXCIX'
             }
         }    
     };
