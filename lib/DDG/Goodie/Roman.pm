@@ -45,9 +45,7 @@ handle query => sub {
     my $output = 'arabic';
     my $output_value = '';
     
-    if (any { $query =~ $_ } @roman_to_arabic) {
-        # Default settings, nothing to do.
-    } elsif (any { $query =~ $_ } @arabic_to_roman) {
+    if (any { $query =~ $_ } @arabic_to_roman) {
         $input = 'arabic';
         $output = 'roman';
     } elsif (any { ($input_value) = $query =~ $_ } @roman_number_to_arabic) {
@@ -64,8 +62,7 @@ handle query => sub {
         $input_value = $input_value;
         $output_value = Roman $input_value;
     } else {
-        # In this case, we do not trigger the ia.  
-        return;
+        return unless any { $query =~ $_ } @roman_to_arabic;
     }
 
     return 'roman numeral converter', structured_answer => {
