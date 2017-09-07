@@ -1,0 +1,76 @@
+{
+    "id": "telegram_cheat_sheet",
+    "name": "Telegram",
+    "description": "Messenger",
+    "metadata": {
+        "sourceName": "TelegramDesktopCheatShet"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Navigation"
+    ],
+    "sections": {
+        "Navigation": [
+            {
+                "key": "Ctrl + Tab",
+                "val": "Move to next chat"
+            },
+            {
+                "key": "Ctrl + PageDown",
+                "val": "Move to next chat"
+            },
+            {
+                "key": "Alt + Arrow Down",
+                "val": "Move to next chat"
+            },
+            {
+                "key": "Ctrl + Shift + Tab",
+                "val": "Move to previous chat"
+            },
+            {
+                "key": "Ctrl + PageUp",
+                "val": "Move to previous chat"
+            },
+            {
+                "key": "Alt + Arrow Up",
+                "val": "Move to previous chat"
+            },
+            {
+                "key": "Ctrl + F",
+                "val": "Search selected chat"
+            },
+            {
+                "key": "Esc",
+                "val": "Exit selected chat and search Telegram"
+            },
+            {
+                "key": "Alt + Arrow Up",
+                "val": "Exit display of current chat/channel"
+            },
+            {
+                "key": "Delete",
+                "val": "Delete currently selected message"
+            },
+            {
+                "key": "Ctrl + Q",
+                "val": "Quit Telegram"
+            },
+            {
+                "key": "Ctrl + L",
+                "val": "Lock Telegram (if Local Password is set)"
+            },
+            {
+                "key": "Ctrl + M",
+                "val": "Iconify (Minimize) Telegram"
+            },
+            {
+                "key": "Ctrl + W",
+                "val": "Iconify (Minimize) Telegram to System Tray"
+            },
+            {
+                "key": "Arrow Up",
+                "val": "Edit Previous Message"
+            }
+        ]
+    }
+}
