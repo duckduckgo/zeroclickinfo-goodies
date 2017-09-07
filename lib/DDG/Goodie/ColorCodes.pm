@@ -70,14 +70,12 @@ handle query_lc => sub {
     s/\sto\s(?:$typestr)?//g;
 
     $_ =~ $trigger_and_guard;
-
-    $type = lc $+{'type'} if defined $+{'type'} and exists $types{lc $+{'type'}};
+    $type = $types{lc $+{'type'}} if defined $+{'type'} and exists $types{lc $+{'type'}};
 
     $color = "$+{'r'} $+{'g'} $+{'b'}" if defined $+{'r'} and defined $+{'g'} and defined $+{'b'};
     $color = lc $+{'color'} if defined $+{'color'};
 
     $inverse = 1 if defined $+{'inv'};
-
     $color =~ s/,?\s+/,/g;
     $color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e;
 
@@ -92,7 +90,6 @@ handle query_lc => sub {
     }
     
     my $col = try { Convert::Color->new("$type:$color") };
-    
     return unless $col;
 
     if ($inverse) {
