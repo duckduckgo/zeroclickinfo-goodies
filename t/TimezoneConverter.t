@@ -31,8 +31,8 @@ ddg_goodie_test(
     '3:14 UTC in GMT' => build_test('3:14 GMT', '3:14 UTC to GMT'),
     '8:10 AM AZOST into CAT' => build_test('11:10 AM CAT', '8:10 AM AZOST (UTC-1) to CAT (UTC+2)'),
     '1pm EDT into UTC+2' => build_test('7:00 PM UTC+2', '1:00 PM EDT (UTC-4) to UTC+2'),
-    '0pm UTC into GMT' => build_test('Noon GMT', 'Noon UTC to GMT'),
-    '0am UTC into UTC' => build_test('Midnight UTC', 'Midnight UTC to UTC'),
+    '0pm UTC into GMT' => build_test('12:00 PM GMT', '12:00 PM UTC to GMT'),
+    '0am UTC into UTC' => build_test('0:00 AM UTC', '0:00 AM UTC to UTC'),
     '1 UTC into UTC -2 ' => build_test('23:00 UTC-2 (1 day prior)', '1:00 UTC to UTC-2'),
     ' 1 UTC into UTC-1' => build_test('0:00 UTC-1', '1:00 UTC to UTC-1'),
     '21 FNT into EET' => build_test('1:00 EET (1 day after)', '21:00 FNT (UTC-2) to EET (UTC+2)'),
@@ -71,12 +71,12 @@ ddg_goodie_test(
     '11:22am cest in localtime' => build_test(re(qr/5:22 AM EDT/), qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
     '11:22am cest in my local timezone' => build_test(re(qr/5:22 AM EDT/), qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
     '11:22am cest' =>  build_test(re(qr/5:22 AM EDT/), qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
-    '12pm my time in CEST' => build_test(q/6:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12pm local timezone in CEST' =>  build_test(q/6:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12pm in CEST' => build_test(q/6:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12am my timezone in UTC' => build_test(q/4:00 AM UTC/, qq/Midnight $test_location_tz to UTC/),
-    '12am local time in UTC' => build_test(q/4:00 AM UTC/, qq/Midnight $test_location_tz to UTC/),
-    '12am in UTC' => build_test(q/4:00 AM UTC/, qq/Midnight $test_location_tz to UTC/)
+    '12pm my time in CEST' => build_test(q/6:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12pm local timezone in CEST' =>  build_test(q/6:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12pm in CEST' => build_test(q/6:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12am my timezone in UTC' => build_test(q/4:00 AM UTC/, qq/0:00 AM $test_location_tz to UTC/),
+    '12am local time in UTC' => build_test(q/4:00 AM UTC/, qq/0:00 AM $test_location_tz to UTC/),
+    '12am in UTC' => build_test(q/4:00 AM UTC/, qq/0:00 AM $test_location_tz to UTC/)
 );
 restore_time();
 
@@ -91,12 +91,12 @@ ddg_goodie_test(
     '11:22am cest in localtime' => build_test(re(qr/4:22 AM EST/), qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
     '11:22am cest in my local timezone' => build_test(q/4:22 AM EST/, qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
     '11:22am cest' => build_test(q/4:22 AM EST/, qq/11:22 AM CEST (UTC+2) to $test_location_tz/),
-    '12pm my time in CEST' => build_test(q/7:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12pm local timezone in CEST' => build_test(q/7:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12pm in CEST' => build_test(q/7:00 PM CEST/, qq/Noon $test_location_tz to CEST (UTC+2)/),
-    '12am my timezone in UTC' => build_test(re(qr/5:00 AM UTC/), qq/Midnight $test_location_tz to UTC/),
-    '12am local time in UTC' => build_test(re(qr/5:00 AM UTC/), qq/Midnight $test_location_tz to UTC/),
-    '12am in UTC' => build_test(re(qr/5:00 AM UTC/), qq/Midnight $test_location_tz to UTC/),
+    '12pm my time in CEST' => build_test(q/7:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12pm local timezone in CEST' => build_test(q/7:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12pm in CEST' => build_test(q/7:00 PM CEST/, qq/12:00 PM $test_location_tz to CEST (UTC+2)/),
+    '12am my timezone in UTC' => build_test(re(qr/5:00 AM UTC/), qq/0:00 AM $test_location_tz to UTC/),
+    '12am local time in UTC' => build_test(re(qr/5:00 AM UTC/), qq/0:00 AM $test_location_tz to UTC/),
+    '12am in UTC' => build_test(re(qr/5:00 AM UTC/), qq/0:00 AM $test_location_tz to UTC/),
 );
 
 restore_time();
