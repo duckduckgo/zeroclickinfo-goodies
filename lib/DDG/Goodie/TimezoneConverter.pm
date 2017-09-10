@@ -59,6 +59,7 @@ sub to_time {
 
     my $pm = "";
     my $seconds = 3600 * fmod $hours, 1 / 60;
+    my $time_word = "";
 
     # I'm using floating point numbers. They sometimes don't do what I want.
     if ( sprintf( '%.5f', $seconds ) == 60 ) {
@@ -69,13 +70,21 @@ sub to_time {
 
     my $seconds_format = int $seconds ? ':%02.0f' : "";
     if ($american) {
+        if ($hours == 0) {
+            $time_word = 'Midnight - ';
+        } elsif ($hours == 12) {
+            $time_word = 'Noon - ';
+        }
+
         $pm = ' AM';
         if ($hours >= 12) {
             $pm = ' PM';
             $hours -= 12 if (int($hours) > 12);
+        } elsif ($hours == 0) {
+            $hours = 12;
         }
     }
-    sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
+    sprintf "$time_word%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
 }
 
 handle query => sub {
