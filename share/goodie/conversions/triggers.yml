@@ -60,6 +60,9 @@ aliases:
   - mcgs
   - microgram
   - micrograms
+  - microg
+  - micro g
+  - micro grams
 type: mass
 unit: microgram
 symbols: [µg]
@@ -368,6 +371,8 @@ aliases:
   - micrometers
   - micro meter
   - micro meters
+  - microm
+  - micro m
   - µms
   - µm
 type: length
@@ -760,6 +765,8 @@ aliases:
   - micro seconds
   - micro-second
   - micro-seconds
+  - micros
+  - micro s
   - µs
 type: duration
 unit: microsecond
