@@ -29,8 +29,8 @@ handle remainder => sub {
 
     return if ($1 > $3);
 
-    my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
-    my ($from_number, $to_number, $sum) = map { commify($_) } ($1, $3, $sum);
+    my $sum = commify((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
+    my ($from_number, $to_number) = map { commify($_) } ($1, $3);
     my $string_answer = 'Sum of natural numbers from ' . $from_number . ' to ' . $to_number;
     return $string_answer, structured_answer => {
         data => {
