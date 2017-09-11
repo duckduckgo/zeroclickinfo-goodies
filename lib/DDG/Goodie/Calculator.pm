@@ -198,6 +198,7 @@ handle query => sub {
     return if $query =~ m#^\d{1,2}/\d{1,2}/\d{2,4}$#;
     return if $query =~ m#^0\d+/\d+$#;
 
+
     # some shallow preprocessing of the query
     $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i;
     $query =~ s/\s//g;
@@ -216,7 +217,7 @@ handle query => sub {
     return if $query =~ m/0x[A-Za-z]{2,}/;
     return if $query =~ m/X\d+/;
     return if $query =~ m/\d+e\+\d+/;
-    return if $query =~ m{(?:7|9)/11}; # date edge case, US supermarket
+    return if $query =~ m{^(?:7|9)/11$}; # date edge case, US supermarket
     return if $query =~ m/.+=.+/; # check there isn't something on both sides of the equals sign
     return if $query =~ /^(?:minus|-|\+)\d+$/;
 
