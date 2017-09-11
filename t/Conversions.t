@@ -2644,7 +2644,38 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-
+    'nanometer to micron' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'nanometer',
+            to_unit => 'micrometer',
+            physical_quantity => 'length'
+        })
+    ),
+    'nanometer to μm ' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'nanometer',
+            to_unit => 'micrometer',
+            physical_quantity => 'length'
+        })
+    ),
+    'seconds to μs' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'second',
+            to_unit => 'microsecond',
+            physical_quantity => 'duration'
+        })
+    ),
+    'grams to μg' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'gram',
+            to_unit => 'microgram',
+            physical_quantity => 'mass'
+        })
+    ),
 
     # natural language queries
     'unit converter' => test_zci(
