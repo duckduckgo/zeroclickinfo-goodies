@@ -81,7 +81,17 @@ sub codepoint_description {
     for (qw/decimal HTML UTF-8 script block decomposition title upper lower/) {
         $info_str .= ", $_: $extra{$_}" if exists $extra{$_};
     }
-    return $info_str;
+
+    my $title = chr($c) . " " . 'U+' . $i{code}, $i{name};
+    return $info_str, structured_answer => {
+      data => {
+        title => $title,
+        subtitle => $info_str
+      },
+      templates => {
+        group => 'text'
+      }
+    }
 }
 
 # Converts a character input to a codepoint
@@ -116,7 +126,7 @@ sub input_type ($) {
     }
 
     return ($input, $type);
-                }
+}
 
 # Converts a name input to a character
 sub name_to_char {
