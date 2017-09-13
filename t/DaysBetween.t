@@ -10,6 +10,8 @@ use Test::MockTime qw( :all );
 zci answer_type => 'days_between';
 zci is_cached   => 0;
 
+my $test_inclusive = ", inclusive";
+
 sub build_structured_answer{
     my($startDate, $endDate, $daysBetween, $inclusive) = @_;
     return "There are $daysBetween days between $startDate and $endDate$inclusive",
@@ -28,8 +30,6 @@ sub build_test{ test_zci(build_structured_answer(@_))}
 
 set_fixed_time('2016-08-03T22:36:00');
 
-my $test_inclusive = ", inclusive";
-
 ddg_goodie_test(
     [qw( DDG::Goodie::DaysBetween)],
     'days between today and tomorrow'                            => build_test('03 Aug 2016', '04 Aug 2016', 1, ''),
@@ -46,9 +46,14 @@ ddg_goodie_test(
     'number of days from 2015-02-02 and 2016-02-02'              => build_test('02 Feb 2015', '02 Feb 2016', 365, ''),
     'number of days from 2015-02-02 and 2016-02-02 inclusive'    => build_test('02 Feb 2015', '02 Feb 2016', 366, $test_inclusive),
     'number of days between 2014-02-02 and 2015-02-02'           => build_test('02 Feb 2014', '02 Feb 2015', 365, ''),
+    'days since 2016-07-31'                                      => build_test('31 Jul 2016', '03 Aug 2016', 3, ''),    
+    'days until tomorrow'                                        => build_test('03 Aug 2016', '04 Aug 2016', 1, ''),
+    'the day before yesterday'                                   => undef,
+    'weekdays between 2015-02-02 and 2016-02-02'                 => undef,    
     'number of days between 2014-02-02 and 2015-02-02 inclusive' => build_test('02 Feb 2014', '02 Feb 2015', 366, $test_inclusive),
     'days since 2016-07-31'                                      => build_test('31 Jul 2016', '03 Aug 2016', 3, ''),
-    'days between jan 1 2012 and jan 1 123456'                   => undef
+    'days until 2017-09-05'                                      => build_test('03 Aug 2016', '05 Sep 2017', 398, ''),
+    'days between jan 1 2012 and jan 1 123456'                   => undef,
 );
 
 restore_time();
