@@ -1,0 +1,24 @@
+.zci--interactive_bmi_calculator .bmi_unit_switches {
+    cursor: pointer;
+    margin-top: 1.5em;
+}
+
+.zci--interactive_bmi_calculator .category {
+    margin-left: 2%;
+}
+
+.zci--interactive_bmi_calculator .bmi_var.bmi_error {
+    border: 1px solid #de5833;
+}
+
+.zci--interactive_bmi_calculator .block-display {
+    display: block;
+}
+
+.zci--interactive_bmi_calculator .bmi_height_ft {
+    margin-right: 4%;
+}
+
+.zci--interactive_bmi_calculator .bold {
+    font-weight: 600;
+}
