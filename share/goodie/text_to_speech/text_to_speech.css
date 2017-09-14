@@ -1,0 +1,20 @@
+#zci-text_to_speech {
+    display: none;
+}
+
+#zci-text_to_speech textarea, #zci-text_to_speech span {
+    float: left;
+    clear: both;
+}
+
+#zci-text_to_speech label {
+    width: 100px;
+}
+
+#zci-text_to_speech span, #zci-text_to_speech textarea, #zci-text_to_speech input[type="range"] {
+    width: 100%;
+}
+
+#zci-text_to_speech .float_right * {
+    float: right;
+}
