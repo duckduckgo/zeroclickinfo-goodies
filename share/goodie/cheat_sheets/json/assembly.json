@@ -1,0 +1,161 @@
+{
+    "id": "assembly_cheat_sheet",
+    "name": "Assembly",
+    "description": "A list of Assembly instructions",
+
+    "metadata": {
+        "sourceName": "Assembly",
+        "sourceUrl" : "https://scadahacker.com/library/Documents/Cheat_Sheets/Programming%20-%20x86%20Instructions%201.pdf"
+    },
+
+    "aliases": [
+        "nasm", "assembly language", "machine code"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Arithmetic",
+        "Function Calls",
+        "Bitwise Operations",
+        "Conditionals and Jumps",
+        "Miscellaneous"
+    ],
+
+    "sections": {
+        "Arithmetic": [
+            {
+                "key": "`mov src,dest`",
+                "val": "Copies source to destination"
+            },
+            {
+                "key": "`add src,dest`",
+                "val": "Increments the dest value by src"
+            },
+            {
+                "key": "`sub src,dest`",
+                "val": "Decreases the dest value by src"
+            },
+            {
+                "key": "`mul reg`",
+                "val": "Multiplies the eax value by reg"
+            },
+            {
+                "key": "`div reg`",
+                "val": "Divides the eax value by reg"
+            },
+            {
+                "key": "`inc dest`",
+                "val": "Increments the value of dest"
+            },
+            {
+                "key": "`dec dest`",
+                "val": "Decreases the value of dest"
+            },
+            {
+                "key": "`mov src,dest`",
+                "val": "Copies the value of source into destination"
+            }
+        ],
+        "Function Calls": [
+            {
+                "key": "`call label`",
+                "val": "Pushes EIP into transfer register"
+            },
+            {
+                "key": "`ret`",
+                "val": "Pops EIP value and returns"
+            },
+            {
+                "key": "`push item`",
+                "val": "Pushes an item into stack"
+            },
+            {
+                "key": "`pop reg`",
+                "val": "Pop item from stack and move to register"
+            }
+        ],
+      "Bitwise Operations": [
+            {
+                "key": "`and src,dest`",
+                "val": "Puts the value of AND operation between source and destination to destination"
+            },
+            {
+                "key": "`or src,dest`",
+                "val": "Puts the value of OR operation between source and destination to destination"
+            },
+            {
+                "key": "`xor src,dest`",
+                "val": "Puts the value of XOR operation between source and destination to destination"
+            },
+            {
+                "key": "`shl count,dest`",
+                "val": "Shift left the value of destination by count number"
+            },
+            {
+                "key": "`shr count,dest`",
+                "val": "Shift right the value of destination by count number"
+            }
+      ],
+      "Conditionals and Jumps": [
+            {
+                "key": "`cmp arg1,arg2`",
+                "val": "Compares the value of arg1 with arg2, and must precede conditional jump instructions"
+            },
+            {
+                "key": "`je label`",
+                "val": "Jump to label if both arguments are equal"
+            },
+            {
+                "key": "`jne label`",
+                "val": "Jump to label if both arguments are not equal"
+            },
+            {
+                "key": "`jg label`",
+                "val": "Jump to label if value of arg2 is more than arg1"
+            },
+            {
+                "key": "`jge label`",
+                "val": "Jump to label if value of arg2 is more than or equal to arg1"
+            },
+            {
+                "key": "`jl label`",
+                "val": "Jump to label if value of arg2 is less than arg1"
+            },
+            {
+                "key": "`jle label`",
+                "val": "Jump to label if value of arg2 is less than or equal to arg1"
+            },
+            {
+                "key": "`jz label`",
+                "val": "Jump to label if bits were set to 0"
+            },
+            {
+                "key": "`jnz label`",
+                "val": "Jump to label if bits were not set to 0"
+            },
+            {
+                "key": "`jmp label`",
+                "val": "Unconditional relative jump"
+            },
+            {
+                "key": "`jmp *reg`",
+                "val": "Unconditional absolute jump where reg is the register"
+            },
+            {
+                "key": "`ljmp segments,off`",
+                "val": "Unconditional absolute far jump"
+            }
+      ],
+      "Miscellaneous": [
+            {
+                "key": "`nop`",
+                "val": "No opcode"
+            },
+            {
+                "key": "`hlt`",
+                "val": "Halt the CPU"
+            }
+      ]
+    }
+}
