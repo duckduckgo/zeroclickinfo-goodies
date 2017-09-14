@@ -1,0 +1,153 @@
+{
+    "id": "ios_testing_tools_cheat_sheet",
+    "name": "IOS Testing Tools",
+    "description": "A list of tools for testing iOS devices",
+
+    "metadata": {
+        "sourceName": "OWASP",
+        "sourceUrl" : "https://www.owasp.org/index.php/IOS_Application_Security_Testing_Cheat_Sheet"
+    },
+
+    "aliases": [
+        "ios testing"
+    ],
+
+    "template_type": "code",
+    
+    "section_order": [
+       "Tools for iOS Testing"
+    ],
+
+    "sections": {
+        "Tools for iOS Testing": [
+            {
+                "key": "Mallory proxy",
+                "val": "Proxy for Binary protocols"
+            },
+            {
+                "key": "Charles/Burp proxy",
+                "val": "Proxy for HTTP and HTTPS"
+            },
+            {
+                "key": "OpenSSH",
+                "val": "Connect to the iPhone remotely over SSH"
+            },
+            {
+                "key": "Sqlite3",
+                "val": "Sqlite database client"
+            },
+            {
+                "key": "GNU Debugger",
+                "val": "For run time analysis & reverse engineering"
+            },
+            {
+                "key": "Syslogd",
+                "val": "View iPhone logs"
+            },
+            {
+                "key": "Tcpdump",
+                "val": "Capture network traffic on phone"
+            },
+            {
+                "key": "Otool",
+                "val": "Odcctools: otool – object file displaying tool"
+            },
+            {
+                "key": "Cycript",
+                "val": "A language designed to interact with Objective-C classes"
+            },
+            {
+                "key": "SSL Kill switch",
+                "val": "Blackbox tool to disable SSL certificate validation - including certificate pinning in NSURL"
+            },
+            {
+                "key": "Plutil",
+                "val": "To view Plist files"
+            },
+            {
+                "key": "nm",
+                "val": "Analysis tool to display the symbol table, which includes names of functions and methods, as well as their load addresses"
+            },
+            {
+                "key": "sysctl",
+                "val": "A utility to read and change kernel state variables"
+            },
+            {
+                "key": "dump_keychain",
+                "val": "A utility to dump the keychain"
+            },
+            {
+                "key": "Filemon",
+                "val": "Monitor realtime iOS file system"
+            },
+            {
+                "key": "FileDP",
+                "val": "Audits data protection of files"
+            },
+            {
+                "key": "BinaryCookieReader",
+                "val": "Read cookies.binarycookies files"
+            },
+            {
+                "key": "lsof ARM Binary",
+                "val": "List of all open files and the processes that opened them"
+            },
+            {
+                "key": "lsock ARM Binary",
+                "val": "Monitor socket connections"
+            },
+            {
+                "key": "PonyDebugger Injected",
+                "val": "Injected via Cycript to enable remote debugging"
+            },
+            {
+                "key": "Weak Class Dump",
+                "val": "Injected via Cycript to do class-dump for when you cant un-encrypt the binary"
+            },
+            {
+                "key": "TrustME",
+                "val": "Lower level tool to disable SSL certificate validation - including certificate pinning for everything else but NSURL"
+            },
+            {
+                "key": "Mac Robber",
+                "val": "C code, forensic tool for imaging filesystems and producing a timeline"
+            },
+            {
+                "key": "USBMux Proxy",
+                "val": "Command line tool to connect local TCP port sto ports on an iPhone or iPod Touch device over USB"
+            },
+            {
+                "key": "iFunBox",
+                "val": "USBMux Tunneler, .ipa installer"
+            },
+            {
+                "key": "iNalyzer",
+                "val": "IOS Penetration testing framework"
+            },
+            {
+                "key": "removePIE",
+                "val": "Disables ASLR of an application"
+            },
+            {
+                "key": "snoop-it",
+                "val": "A tool to assist security assessments and dynamic analysis of iOS Apps, includes runtime views of obj-c classes and methods, and options to modify those values"
+            },
+            {
+                "key": "idb",
+                "val": "A GUI and cmdline tool to simplify some common tasks for iOS pentesting and research"
+            },
+            {
+                "key": "Damn Vulnerable iOS Application",
+                "val": "A purposefully vulnerable iOS application for learning iOS application assessment skills"
+            },
+            {
+                "key": "introspy",
+                "val": "A security profiling tool revolved around hooking security based iOS APIs and logging their output for security analysis"
+            },
+            {
+                "key": "MEMSCAN",
+                "val": "A tool which allows you to easily dump iOS process memory to disk as well as searching memory for specified byte signatures"
+            }
+        ]
+    }
+}
