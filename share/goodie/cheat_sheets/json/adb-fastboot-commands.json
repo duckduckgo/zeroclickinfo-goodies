@@ -1,0 +1,300 @@
+{
+    "id": "adb_fastboot_commands_cheat_sheet",
+    "name": "Adb & Fastboot Commands Cheat Sheet",
+    "description": "This cheat sheet provides a list of useful adb & fastboot commands for debugging Android devices. ",
+    "metadata": {
+        "sourceName": "Android Debugging Bridge (adb) - android.com",
+        "sourceUrl": "https://developer.android.com/studio/command-line/adb.html"
+    },
+    "aliases": [
+        "adb",
+        "fastboot"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "adb",
+        "fastboot"
+    ],
+    "sections": {
+        "adb": [
+            {
+                "val": "Direct adb to listen on all interfaces for a connection.",
+                "key": "-a"
+            },
+            {
+                "val": "Direct an adb command to the only attached USB device.",
+                "key": "-d"
+            },
+            {
+                "val": "Direct an adb command to the only running emulator instance.",
+                "key": "-e"
+            },
+            {
+                "val": "Direct an adb command a specific emulator/device instance, referred to by its adb-assigned serial number (such as \"emulator-5556\").",
+                "key": "-s <serialNumber>"
+            },
+            {
+                "val": "Simple product name like 'sooner', or a relative/absolute path to a product out directory like 'out/target/product/sooner'. If -p is not specified, the ANDROID_PRODUCT_OUT environment variable is used, which must be an absolute path.",
+                "key": "-p <product name or path>"
+            },
+            {
+                "val": "Name of adb server host (default: localhost).",
+                "key": "-H"
+            },
+            {
+                "val": "Port of adb server (default: 5037).",
+                "key": "-P"
+            },
+            {
+                "val": "Prints a list of all attached emulator/device instances ('-l' will also list device qualifiers).",
+                "key": "devices \\[-l\\]"
+            },
+            {
+                "val": "Prints a list of supported adb commands.",
+                "key": "help"
+            },
+            {
+                "val": "Connect to a device via TCP/IP. Port 5555 is used by default if no port number is specified.",
+                "key": "connect <host>\\[:<port>\\]"
+            },
+            {
+                "val": "Disconnect from a TCP/IP device. Port 5555 is used by default if no port number is specified. Using this command with no additional arguments will disconnect from all connected TCP/IP devices.",
+                "key": "disconnect \\[<host>\\[:<port>\\]\\]"
+            },
+            {
+                "val": "Prints the adb version number.",
+                "key": "version"
+            },
+            {
+                "val": "Prints log data to the screen.",
+                "key": "logcat \\[<option>\\] \\[<filter-specs>\\]"
+            },
+            {
+                "val": "Return all information from the device that should be included in a zipped bug report.",
+                "key": "bugreport \\[<path>\\]"
+            },
+            {
+                "val": "Prints a list of available JDWP processes on a given device.",
+                "key": "jdwp"
+            },
+            {
+                "val": "Pushes an Android application to an emulator/device and installs it. (-l: forward lock application) (-r: replace existing application) (-t: allow test packages) (-s: install application on sdcard) (-d: allow version code downgrade (debuggable packages only)) (-g: grant all runtime permissions)",
+                "key": "install \\[-lrtsdg\\] <path-to-apk>"
+            },
+            {
+                "val": "Remove this app package from the device. ('-k' means keep the data and cache directories)",
+                "key": "uninstall \\[-k\\] <package>"
+            },
+            {
+                "val": "Copies a specified file from an emulator/device instance to your computer. -a preserves the timestamp and mode.",
+                "key": "pull \\[-a\\] <remote> <local>"
+            },
+            {
+                "val": "Copy host->device only if changed. -l means list but don't copy.",
+                "key": "sync \\[ <directory> \\]"
+            },
+            {
+                "val": "Copies a specified file from your development computer to an emulator/device instance.",
+                "key": "push <local> <remote>"
+            },
+            {
+                "val": "Forwards socket connections from a specified local port to a specified remote port on the emulator/device instance.",
+                "key": "forward <local> <remote>"
+            },
+            {
+                "val": "Run PPP over USB. <tty> — the tty for PPP stream. For example dev:/dev/omap_csmi_ttyl. parm]... &mdash zero or more PPP/PPPD options, such as defaultroute, local, notty, etc. Note that you should not automatically start a PDP connection.",
+                "key": "ppp <tty> \\[parameters\\]..."
+            },
+            {
+                "val": "Prints the adb instance serial number string.",
+                "key": "get-serialno"
+            },
+            {
+                "val": "Prints the adb state of an emulator/device instance.",
+                "key": "get-state"
+            },
+            {
+                "val": "Blocks command execution until the device is online — that is, until the instance state is device. Example: adb wait-for-device install <app>.apk",
+                "key": "wait-for-device"
+            },
+            {
+                "val": "Checks whether the adb server process is running and starts it, if not.",
+                "key": "start-server"
+            },
+            {
+                "val": "Terminates the adb server process.",
+                "key": "kill-server"
+            },
+            {
+                "val": "Restarts the adbd daemon with root permissions.",
+                "key": "root"
+            },
+            {
+                "val": "Run emulator console command.",
+                "key": "emu <command>"
+            },
+            {
+                "val": "Run remote shell command (interactive shell if no command given) (-e: choose escape character, or \"none\"; default '~') (-n: don't read from stdin)  (-T: disable PTY allocation) (-t: force PTY allocation) (-x: disable remote exit codes and stdout/stderr separation)",
+                "key": "shell \\[-e escape\\] \\[-n\\] \\[-Tt\\] \\[-x\\] \\[command\\]"
+            }
+        ],
+        "fastboot": [
+            {
+                "val": "Reflash device from update.zip. Sets the flashed slot as active.",
+                "key": "update <filename>"
+            },
+            {
+                "val": "Flash boot, system, vendor, and -- if found -- recovery. If the device supports slots, the slot that has been flashed to is set as active. Secondary images may be flashed to an inactive slot.",
+                "key": "flashall"
+            },
+            {
+                "val": "Write a file to a flash partition.",
+                "key": "flash <partition> \\[<filename>\\]"
+            },
+            {
+                "val": "Locks the device. Prevents flashing.",
+                "key": "flashing lock"
+            },
+            {
+                "val": "Unlocks the device. Allows flashing any partition except bootloader-related partitions.",
+                "key": "flashing unlock"
+            },
+            {
+                "val": "Prevents flashing bootloader-related partitions.",
+                "key": "flashing lock_critical"
+            },
+            {
+                "val": "Enables flashing bootloader-related partitions.",
+                "key": "flashing unlock_critical"
+            },
+            {
+                "val": "Queries bootloader to see if the device is unlocked.",
+                "key": "flashing get_unlock_ability"
+            },
+            {
+                "val": "Queries the bootloader to get the unlock nonce.",
+                "key": "flashing get_unlock_bootloader_nonce"
+            },
+            {
+                "val": "Issue unlock bootloader using request.",
+                "key": "flashing unlock_bootloader <request>"
+            },
+            {
+                "val": "Locks the bootloader to prevent bootloader version rollback.",
+                "key": "flashing lock_bootloader"
+            },
+            {
+                "val": "Erase a flash partition.",
+                "key": "erase <partition>"
+            },
+            {
+                "val": "Format a flash partition. Can override the fs type and/or size the bootloader reports.",
+                "key": "format\\[:\\[<fs type>\\]\\[:\\[<size>\\]\\] <partition>"
+            },
+            {
+                "val": "Display a bootloader variable.",
+                "key": "getvar <variable>"
+            },
+            {
+                "val": "Sets the active slot. If slots are not supported, this does nothing.",
+                "key": "set_active <slot>"
+            },
+            {
+                "val": "Download and boot kernel.",
+                "key": "boot <kernel> \\[ <ramdisk> \\[ <second> \\] \\]"
+            },
+            {
+                "val": "Create bootimage and flash it.",
+                "key": "flash:raw boot <kernel> \\[ <ramdisk> \\[ <second> \\] \\]"
+            },
+            {
+                "val": "List all connected devices [with device paths].",
+                "key": "devices \\[-l\\]"
+            },
+            {
+                "val": "Continue with autoboot.",
+                "key": "continue"
+            },
+            {
+                "val": "Reboot device into bootloader.",
+                "key": "reboot \\[bootloader|recovery\\]"
+            },
+            {
+                "val": "Show full help menu.",
+                "key": "help"
+            },
+            {
+                "val": "Erase userdata and cache (and format if supported by partition type).",
+                "key": "-w"
+            },
+            {
+                "val": "Do not erase partition before formatting.",
+                "key": "-u"
+            },
+            {
+                "val": "Specify a device. For USB, provide either a serial number or path to device port. For ethernet, provide an address in the form <protocol>:<hostname>[:port] where <protocol> is either tcp or udp.",
+                "key": "-s <specific device>"
+            },
+            {
+                "val": "Specify product name.",
+                "key": "-p <product>"
+            },
+            {
+                "val": "Override kernel commandline.",
+                "key": "-c <cmdline>"
+            },
+            {
+                "val": "Specify a custom USB vendor id.",
+                "key": "-i <vendor id>"
+            },
+            {
+                "val": "Specify a custom kernel base address (default: 0x10000000).",
+                "key": "-b, --base <base_addr>"
+            },
+            {
+                "val": "Specify a custom kernel offset (default: 0x00008000).",
+                "key": "--kernel-offset"
+            },
+            {
+                "val": "Specify a custom ramdisk offset (default: 0x01000000).",
+                "key": "--ramdisk-offset"
+            },
+            {
+                "val": "Specify a custom tags offset (default: 0x00000100).",
+                "key": "--tags-offset"
+            },
+            {
+                "val": "Specify the nand page size (default: 2048).",
+                "key": "-n, --page-size <page size>"
+            },
+            {
+                "val": "Automatically sparse files greater than 'size'. 0 to disable.",
+                "key": "-S <size>\\[K|M|G\\]"
+            },
+            {
+                "val": "Specify slot name to be used if the device supports slots. All operations on partitions that support slots will be done on the slot specified. 'all' can be given to refer to all slots. 'other' can be given to refer to a non-current slot. If this flag is not used, slotted partitions will default to the current active slot.",
+                "key": "--slot <slot>"
+            },
+            {
+                "val": "Sets the active slot. If no slot is provided, this will default to the value given by --slot. If slots are not supported, this sets the current slot to be active. This will run after all non-reboot commands.",
+                "key": "-a, --set-active\\[=<slot>\\]"
+            },
+            {
+                "val": "Will not flash secondary slots when performing a flashall or update. This will preserve data on other slots.",
+                "key": "--skip-secondary"
+            },
+            {
+                "val": "Do not buffer input or output.",
+                "key": "--unbuffered"
+            },
+            {
+                "val": "Display version.",
+                "key": "--version"
+            },
+            {
+                "val": "Show help for command.",
+                "key": "-h, --help"
+            }
+        ]
+    }
+}
