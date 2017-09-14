@@ -69,9 +69,11 @@ handle remainder => sub {
         } else {
             # We didn't match anything else, so just convert whatever string is left.
             $input = $_;
-            $from = "String";
+            $from = "String (UTF-8)";
             $to = "Binary";
-            $result = bin($_);
+            # change input's internal encoding into UTF-8
+            my $utf8_input = Encode::encode('utf8', $_);
+            $result = bin($utf8_input);
         }
     }
     return unless ($input);    # Didn't hit any conditions, must not be us.
