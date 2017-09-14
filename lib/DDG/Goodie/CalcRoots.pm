@@ -52,6 +52,7 @@ handle query  => sub {
         # Figure out what number the base is
         $base = $';
         $base =  str2nbr($base) if $base =~ /[^0-9]/;
+        return unless $base =~ /[0-9]+/;
 
         # Solve using  the absolute value of the base
         $base = abs($base);
