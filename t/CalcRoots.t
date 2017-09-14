@@ -37,8 +37,8 @@ ddg_goodie_test(
     'cube root of 33'                     => build_test('3',  '33',  'The 3-root of 33 is 3.20753432999583.',
             qq|<sup>3</sup>&radic;33 = <a href="javascript:;" onclick="document.x.q.value='3.20753432999583';document.x.q.focus();">3.20753432999583</a>|),
 	'2nd root of 9999999999' => undef,
-  'square root of minus garfield' => undef,
-  'cubed root of pete' => undef,
-  'negative root of dax the ducky' => undef,
+    'square root of minus garfield' => undef,
+    'cubed root of pete' => undef,
+    'negative root of dax the ducky' => undef,
 );
 done_testing;
