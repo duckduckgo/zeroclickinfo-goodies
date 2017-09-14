@@ -1,0 +1,353 @@
+{
+    "id": "fusion360_keyboard_shortcuts_cheat_sheet",
+    "name": "fusion360",
+    "description": "Fusion360 Keyboard shortcuts",
+    "metadata": {
+        "sourceName": "fusion360",
+        "sourceUrl":"https://www.cadlinecommunity.co.uk/hc/en-us/articles/210361725-Fusion-360-Keyboard-Shortcuts"
+    },
+    "aliases": [
+        "fusion360"
+  ],
+    "template_type": "keyboard",
+    "section_order": [
+        "System",
+        "General",
+        "Model_workspace",
+        "Sculpt_workplace",
+        "CAM_workspace",
+        "Mouse/Touchpad"
+    ],
+    "sections": {
+        "System": [
+            {
+                "key": "Ctrl+C",
+                "val": "Copy"
+            },
+            {
+                "key": "Ctrl+V",
+                "val": "Paste"
+            },
+            {
+                "key": "Ctrl+X",
+                "val": "Cut"
+            },
+            {
+                "key": "Ctrl+S",
+                "val": "Save"
+            },
+            {
+                "key": "Ctrl+Z",
+                "val": "Undo"
+            },
+            {
+                "key": "Ctrl+Y",
+                "val": "Redo"
+            },
+            {
+                "key": "F5",
+                "val": "Refresh data panel"
+            }
+        ],
+        "General": [
+            {
+                "key": "Shift+1",
+                "val": "Display 4 viewports"
+            },
+            {
+                "key": "Ctrl+Shift+F",
+                "val": "Full-screen mode"
+            },
+            {
+                "key": "Ctrl+Alt+V",
+                "val": "Show/hide ViewCube"
+            },
+            {
+                "key": "Ctrl+Alt+B",
+                "val": "Show/hide browser"
+            },
+            {
+                "key": "Ctrl+Alt+A",
+                "val": "Show/hide activity"
+            },
+            {
+                "key": "Show/hide text commands",
+                "val": "Ctrl+Alt+C"
+            },
+            {
+                "key": "Ctrl+Alt+W",
+                "val": "Show/hide toolbar"
+            },
+            {
+                "key": "Ctrl+Alt+N",
+                "val": "Show/hide navigation bar"
+            },
+            {
+                "key": "Ctrl+Alt+P",
+                "val": "Show/hide data panel"
+            },
+            {
+                "key": "Ctrl+Alt+R",
+                "val": "Reset to default layout"
+            }
+        ],
+        "Model_workspace": [
+            {
+                "key": "E",
+                "val": "Extrude"
+            },
+            {
+                "key": "H",
+                "val": "Hole"
+            },
+            {
+                "key": "F",
+                "val": "Fillet"
+            },
+            {
+                "key": "M",
+                "val": "Move"
+            },
+            {
+                "key": "A",
+                "val": "Appearance"
+            },
+            {
+                "key": "Ctrl+B",
+                "val": "Commpute All"
+            },
+            {
+                "key": "J",
+                "val": "Joint"
+            },
+            {
+                "key": "Shift+J",
+                "val": "As-built Joint"
+            },
+            {
+                "key": "L",
+                "val": "Line"
+            },
+             {
+                "key": "R",
+                "val": "2-point Rectangle"
+            },
+             {
+                "key": "C",
+                "val": "Center Diameter Circle"
+            },
+             {
+                "key": "T",
+                "val": "Trim"
+            },
+             {
+                "key": "O",
+                "val": "Offset"
+            },
+             {
+                "key": "I",
+                "val": "Measure"
+            },
+             {
+                "key": "D",
+                "val": "Skecth Dimmension"
+            },
+             {
+                "key": "Shift+S",
+                "val": "Script and Add-Ins"
+            },
+             {
+                "key": "1",
+                "val": "Window Selection"
+            },
+             {
+                "key": "2",
+                "val": "Freeform Selection"
+            },
+             {
+                "key": "3",
+                "val": "Paint Selection"
+            }
+        ],
+        "Sculpt_workplace": [
+            {
+                "key": "Alt+drag",
+                "val": "Add grometry"
+            },
+            {
+                "key": "Ctrl+Alt+drag",
+                "val": "Add geometry and keep creases"
+            },
+            {
+                "key": "Shift+UpArrow",
+                "val": "Grow Selection"
+            },
+             {
+                "key": "Shift+DownArrow",
+                "val": "Shrink Selection"
+            },
+             {
+                "key": "Alt+P",
+                "val": "Loop selection"
+            },
+             {
+                "key": "Alt+O",
+                "val": "Loop grow Selection"
+            },
+             {
+                "key": "Loop Shrink selection",
+                "val": "Alt+I"
+            },
+             {
+                "key": "Ring grow Selection",
+                "val": "Alt+K"
+            },
+             {
+                "key": "Ring shirnk Selection",
+                "val": "Alt+J"
+            },
+             {
+                "key": "Range Selection",
+                "val": "Alt+M"
+            },
+             {
+                "key": "Invert selection",
+                "val": "Alt+N"
+            },
+             {
+                "key": "Alt+A",
+                "val": "Selection filter Vertex"
+            },
+             {
+                "key": "Alt+S",
+                "val": "Selcetion fillter Edge"
+            },
+             {
+                "key": "Alt+D",
+                "val": "Slection fillter face"
+            },
+             {
+                "key": "Alt+G",
+                "val": "Selection fillter Body"
+            },
+             {
+                "key": "Alt+LeftArrow",
+                "val": "Previous U"
+            },
+             {
+                "key": "Next U",
+                "val": "Alt+RightArrow"
+            },
+            {
+                "key": "Alt+DownArrow",
+                "val": "Previous V"
+            },
+            {
+                "key": "Alt+UpArrow",
+                "val": "Next V"
+            },
+            {
+                "key": "Alt+Q",
+                "val": "Transformation mode Multi"
+            },
+            {
+                "key": "Alt+W",
+                "val": "Transformation mode Translation"
+            },
+            {
+                "key": "Alt+E",
+                "val": "Transformation mode Rotation"
+            },
+            {
+                "key": "Alt+R",
+                "val": "Transformation mode Scale"
+            },
+            {
+                "key": "Alt+Z",
+                "val": "Coordinate space World"
+            },
+            {
+                "key": "Alt+X",
+                "val": "Coordinate space View"
+            },
+            {
+                "key": "Alt+C",
+                "val": "Coordinate speca Local"
+            },
+            {
+                "key": "Ctrl+1",
+                "val": "Box mode"
+            },
+            {
+                "key": "Ctrl+2",
+                "val": "Control frame mode"
+            },
+            {
+                "key": "Ctrl+3",
+                "val": "Smooth mode"
+            },
+            {
+                "key": "Double-click an edge",
+                "val": "Select edge ring"
+            },
+            {
+                "key": "Seclect two faces and double-Click a third",
+                "val": "Select face ring"
+            }
+            
+           
+        ],
+        "CAM_workspace": [
+           {
+                "key": "Ctrl+A",
+                "val": "All CAM tools"
+            },
+            {
+                "key": "Ctrl+I",
+                "val": "Import tool library"
+            },
+            {
+                "key": "Ctrl+E",
+                "val": "Export tool library"
+            },
+            {
+                "key": "Ctrl+D",
+                "val": "Duplicate tool"
+            },
+            {
+                "key": "Del",
+                "val": "Delete tool"
+            },
+            {
+                "key": "Ctrl+R",
+                "val": "Renumber tools"
+            },
+            {
+                "key": "Ctrl+G",
+                "val": "Genarate toolpaths"
+            },
+            {
+                "key": "Alt+Enter",
+                "val": "Tool edit"
+            }
+        ],
+        "Mouse/Touchpad": [
+            {
+                "key": "press middile button",
+                "val": "Pan"
+            },
+            {
+                "key": "roll wheel",
+                "val": "Zoom"
+            },
+            {
+                "key": "Shift+press middle button",
+                "val": "orbit"
+            },
+            {
+                "key": "Shift+Click then press middle button",
+                "val": "Orbit around point"
+            }
+        ]
+    }
+}
