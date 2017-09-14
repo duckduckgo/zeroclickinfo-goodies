@@ -1,0 +1,283 @@
+.zci--css_gradient_generator, 
+.zci__body {
+    width: 800px;
+}
+
+.zci--css_gradient_generator #wrapper {
+    overflow: auto;
+    overflow-y: hidden;
+    height: 15em;
+}
+
+.zci--css_gradient_generator .container {
+    padding: 1em;
+    height: 100%;
+}
+
+.zci--css_gradient_generator #container-block {
+    height: 100%;
+}
+
+.zci--css_gradient_generator .row {
+    width: 100%;
+    height: 25%;
+    line-height: 40px;
+    text-align: center;
+}
+
+.zci--css_gradient_generator .title {
+    text-align: left;
+}
+
+.zci--css_gradient_generator #radial-type-settings {
+    display: none;
+}
+
+.zci--css_gradient_generator #radial-type-settings input[type="range"] {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    width: 80%;
+    height: 0.2em;
+    background-color: #b6b6b6;
+    outline-color: transparent;
+}
+
+.zci--css_gradient_generator #radial-type-settings select {
+    padding: 0.2em;
+    border: 1px solid #ccc;
+    width: 90%;
+}
+
+.zci--css_gradient_generator input:focus {
+    outline-color: transparent;
+}
+
+.zci--css_gradient_generator input[type="range"] {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    height: 0.2em;
+    width: 60%;
+    background-color: #b6b6b6;
+    outline-color: transparent;
+}
+
+.zci--css_gradient_generator input::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    width:1em;
+    height:1em;
+    background-color: #c3c3c3;
+    overflow: visible;
+}
+
+.zci--css_gradient_generator table {
+    height: 80%;
+    width: 100%;
+}
+
+.zci--css_gradient_generator #color-panel {
+    height: 100%;
+    width: 100%;
+}
+
+.zci--css_gradient_generator .color-box {
+    height: 100%;
+    cursor: pointer;
+    border: 3px solid #f2f2f2;
+}
+
+.zci--css_gradient_generator .selected {
+    border: 4px solid #848484;
+}
+
+.zci--css_gradient_generator .color-box button{
+    float: right;
+}
+
+.zci--css_gradient_generator form {
+    display: inline-block;
+    height: 100%;
+    margin-left: 10%;
+}
+
+.zci--css_gradient_generator form input[type=number] {
+    -moz-appearance:textfield;
+    height: 2em;
+    text-align: center;
+    width: auto;
+    max-width: 2em;
+}
+
+.zci--css_gradient_generator form input[type=number]::-webkit-inner-spin-button,
+.zci--css_gradient_generator form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.zci--css_gradient_generator #new-color-add-btn {
+    height: 2em;
+    background-color: #48966a;
+    color: white;
+}
+
+.zci--css_gradient_generator #new-color-add-btn:disabled,
+.zci--css_gradient_generator #new-color-add-btn[disabled] {
+    background-color: #a9a8a8;
+    cursor: default;
+}
+
+.zci--css_gradient_generator #color-picker-container .row {
+    width: 100%;
+    height: 20%;
+    line-height: 2em;
+    text-align: center;
+}
+
+.zci--css_gradient_generator #color-picker-container #selected-color-text {
+    text-shadow: 1px 1px 1px #353434;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.zci--css_gradient_generator #color-picker-container input:focus {
+    outline-color: transparent;
+}
+
+.zci--css_gradient_generator #color-picker-container input[type="range"] {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    width: 60%;
+    height: 0.2em;
+    background-color: #b6b6b6;
+    outline-color: transparent;
+}
+
+.zci--css_gradient_generator #color-picker-container input::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    width:0.5em;
+    height:1em;
+    background-color: #c3c3c3;
+    overflow: visible;
+}
+
+.zci--css_gradient_generator #color-picker-container #selected-delete-btn {
+    color: #ff0202;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.zci--css_gradient_generator #color-picker-container #selected-delete-btn:disabled,
+.zci--css_gradient_generator #color-picker-container #selected-delete-btn[disabled] {
+    color: #a9a8a8;
+    cursor: default;
+}
+
+.zci--css_gradient_generator #preview-panel {
+    border: 1px solid #c3c3c3;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 1em #000000;
+    cursor: pointer;
+}
+
+.zci--css_gradient_generator #preview-panel:hover {
+    outline: 2px solid #8BC34A;
+}
+
+.zci--css_gradient_generator #output-panel {
+    border: 1px solid #c3c3c3;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    background-color: #f7f7f7;
+    text-align: left;
+}
+
+.zci--css_gradient_generator #output-panel-text {
+    padding: 1em;
+}
+
+@media only screen and (max-width: 590px) {
+    .zci--css_gradient_generator #wrapper {
+        clear: both;
+        height: auto;
+        overflow: auto;
+    }
+    
+    .zci--css_gradient_generator .title {
+        display: none;
+    }
+    
+    .zci--css_gradient_generator #container-block {
+        clear: both;
+        display: inline;
+        position: relative;
+        height: 15em;
+        width: 400px;
+        float: left;
+    }
+    
+    .zci--css_gradient_generator #settings-container {
+        width: 400px;
+        height: 15em;
+    }
+    
+    .zci--css_gradient_generator #color-picker-container {
+        float: left;
+        width: 200px;
+        height: 15em;
+    }
+    
+    .zci--css_gradient_generator #preview-container {
+        float: right;
+        width: 200px;
+        height: 15em;
+    }
+    
+    .zci--css_gradient_generator #color-picker-container .t-s {
+        display: none;
+    }
+        
+    .zci--css_gradient_generator #radial-type-settings {
+        clear: both;
+    }
+    
+    .zci--css_gradient_generator #radial-type-settings .third {
+        float: left;
+        width: 50%;
+    }
+    
+    .zci--css_gradient_generator #radial-type-settings .twothirds {
+        float: right;
+        width: 50%;
+        line-height: 1.5em;
+    }
+}
+
+/* For IE */
+@media screen\0 {
+    .zci--css_gradient_generator input[type='range'],
+    .zci--css_gradient_generator #color-picker-container input[type='range'],
+    .zci--css_gradient_generator #radial-type-settings input[type='range'] {
+        background-color: rgba(241, 241, 241, 1);
+        height: auto;
+    }
+    
+    .zci--css_gradient_generator #direction-output {
+        display: none;
+    }
+}
+
+@media screen\9 {
+    .zci--css_gradient_generator input[type='range'],
+    .zci--css_gradient_generator #color-picker-container input[type='range'],
+    .zci--css_gradient_generator #radial-type-settings input[type='range'] {
+        background-color: rgba(241, 241, 241, 1);
+        height: auto;
+    }
+    
+    .zci--css_gradient_generator #direction-output {
+        display: none;
+    }
+}
