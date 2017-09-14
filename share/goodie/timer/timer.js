@@ -11,6 +11,7 @@ DDH.timer.build = function(ops) {
 
     var SOUND_NAME = "alarm-sound",
         soundUrl = '/share/goodie/timer/' + ops.data.goodie_version + '/alarm.mp3',
+        autoStart = ops.data.should_autostart,
         soundIsPlaying = false,
         hasShown = false,
         $lastTimerToFinish,
@@ -421,7 +422,7 @@ DDH.timer.build = function(ops) {
             timers.push(timer);
             // start first timer automatically, but only when the user
             // specified a time.
-            if (startingTime !== 0 && timers.length === 1) {
+            if (startingTime !== 0 && autoStart === 1 && timers.length === 1) {
                 timer.start();
             }
         }
