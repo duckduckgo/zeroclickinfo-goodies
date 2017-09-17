@@ -50,22 +50,22 @@ ddg_goodie_test(
 
     'binary converter' => test_zci(
         '', structured_answer => build_structured_answer({
-            from_type => '',
-            to_type => 'binary'
+            from_type => 'binary',
+            to_type => ''
         })
     ),
 
     'hex converter' => test_zci(
         '', structured_answer => build_structured_answer({
-            from_type => '',
-            to_type => 'hexadecimal'
+            from_type => 'hexadecimal',
+            to_type => ''
         })
     ),
 
     'ascii converter' => test_zci(
         '', structured_answer => build_structured_answer({
-            from_type => '',
-            to_type => 'text'
+            from_type => 'text',
+            to_type => ''
         })
     ),
 
@@ -80,6 +80,27 @@ ddg_goodie_test(
         '', structured_answer => build_structured_answer({
             from_type => '',
             to_type => 'base64'
+        })
+    ),
+
+    'base64 decoder' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'base64',
+            to_type => ''
+        })
+    ),
+
+    'hex translator' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'hexadecimal',
+            to_type => ''
+        })
+    ),
+
+    'binary translation' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => '',
+            to_type => 'binary'
         })
     ),
 

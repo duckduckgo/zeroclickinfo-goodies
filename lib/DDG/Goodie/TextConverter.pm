@@ -89,7 +89,18 @@ handle query_lc => sub {
     # check to see if query is a static language based trigger
     # eg. binary converter, hex encoder
     if(grep(/^$query$/, @lang_triggers)) {
-        $to_type = get_type_information($query);
+        # these words mean we want to go from the type in the query to text
+        my @from_words = ('decoder', 'decode', 'converter', 'translator');
+        my $from_words_re = join '|', @from_words;
+        # these words mean we want to go from text to the type in the query
+        my @to_words = ('encode', 'encoder', 'translation', 'translate', 'convert', 'conversion');
+        my $to_words_re = join '|', @to_words;
+
+        if ($query =~ /${from_words_re}/gi) {
+            $from_type = get_type_information($query);
+        } elsif ($query =~ /${to_words_re}/gi) {
+            $to_type = get_type_information($query);            
+        }
 
         return '',
             structured_answer => {
