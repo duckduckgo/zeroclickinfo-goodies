@@ -51,13 +51,13 @@ DDH.conversions = DDH.conversions || {};
             {name: 'sqdecimeter',   factor: '0.000001 hectare'},
             {name: 'sqcentimeter',  factor: '0.0001 m2'},
             {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
-     
+
              // CUSTOM DURATION UNITS
             {name: "femtosecond",   factor: "0.000000000000001 second"},
             {name: "picosecond",    factor: "0.000000000001 second"},
             {name: "fortnight",     factor: "2 week"},
             {name: "siderealyear",  factor: "1.00001741 year"},
-          
+
             // CUSTOM DIGITAL UNITS
             {name: 'kbit',      factor: '1000 b'},
             {name: 'mbit',      factor: '1000000 b'},
@@ -93,7 +93,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'mibps',         factor: '1024 kibps'},
             {name: 'gibps',         factor: '1024 mibps'},
             {name: 'tibps',         factor: '1024 gibps'},
-            
+
             // CUSTOM ANGLE UNITS
             {name: 'microarcsec', factor: '0.000000000004848 rad'},
             {name: 'milliarcsec', factor: '0.000000004848 rad'},
@@ -161,7 +161,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'terawatt',    factor: '1000 gigawatt'},
             {name: 'petawatt',    factor: '1000 terawatt'},
             {name: 'exawatt',     factor: '1000 petawatt'},
-            
+
             // CUSTOM PRESSURE UNITS
             {name: 'barye',     factor: '0.000001 bar'},
             {name: 'Satm',      factor: '1 atm'},
@@ -179,7 +179,7 @@ DDH.conversions = DDH.conversions || {};
             // CUSTOM VOLUME UNITS
             {name: 'impgallon',     factor: '4.54609 liters'},
             {name: 'usgallon',      factor: '3.7854 liters'},
-            {name: 'usfluidounce',  factor: '0.0295735 liters'},
+            {name: 'usfluidounce',  factor: '0.0078125 usgallon'},
             {name: 'impfluidounce', factor: '0.0284131 liters'},
             {name: 'usquart',       factor: '0.946353 liters'},
             {name: 'impquart',      factor: '1.13652 liters'},
@@ -466,7 +466,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramforce',      name: 'Gram Force' },
                 { symbol: 'ounceforce',     name: 'Ounce Force' },
                 { symbol: 'kilogramforce',  name: 'Kilogram Force' },
-                { symbol: 'metrictonforce', name: 'Ton Force Metric' },				
+                { symbol: 'metrictonforce', name: 'Ton Force Metric' },
             ],
             defaults: ['newton', 'dyne']
         },
@@ -576,7 +576,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cmH2O',  name: 'cmH2O' },
                 { symbol: 'bar',    name: 'Bars' },
                 { symbol: 'barye',  name: 'Barye' },
-                { symbol: 'mPa',    name: 'Millipascal' },                
+                { symbol: 'mPa',    name: 'Millipascal' },
                 { symbol: 'hPa',    name: 'Hectopascal' },
                 { symbol: 'kPa',    name: 'Kilopascal' },
                 { symbol: 'MPa',    name: 'Megapascal' },
@@ -651,7 +651,7 @@ DDH.conversions = DDH.conversions || {};
     } // Units
 
     DDH.conversions.build = function(ops) {
-        
+
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var rawInput = ops.data.raw_input || '1';
@@ -699,7 +699,7 @@ DDH.conversions = DDH.conversions || {};
                             $convert_right.val("");
                         }
                         try {
-                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert() }                            
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert() }
                         } catch(e) {}
                     });
 
@@ -711,13 +711,13 @@ DDH.conversions = DDH.conversions || {};
                             if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert("left") }
                         } catch(e) {}
                     });
-                    
+
                     $convert_left.click(function() {
-                        this.select() 
+                        this.select()
                     });
-                    
+
                     $convert_right.click(function() {
-                        this.select() 
+                        this.select()
                     });
 
                     $select_right.change(function() {
@@ -734,7 +734,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert();
                     });
-                    
+
 
                 });
 
