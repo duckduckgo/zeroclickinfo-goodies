@@ -103,7 +103,7 @@ my $guard = qr/^
                 (?<question>$question_prefix)\s?
                 (?<left_num>$factor_re*|\d+\/\d+)\s?(?<left_unit>$keys)
                 (?:\s
-                    (?<connecting_word>(?:are)?\s?(?:there)?\s?in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?(?:\swhat(?:\sin)?)?|make)\sa?|\?\s?=|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?(?:\swhat(?:\sin)?)?|make)\sa?|\?\s?=|are\s(?:there)?\s?in\sa?|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*|\d+\/\d+)\s?(?:of\s)?(?<right_unit>$keys)\s?
                     (?:conver(?:sion|ter)|calculator|equals(?:\swhat)?)?[\?]?
                 )?
