@@ -5,6 +5,7 @@ use DDG::Goodie;
 use URI::Escape::XS qw(uri_unescape);
 use warnings;
 use strict;
+use Encode;
 my $trigger_words = qr#ur[li]unescape|unescapeur[li]|(unescape ur[li])|decodeur[li]|(decode ur[li])|ur[li]decode|(ur[li] decode)|(ur[li] unescape)#i;
 
 triggers query_raw => qr#%[0-9A-Fa-f]{2}#;
@@ -22,7 +23,7 @@ handle query_raw => sub {
     s/(^\s+)|(\s+$)//;
 
     my $in      = $_;
-    my $decoded = uri_unescape($in);
+    my $decoded = decode_utf8(uri_unescape($in));
 
     if ($decoded =~ /^\s+$/) {
         $decoded =~ s/\r/CReturn/;
