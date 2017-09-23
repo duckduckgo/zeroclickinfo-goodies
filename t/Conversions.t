@@ -695,6 +695,22 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    'how many metres are in 10 yards?' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '10',
+            from_unit => 'yard',
+            to_unit => 'meter',
+            physical_quantity => 'length'
+        })
+    ),
+    'how many metres are there in a mile?' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'mile',
+            to_unit => 'meter',
+            physical_quantity => 'length'
+        })
+    ),
     'how many cm in a metre?' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
