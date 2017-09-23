@@ -931,7 +931,7 @@ DDH.calculator = DDH.calculator || {};
                      */
                     if(DDG.device.isMobile || DDG.device.isMobileDevice) {
                         // mobile
-                        deviceType = 'touchstart';
+                        deviceType = 'touchend';
                     } else {
                         // everything else
                         deviceType = 'click';

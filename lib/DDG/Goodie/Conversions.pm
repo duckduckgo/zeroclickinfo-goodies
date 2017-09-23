@@ -205,6 +205,9 @@ handle query => sub {
     $_ =~ s/"/inch/;
     $_ =~ s/'/foot/;
 
+    # hack around the dropped micro symbol
+    $_ =~ s/μ/micro/;
+
     if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/i){
         my $feetHack = $1 + $2/12;
         $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/i;

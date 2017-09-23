@@ -434,6 +434,9 @@ ddg_goodie_test(
     '2 + cube 66 + 2' => build_test(
         '2 + cube(66) + 2'
     ),
+    '16739317 / 11147731' => build_test(
+        '16739317 / 11147731'
+    ),
 
     'e2e4'                            => undef,
     'cosh(4+-)'                       => undef,

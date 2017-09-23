@@ -1,0 +1,43 @@
+.zci--roman .converter {
+    width: 100%;
+}
+
+.zci--roman .converter__input,
+.zci--roman .converter__output {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: 45%;
+}
+
+.zci--roman .converter__input {
+    margin-right: 1em;
+}
+
+.zci--roman .converter__input__label,
+.zci--roman .converter__output__label {
+    display: block;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+.zci--roman .converter__input__field,
+.zci--roman .converter__output__field {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
+.is-mobile .zci--roman .converter__input,
+.is-mobile .zci--roman .converter__output {
+    display: block;
+    width: 100%;
+}
+
+/* Mobile UI */
+.is-mobile .zci--roman .converter__input {
+    margin-right: 0em;
+}
+
+.is-mobile .zci--roman .converter__output {
+    margin-top: 1em;
+}
