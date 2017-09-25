@@ -125,22 +125,24 @@ my @shorturl_result = (
         }
     });
 
-my @zci_result = (
-    'Zero Click Info is another term for our Instant Answers that show above the search results https://duckduckhack.com',
-    structured_answer => {
-        data => {
-            title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
-            subtitle_image => undef,
-            subtitle_text => 'Learn more about Instant Answers',
-            subtitle_url => 'https://duckduckhack.com'
-        },
-        templates => {
-            group => 'text',
-            options => {
-                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
-            }
-        }
-    });
+
+# Remove during DDH Maintenance
+# my @zci_result = (
+#     'Zero Click Info is another term for our Instant Answers that show above the search results https://duckduckhack.com',
+#     structured_answer => {
+#         data => {
+#             title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
+#             subtitle_image => undef,
+#             subtitle_text => 'Learn more about Instant Answers',
+#             subtitle_url => 'https://duckduckhack.com'
+#         },
+#         templates => {
+#             group => 'text',
+#             options => {
+#                 subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+#             }
+#         }
+#     });
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DuckDuckGo )],
@@ -150,8 +152,6 @@ ddg_goodie_test(
     "ddg tor"                    => test_zci(@tor_result),
     'short URL for duck duck go' => test_zci(@shorturl_result),
     # Other queries
-    'duckduckgo Zero-Click Info'              => test_zci(@zci_result),
-    'ddg zeroclick'                           => test_zci(@zci_result),
     'duckduckgo about'                        => test_zci(@about_result),
     'ddg merch'                               => test_zci(@merch_result),
     'duckduckgo irc'                          => test_zci(@irc_result),
@@ -174,5 +174,9 @@ ddg_goodie_test(
     # Intentionally ignored queries
     irc => undef,
 );
+
+# Remove during DDH Maintenance
+# 'duckduckgo Zero-Click Info'              => test_zci(@zci_result),
+# 'ddg zeroclick'                           => test_zci(@zci_result),
 
 done_testing;
