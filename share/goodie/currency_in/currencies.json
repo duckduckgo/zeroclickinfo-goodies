@@ -1248,9 +1248,9 @@
         "ucwords": "Latvia",
         "currencies": [
             {
-                "shortcode": "LVL",
-                "currency": "Latvian Lats",
-                "string": "Latvian Lats (LVL)"
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
             }
         ]
     },
@@ -1313,9 +1313,9 @@
         "ucwords": "Lithuania",
         "currencies": [
             {
-                "shortcode": "LTL",
-                "currency": "Lithuanian Litas",
-                "string": "Lithuanian Litas (LTL)"
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
             }
         ]
     },
