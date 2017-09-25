@@ -47,21 +47,8 @@ chrome:
   subtitle: "Visit the DuckDuckgo help page for Chrome"
   url: https://duck.co/help/desktop/chrome
 community:
-  title: "Join our growing community"
-  url: https://duckduckhack.com/
-develop:
-  aliases:
-    - developers
-    - improve
-    - relevancy
-    - contribute
-    - contributing
-    - hack
-    - hacking
-    - developer
-  title: "Want to improve our search results?"
-  subtitle: "Visit DuckDuckHack to learn more"
-  url: https://duckduckhack.com/
+  title: "Join our growing community on Reddit"
+  url: https://www.reddit.com/r/duckduckgo/
 doodle:
   title: "Sometimes Dax gets dressed up for special occasions"
   subtitle: "View our past holiday logos"
@@ -84,17 +71,17 @@ facebook:
   subtitle: "Visit the official DuckDuckGo Facebook page"
   url: https://www.facebook.com/duckduckgo
 fathead:
-  title: "Interested in creating a Fathead Instant Answer?"
-  subtitle: "Visit our documentation"
-  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
+  title: "Looking for our open source Fathead Instant Answers?"
+  subtitle: "View them on GitHub"
+  url: https://github.com/duckduckgo/zeroclickinfo-fathead
 firefox:
   title: "Need help with the Firefox browser?"
   subtitle: "Visit the DuckDuckGo help page for Firefox"
   url: https://duck.co/help/desktop/firefox
 goodies:
-  title: "Interested in creating a Goodie Instant Answer?"
-  subtitle: "Visit our documentation"
-  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html
+  title: "Looking for our open source Goodie Instant Answers?"
+  subtitle: "View them on GitHub"
+  url: https://github.com/duckduckgo/zeroclickinfo-goodies
 help:
   title: "Need some help?"
   subtitle: "Visit our help page"
@@ -111,8 +98,8 @@ ia:
     - instantanswer
     - instantanswers
   title: "DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box)"
-  subtitle: "Suggest, develop and learn more about Instant Answers at DuckDuckHack"
-  url: https://duckduckhack.com/
+  subtitle: "See the list of all our Instant Answers"
+  url: https://duck.co/ia
 ie:
   aliases:
     - internetexplorer
@@ -124,13 +111,13 @@ irc:
   subtitle: "Visit #duckduckgo on irc.freenode.net"
   url: https://webchat.freenode.net/?channels=duckduckgo
 longtail:
-  title: "Interested in creating a Longtail Instant Answer?"
-  subtitle: "Visit our documentation"
-  url: https://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
+  title: "Looking for our open source Longtail Instant Answers?"
+  subtitle: "View them on GitHub"
+  url: https://github.com/duckduckgo/zeroclickinfo-longtail
 opensource:
   title: "Looking for the DuckDuckGo open source projects?"
-  subtitle: "Learn more about open source at DuckDuckGo"
-  url: https://duckduckhack.com/
+  subtitle: "View our open source projects on GitHub"
+  url: https://github.com/duckduckgo/
 opera:
   title: "Need help with the Opera browser?"
   subtitle: "Visit the DuckDuckGo help page for Opera"
@@ -170,8 +157,8 @@ short:
   subtitle: "You can also find us at https://ddg.gg"
   url: https://ddg.gg
 spice:
-  title: "Interested in creating a Spice Instant Answer?"
-  subtitle: "Visit our documentation"
+  title: "Looking for our open source Spice Instant Answer?"
+  subtitle: "Visit our GitHub"
   url: https://github.com/duckduckgo/zeroclickinfo-spice
 spread:
   title: "Interested in spreading the word?"
@@ -224,15 +211,34 @@ twitter:
   title: "Looking for us on Twitter?"
   subtitle: "Follow us on @duckduckgo"
   url: https://twitter.com/duckduckgo
-zci:
-  aliases:
-    - zeroclickinfo
-    - zeroclick
-    - 0click
-    - 0clickinfo
-    - zero 0
-    - zero click info
-    - zero-click info
-  title: "Zero Click Info is another term for our Instant Answers that show above the search results"
-  subtitle: "Learn more about Instant Answers"
-  url: https://duckduckhack.com
+searchbox:
+  title: "Want to add DuckDuckGo Search to your website?"
+  subtitle: "Learn more about embedding the DuckDuckGo search box on your website"
+  url: https://duckduckgo.com/search_box
+
+# Removing during DDH Maintenance
+# develop:
+#   aliases:
+#     - developers
+#     - improve
+#     - relevancy
+#     - contribute
+#     - contributing
+#     - hack
+#     - hacking
+#     - developer
+#   title: "Want to improve our search results?"
+#   subtitle: "Visit DuckDuckHack to learn more"
+#   url: https://duckduckhack.com/
+# zci:
+#   aliases:
+#     - zeroclickinfo
+#     - zeroclick
+#     - 0click
+#     - 0clickinfo
+#     - zero 0
+#     - zero click info
+#     - zero-click info
+#   title: "Zero Click Info is another term for our Instant Answers that show above the search results"
+#   subtitle: "Learn more about Instant Answers"
+#   url: https://duckduckhack.com
