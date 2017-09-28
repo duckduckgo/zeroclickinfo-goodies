@@ -387,6 +387,12 @@ ddg_goodie_test(
     'fact 20' => build_test(
         '20!'
     ),
+    '.32 * 100' => build_test(
+        '.32 * 100'
+    ),
+    '.7 + .32' => build_test(
+        '.7 + .32'
+    ),
 
     ## Trig testing
     'tan 45' => build_test(
@@ -551,6 +557,8 @@ ddg_goodie_test(
     '2/3/09' => undef,
     '21/12/2012' => undef,
     '12/21/2012' => undef,
+    '.7zip * 100' => undef,
+    '.tar64 + 0.3' => undef,
 );
 
 done_testing;
