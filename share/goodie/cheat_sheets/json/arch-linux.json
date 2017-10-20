@@ -19,12 +19,13 @@
     ],
     "template_type" : "terminal",
     "section_order": [
-       "Pacman - Arch Linux Package Manager",
-       "Yaourt - A wrapper for the AUR and including regular packageses as well" ,
+       "Pacman - Package manager utility",
+       "Yaourt - Yaourt is a pacman frontend with a lot of features. Including AUR/ABS support, colorized output, interactive search/install, save/restore Alpm database, orphans detection, manage
+       .pac* files," ,
        "Removing Packages"
     ],
     "sections": {
-        "Pacman - Arch Linux Package Manager": [
+        "Pacman - Package manager utility": [
             {
                 "key": "pacman -S xyz",
                 "val": "Install package xyz"
@@ -78,7 +79,7 @@
                 "val": "Download a package without installing it"
             }
         ],
-        "Yaourt - A wrapper for the AUR and regular packages": [
+        "Yaourt - is a pacman frontend with a lot of features.": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
