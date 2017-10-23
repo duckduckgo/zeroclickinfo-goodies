@@ -536,11 +536,11 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
-    '1 gpa to megapascle' => test_zci(
+    '1 gpa to megapascal' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
             from_unit => 'gpa',
-            to_unit => 'megapascle',
+            to_unit => 'megapascal',
             physical_quantity => 'pressure'
         })
     ),
