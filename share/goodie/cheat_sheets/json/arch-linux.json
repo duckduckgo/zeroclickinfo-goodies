@@ -13,19 +13,19 @@
         "pacman",
         "yaourt",
         "antergos",
-        "antegros linux",
+	"antergos linux",    
         "manjaro",
         "manjaro linux",
         "chakra linux"
     ],
     "template_type" : "terminal",
     "section_order": [
-       "Pacman - Arch Linux Package Manager",
-       "Yaourt - A wrapper for the AUR and regular packages" ,
+       "Pacman - Package manager utility",
+       "Yaourt - Yaourt is a pacman frontend with added features",
        "Removing Packages"
     ],
     "sections": {
-        "Pacman - Arch Linux Package Manager": [
+        "Pacman - Package manager utility": [
             {
                 "key": "pacman -S xyz",
                 "val": "Install package xyz"
@@ -75,11 +75,11 @@
                 "val": "Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR)"
             },
             {
-                "key": "pacman -Sw package_name",
-                "val": "Download a package without installing it"
+                "key": "pacman -Sw xyz",
+                "val": "Download package xyz without installing it"
             }
         ],
-        "Yaourt - A wrapper for the AUR and regular packages": [
+        "Yaourt - Yaourt is a pacman frontend with added features": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
