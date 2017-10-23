@@ -19,9 +19,8 @@
     ],
     "template_type" : "terminal",
     "section_order": [
-       "Pacman - Package manager utility",
-       "Yaourt - Yaourt is a pacman frontend with a lot of features. Including AUR/ABS support, colorized output, interactive search/install, save/restore Alpm database, orphans detection, manage
-       .pac* files," ,
+       "Pacman - Package manager utility.",
+       "Yaourt - Yaourt is a pacman frontend with a lot of features.",
        "Removing Packages"
     ],
     "sections": {
