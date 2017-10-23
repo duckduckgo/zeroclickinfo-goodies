@@ -543,7 +543,7 @@ ddg_goodie_test(
             to_unit => 'megapascle',
             physical_quantity => 'pressure'
         })
-    )
+    ),
     # DURATION
     '36 months to years' => test_zci(
         '', structured_answer => make_answer({
