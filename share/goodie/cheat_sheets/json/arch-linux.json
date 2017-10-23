@@ -20,12 +20,12 @@
     ],
     "template_type" : "terminal",
     "section_order": [
-       "Pacman - Package manager utility.",
-       "Yaourt - Yaourt is a pacman frontend with a lot of features.",
+       "Pacman - Package manager utility",
+       "Yaourt - Yaourt is a pacman frontend with added features",
        "Removing Packages"
     ],
     "sections": {
-        "Pacman - Package manager utility.": [
+        "Pacman - Package manager utility": [
             {
                 "key": "pacman -S xyz",
                 "val": "Install package xyz"
@@ -79,7 +79,7 @@
                 "val": "Download package xyz without installing it"
             }
         ],
-        "Yaourt - Yaourt is a pacman frontend with a lot of features.": [
+        "Yaourt - Yaourt is a pacman frontend with added features": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
