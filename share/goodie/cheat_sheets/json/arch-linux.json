@@ -13,6 +13,7 @@
         "pacman",
         "yaourt",
         "antergos",
+	"antergos linux",    
         "manjaro",
         "manjaro linux",
         "chakra linux"
@@ -24,7 +25,7 @@
        "Removing Packages"
     ],
     "sections": {
-        "Pacman - Package manager utility": [
+        "Pacman - Package manager utility.": [
             {
                 "key": "pacman -S xyz",
                 "val": "Install package xyz"
@@ -74,11 +75,11 @@
                 "val": "Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR)"
             },
             {
-                "key": "pacman -Sw package_name",
-                "val": "Download a package without installing it"
+                "key": "pacman -Sw xyz",
+                "val": "Download package xyz without installing it"
             }
         ],
-        "Yaourt - is a pacman frontend with a lot of features.": [
+        "Yaourt - Yaourt is a pacman frontend with a lot of features.": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
