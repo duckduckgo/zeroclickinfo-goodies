@@ -490,7 +490,7 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 { symbol: 'decameter',        name: 'Decameter' },
                 { symbol: 'millimeter',       name: 'Millimeter' },
-                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'decimeter',        name: 'Decimeter' },
                 { symbol: 'micrometer',       name: 'Micrometer' },
                 { symbol: 'nanometer',        name: 'Nanometer' },
                 { symbol: 'picometer',        name: 'Picometer' },
