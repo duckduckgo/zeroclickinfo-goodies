@@ -539,8 +539,16 @@ ddg_goodie_test(
     '1 gpa to megapascal' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
-            from_unit => 'gpa',
-            to_unit => 'megapascal',
+            from_unit => 'GPa',
+            to_unit => 'MPa',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '1 gpa to gbar' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'GPa',
+            to_unit => 'Gbar',
             physical_quantity => 'pressure'
         })
     ),
