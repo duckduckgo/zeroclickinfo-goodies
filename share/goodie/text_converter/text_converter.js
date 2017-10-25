@@ -129,14 +129,8 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
         binaryToDecimal: function(binary) {
-            var octet = binary.replace(/\s/g, "").match(/.{1,8}/g);
-            var dec_cache = [];
-
-            for(var i = 0; i < octet.length; i++) {
-                dec_cache.push(parseInt(octet[i], 2));
-            }
-
-            return dec_cache.join(" ");
+            binary = binary.replace(/\s+/g, "");
+            return parseInt(binary, 2);
         },
 
         binaryToText: function(text) {
@@ -146,19 +140,28 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
         binaryToHex: function(binaryString) {
-            var binaryString = binaryString.replace(/\s/g, "");
+            var binaryString = binaryString.replace(/\s+/g, "");
             var output = "";
 
             // For every 4 bits in the binary string
-            for(var i = 0; i < binaryString.length; i += 4) {
+            for(var i = -4; i >= -binaryString.length; i -= 4) {
                 var bytes = binaryString.substr(i, 4);
                 var decimal = parseInt(bytes, 2); // convert to dec then hex
                 var hex = decimal.toString(16);
 
-                output += hex;
+                output = hex + output;
             }
 
-            return output.replace(/[^\dA-Za-z]/g, "").replace(/(.{2})/g, "$1 ").trim();
+            var rest = binaryString.length % 4;
+
+            if(rest != 0) {
+                var bytes = binaryString.substr(0, rest);
+                var decimal = parseInt(bytes, 2);
+
+                output = decimal.toString(16) + output;
+            }
+
+            return output.toUpperCase();
         },
 
         /**
