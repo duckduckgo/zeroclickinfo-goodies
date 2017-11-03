@@ -50,7 +50,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'are',           factor: '0.01 hectare'},
             {name: 'sqdecimeter',   factor: '0.000001 hectare'},
             {name: 'sqcentimeter',  factor: '0.0001 m2'},
-            {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
+            {name: 'sqmillimeter',  factor: '0.01 sqcentimeter'},
 
              // CUSTOM DURATION UNITS
             {name: "femtosecond",   factor: "0.000000000000001 second"},
@@ -490,7 +490,7 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 { symbol: 'decameter',        name: 'Decameter' },
                 { symbol: 'millimeter',       name: 'Millimeter' },
-                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'decimeter',        name: 'Decimeter' },
                 { symbol: 'micrometer',       name: 'Micrometer' },
                 { symbol: 'nanometer',        name: 'Nanometer' },
                 { symbol: 'picometer',        name: 'Picometer' },
