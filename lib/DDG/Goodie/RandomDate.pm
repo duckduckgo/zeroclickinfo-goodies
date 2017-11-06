@@ -48,7 +48,7 @@ my %supports_range = map { $_ => $date_re } (
 my @standard_query_forms = keys %standard_queries;
 
 my @blacklist = (
-    '\\%{[^}]*}', # Access to any DateTime method.
+    '\\%\\{[^}]*\\}', # Access to any DateTime method.
 );
 
 my $blacklist_re = join '|', map { "($_)" } @blacklist;
