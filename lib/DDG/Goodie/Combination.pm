@@ -47,7 +47,7 @@ handle query => sub {
     }
 
     #Return no result if overflow
-    return if $result eq '-nan' or $result eq 'nan';
+    return if $result eq '-nan' or $result eq 'nan' or $result eq 'NaN';
 
     my $formatted_result = $style->for_display($result);
 
