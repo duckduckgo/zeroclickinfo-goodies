@@ -23,7 +23,7 @@ install:
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org --mirror http://duckpan.org --mirror-only
 language: perl
 perl:
-  - 5.26
+  - 5.16
 script:
   - jasmine-node --test-dir spec/
   - prove -lr -j1 t
