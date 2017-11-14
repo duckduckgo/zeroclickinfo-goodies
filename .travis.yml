@@ -6,7 +6,6 @@ cache:
   directories:
     - $HOME/.cpanm
     - $HOME/.nvm
-    - $HOME/perl5/perlbrew/perls/5.16/lib
     - $HOME/perl5/perlbrew/perls/5.26/lib
     - /var/tmp
 addons:
@@ -24,7 +23,6 @@ install:
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org --mirror http://duckpan.org --mirror-only
 language: perl
 perl:
-  - 5.16
   - 5.26
 script:
   - jasmine-node --test-dir spec/
