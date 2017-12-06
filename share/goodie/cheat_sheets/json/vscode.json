@@ -8,8 +8,27 @@
     },
     "aliases": ["visual studio code", "vs code"],
     "template_type": "keyboard",
-    "section_order": ["Basic Editing", "Rich Languages Editing", "Navigation", "Editor/Window Management", "File Management", "Display", "Debug", "Tasks"],
+    "section_order": ["General","Basic Editing", "Rich Languages Editing", "Navigation", "Editor/Window Management", "File Management", "Display", "Debug", "Tasks"],
     "sections": {
+        "General": [{
+            "key": "[Ctrl] [Shift] [P]",
+            "val": "Show Command Palette"
+        }, {
+            "key": "[Ctrl] [P]",
+            "val": "Quick Open, Go to File.."
+        }, {
+            "key": "[Ctrl] [Shift] [N]",
+            "val": "New window/instance"
+        }, {
+            "key": "[Ctrl] [Shift] [W]",
+            "val": "Close window/instance"
+        }, {
+            "key": "[Ctrl] [,]",
+            "val": "User Settings"
+        }, {
+            "key": "[Ctrl] [K] [S]",
+            "val": "Keyboard Shortcuts"
+        }],
         "Basic Editing": [{
             "key": "[Ctrl] [X]",
             "val": "Cut line (empty selection)"
