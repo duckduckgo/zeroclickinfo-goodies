@@ -230,3 +230,9 @@ Freenom World:
     - 80.80.80.80
     - 80.80.81.81
   ip6: []
+Quad9:
+  info_url: https://quad9.net/
+  ip4:
+    - 9.9.9.9
+  ip6:
+    - 2620:fe::fe
