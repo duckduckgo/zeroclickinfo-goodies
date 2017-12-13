@@ -193,7 +193,7 @@
             },
             {
                 "key": "[C-c] [']",
-                "val": "cycle throigh agenda file list"
+                "val": "cycle through agenda file list"
             },
             {
                 "key": "[C-c] [C-x] [</>]",
