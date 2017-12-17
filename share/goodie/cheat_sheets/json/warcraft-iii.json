@@ -1,5 +1,5 @@
 {
-  "id": "warcraft_iii_cheat_codes",
+  "id": "warcraft_iii_cheat_codes_cheat_sheet",
   "name": "Warcraft III Cheat Codes",
   "description": "To use a cheat code, press the enter key, type in the code, and press enter again. The message \"Cheat Code Enabled\" should appear. Note that these codes only work in single-player missions and custom maps.",
   "metadata": {
@@ -88,7 +88,7 @@
         "key": "SharpAndShiny"
       }
     ],
-    "Time": [
+    "Time and FOW": [
       {
         "val": "Remove fog of war",
         "key": "IseeDeadPeople"
