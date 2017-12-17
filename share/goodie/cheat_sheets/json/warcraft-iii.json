@@ -1,0 +1,116 @@
+{
+  "id": "warcraft_iii_cheat_codes",
+  "name": "Warcraft III Cheat Codes",
+  "description": "To use a cheat code, press the enter key, type in the code, and press enter again. The message \"Cheat Code Enabled\" should appear. Note that these codes only work in single-player missions and custom maps.",
+  "metadata": {
+    "sourceName": "Warcraft III - Cheat Codes",
+    "sourceUrl": "http://classic.battle.net/war3/cheatcodes.shtml"
+  },
+  "aliases": [
+    "wc3",
+    "war3"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Resources",
+    "Buildings and units",
+    "Victory",
+    "Research",
+    "Time and FOW",
+    "Frozen Throne"
+  ],
+  "sections": {
+    "Resources": [
+      {
+        "val": "Gives you X Gold",
+        "key": "KeyserSoze [amount]"
+      },
+      {
+        "val": "Gives you X Lumber",
+        "key": "LeafitToMe [amount]"
+      },
+      {
+        "val": "Gives you X Gold and Lumber",
+        "key": "GreedIsGood [amount]"
+      },
+      {
+        "val": "Removes food limit",
+        "key": "PointBreak"
+      }
+    ],
+    "Buildings and units": [
+      {
+        "val": "Speeds construction of buildings and units",
+        "key": "WarpTen"
+      },
+      {
+        "val": "Disable tech tree requirements",
+        "key": "Synergy"
+      },
+      {
+        "val": "Fast Death/Decay",
+        "key": "IocainePowder"
+      },
+      {
+        "val": "God mode",
+        "key": "WhosYourDaddy"
+      },
+      {
+        "val": "Unlimited Mana",
+        "key": "ThereIsNoSpoon"
+      },
+      {
+        "val": "Level jump",
+        "key": "Motherland [race] [level]"
+      }
+    ],
+    "Victory": [
+      {
+        "val": "No defeat",
+        "key": "StrengthAndHonor"
+      },
+      {
+        "val": "Instant defeat",
+        "key": "SomebodySetUpUsTheBomb"
+      },
+      {
+        "val": "Instant victory",
+        "key": "AllYourBaseAreBelongToUs"
+      }
+    ],
+    "Research": [
+      {
+        "val": "Enable research",
+        "key": "WhoIsJohnGalt"
+      },
+      {
+        "val": "Research upgrades",
+        "key": "SharpAndShiny"
+      }
+    ],
+    "Time and FOW": [
+      {
+        "val": "Remove fog of war",
+        "key": "IseeDeadPeople"
+      },
+      {
+        "val": "Set time of day to dawn",
+        "key": "RiseAndShine"
+      },
+      {
+        "val": "Set time of day to dusk",
+        "key": "LightsOut"
+      },
+      {
+        "val": "If a time is specified, time of day is set to that, otherwise time of day is alternately halted/resumed",
+        "key": "DayLightSavings [time]"
+      }
+    ],
+    "Frozen Throne": [
+      {
+        "val": "Plays a special song (WarCraft III: The Frozen Throne Only)",
+        "key": "TenthLevelTaurenChieftain"
+      }
+    ]
+  }
+}
