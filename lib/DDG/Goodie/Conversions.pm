@@ -281,7 +281,7 @@ handle query => sub {
         || (   "" eq $left_num
             && "" eq $right_num
             && $question !~ qr/convert/i
-            && $connecting_word !~ qr/to/i ))
+            && $connecting_word !~ qr/to|=/i ))
     {
         $factor = $right_num;
         @matches = reverse @matches;
