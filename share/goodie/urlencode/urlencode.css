@@ -1,0 +1,7 @@
+.zci--urlencode .zci__content pre {
+    /* word-wrap is alias used in IE, but accepted everywhere */
+    word-wrap: break-word;
+    /* overflow-wrap is new name for word-wrap */
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
