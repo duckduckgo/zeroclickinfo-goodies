@@ -24,20 +24,16 @@ handle remainder => sub {
     my $encoded_url = uri_escape($in);
 
     my $text = "Percent-encoded URL: $encoded_url";
+    my $subtitle = "URL percent-encode: $in";
 
     return $text, structured_answer => {
         data => {
-            title => 'Percent-encode',
-            orig_input => $in,
-            description => $encoded_url
+            title => $encoded_url,
+            subtitle => $subtitle
         },
         templates => {
             group => 'text',
-            moreAt => 0,
-            options => {
-                content => 'DDH.urlencode.content',
-                subtitle_content => 'DDH.urlencode.subtitle_content'
-            }
+            moreAt => 0
         }
     };
 };

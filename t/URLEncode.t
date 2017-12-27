@@ -17,17 +17,12 @@ sub build_answer {
 
     return sprintf("Percent-encoded URL: %s",$answer) , structured_answer => {
         data => {
-            title => 'Percent-encode',
-            orig_input => $sub,
-            description => $answer
+            title => $answer,
+            subtitle => "URL percent-encode: $sub"
         },
         templates => {
             group => 'text',
-            moreAt => 0,
-            options => {
-                content => 'DDH.urlencode.content',
-                subtitle_content => 'DDH.urlencode.subtitle_content'
-            }
+            moreAt => 0
         }
     }
 }
