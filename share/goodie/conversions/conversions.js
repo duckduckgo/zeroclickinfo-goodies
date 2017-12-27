@@ -619,7 +619,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'millilitre',     name: 'Millilitre' },
                 { symbol: 'hectolitre',     name: 'Hectolitre' },
                 { symbol: 'decalitre',      name: 'Decalitre' },
-                { symbol: 'deciliter',      name: 'Decilitre' },
+                { symbol: 'decilitre',      name: 'Decilitre' },
                 { symbol: 'centilitre',     name: 'Centilitre' },
                 { symbol: 'cc',             name: 'Cubic Centimeter' },
                 { symbol: 'cuin',           name: 'Cubic Inch' },

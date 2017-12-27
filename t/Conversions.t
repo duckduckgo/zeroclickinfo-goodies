@@ -2202,6 +2202,14 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    '1/3 cups in deciliters' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '0.3333',
+            from_unit => 'uscup',
+            to_unit => 'decilitre',
+            physical_quantity => 'volume'
+        })
+    ),
     'miles to nautical' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
@@ -2211,7 +2219,7 @@ ddg_goodie_test(
         })
     ),
 
-    # single unit queries with no number 
+    # single unit queries with no number
     'grams' => test_zci(
         '', structured_answer => make_answer({
             raw_input => '1',
