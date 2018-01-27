@@ -10,7 +10,7 @@ DDH.text_converter = DDH.text_converter || {};
         $convert_selects,
         $convert_from_select,
         $convert_to_select,
-        $convert_from_textarea, 
+        $convert_from_textarea,
         $convert_to_textarea;
 
     // TextConverter: A singleton object that performs all the text conversions
@@ -29,7 +29,10 @@ DDH.text_converter = DDH.text_converter || {};
             var to_type = $convert_to_select.val();
             var from = $convert_from_textarea.val();
 
-            if(from_type === "binary" && to_type === "hexadecimal") {
+            if(from_type === "decimal" && to_type === "binary") {
+                return parseInt(from, 10).toString(2);
+
+            } else if(from_type === "binary" && to_type === "hexadecimal") {
                 return TextConverter.binaryToHex(from);
 
             } else if(from_type === "binary" && to_type === "base64") {
