@@ -39,3 +39,4 @@ json indent
 json format check
 lint json
 indent json
+json
