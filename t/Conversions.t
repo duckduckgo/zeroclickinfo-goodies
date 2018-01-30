@@ -536,6 +536,22 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
+    '1 gpa to megapascal' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'GPa',
+            to_unit => 'MPa',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '1 gpa to gbar' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'GPa',
+            to_unit => 'Gbar',
+            physical_quantity => 'pressure'
+        })
+    ),
     # DURATION
     '36 months to years' => test_zci(
         '', structured_answer => make_answer({

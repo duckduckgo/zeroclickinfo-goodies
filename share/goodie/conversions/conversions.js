@@ -587,7 +587,8 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'dbar',   name: 'Decibar' },
                 { symbol: 'kbar',   name: 'Kilobar' },
                 { symbol: 'Mbar',   name: 'Megabar' },
-                { symbol: 'Gbar',   name: 'Gigabar' }
+                { symbol: 'Gbar',   name: 'Gigabar' },
+                { symbol: 'GPa',    name: 'Gigapascal' },
             ],
             defaults: ['Pa', 'psi']
         },
