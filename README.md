@@ -1,4 +1,4 @@
-# In Maintenance [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.svg?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+# In Maintenance [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.svg?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies) [![Open Source Helpers](https://www.codetriage.com/duckduckgo/zeroclickinfo-goodies/badges/users.svg)](https://www.codetriage.com/duckduckgo/zeroclickinfo-goodies)
 
 DuckDuckHack is now in maintenance mode. We are only accepting pull requests for essential bug fixes. For more information see [duckduckhack.com](https://duckduckhack.com). 
 
