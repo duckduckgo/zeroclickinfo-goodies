@@ -112,7 +112,7 @@
       ],
       "Basics" : [
          {
-            "val" : "Ich heiße...",
+            "val" : "Ich heiße …",
             "key" : "My name is..."
          },
          {
@@ -142,7 +142,7 @@
       ],
       "Travelling" : [
          {
-            "val" : "Biegen Sie links ab.",
+            "val" : "Bitte links abbiegen.",
             "key" : "Turn left."
          },
          {
@@ -166,11 +166,11 @@
             "key" : "Do you have a city map?"
          },
          {
-            "val" : "Bitte halten Sie hier an.",
+            "val" : "Bitte hier anhalten.",
             "key" : "Please stop here."
          },
          {
-            "val" : "Biegen Sie rechts ab.",
+            "val" : "Bitte rechts abbiegen.",
             "key" : "Turn right."
          },
          {
