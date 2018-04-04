@@ -1,0 +1,318 @@
+{
+
+    "id": "indian_freedom_movement_cheat_sheet",
+
+    "name": "indian freedom movement",
+
+    "description": "Records the major events leading to India's freedom in a chronological order",
+
+    "metadata": {
+
+        "sourceName": "Indian freedom",
+
+        "sourceUrl": "https://en.wikipedia.org/wiki/Indian_independence_movement"
+
+    },
+
+    "template_type": "reference",
+
+    "aliases": [
+
+        "indian freedom chronology",
+
+        "indian political history",
+
+        "indian independence movement",
+
+        "indian freedom struggle",
+
+        "indian freedom struggle",
+
+        "indian independence timeline"
+
+    ],
+
+    "section_order": [
+
+        "British Colonialism",
+
+        "The Rebellion of 1857",
+
+        "Rise of Organised Movements",
+
+        "Partition of Bengal",
+
+        "All India Muslim League",
+
+        "Gandhi period" ,      
+
+        "Azad Hind Fauz",
+
+        "Quit India Movement",
+
+        "Sovereignty and partition of India"
+
+    ],
+
+    "sections": {
+
+        "British Colonialism": [
+
+            {
+
+                "key": "Setting up of British East India Company",
+
+                "val": "31 December 1600"
+
+            },
+
+            {
+
+                "key": "Battle of Plassey",
+
+                "val": "1757"
+
+            }
+        ],
+
+        
+        "The Rebellion of 1857":[
+            {
+
+                "key": "The Revolt of 1857",
+
+                "val": "1857"
+
+            }
+        ],
+
+            
+        "Rise of Organised Movements":[
+
+            {
+
+                "key": "Formation of Indian National Congress",
+
+                "val": "1885"
+
+            }],
+
+        "Partition of Bengal":[    
+
+            {
+
+                "key": "Partition of Bengal announced by Lord Curzon",
+
+                "val": "July, 1905"
+
+            },
+
+            {
+
+                "key": "Partition Of Bengal",
+
+                "val": "16 October, 1905"
+
+            }
+            ],
+        "All India Muslim League":[    
+            {
+
+                "key": "All India Muslim League founded by Nawab Salimullah of Dacca at Dacca",
+
+                "val": "31 December,1906"
+
+            },
+
+            {
+
+                "key": "Surat Session of Congress, where Congress is split into Moderates and Extremists",
+
+                "val": "1907"
+
+            },
+
+            {
+
+                "key": "Morley-Minto Reforms, separate electorates for Hindus and Muslims introduced",
+
+                "val": "1909"
+
+            },
+
+            {
+
+                "key": "Capital shifted from Calcutta to Delhi",
+
+                "val": "1911"
+
+            },
+
+            {
+
+                "key": "Establishment of Home Rule by Bal Gangadhar Tilak",
+
+                "val": "April 1916"
+
+            },
+
+            {
+
+                "key": "Lucknow Pact- Agreement signed between Congress and Muslim League",
+
+                "val": "December 1916"
+
+            }],
+        "Gandhi period":[
+
+            {
+
+                "key": "Champaran Satyagraha- First satyagraha of Mahatma Gandhi",
+
+                "val": "1917"
+
+            },
+
+            {
+
+                "key": "Rowlatt Acts passed",
+
+                "val": "16th February 1919"
+
+            },
+
+            {
+
+                "key": "Jallianwala Bagh Massacre",
+
+                "val": "13 April, 1919"
+
+            },
+
+            {
+
+                "key": "Non-Cooperation Movement launched by Mahatma Gandhi",
+
+                "val": "1920"
+
+            },
+
+            {
+
+                "key": "Withdrawl of Non-Cooperation Movement by Mahatma Gandhi, formation of Swaraj party by Motilal Nehru, C.R. Das and N.C. Kelkar",
+
+                "val": "1922"
+
+            },
+
+            {
+
+                "key": "Simon Commission arrives in India",
+
+                "val": "3 February 1928"
+
+            },
+
+            {
+
+                "key": "Poorna Swaraj Declaration in Lahore Session",
+
+                "val": "December 1929"
+
+            },
+
+            {
+
+                "key": "Dandi March- Start of Civil Disobedience Movement",
+
+                "val": "12 March 1930"
+
+            },
+             
+            {
+
+                "key": "Government of India Act",
+
+                "val": "1935"
+
+            }
+
+        ],    
+        "Azad Hind Fauz":[
+
+             {
+
+                "key": "Formation of All India Forward Bloc by Netaji Subhas Chandra Bose",
+
+                "val": "22 June 1939"
+
+            },
+
+            {
+
+                "key": "Formation of Indian National Army by Subhas Chandra Bose",
+
+                "val": "1 September 1942"
+
+            }
+
+
+        ],
+
+        "Quit India Movement":[
+
+              {
+
+                "key": "Quit India Movement",
+
+                "val": "1942"
+
+            },
+
+            {
+
+                "key": "Wavell Plan announced in Shimla Conference",
+
+                "val": "1945"
+
+            }
+
+        ],
+
+        "Sovereignty and partition of India":[
+             
+             {
+
+                "key": "Cabinet Mission for formation of interim government and means of transfer of power",
+
+                "val": "1946"
+
+            },
+
+            {
+
+                "key": "Mountbatten Plan",
+
+                "val": "3 June 1947"
+
+            },
+
+            {
+
+                "key": "Partition of India and Indian Independence Act",
+
+                "val": "14 August 1947"
+
+            },
+
+            {
+
+                "key": "Independence Day of India",
+
+                "val": "15 August 1947"
+
+            }
+        
+        ]
+    }    
+}
