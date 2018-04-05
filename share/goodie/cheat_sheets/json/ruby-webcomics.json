@@ -92,16 +92,6 @@
                 "val": "Returns true if the comic book series has chapters. Returns false otherwise"
             }
         ],
-        "Comics Directory Helper": [
-            {
-                "key": "return_page(series_path, page = 0)",
-                "val": "Returns a specified page. It takes two arguments; series_path should be the path to the series folder, and the page should be the index to the page you want to be returned from the array. By default, it returns the first page"
-            },
-            {
-                "key": "does_this_series_have_chapters?(series_path)",
-                "val": "Returns true if the comic book series has chapters. Returns false otherwise."
-            }
-        ],
         "Comics Engine": [
             {
                 "key": "return_an_array_of_entries_without_image_files(array)",
