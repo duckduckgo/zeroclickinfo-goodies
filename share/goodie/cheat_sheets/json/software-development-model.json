@@ -1,0 +1,109 @@
+{
+    "id": "software_development_model_cheat_sheet",
+    "name": "software development model",
+    "description": "Basic differences between the software models",
+
+    "metadata": {
+        "sourceName": "Alsudragonbook",
+        "sourceUrl" : "https://melsatar.blog/2012/03/15/software-development-life-cycle-models-and-methodologies/"
+    },
+
+    "aliases": [
+        "software development models","software models","s/w models","s/w development models"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Waterfall Model",
+        "Prototype Model",
+        "Iterative Enhancement Model",
+        "Spiral Model"
+        
+    ],
+
+    "sections": {
+        "Waterfall Model": [
+            {
+                "key": "Property",
+                "val": "Simplest process model that states that phases are organized linearly one after another.Sequence of activities are: requirements Analysis, Project planning, System design, detailed design, coding & unit testing, system integration & testing."
+
+            },
+            {
+                "key": "Steps",
+                "val": "System feasibility,Req Analysis & Project Planning,System design,detailed design,Coding,Testing and integration,Installation, Operations Maintenance"
+            },
+            {
+                "key": "Output",
+                "val": "Feasibility Report,Requirements document & Project Plan,System design Document,Detailed design document,Programs,Thest plan, Final code, test report & manuals,Installation report"
+            },
+            {
+                "key": "Limitations",
+                "val": "Assumes that requirements of a system can be frozen before design begins. This is possible for existing manual systems. But for entirely new system, determining the system requirements is very difficult as user himself may not know the exact requirements . So having unchanging (or a very few changing) requirements is unrealistic in s/w projects."
+            }
+            ],
+         "Prototype Model" :[    
+            {
+                "key": "Property",
+                "val": "It deals with the first two problems of waterfall model. Instead of freezing the specifications before any design or coding can proceed, a prototype is built based on the currently known requirements. Development of the prototype obviously undergoes design, coding, testing but each of these phases is not done very formally as there is scope to enhance it further."
+            },
+            {
+                "key": "Steps",
+                "val": "Req Analysis,Project Planning,Coding,Testing and integration"
+           },
+            {
+                 "key": "Output",
+                "val": "Feasibility Report,Requirements document & Project Plan,Detailed design document,Programs,Final code,test report & manuals"
+            },
+            {
+                "key": "Limitations",
+                "val": "all the problems of waterfall model is not solved here"
+            }
+            
+            ],
+        "Iterative Enhancement Model" : [   
+            
+             {
+                "key": "Property",
+                "val": "This counters the third limitation of waterfall model & tries to combine the benefits of both waterfall & prototype model.Basic idea is that the software is developed in increments, each increment adding some functional capability to the system, until full system is implemented."
+            },
+            
+             {
+                "key": "Steps",
+                "val": "design,Implement,Analysis"
+            },
+             {
+                "key": "Limitations",
+                "val": "At each step, extensions & design modifications can be made. It results in BETTER TESTING as testing an increment is easier than testing the entire system as in the waterfall model.Furthermore, the increments provide valuable feedback to the client for determining the final requirements of the system like in prototype model."
+                },
+             {
+                "key": "Output",
+                "val": "A simple implementation for a subset of the overall problem is done first. This subset contains the key aspects of the problem.A project control list is created that contains, in order , all those tasks that must be performed to obtain the final implementation. This list gives an idea at any given step from the final system. The project control list guides the iteration steps & keeps track of all the tasks that must be done"
+            }
+             
+        ],
+        "Spiral Model" : [   
+            
+             {
+                "key": "Property",
+                "val": "New Model proposed by Boehm.Activities in this model are spirally arranged.The spiral has many cycles, the radial dimension represents cumulative cost incurred in accomplishing the steps done so far & the angular dimension represents the progress made in completing each cycle of the spiral."
+            },
+            
+             {
+                "key": "Steps",
+                "val": "elaborating objectives,evaluate the risks,system is chosen."
+            },
+             {
+                "key": "Limitations",
+                "val": "Risk is a concept of something going wrong or different from the normal course in a process. For ex; intention is to use a good programming language, but risk is that no suitable compiler is available, Here, risk is resolved by a market survey of what compilers are available & use a programming language matching with that,"
+                },
+             {
+                "key": "Output",
+                "val": "Key characteristic of this model is assessment of management risks at regular stages in the project & the initiation of actions to counteract these risks. Before each cycle, a risk is initiated & at the end of each cycle, a review procedure assesses whether to move on to the next cycle of the spiral."
+            }
+             
+             
+        ]
+
+    }
+}
