@@ -3,8 +3,6 @@
     "name": "Git",
     "description": "Git help",
     "metadata": {
-        "sourceName": "GitHub",
-        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet",
         "sourceName": "Pro Git",
         "sourceUrl": "https://git-scm.com/book/en/v2/Getting-Started-Git-Basics"
     },
