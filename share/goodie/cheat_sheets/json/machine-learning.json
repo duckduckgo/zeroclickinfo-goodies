@@ -23,7 +23,6 @@
       "Probabilistic Graphical Models",
       "Ensemble Techniques"
    ],
-   "description" : "Types of Machine Learning Algorithms",
    "sections" : {
       "Regression Algorithms" : [
          {
@@ -226,7 +225,7 @@
             "key" : "Gradient Boosting Machines (GBM)",
             "link" : "https://en.wikipedia.org/wiki/Gradient_boosting"
          },
-         {         
+         {
             "key" : "Random Forest",
             "link" : "https://en.wikipedia.org/wiki/Random_forest"
          }

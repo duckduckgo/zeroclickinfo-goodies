@@ -113,6 +113,74 @@
             {
                 "key": "[Ctrl] [Shift], [Q]",
                 "val": "Jump to Editor Window"
+            },
+            {
+                "key": "[Ctrl] [X]",
+                "val": "Cut"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste"
+            },
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo last action"
+            },
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Redo last (undone) action"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Delete Line"
+            },
+            {
+                "key": "[Alt] [↑]",
+                "val": "Move current line or selection Up"
+            },
+            {
+                "key": "[Alt] [↓]",
+                "val": "Move current line or selection down"
+            },
+            {
+                "key": "[Ctrl] [Alt] [↑]",
+                "val": "Duplicate current line or selection Up"
+            },
+            {
+                "key": "[Ctrl] [Alt] [↓]",
+                "val": "Duplicate current line or selection down"
+            },
+            {
+                "key": "[Ctrl] [Delete]",
+                "val": "Delete next word"
+            },
+            {
+                "key": "[Ctrl] [Backspace]",
+                "val": "Delete previous word"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Enter line below current line"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Enter line above current line"
+            },
+            {
+                "key": "Insert",
+                "val": "Switch between insert and overwrite mode"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Y]",
+                "val": "Change selection to all lower case"
+            },
+            {
+                "key": "[Shift] [Ctrl] [X]",
+                "val": "Change selection to all upper case"
             }
         ],
         "Navigate in Editor": [
@@ -262,77 +330,6 @@
                 "key": "[Alt] [Shift] [↓]",
                 "val": "Reduce previously expanded selection by one step"
             }
-        ],
-        "Editor Window": [
-            {
-                "key": "[Ctrl] [X]",
-                "val": "Cut"
-            },
-            {
-                "key": "[Ctrl] [C]",
-                "val": "Copy"
-            },
-            {
-                "key": "[Ctrl] [V]",
-                "val": "Paste"
-            },
-            {
-                "key": "[Ctrl] [Z]",
-                "val": "Undo last action"
-            },
-            {
-                "key": "[Ctrl] [Y]",
-                "val": "Redo last (undone) action"
-            },
-            {
-                "key": "[Ctrl] [D]",
-                "val": "Delete Line"
-            },
-            {
-                "key": "[Alt] [↑]",
-                "val": "Move current line or selection Up"
-            },
-            {
-                "key": "[Alt] [↓]",
-                "val": "Move current line or selection down"
-            },
-            {
-                "key": "[Ctrl] [Alt] [↑]",
-                "val": "Duplicate current line or selection Up"
-            },
-            {
-                "key": "[Ctrl] [Alt] [↓]",
-                "val": "Duplicate current line or selection down"
-            },
-            {
-                "key": "[Ctrl] [Delete]",
-                "val": "Delete next word"
-            },
-            {
-                "key": "[Ctrl] [Backspace]",
-                "val": "Delete previous word"
-            },
-            {
-                "key": "[Shift] [Enter]",
-                "val": "Enter line below current line"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Enter]",
-                "val": "Enter line above current line"
-            },
-            {
-                "key": "Insert",
-                "val": "Switch between insert and overwrite mode"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Y]",
-                "val": "Change selection to all lower case"
-            },
-            {
-                "key": "[Shift] [Ctrl] [X]",
-                "val": "Change selection to all upper case"
-            }
-
         ],
         "Search and Replace": [
             {

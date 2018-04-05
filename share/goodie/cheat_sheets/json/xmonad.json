@@ -6,19 +6,14 @@
         "sourceName": "xmonad manpage",
         "sourceUrl" : "http://xmonad.org/manpage.html"
     },
-
     "aliases": [ "xmonad window manager", "xmonad tiling window manager"
     ],
-
     "template_type": "keyboard",
-
     "section_order": [
         "System Options",
         "Window Management",
         "Workspace/Screen Management"
     ],
-
-    "template_type": "keyboard",
     "sections": {
         "System Options": [{
             "val": "Launch terminal",
