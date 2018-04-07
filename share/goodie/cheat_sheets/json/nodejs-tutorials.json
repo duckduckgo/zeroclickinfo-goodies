@@ -31,7 +31,7 @@
                 "key": "Getting started with Node.js"
             },
             {
-                "link": "http://nodeschool.io/",
+                "link": "https://nodeschool.io/",
                 "key": "NodeSchool.io interactive lessons"
             },
             {
@@ -39,11 +39,11 @@
                 "key": "The Art of Node (an introduction to Node.js)"
             },
             {
-                "link": "http://www.nodebeginner.org/#hello-world",
+                "link": "https://www.nodebeginner.org/#hello-world",
                 "key": "Hello World"
             },
             {
-                "link": "http://www.nodebeginner.org/#building-the-application-stack",
+                "link": "https://www.nodebeginner.org/#building-the-application-stack",
                 "key": "Hello World Web Server"
             },
             {
@@ -51,11 +51,11 @@
                 "key": "Node.js Guide"
             },
             {
-                "link": "http://howtonode.org/express-mongodb",
+                "link": "https://howtonode.org/express-mongodb",
                 "key": "Build a blog with Node.js, express and MongoDB"
             },
             {
-                "link": "http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/",
+                "link": "https://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/",
                 "key": "Node.js for Beginners"
             },
             {
@@ -99,7 +99,7 @@
                 "key": "Einführung in Node.js (in German)"
             },
             {
-                "link": "http://www.youtube.com/watch?v=jo_B4LTHi3I",
+                "link": "https://www.youtube.com/watch?v=jo_B4LTHi3I",
                 "key": "Introduction to Node.js with Ryan Dahl"
             },
             {
@@ -111,23 +111,19 @@
                 "key": "Parallel Programming with Node.js"
             },
             {
-                "link": "http://vimeo.com/18077379",
+                "link": "https://vimeo.com/18077379",
                 "key": "Server-side JavaScript with Node, Connect & Express"
             },
             {
-                "link": "http://www.lynda.com/Nodejs-tutorials/Nodejs-First-Look/101554-2.html",
-                "key": "Node.js First Look"
-            },
-            {
-                "link": "http://www.youtube.com/watch?v=0_GNHWZHc-o",
+                "link": "https://www.youtube.com/watch?v=0_GNHWZHc-o",
                 "key": "Node.js with MongoDB"
             },
             {
-                "link": "http://www.youtube.com/watch?v=F6k8lTrAE2g",
+                "link": "https://www.youtube.com/watch?v=F6k8lTrAE2g",
                 "key": "Ryan Dahl's Google Tech Talk"
             },
             {
-                "link": "http://node.codeschool.com/levels/1",
+                "link": "https://node.codeschool.com/levels/1",
                 "key": "Real Time Web with Node.js"
             },
             {
@@ -135,7 +131,7 @@
                 "key": "Node.js Tutorials for Beginners"
             },
             {
-                "link": "http://www.pluralsight.com/search/?searchTerm=Node.js",
+                "link": "https://www.pluralsight.com/search/?searchTerm=Node.js",
                 "key": "Pluralsight courses (paid)"
             },
             {
@@ -183,10 +179,6 @@
                 "key": "Node.js in Action"
             },
             {
-                "link": "http://amzn.com/B008Z5OEUY",
-                "key": "Smashing Node.js: JavaScript Everywhere"
-            },
-            {
                 "link": "http://www.amazon.de/dp/389864829X",
                 "key": "Node.js & Co. (in German)"
             },
@@ -231,11 +223,11 @@
         ],
         "Blogs": [
             {
-                "link": "http://blog.nodejs.org/",
+                "link": "https://blog.nodejs.org/",
                 "key": "The Node.js blog"
             },
             {
-                "link": "http://howtonode.org/",
+                "link": "https://howtonode.org/",
                 "key": "How to Node"
             },
             {
@@ -243,7 +235,7 @@
                 "key": "DailyJS"
             },
             {
-                "link": "http://blog.nodejitsu.com/",
+                "link": "https://blog.nodejitsu.com/",
                 "key": "Nodejitsu blog"
             },
             {
@@ -267,11 +259,11 @@
                 "key": "Crockford's videos"
             },
             {
-                "link": "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
+                "link": "https://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
                 "key": "Essential JavaScript Design Patterns For Beginners"
             },
             {
-                "link": "http://bonsaiden.github.com/JavaScript-Garden/",
+                "link": "https://bonsaiden.github.io/JavaScript-Garden/",
                 "key": "JavaScript garden"
             },
             {
@@ -285,7 +277,7 @@
         ],
         "Node.js Modules": [
             {
-                "link": "http://npmjs.org/",
+                "link": "https://www.npmjs.com/",
                 "key": "Search for registered Node.js modules"
             },
             {
