@@ -180,8 +180,8 @@ gravitational constant:
     symbol:
     wiki:
     value:
-        plain: '6.67300 × 10^-11 m^3 kg^-1 s^-2'
-        html: '6.67300 × 10<sup>-11</sup> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup>'
+        plain: '6.67408 × 10^-11 m^3 kg^-1 s^-2'
+        html: '6.67408 × 10<sup>-11</sup> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup>'
 
 hbar:
     name: hbar
@@ -408,4 +408,4 @@ nuclear magneton:
     wiki:
     value:
         plain: '5.050783699 × 10^−27 J T^−1'
-        html: '5.050783699 × 10<sup>−27</sup> J T<sup>−1</sup>' 
+        html: '5.050783699 × 10<sup>−27</sup> J T<sup>−1</sup>'
