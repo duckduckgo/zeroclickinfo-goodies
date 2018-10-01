@@ -512,7 +512,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'angstrom',         name: 'Angstrom' },
                 { symbol: 'mil',              name: 'Mil' },
             ],
-            defaults: ['meter', 'cm']
+            defaults: ['mile', 'kilometer']
         },
         mass: {
             name: "Mass",
