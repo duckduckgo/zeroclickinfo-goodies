@@ -468,6 +468,22 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    '72 points in inches' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '72',
+            from_unit => 'point',
+            to_unit => 'inch',
+            physical_quantity => 'length'
+        })
+    ),
+    'point to mm' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1',
+            from_unit => 'point',
+            to_unit => 'millimeter',
+            physical_quantity => 'length'
+        })
+    ),
     # TEMPERATURE
     '1 degree fahrenheit to celsius' => test_zci(
         '',

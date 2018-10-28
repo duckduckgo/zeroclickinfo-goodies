@@ -505,6 +505,18 @@ unit: foot
 symbols: ["'"]
 ---
 aliases:
+  - point
+  - points
+type: length
+unit: point
+---
+aliases:
+  - pica
+  - picas
+type: length
+unit: pica
+---
+aliases:
   - in
   - ins
   - inch
