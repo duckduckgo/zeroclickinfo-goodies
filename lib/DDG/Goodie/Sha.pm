@@ -36,7 +36,7 @@ handle query => sub {
       structured_answer => {
         data => {
             title => $out,
-            subtitle => "SHA-$ver $enc hash",
+            subtitle => "SHA-$ver $enc hash: $str",
         },
         templates => {
             group => 'text'
