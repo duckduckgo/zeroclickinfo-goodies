@@ -29,8 +29,6 @@ my $infobox = [ { heading => "Related Queries", },
               ];
 
 handle remainder => sub {
-    # Ensure rand is seeded for each process
-    srand();
 
     my $address = join(':', map { sprintf '%0.2X', rand(255) } (1 .. 6));
 

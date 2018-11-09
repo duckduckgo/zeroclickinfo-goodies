@@ -10,8 +10,6 @@ triggers end => "words", "word";
 zci is_cached => 0;
 
 handle query_parts => sub {
-    # Ensure rand is seeded for each process
-    srand();
 
     my $numericalized = str2nbr($_);
     return unless $numericalized =~ /^(\d{1,50}) (letter|char|character) words?$/;
