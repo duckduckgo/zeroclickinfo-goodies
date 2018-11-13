@@ -189,11 +189,6 @@ German Privacy Foundation e.V.:
     - 85.25.251.254
     - 62.141.58.13
   ip6: []
-Chaos Computer Club Berlin:
-  info_url: https://berlin.ccc.de/
-  ip4:
-    - 213.73.91.35
-  ip6: []
 ClaraNet:
   info_url: http://www.claranet.com/
   ip4:
