@@ -102,6 +102,8 @@ handle remainder => sub {
     # Extract only the number from the remainder
     $_ =~ s/\D+//;
 
+    return unless $_ <= 1000000;
+
     my @factors = factor_exp($_);
 
     # Exit if we didn't find anything.

@@ -27,9 +27,9 @@ sub build_answer {
 }
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::PrimeFactors
-	)],
+    [qw(
+        DDG::Goodie::PrimeFactors
+    )],
     '72 prime factors' => test_zci('The prime factorization of 72 is 2^3 × 3^2',
                                     build_answer('72 - Prime Factors', '2³ × 3²')),
     'prime factors of 111' => test_zci('The prime factorization of 111 is 3 × 37',
@@ -52,7 +52,8 @@ ddg_goodie_test(
                                     build_answer(undef, '83 is a prime number')),
     'is 83 a prime number' => test_zci('83 is a prime number',
                                     build_answer(undef, '83 is a prime number')),
-    'optimus prime 45' => undef
+    'optimus prime 45' => undef,
+    'prime factors of 9999999' => undef
 );
 
 done_testing;
