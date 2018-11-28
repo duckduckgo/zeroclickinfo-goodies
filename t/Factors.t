@@ -56,6 +56,7 @@ ddg_goodie_test(
         '-12',
         '-12, -6, -4, -3, -2, -1, 1, 2, 3, 4, 6, 12'
     ),
+    'factors of 999999999' => undef,
     'factors of 2.4'  => undef,
     'factors of fear' => undef,
 );

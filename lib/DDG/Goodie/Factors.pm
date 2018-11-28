@@ -22,7 +22,12 @@ handle remainder => sub {
     # query number is negative, find and include negative factors.
     my $negative  = $1;
     my $query_mag = $2;
-    my @factors   = divisors($query_mag);
+
+    # max input value of 1M
+    # anything big takes too long to calculate
+    return unless $query_mag <= 1000000;
+
+    my @factors = divisors($query_mag);
 
     unshift @factors, sort { $a <=> $b } map { -$_ } @factors
         if $negative;
