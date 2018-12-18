@@ -195,10 +195,6 @@ tor:
   title: "DuckDuckGo is available on Tor"
   subtitle: "Visit our onion address"
   url: http://3g2upl4pq6kufc4m.onion  # only available via the Tor Browser
-traffic:
-  title: "Looking for our traffic stats?"
-  subtitle: "Visit the DuckDuckGo traffic page"
-  url: https://duckduckgo.com/traffic.html
 translation:
   aliases:
     - translations
