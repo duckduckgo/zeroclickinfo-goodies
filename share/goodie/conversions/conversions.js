@@ -378,7 +378,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'kbit',       name: 'Kilobit' },
                 { symbol: 'mbit',       name: 'Megabit' },
                 { symbol: 'gbit',       name: 'Gigabit' },
-                { symbol: 'tbit',       name: 'Terrabit' },
+                { symbol: 'tbit',       name: 'Terabit' },
                 { symbol: 'KB',         name: 'Kilobyte' },
                 { symbol: 'MB',         name: 'Megabyte' },
                 { symbol: 'GB',         name: 'Gigabyte' },
