@@ -3,4 +3,5 @@ package DDG::GoodieBundle::OpenSourceDuckDuckGo;
 
 # This package is only a namespace/version holder
 
+
 1;
