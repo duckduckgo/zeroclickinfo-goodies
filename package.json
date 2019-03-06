@@ -1,7 +1,7 @@
 {
   "name": "zeroclickinfo-goodies",
   "version": "0.0.0",
-  "description": "DuckDuckGo Goodies - Perl Backed IAs",
+  "description": "DuckDuckGo Goodies - Perl Backend IAs",
   "main": "",
   "repository": {
     "type": "git",
