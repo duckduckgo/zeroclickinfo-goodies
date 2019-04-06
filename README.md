@@ -1,3 +1,9 @@
+#DUCK DUCK GO
+
+The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.
+visit general offical page of duck duck go:-
+https://duckduckgo.com/
+
 # In Maintenance [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.svg?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
 
 DuckDuckHack is now in maintenance mode. We are only accepting pull requests for essential bug fixes. For more information see [duckduckhack.com](https://duckduckhack.com). 
