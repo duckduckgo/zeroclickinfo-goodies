@@ -1,4 +1,4 @@
-#DUCK DUCK GO
+
 
 The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.
 visit general offical page of duck duck go:-
