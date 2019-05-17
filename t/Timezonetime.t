@@ -13,7 +13,7 @@ zci is_cached   => 0;
 
 sub build_structured_answer {
     my ($time, $timezone, $daylightSaving) = @_;
-    
+
     return "$time $timezone $daylightSaving",
         structured_answer => {
             data => {
@@ -33,7 +33,7 @@ set_fixed_time('2017-06-03T09:36:53Z');
 
 ddg_goodie_test(
     ['DDG::Goodie::Timezonetime'],
-    
+
     #
     # 1. Queries that SHOULD TRIGGER ~~ IN DAYLIGHT SAVINGS
     #
@@ -50,7 +50,7 @@ set_fixed_time('2016-01-03T09:36:53Z');
 
 ddg_goodie_test(
     ['DDG::Goodie::Timezonetime'],
-    
+
     #
     # 2. Queries that SHOULD TRIGGER ~~ NOT IN DAYLIGHT SAVINGS
     #
@@ -61,7 +61,7 @@ ddg_goodie_test(
     'ist now time' => build_test("15:06:53", "IST", "IST is not in daylight saving"),
     'time now cst' => build_test("03:36:53", "CST", "CST is not in daylight saving"),
     'time in pst'  => build_test("01:36:53", "PST", "PST is not in daylight saving"),
-    
+
     #
     # 3. Queries that SHOULD NOT TRIGGER
     #
