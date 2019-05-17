@@ -9,7 +9,7 @@ use DateTime;
 use DateTime::TimeZone;
 
 zci answer_type => 'timezonetime';
-zci is_cached => 1;
+zci is_cached => 0;
 
 triggers start => ("what time in", "what time is it in", "time in");
 triggers startend => ("time", "now time", "time now");
