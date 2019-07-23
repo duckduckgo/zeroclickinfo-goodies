@@ -10,7 +10,6 @@ zci is_cached   => 0;
 triggers start => 'rand','random','number';
 
 handle query_lc => sub {
-    srand();
     # Random number.
     # q_check (as opposed to q_internal) Allows for decimals.
     return unless ($_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|)(?: between|))( [\d\.]+|)(?: and|)( [\d\.]+|)$/i);

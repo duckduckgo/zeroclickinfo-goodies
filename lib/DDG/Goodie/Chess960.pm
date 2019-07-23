@@ -108,8 +108,6 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
 );
 
 handle query => sub {
-    # Ensure rand is seeded for each process
-    srand();
 
     my $query = $_;
     my $pos = undef;

@@ -16,8 +16,6 @@ my $quotes = LoadFile(share('quotes.yml'));
 handle query => sub {
     return unless $_ =~ m/quotes?/;
 
-    # Ensure rand is seeded for each process
-    srand();
     my @quote = @{$quotes->[int(rand(scalar(@$quotes)))]};
 
     return join("\n", @quote),

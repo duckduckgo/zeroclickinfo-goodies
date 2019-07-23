@@ -18,8 +18,6 @@ handle query_lc => sub {
 
     return unless ($flips);
 
-    # Ensure rand is seeded for each process
-    srand();
     my @output;
 
     my @ht = ("heads", "tails");

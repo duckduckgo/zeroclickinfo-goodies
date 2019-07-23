@@ -30,8 +30,6 @@ handle remainder => sub {
         $selection_type = 'Non-random';
         $selection      = $duck[0];
     } else {
-        # Ensure rand is seeded for each process
-        srand();
         # Choose randomly
         $selection = $choices[int rand scalar @choices];
     }
