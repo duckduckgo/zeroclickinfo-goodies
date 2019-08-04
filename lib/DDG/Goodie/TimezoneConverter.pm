@@ -11,6 +11,7 @@ use DateTime;
 use POSIX qw(fmod);
 
 my %timezones = DDG::GoodieRole::Dates::get_timezones();
+my %timezone_names = DDG::GoodieRole::Dates::get_timezone_names();
 
 triggers any => lc for keys %timezones;
 
@@ -23,7 +24,7 @@ my $timezone_re  = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|$localtime_
 
 sub parse_timezone {
     my $timezone = shift;
-    
+
     # They said "my timezone" or nothing at all.
     if (!defined($timezone) || !$timezone || $timezone =~ /$localtime_re/i) {
         my $dt = DateTime->now(time_zone => $loc->time_zone || $default_tz );
@@ -137,6 +138,9 @@ handle query => sub {
     ($output->{timezone}, $output->{gmt_timezone}) = parse_timezone($+{'to_tz'});
     return unless defined $output->{gmt_timezone};
 
+    $input->{name} = $timezone_names{$input->{timezone}};
+    $output->{name} = $timezone_names{$output->{timezone}};
+
     my $modifier = $output->{gmt_timezone} - $input->{gmt_timezone};
 
     for ( $input->{gmt_timezone}, $output->{gmt_timezone} ) {
@@ -167,13 +171,20 @@ handle query => sub {
         $time = fmod $time, 24;
         $io->{time} = to_time($time, $american);
 
-        $io->{format} = '%s (UTC%s)';
-        $io->{timezones}  = [ $io->{timezone},  $io->{gmt_timezone} ];
+        $io->{format} = '%s (%s, UTC%s)';
+        $io->{timezones}  = [ $io->{name}, $io->{timezone},  $io->{gmt_timezone} ];
 
         $io->{timezone} =~ /(\A\w+)/;
         if ( $timezones{ $1 } !~ /[1-9]/ ) {
-            $io->{format} = '%s';
-            pop @{$io->{timezones}};
+            if ($io->{name}) {
+                $io->{format} = '%s (%s)';
+                pop @{$io->{timezones}};
+            }
+            else {
+                $io->{format} = '%s';
+                shift @{$io->{timezones}};
+                pop @{$io->{timezones}};
+            }
         }
     }
 
