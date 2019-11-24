@@ -1532,7 +1532,7 @@ aliases:
 can_be_negative: 1
 type: temperature
 unit: fahrenheit
-symbols: [°f]
+symbols: [°f,°F]
 ---
 aliases:
   - c
@@ -1547,7 +1547,7 @@ aliases:
 can_be_negative: 1
 type: temperature
 unit: celsius
-symbols: [°c]
+symbols: [°c,°C]
 ---
 aliases:
   - kelvin
