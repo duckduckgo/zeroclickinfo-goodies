@@ -17,6 +17,10 @@
         "gregorian_year_started": 1988,
         "wikipedia_page": "Heisei_period"
     },
+    "reiwa": {
+        "gregorian_year_started": 2018,
+        "wikipedia_page": "Reiwa_period"
+    },
     "juche": {
         "gregorian_year_started": 1911,
         "wikipedia_page": "North_Korean_calendar"
