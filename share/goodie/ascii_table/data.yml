@@ -185,7 +185,7 @@ body:
     Hex: 22
     Oct: 042
     Html: '&#34;'
-    Char: '\"'
+    Char: '"'
   - Dec: 35
     Hex: 23
     Oct: 043
