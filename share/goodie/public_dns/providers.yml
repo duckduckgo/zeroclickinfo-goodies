@@ -69,8 +69,8 @@ FDN:
     - 80.67.169.12
   ip6:
     - 2001:910:800::12
-Censurfridns:
-  info_url: http://blog.censurfridns.dk/en/ip
+Uncensored DNS:
+  info_url: https://blog.uncensoreddns.org/dns-servers/
   ip4:
     - 91.239.100.100
     - 89.233.43.71
