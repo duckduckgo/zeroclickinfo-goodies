@@ -64,6 +64,22 @@ Others: read
         })
     ),
 
+    'chmod 4744' => test_zci(
+'4744 (octal)
+rwsr--r-- (symbolic)
+User: read, write and execute
+Group: read
+Others: read
+Attributes: setuid
+',
+        structured_answer => _expected_result({
+            symbolic => 'rwsr--r--',
+            user => 'read, write and execute',
+            group => 'read',
+            others => 'read',
+            attributes => 'setuid',
+        })
+    ),
     'permission 7644' => test_zci(
 '7644 (octal)
 rwSr-Sr-T (symbolic)
