@@ -33,10 +33,10 @@ handle query => sub {
     my %attributes = (
         0 => 'no special attributes',
         1 => 'sticky',
-        2 => 'setuid',
-        3 => 'setuid and sticky',
-        4 => 'setgid',
-        5 => 'setgid and sticky',
+        2 => 'setgid',
+        3 => 'setgid and sticky',
+        4 => 'setuid',
+        5 => 'setuid and sticky',
         6 => 'setuid and setgid',
         7 => 'sticky, setuid and setgid',
     );
@@ -54,16 +54,19 @@ handle query => sub {
         my $tmp_attributes = $attributes;
         my @symbolic = split '', $symbolic;
         if ($tmp_attributes >= 4) {
+            # setuid
             $tmp_attributes -= 4;
-            if ($symbolic[5] eq 'x') { $symbolic[5] = 's'; }
-            else { $symbolic[5] = 'S'; }
-        }
-        if ($tmp_attributes >= 2) {
-            $tmp_attributes -= 2;
             if ($symbolic[2] eq 'x') { $symbolic[2] = 's'; }
             else { $symbolic[2] = 'S'; }
         }
+        if ($tmp_attributes >= 2) {
+            # setgid
+            $tmp_attributes -= 2;
+            if ($symbolic[5] eq 'x') { $symbolic[5] = 's'; }
+            else { $symbolic[5] = 'S'; }
+        }
         if ($tmp_attributes >= 1) {
+            # sticky
             $tmp_attributes -= 1;
             if ($symbolic[8] eq 'x') { $symbolic[2] = 't'; }
             else { $symbolic[8] = 'T'; }
