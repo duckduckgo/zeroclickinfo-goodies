@@ -14,17 +14,19 @@
     ],
     "template_type": "keyboard",
     "section_order": [
-        "Moving Around",
-        "Changing Container Modes",
-        "Opening Other Application",
+        "Basics",
+        "Moving Windows",
+        "Modifying Windows",
+        "Changing The Container Layout",
+        "Floating",
         "Using Workspaces",
-        "Restarting i3 Inplace",
-        "Exiting i3"
+        "Opening Applications / Closing Windows",
+        "Restart / Exit",
     ],
     "sections": {
-        "Moving Around": [
+        "Basics": [
             {
-                "val": "Open new Terminal",
+                "val": "Open new terminal",
                 "key": "[$mod] [Enter]"
             },
             {
@@ -44,6 +46,16 @@
                 "key": "[$mod] ( [;] / [→] )"
             },
             {
+                "val": "Focus parent",
+                "key": "[$mod] [a]"
+            },
+            {
+                "val": "Toggle focus mode",
+                "key": "[$mod] [Space]"
+            }
+        ],
+        "Moving Windows": [
+            {
                 "val": "Move window left",
                 "key": "[$mod] [Shift] ( [j] / [←] )"
             },
@@ -58,68 +70,82 @@
             {
                 "val": "Move window right",
                 "key": "[$mod] [Shift] ( [;] / [→] )"
-            },
-            {
-                "val": "Kill a window",
-                "key": "[$mod] [Shift], [q]"
-            },
-            {
-                "val": "Move window to another workspace",
-                "key": "[$mod] [Shift] [<Number>]"
             }
         ],
-        "Changing Container Modes": [
+        "Modifying Windows": [
+            {
+                "val": "Toggle fullscreen",
+                "key": "[$mod] [f]"
+            },
+            {
+                "val": "Split a window vertically",
+                "key": "[$mod] [v]"
+            },
+            {
+                "val": "Split a window horizontally",
+                "key": "[$mod] [h]"
+            },
+            {
+                "val": "Resize mode",
+                "key": "[$mod] [r]"
+            }
+        ],
+        "Changing The Container Layout": [
             {
                 "val": "Default",
                 "key": "[$mod] [e]"
             },
             {
                 "val": "Stacking",
-                "key": "[$mod] [h]"
+                "key": "[$mod] [s]"
             },
             {
                 "val": "Tabbed",
                 "key": "[$mod] [w]"
             },
-            {
-                "val": "Global fullscreen",
-                "key": "[$mod] [Shift], [f]"
-            },
-            {
-                "val": "Toggle fullscreen",
-                "key": "[$mod] [f]"
-            },
+        ],
+        "Floating": [
             {
                 "val": "Toggle floating",
-                "key": "[$mod] [Shift], [Space]"
+                "key": "[$mod] [Shift] [Space]"
             },
             {
                 "val": "Drag floating",
                 "key": "[$mod] [<Mouse>]"
             }
         ],
-        "Opening Other Application": [
+        "Using Workspaces": [
+            {
+                "val": "Switch to another workspace",
+                "key": "[$mod] [<Number>]"
+            },
+            {
+                "val": "Move a window to another workspace",
+                "key": "[$mod] [Shift] [<Number>]"
+            }
+        ],
+        "Opening Applications / Closing Windows": [
             {
                 "val": "Open application launcher (dmenu)",
                 "key": "[$mod] [d]"
-            }
-        ],
-        "Using Workspaces": [
+            },
             {
-                "val": "Switch to workspace num",
-                "key": "[$mod] [<Number>]"
+                "val": "Kill a window",
+                "key": "[$mod] [Shift] [q]"
             }
         ],
-        "Restarting i3 Inplace": [
+        "Restart / Exit": [
+            {
+                "val": "Reload the configuration file",
+                "key": "[$mod] [Shift] [c]"
+            },
             {
                 "val": "Restart i3 inplace",
-                "key": "[$mod] [Shift], [r]"
-            }
-        ],
-        "Exiting i3": [
+                "key": "[$mod] [Shift] [r]"
+            },
             {
                 "val": "Exit i3",
-                "key": "[$mod] [Shift], [e]"
+                "key": "[$mod] [Shift] [e]"
             }
         ]
     }
