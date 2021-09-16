@@ -107,8 +107,12 @@
             "val":"For generic type parameters, the out keyword specifies that the type parameter is covariant."
          },
          {  
-            "key":"sealed",
+            "key":"ref",
             "val":"The ref keyword causes an argument to be passed by reference, not by value."
+         },
+         {  
+            "key":"sealed",
+            "val":"When applied to a class, the sealed modifier prevents other classes from inheriting from it."
          },
          {  
             "key":"this",
