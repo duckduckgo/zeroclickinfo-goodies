@@ -1714,15 +1714,6 @@ unit: gibibyte
 symbols: [GiB]
 ---
 aliases:
-  - gibibyte
-  - gibibytes
-  - gibi byte
-  - gibi bytes
-  - gib
-type: digital
-unit: gibibyte
----
-aliases:
   - tib
   - tibibyte
   - tibibytes
